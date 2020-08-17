@@ -1,0 +1,800 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMainPage.master.cs" Inherits="WebBillingSystem.AdminMainPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="UNITGLO SOLUTIONS PRIVET LIMITED">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PMS Services</title>
+    <meta name="description" content="PMS System is design for companies compliance management system powerd by UNITGLO SOLUTIONS PRIVET LIMITED" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+	<!-- vector map CSS -->
+    <link href="<%=default_prefix %>/Assets/vendors/vectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" type="text/css" />
+    
+    
+    <!-- Data Table CSS -->
+    <link href="<%=default_prefix %>/Assets/vendors/datatables.net-responsive-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
+    <link href="<%=default_prefix %>/Assets/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">    
+
+    <!-- Toggles CSS -->
+    <link href="<%=default_prefix %>/Assets/vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+	
+	<!-- Toastr CSS -->
+    <link href="<%=default_prefix %>/Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
+
+    <link href="<%=default_prefix %>/Assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="<%=default_prefix %>/Assets/dist/css/style.css" rel="stylesheet" type="text/css">
+     <!-- jQuery -->
+    <script src="<%=default_prefix %>/Assets/vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<%=default_prefix %>/Assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="<%=default_prefix %>/Assets/dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="<%=default_prefix %>/Assets/dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="<%=default_prefix %>/Assets/dist/js/feather.min.js"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="<%=default_prefix %>/Assets/vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/toggle-data.js"></script>
+	
+	<!-- Counter Animation JavaScript -->
+	<script src="<%=default_prefix %>/Assets/vendors/waypoints/lib/jquery.waypoints.min.js"></script>
+	<script src="<%=default_prefix %>/Assets/vendors/jquery.counterup/jquery.counterup.min.js"></script>
+	
+	<!-- EChartJS JavaScript -->
+    <script src="<%=default_prefix %>/Assets/vendors/echarts/dist/echarts-en.min.js"></script>
+    
+	<!-- Sparkline JavaScript -->
+    <script src="<%=default_prefix %>/Assets/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+	
+	<!-- Vector Maps JavaScript -->
+    <script src="<%=default_prefix %>/Assets/vendors/vectormap/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/vectormap-data.js"></script>
+
+	<!-- Owl JavaScript -->
+    <script src="<%=default_prefix %>/Assets/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+	
+	<!-- Toastr JS -->
+    <script src="<%=default_prefix %>/Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    
+    <!-- Init JavaScript -->
+    <script src="<%=default_prefix %>/Assets/dist/js/init.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/dashboard-data.js"></script>
+
+    <script src="<%=default_prefix %>/Assets/vendors/select2/dist/js/select2.full.min.js"></script>
+	
+
+    <link rel="stylesheet" href="<%=default_prefix %>/Assets/dist/css/jquery-ui.min.css">
+<%--    <script src="<%=default_prefix %>/Assets/dist/js/jquery-1.10.2.js"></script>--%>
+    <script src="<%=default_prefix %>/Assets/dist/js/jquery-ui.min.js"></script>
+
+    
+    <!-- Data Table JavaScript -->
+    
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net/js/dataTables.export.js"></script>
+<%--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css" integrity="sha256-bX+rnnNrWmSrL9BjREvIc3tU9uClWcKmoEFJ2VKnUBc=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.js" integrity="sha256-K3qK8ynOxhJVloLac0CTWwr7iFKVDZF4Gd2yEsiAZYA=" crossorigin="anonymous"></script></head>--%>
+
+<body>
+    <form id="form1" runat="server">
+                 
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="loader-pendulums"></div>
+    </div>
+    <!-- /Preloader -->
+	
+	<!-- HK Wrapper -->
+	<div class="hk-wrapper hk-vertical-nav">
+
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
+            <a id="" class="navbar_toggle_btn navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="menu"></i></span></a>
+            <a class="navbar-brand" href="index.html">
+               <!-- <img class="brand-img d-inline-block" src="dist/img/logo-light.png" alt="brand" />-->
+			   PMS Consulting Services
+            </a>
+            <ul class="navbar-nav hk-navbar-content">
+                <li class="nav-item">
+                   <u> <a id="changeComp" runat="server"  href="~/Master/CompanyDetails.aspx"></a></u>
+                </li>
+                    
+                <li class="nav-item">
+                    <a id="" class=" navbar_search_btn nav-link nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="search"></i></span></a>
+                </li>
+                <li class="nav-item">
+                    <a id="" class="settings_toggle_btn nav-link nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="settings"></i></span></a>
+                </li>
+                <li class="nav-item dropdown dropdown-notifications">
+                    <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="notification_click()"><span class="feather-icon"><i data-feather="bell"></i></span><span class="badge-wrap"><span class="badge badge-violet badge-indicator badge-indicator-sm badge-pill pulse"></span></span></a>
+                    <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                        <h6 class="dropdown-header">Notifications <a href="javascript:void(0);" class="">View all</a></h6>
+                        <div class="notifications-nicescroll-bar notification_class">
+                          
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                            <% 
+    if (Session["page_role"] + "" == "CA")
+    { %>
+                    <asp:Button runat="server" id="backup_database_id" class="btn btn-primary btn-sm backup_database_class" Text="Submit data to Company" OnClick="backupChange"></asp:Button>
+        <% }
+    else
+    { %>
+                    <asp:Button runat="server" id="Button1" class="btn btn-primary btn-sm backup_database_class" Text="Submit data to CA" OnClick="backupChange"></asp:Button>
+
+        <% } %>
+                </li>
+
+                <li class="nav-item dropdown dropdown-authentication">
+                    <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media">
+                            <div class="media-img-wrap">
+                                <div class="avatar">
+                                    <img src="Assets/dist/img/avatar12.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                                <span class="badge badge-success badge-indicator"></span>
+                            </div>
+                            <div class="media-body">
+                                <span>User<i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+                        <a class="dropdown-item" href="profile.html"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
+                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My balance</span></a>
+                        <a class="dropdown-item" href="inbox.html"><i class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
+                        <a class="dropdown-item" href="/Master/BrandSettings.aspx"><i class="dropdown-icon zmdi zmdi-settings"></i><span>Brand Settings</span></a>
+                        <div class="dropdown-divider"></div>
+                        <div class="sub-dropdown-menu show-on-hover">
+                            <a href="#" class="dropdown-toggle dropdown-item no-caret"><i class="zmdi zmdi-check text-success"></i>Online</a>
+                            <div class="dropdown-menu open-left-side">
+                                <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-check text-success"></i><span>Online</span></a>
+                                <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-circle-o text-warning"></i><span>Busy</span></a>
+                                <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-minus-circle-outline text-danger"></i><span>Offline</span></a>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/LogOut.aspx"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log out</span></a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /Top Navbar -->
+
+        <!-- Vertical Nav -->
+        <nav class="hk-nav hk-nav-dark">
+            <a href="javascript:void(0);" id="" class="hk_nav_close hk-nav-close"><span class="feather-icon"><i data-feather="x"></i></span></a>
+            <div class="nicescroll-bar">
+                <div class="navbar-nav-wrap">
+                    <ul class="navbar-nav flex-column">
+                        <% if (Session["page_role"] + "" == "SUPERADMIN")
+                            {  %>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/SupperAdminHome" >
+                                <span class="feather-icon"><i data-feather="layers"></i></span>
+                                <span class="nav-link-text">Super Dashboard</span>
+                            </a>
+                        </li>
+                        <% }  %>
+                        <% if (Session["page_role"] + "" == "CA")
+                            {  %>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/CAHome" >
+                                <span class="feather-icon"><i data-feather="layers"></i></span>
+                                <span class="nav-link-text">CA Dashboard</span>
+                            </a>
+                        </li>
+                        <% }  %>
+                        <% if (Session["role_code"] + "" == "COMPANY")
+                            { 
+                                
+                                %>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/CompanyHome.aspx" >
+                                <span class="feather-icon"><i data-feather="layers"></i></span>
+                                <span class="nav-link-text">Dashboard</span>
+                            </a>
+                          <!--  <ul id="dash_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.html">CRM</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index2.html">Project</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index3.html">Statistics</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul> -->
+                           </li>
+                       </ul> 
+                <%-- NEWS --%>    
+                    <hr class="nav-separator">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#News_Components_drp">
+                                <span class="feather-icon"><i data-feather="file-text"></i></span>
+                                <span class="nav-link-text">NEWS</span>
+                            </a>
+                            <ul id="News_Components_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-company">
+                                            <a id="A1" runat="server" class="nav-link" href="/News/News_And_Updates_Details.aspx">NEWS AND UPDATE</a>
+                                        </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+     <%-- /NEWS --%>
+                    <%-- MASTER --%>
+
+                    <hr class="nav-separator">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#Components_drp">
+                                <span class="feather-icon"><i data-feather="user"></i></span>
+                                <span class="nav-link-text">MASTER</span>
+                            </a>
+                            <ul id="Components_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-company">
+                                            <a id="CompanyDetails" runat="server" class="nav-link" href="/Master/CompanyDetails.aspx">COMPANY MASTER</a>
+                                        </li>
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/Master/AccountDetails.aspx">ACCOUNT MASTER</a>
+                                        </li>
+                                        <li class="nav-stock">
+                                            <a class="nav-link" href="/Master/StockDetails.aspx">INVENTORY MASTER</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Master/MasterSettings.aspx">MASTER SETTING</a>
+                                        </li>
+                                        <li class="nav-subgroup">
+                                            <a class="nav-link" href="/Master/SubGroupDetails.aspx">SUB GROUP ACCOUNT MASTER</a>
+                                        </li>
+                                        <li class="nav-group">
+                                            <a class="nav-link" href="/Master/InventoryGroupDetails.aspx">GROUP INVENTORY MASTER</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+
+       <%-- VOUCHER --%>
+            <hr class="nav-separator">
+                <%-- <div class="nav-header">
+                   <span>Voucher</span>
+                    <span>GS</span>
+                    </div>
+                --%> 
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#sale_drp">
+                                <span class="feather-icon"><i data-feather="edit"></i></span>
+                                <span class="nav-link-text">VOUCHER</span>
+                            </a>
+                            <ul id="sale_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/SaleDetails.aspx">SALE</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx?saleRetu=Sale Return">SALE RETURN</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/PurchaseDetails.aspx">PURCHASE</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/DebitDetails.aspx?purRetu=Purchase Return ">PURCHASE RETURN</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/home.aspx">PAYMENT</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/home.aspx">RECEIPT</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/DebitDetails.aspx">DEBIT NOTE</a>
+                                        </li>
+
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx">CREDIT NOTE</a>
+                                        </li>
+                                       
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/ExpensesDetails.aspx">EXPENSES</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/Vouchers/JournalVouchersDetails.aspx">JOURNAL ENTRY</a>
+                                        </li>
+
+                                        </ul>
+                                    </li>
+                                 </ul>
+                        </li>
+                    </ul>
+
+
+                                
+     <%-- REPORTS --%>
+
+                    <hr class="nav-separator">
+                    
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#Comp_drp">
+                                <span class="feather-icon"><i data-feather="file-text"></i></span>
+                                <span class="nav-link-text">REPORTS</span>
+                            </a>
+                            <ul id="Comp_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/Reports/AccountLedger.aspx">ACCOUNTS LEDGER</a>
+                                        </li>
+                                        <li class="nav-stock">
+                                            <a class="nav-link" href="/Reports/CashBankBook.aspx">CASH BOOK / BANK BOOK</a>
+                                        </li>
+                                       <%-- <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">BANK BOOK</a>
+                                        </li>--%>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Reports/JournalBook.aspx">JOURNAL BOOK</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Reports/TrialBalance.aspx">TRIAL BALANCE</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Reports/PurchaseRegister.aspx">PURCHASE REGISTER</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Reports/SaleRegister.aspx">SALE REGISTER</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Reports/DebtorsStatement.aspx">DEBTORS STATEMENT</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/Reports/CreditorsStatement.aspx">CREDITORS STATEMENT</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">PROFIT AND LOSS ACCOUNTS</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">BALANCE SHEET</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#OtherReport_drp">
+                                          <span class="feather-icon"><i data-feather="layout"></i></span>
+                                          <span class="nav-link-text">OTHER REPORT</span>
+                                        </a>
+                            <ul id="OtherReport_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/Reports/StockLedger.aspx">STOCK LEDGER</a>
+                                        </li>
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/Reports/ClosingStockReport.aspx">CLOSING STOCK REPORT</a>
+                                        </li>
+                            
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">CLOSING STOCK VALUATION REPORT</a>
+                                        </li>
+                            
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">BATCH WISE STOCK REPORT</a>
+                                        </li>
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">EXPIRY STOCK REPORT</a>
+                                        </li>
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">BANK RECONCILIATION STATEMENT</a>
+                                        </li>
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">CASH FLOW STATEMENT</a>
+                                        </li>
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">DEPRECIATION SCHEDULE</a>
+                                        </li>
+                            
+                                    </ul>
+                                    </li>    
+                                       </ul>     
+                                        </li>
+                                        
+                                    </ul>
+
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+
+
+                        <%-- GST REPORTS --%>
+
+                    <hr class="nav-separator">
+                    <%--<div class="nav-header">
+                        <span>Master</span>
+                        <span>UI</span>
+                    </div>--%>
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#GSTreport_drp">
+                                <span class="feather-icon"><i data-feather="file"></i></span>
+                                <span class="nav-link-text">GST REPORTS</span>
+                            </a>
+                            <ul id="GSTreport_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-account">
+                                        <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#format1_drp">
+                                          <span class="feather-icon"></span>
+                                          <span class="nav-link-text">FORMAT - 1</span>
+                                        </a>
+                            <ul id="format1_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/Reports/gstr1.aspx">GSTR-1</a>
+                                        </li>
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/Reports/gstr2.aspx">GSTR-2</a>
+                                        </li>
+                            
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">GSTR 3B</a>
+                                        </li>
+                            
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">RECIPIENT DETAILS</a>
+                                        </li>
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">SUPPLIERS DETAILS</a>
+                                        </li>
+                                       <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">RATE CHART</a>
+                                        </li>
+                            </ul>
+                                    </li>    
+                                       </ul>   
+                                        </li>
+                                        <li class="nav-stock">
+                                                      <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#format2_drp">
+                                          <span class="feather-icon"></span>
+                                          <span class="nav-link-text">Format - 2 GSTN FORMAT</span>
+                                        </a>
+                            <ul id="format2_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">GSTN FORMATS - GSTR 1</a>
+                                        </li>
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">GSTN FORMATS - GSTR 2</a>
+                                        </li>
+                            
+                                         <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">GSTN FORMATS - GSTR 3B</a>
+                                        </li>
+                                      </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+
+                        
+                      <%-- REPORT PRINTING --%>
+
+                    <hr class="nav-separator">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#ReportPrint_drp">
+                                <span class="feather-icon"><i data-feather="printer"></i></span>
+                                <span class="nav-link-text">REPORT PRINTING</span>
+                            </a>
+                            <ul id="ReportPrint_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">ALL ACCOUNTS LEDGER</a>
+                                        </li>
+                                        <li class="nav-stock">
+                                            <a class="nav-link" href="/Reports/TrialBalance.aspx">TRIAL BALANCE</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">PROFIT AND LOSS A/C</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">BALANCE SHEET</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">ALL STOCK LEDGER</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">PURCHASE REGISTER</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">SALE REGISTER</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+      
+
+                                              
+                      <%-- Online Activity --%>
+
+                    <hr class="nav-separator">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#OnlineActivity_drp">
+                                <span class="feather-icon"><i data-feather="wifi"></i></span>
+                                <span class="nav-link-text">ONLINE ACTIVITY</span>
+                            </a>
+                            <ul id="OnlineActivity_drp" class="nav flex-column collapse collapse-level-1">
+                                <li class="nav-item">
+                                    <ul class="nav flex-column">
+
+                                        <li class="nav-account">
+                                            <a class="nav-link" href="/home.aspx">File GSTR-1</a>
+                                        </li>
+                                        <li class="nav-stock">
+                                            <a class="nav-link" href="/home.aspx">File GSTR-2</a>
+                                        </li>
+                                        <li class="nav-sett">
+                                            <a class="nav-link" href="/home.aspx">File GSTR 3B</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                     </ul>
+                           <% }
+                               else
+                               { %>
+
+                    <ul class="navbar-nav flex-column">
+                                                <li class="nav-item ">
+                            <a class="nav-link" href="/Master/CompanyDetails.aspx" >
+                                <span class="feather-icon"><i data-feather="layers"></i></span>
+                                <span class="nav-link-text">Company Master</span>
+                            </a>
+                        </li>
+
+                        </ul>
+                            <% } %>
+                </div>
+            </div>
+        </nav>
+        <div id="" class="hk_nav_backdrop hk-nav-backdrop"></div>
+        <!-- /Vertical Nav -->
+
+        <!-- Setting Panel -->
+        <div class="hk-settings-panel">
+            <div class="nicescroll-bar position-relative">
+                <div class="settings-panel-wrap">
+                    <div class="settings-panel-head">
+                        <img class="brand-img d-inline-block align-top" src="dist/img/logo-light.png" alt="brand" />
+                        <a href="javascript:void(0);" id="settings_panel_close" class="settings-panel-close"><span class="feather-icon"><i data-feather="x"></i></span></a>
+                    </div>
+                    <hr>
+                    <h6 class="mb-5">Layout</h6>
+                    <p class="font-14">Choose your preferred layout</p>
+                    <div class="layout-img-wrap">
+                        <div class="row">
+                            <a href="javascript:void(0);" class="col-6 mb-30 active">
+                                <img class="rounded opacity-70" src="dist/img/layout1.png" alt="layout">
+                                <i class="zmdi zmdi-check"></i>
+                            </a>
+                            <a href="index2.html" class="col-6 mb-30">
+                                <img class="rounded opacity-70" src="dist/img/layout2.png" alt="layout">
+                                <i class="zmdi zmdi-check"></i>
+                            </a>
+                            <a href="index3.html" class="col-6">
+                                <img class="rounded opacity-70" src="dist/img/layout3.png" alt="layout">
+                                <i class="zmdi zmdi-check"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <h6 class="mb-5">Navigation</h6>
+                    <p class="font-14">Menu comes in two modes: dark & light</p>
+                    <div class="button-list hk-nav-select mb-10">
+                        <button type="button" id="" class="nav_light_select btn btn-outline-light btn-sm btn-wth-icon icon-wthot-bg"><span class="icon-label"><i class="fa fa-sun-o"></i> </span><span class="btn-text">Light Mode</span></button>
+                        <button type="button" id="" class="nav_dark_select btn btn-outline-primary btn-sm btn-wth-icon icon-wthot-bg"><span class="icon-label"><i class="fa fa-moon-o"></i> </span><span class="btn-text">Dark Mode</span></button>
+                    </div>
+                    <hr>
+                    <h6 class="mb-5">Top Nav</h6>
+                    <p class="font-14">Choose your liked color mode</p>
+                    <div class="button-list hk-navbar-select mb-10">
+                        <button type="button" id="" class="navtop_light_select btn btn-outline-primary btn-sm btn-wth-icon icon-wthot-bg"><span class="icon-label"><i class="fa fa-sun-o"></i> </span><span class="btn-text">Light Mode</span></button>
+                        <button type="button" id="" class="navtop_dark_select btn btn-outline-light btn-sm btn-wth-icon icon-wthot-bg"><span class="icon-label"><i class="fa fa-moon-o"></i> </span><span class="btn-text">Dark Mode</span></button>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6>Scrollable Header</h6>
+                        <div class="toggle toggle-sm toggle-simple toggle-light toggle-bg-primary scroll-nav-switch"></div>
+                    </div>
+                    <button id="" class=" reset_settingsbtn btn-primary btn-block btn-reset mt-30">Reset</button>
+                </div>
+            </div>
+            <img class="d-none" src="dist/img/logo-light.png" alt="brand" />
+            <img class="d-none" src="dist/img/logo-dark.png" alt="brand" />
+        </div>
+        <!-- /Setting Panel -->
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper ContentPlaceHolder1" >
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                    </asp:ContentPlaceHolder>
+                   <!-- Footer -->
+            <div class="hk-footer-wrap container">
+                <footer class="footer">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p class="d-inline-block">Follow us</p>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                            <a href="#" class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span class="btn-icon-wrap"><i class="fa fa-google-plus"></i></span></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /Footer -->
+        </div>
+
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+        </form>
+                                <div class="row">
+                                <div class="col-sm">
+                                    <!-- Button trigger modal -->                                   
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="confirmationModalPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title"></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body pareches-invoice-model">
+                                                    <p class="popup_message">Do you want to Submit?</p>
+                                                    <p class="popup_url" style="display:none;"></p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" onclick="redirect_function()">YES</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                     <!-- /Modal -->
+                                </div>
+                            </div>
+</body>
+<script type="text/javascript">
+    function warning_message(message) {
+        $.toast({
+            heading: 'Error', text: message,
+            position: 'top-right',
+            loaderBg: '#6640b2',
+            class: 'jq-toast-primary',
+            hideAfter: 3500, stack: 6,
+            showHideTransition: 'fade'
+        });
+
+    }
+    var api_url = "";
+    var obj = {};
+    var notification_html = '<a href="{{action_url}}" class="dropdown-item"><div class="media"><div class="media-img-wrap"><div class="avatar avatar-sm"><img src="Assets/dist/img/avatar2.jpg" alt="user" class="avatar-img rounded-circle"></div></div><div class="media-body"><div><div class="notifications-text">{{notification_title}}</div><div class="notifications-time">{{notification_time}}</div></div></div></div></a>';
+  
+    function notification_click() {
+        $(".notification_class").text("");
+        
+        var api_url = "http://pms.unitglo.com/company_list.php";        
+        <% 
+        if (Session["page_role"] + "" == "CA") { %>
+        api_url =  "http://pms.unitglo.com/ca_list.php";
+        <% } %>
+    
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            url: api_url,
+            data: {"company_code": "<%=Session["company_code"]%>", "ca_code": "<%=Session["ca_code"]%>" },
+            dataType: "json",
+            success: function (data) {
+                
+                $(data.file_list).each(function (index, value) {
+                    var temp_html = notification_html;
+                    var temp_html = temp_html.replace("{{notification_title}}", value.file_name);
+                    var temp_html = temp_html.replace("{{notification_time}}", value.file_date_time);
+                    var temp_html = temp_html.replace("{{action_url}}", "/ca_comp_fileupload/import_db.aspx?value=" + encodeURI(value.file_name));
+                    $(".notification_class").append(temp_html);
+                    
+                });
+               },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Error: " + XMLHttpRequest.responseText);
+                }
+             });
+    }
+
+    function convert_number(obj) {
+        return parseFloat(obj).toFixed(2);
+    }
+
+    function redirect_function() {
+        window.location.href = $(".popup_url").attr("link");
+    }
+    function preparePopup(obj) {
+        $(".popup_message").html($(obj).attr("data-message"));
+        $(".popup_url").attr("link", $(obj).attr("data-url"));
+        $(".modal-title").html($(obj).attr("data-modal-title"));
+        $("#confirmationModalPopup").modal();        
+    }
+    $(".ContentPlaceHolder1").on("change", function () {
+        feather.replace();
+    });
+    
+</script>
+
+</html>

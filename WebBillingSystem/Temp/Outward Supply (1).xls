@@ -1,0 +1,58 @@
+<table class="table table-bordered" id="outwardSupply_Table" style="border: 1px solid;">
+                    
+           <thead>
+               <tr style="height:5px; border-color:black;"> <td colspan="29" style="background-color:sandybrown;">Details of outward supplies </td></tr>
+			  <tr style="border-color:black;">
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Name of the receipient*  <font color="red">(Mandatory in case of unregistered person) </font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">GSTIN/ UIN*  <font color="red"> (Mandatory in case of Registered person)</font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">State Name*</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">"POS  <font color="red">(only if different from the location of recipient)" </font></th>
+                  <th colspan="6" style="border: 1px solid #ccc; border-color:black;">Invoice Details</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Quantity	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">IGST   <font color="red"> (Only for Inter State Supply)</font></th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">CGST	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">SGST	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Cess</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Indicate if supply attracts reverse charge $</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Name of ecommerce operator</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">GSTIN of ecommerce operato <font color="red"> (if applicable)</font></th>
+                  <th colspan="4" style="border: 1px solid #ccc; border-color:black;">Shipping Bill  <font color="red"> (In case of export)</font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Select Receipient Category if different from "Regular"</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Item Type</th>
+			  </tr>
+               <tr>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Invoice Value</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">HSN/SAC</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Goods/Service description</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Taxable value*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Qty</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Unit</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Export Type </th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date </th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Port Code </th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+               </tr>
+            </thead>
+             <tbody>
+               
+                        <tr><td colspan="1" style="border: 1px solid #ccc; border-color:black;">RAKESH KUMAR</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">10AAVFM2440B1ZS</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">27</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">MAYUR TRADE CENTER</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">PAT/1819/1</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">/Date(1568831400000)/</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">87052</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">2</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">60000</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">1</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">PCS-PIECES</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">18</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">10800</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">8919</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">GENIAL POLYMERS PRIVATE LIMITED  </td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">2</td></tr><tr><td colspan="1" style="border: 1px solid #ccc; border-color:black;"></td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">27ABCDEFGHD1AS</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">27</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">chinchwad</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">PAT/1819/3</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">/Date(1569349800000)/</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">87052</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">2</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">60000</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">1</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">PCS-PIECES</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">18</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">10800</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">10800</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">GENIAL POLYMERS PRIVATE LIMITED  </td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">0</td><td colspan="1" style="border: 1px solid #ccc; border-color:black;">2</td></tr></tbody>
+						</table>

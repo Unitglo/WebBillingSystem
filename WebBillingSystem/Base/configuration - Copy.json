@@ -1,0 +1,37 @@
+{
+  "branding_data_ca": {
+    "ca_logo": "/images/CAlogo2.jpg",
+
+    "ca_slider1": "/images/CAlogo1.jpg",
+    "ca_slider2": "/images/CAlogo2.jpg",
+    "ca_slider3": "/images/CAlogo3.jpg",
+    "ca_header_msg1": "Understand and look deep into nature.",
+    "ca_header_msg2": "Experience matters for good applications.",
+    "ca_header_msg3": "abc",
+
+    "ca_description1": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. Again during the 90s as desktop publishers bundled the text with their software.",
+    "ca_description2": "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.",
+    "ca_description3": "abc"
+
+  },
+  "branding_data_company": {
+    "company_name": "unitglo solutions pvt ltd",
+    "company_logo": "/images/mlogo.cdr",
+
+    "company_slider1": "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "company_slider2": "http://avenuesolutions.com.au/wp-content/uploads/2015/01/Banner-2.jpg",
+    "company_slider3": "/images/1.jpg",
+
+    "company_header_msg1": "Understand and look deep into nature.",
+    "company_header_msg2": "Experience matters for good applications.",
+    "company_header_msg3": "abc",
+
+    "company_description1": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. Again during the 90s as desktop publishers bundled the text with their software.",
+    "company_description2": "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.",
+    "company_description3": "abc"
+
+  },
+  "installation_type": "CA",
+  "pmslogo": "/images/pmslogo.png",
+  "default_database": "pms"
+}

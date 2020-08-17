@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="PMS" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^G:\\akash\\Account\ Project\\smita\\WebBillingSystem\\WebBillingSystem\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^G:\\akash\\Account\ Project\\smita\\WebBillingSystem\\WebBillingSystem\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ConnectionString-Web.config Connection String" description="" value="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\suraj\Documents\erp.accdb" tags="">
+    <parameterEntry kind="XmlFile" scope="G:\\akash\\Account\ Project\\smita\\WebBillingSystem\\WebBillingSystem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

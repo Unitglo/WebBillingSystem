@@ -1,0 +1,1 @@
+﻿INSERT INTO `pms_ca_tbl`(`ca_name`, `ca_code`, `ca_password`, `date`) VALUES ('Mukund Sahay','YYY001','admin!@#', now())

@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC73149D-9CE3-4143-B1BC-2D02CF22A639}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebBillingSystem</RootNamespace>
+    <AssemblyName>WebBillingSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Tools.Com.Interop, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="mysql.data.entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.Entities.6.8.3.0\lib\net45\mysql.data.entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlBackup.1.0.1\lib\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\dist\css\animate.css" />
+    <Content Include="Assets\dist\css\dripicons.css" />
+    <Content Include="Assets\dist\css\font-awesome.min.css" />
+    <Content Include="Assets\dist\css\glyphicons.css" />
+    <Content Include="Assets\dist\css\ionicons.min.css" />
+    <Content Include="Assets\dist\css\jquery-ui.css" />
+    <Content Include="Assets\dist\css\jquery-ui.min.css" />
+    <Content Include="Assets\dist\js\jquery-ui.min.js" />
+    <Content Include="Assets\dist\css\linea-icon.css" />
+    <Content Include="Assets\dist\css\material-design-iconic-font.min.css" />
+    <Content Include="Assets\dist\css\pe-icon-7-stroke.css" />
+    <Content Include="Assets\dist\css\simple-line-icons.css" />
+    <Content Include="Assets\dist\css\style.css" />
+    <Content Include="Assets\dist\css\themify-icons.css" />
+    <Content Include="Assets\dist\fonts\dripicons\dripicons-v2.svg" />
+    <Content Include="Assets\dist\fonts\fontawesome\fontawesome-webfont5b62.svg" />
+    <Content Include="Assets\dist\fonts\glyphicons\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\dist\fonts\ionicons\ionicons78ce.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-arrows-10.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-10.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-elaboration-10.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-ecommerce-10.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-music-10.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-software-10.svg" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-weather-10.svg" />
+    <Content Include="Assets\dist\fonts\pe-icon-7\Pe-icon-7-strokebb1d.svg" />
+    <Content Include="Assets\dist\fonts\simple-line-icons\Simple-Line-Icons4c824c82.svg" />
+    <Content Include="Assets\dist\fonts\themify-icons\themify9f24.svg" />
+    <Content Include="Assets\dist\img\1foldericon.png" />
+    <Content Include="Assets\dist\img\2image.png" />
+    <Content Include="Assets\dist\img\3videoicon.png" />
+    <Content Include="Assets\dist\img\4image.png" />
+    <Content Include="Assets\dist\img\5psdicon.png" />
+    <Content Include="Assets\dist\img\6image.png" />
+    <Content Include="Assets\dist\img\avatar1.jpg" />
+    <Content Include="Assets\dist\img\avatar10.jpg" />
+    <Content Include="Assets\dist\img\avatar11.jpg" />
+    <Content Include="Assets\dist\img\avatar12.jpg" />
+    <Content Include="Assets\dist\img\avatar2.jpg" />
+    <Content Include="Assets\dist\img\avatar3.jpg" />
+    <Content Include="Assets\dist\img\avatar4.jpg" />
+    <Content Include="Assets\dist\img\avatar5.jpg" />
+    <Content Include="Assets\dist\img\avatar6.jpg" />
+    <Content Include="Assets\dist\img\avatar7.jpg" />
+    <Content Include="Assets\dist\img\avatar8.jpg" />
+    <Content Include="Assets\dist\img\avatar9.jpg" />
+    <Content Include="Assets\dist\img\bg1.jpg" />
+    <Content Include="Assets\dist\img\bg2.jpg" />
+    <Content Include="Assets\dist\img\card-ae.png" />
+    <Content Include="Assets\dist\img\card-mc.png" />
+    <Content Include="Assets\dist\img\card-visa.png" />
+    <Content Include="Assets\dist\img\cropper.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock1.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock10.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock11.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock12.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock13.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock14.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock15.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock2.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock3.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock4.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock5.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock6.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock7.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock8.jpg" />
+    <Content Include="Assets\dist\img\gallery\mock9.jpg" />
+    <Content Include="Assets\dist\img\img-thumb.jpg" />
+    <Content Include="Assets\dist\img\img-thumb1.jpg" />
+    <Content Include="Assets\dist\img\invoice-logo.png" />
+    <Content Include="Assets\dist\img\jpgicon.png" />
+    <Content Include="Assets\dist\img\landing-pg\herobg.html" />
+    <Content Include="Assets\dist\img\layout1.png" />
+    <Content Include="Assets\dist\img\layout2.png" />
+    <Content Include="Assets\dist\img\layout3.png" />
+    <Content Include="Assets\dist\img\logo-dark.png" />
+    <Content Include="Assets\dist\img\logo-light.png" />
+    <Content Include="Assets\dist\img\logo1.jpg" />
+    <Content Include="Assets\dist\img\logo2.jpg" />
+    <Content Include="Assets\dist\img\logo3.jpg" />
+    <Content Include="Assets\dist\img\logo4.jpg" />
+    <Content Include="Assets\dist\img\logo5.jpg" />
+    <Content Include="Assets\dist\img\mastercard.png" />
+    <Content Include="Assets\dist\img\pdficon.png" />
+    <Content Include="Assets\dist\img\product-thumb1.png" />
+    <Content Include="Assets\dist\img\product-thumb2.png" />
+    <Content Include="Assets\dist\img\product-thumb3.png" />
+    <Content Include="Assets\dist\img\signature.png" />
+    <Content Include="Assets\dist\img\slide1.jpg" />
+    <Content Include="Assets\dist\img\slide2.jpg" />
+    <Content Include="Assets\dist\img\slide3.jpg" />
+    <Content Include="Assets\dist\img\slide4.jpg" />
+    <Content Include="Assets\dist\img\slide5.jpg" />
+    <Content Include="Assets\dist\img\slide6.jpg" />
+    <Content Include="Assets\dist\img\slide7.jpg" />
+    <Content Include="Assets\dist\img\trans-bg.jpg" />
+    <Content Include="Assets\dist\js\areacharts-data.js" />
+    <Content Include="Assets\dist\js\barcharts-data.js" />
+    <Content Include="Assets\dist\js\bootstrap-table-data.html" />
+    <Content Include="Assets\dist\js\cropperjs-data.js" />
+    <Content Include="Assets\dist\js\dashboard-data.js" />
+    <Content Include="Assets\dist\js\dashboard2-data.js" />
+    <Content Include="Assets\dist\js\dashboard3-data.js" />
+    <Content Include="Assets\dist\js\dataTables-data.js" />
+    <Content Include="Assets\dist\js\daterangepicker-data.js" />
+    <Content Include="Assets\dist\js\dropdown-bootstrap-extended.js" />
+    <Content Include="Assets\dist\js\easypiechart-data.js" />
+    <Content Include="Assets\dist\js\editable-table-data.js" />
+    <Content Include="Assets\dist\js\feather.min.js" />
+    <Content Include="Assets\dist\js\fm-data.js" />
+    <Content Include="Assets\dist\js\form-file-upload-data.js" />
+    <Content Include="Assets\dist\js\form-wizard-data.js" />
+    <Content Include="Assets\dist\js\froogaloop2.min.js" />
+    <Content Include="Assets\dist\js\fullcalendar-data.js" />
+    <Content Include="Assets\dist\js\gallery-data.js" />
+    <Content Include="Assets\dist\js\gmap-data.js" />
+    <Content Include="Assets\dist\js\init.js" />
+    <Content Include="Assets\dist\js\inputspinner-data.js" />
+    <Content Include="Assets\dist\js\jquery-1.10.2.js" />
+    <Content Include="Assets\dist\js\jquery-ui.js" />
+    <Content Include="Assets\dist\js\jquery.slimscroll.js" />
+    <Content Include="Assets\dist\js\linecharts-data.js" />
+    <Content Include="Assets\dist\js\login-data.js" />
+    <Content Include="Assets\dist\js\nestable-data.js" />
+    <Content Include="Assets\dist\js\owl-data.js" />
+    <Content Include="Assets\dist\js\peity-data.js" />
+    <Content Include="Assets\dist\js\pickr-data.js" />
+    <Content Include="Assets\dist\js\piecharts-data.js" />
+    <Content Include="Assets\dist\js\rangeslider-data.js" />
+    <Content Include="Assets\dist\js\realtimecharts-data.js" />
+    <Content Include="Assets\dist\js\select2-data.js" />
+    <Content Include="Assets\dist\js\sparkline-data.js" />
+    <Content Include="Assets\dist\js\tablesaw-data.js" />
+    <Content Include="Assets\dist\js\tinymce-data.js" />
+    <Content Include="Assets\dist\js\toast-data.js" />
+    <Content Include="Assets\dist\js\toggle-data.js" />
+    <Content Include="Assets\dist\js\tooltip-data.js" />
+    <Content Include="Assets\dist\js\twitterFetcher.js" />
+    <Content Include="Assets\dist\js\validation-data.js" />
+    <Content Include="Assets\dist\js\vectormap-data.js" />
+    <Content Include="Assets\dist\js\widgets-data.js" />
+    <Content Include="Assets\vendors\bootstrap-input-spinner\src\bootstrap-input-spinner.js" />
+    <Content Include="Assets\vendors\bootstrap-table\dist\bootstrap-table.min.css" />
+    <Content Include="Assets\vendors\bootstrap-table\dist\bootstrap-table.min.js" />
+    <Content Include="Assets\vendors\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.html" />
+    <Content Include="Assets\vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Assets\vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Assets\vendors\cropperjs\dist\cropper.min.css" />
+    <Content Include="Assets\vendors\cropperjs\dist\cropper.min.js" />
+    <Content Include="Assets\vendors\datatables.net-bs4\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Assets\vendors\datatables.net-buttons-bs4\js\buttons.bootstrap4.min.js" />
+    <Content Include="Assets\vendors\datatables.net-buttons\js\buttons.flash.min.js" />
+    <Content Include="Assets\vendors\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="Assets\vendors\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="Assets\vendors\datatables.net-buttons\js\dataTables.buttons.min.js" />
+    <Content Include="Assets\vendors\datatables.net-dt\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\vendors\datatables.net-dt\images\sort_asc.html" />
+    <Content Include="Assets\vendors\datatables.net-dt\images\sort_asc_disabled.html" />
+    <Content Include="Assets\vendors\datatables.net-dt\images\sort_both.html" />
+    <Content Include="Assets\vendors\datatables.net-dt\images\sort_desc.html" />
+    <Content Include="Assets\vendors\datatables.net-dt\images\sort_desc_disabled.html" />
+    <Content Include="Assets\vendors\datatables.net-dt\js\dataTables.dataTables.min.js" />
+    <Content Include="Assets\vendors\datatables.net-responsive-dt\css\responsive.dataTables.min.css" />
+    <Content Include="Assets\vendors\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Assets\vendors\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\vendors\daterangepicker\daterangepicker.css" />
+    <Content Include="Assets\vendors\daterangepicker\daterangepicker.js" />
+    <Content Include="Assets\vendors\dropify\dist\css\dropify.min.css" />
+    <Content Include="Assets\vendors\dropify\dist\fonts\dropify.svg" />
+    <Content Include="Assets\vendors\dropify\dist\js\dropify.min.js" />
+    <Content Include="Assets\vendors\dropzone\dist\dropzone.css" />
+    <Content Include="Assets\vendors\dropzone\dist\dropzone.js" />
+    <Content Include="Assets\vendors\easy-pie-chart\dist\jquery.easypiechart.min.js" />
+    <Content Include="Assets\vendors\echarts\dist\echarts-en.min.js" />
+    <Content Include="Assets\vendors\editable-table\mindmup-editabletable.js" />
+    <Content Include="Assets\vendors\editable-table\numeric-input-example.js" />
+    <Content Include="Assets\vendors\flot\excanvas.min.js" />
+    <Content Include="Assets\vendors\flot\jquery.flot.crosshair.js" />
+    <Content Include="Assets\vendors\flot\jquery.flot.js" />
+    <Content Include="Assets\vendors\flot\jquery.flot.pie.js" />
+    <Content Include="Assets\vendors\flot\jquery.flot.resize.js" />
+    <Content Include="Assets\vendors\flot\jquery.flot.stack.js" />
+    <Content Include="Assets\vendors\flot\jquery.flot.time.js" />
+    <Content Include="Assets\vendors\fullcalendar\dist\fullcalendar.min.css" />
+    <Content Include="Assets\vendors\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="Assets\vendors\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="Assets\vendors\ion-rangeslider\css\ion.rangeSlider.skinHTML5.css" />
+    <Content Include="Assets\vendors\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <Content Include="Assets\vendors\jasny-bootstrap\dist\js\jasny-bootstrap.min.js" />
+    <Content Include="Assets\vendors\jquery-steps\build\jquery.steps.min.js" />
+    <Content Include="Assets\vendors\jquery-steps\demo\css\jquery.steps.css" />
+    <Content Include="Assets\vendors\jquery-toast-plugin\dist\jquery.toast.min.css" />
+    <Content Include="Assets\vendors\jquery-toast-plugin\dist\jquery.toast.min.js" />
+    <Content Include="Assets\vendors\jquery-toggles\css\themes\toggles-light.css" />
+    <Content Include="Assets\vendors\jquery-toggles\css\toggles.css" />
+    <Content Include="Assets\vendors\jquery-toggles\toggles.min.js" />
+    <Content Include="Assets\vendors\jquery.counterup\jquery.counterup.min.js" />
+    <Content Include="Assets\vendors\jquery.flot.tooltip\js\jquery.flot.tooltip.min.js" />
+    <Content Include="Assets\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
+    <Content Include="Assets\vendors\jquery\dist\jquery.min.3.4.1.js" />
+    <Content Include="Assets\vendors\jquery\dist\jquery.min.js" />
+    <Content Include="Assets\vendors\jszip\dist\jszip.min.js" />
+    <Content Include="Assets\vendors\lightgallery\dist\css\lightgallery.min.css" />
+    <Content Include="Assets\vendors\lightgallery\dist\fonts\lgd641.svg" />
+    <Content Include="Assets\vendors\lightgallery\dist\img\loading.gif" />
+    <Content Include="Assets\vendors\lightgallery\dist\img\video-play.png" />
+    <Content Include="Assets\vendors\lightgallery\dist\img\vimeo-play.png" />
+    <Content Include="Assets\vendors\lightgallery\dist\img\youtube-play.png" />
+    <Content Include="Assets\vendors\lightgallery\dist\js\lightgallery-all.min.js" />
+    <Content Include="Assets\vendors\moment\min\moment.min.js" />
+    <Content Include="Assets\vendors\morris.js\morris.css" />
+    <Content Include="Assets\vendors\morris.js\morris.min.js" />
+    <Content Include="Assets\vendors\nestable2\dist\jquery.nestable.min.css" />
+    <Content Include="Assets\vendors\nestable2\dist\jquery.nestable.min.js" />
+    <Content Include="Assets\vendors\owl.carousel\dist\assets\owl.carousel.min.css" />
+    <Content Include="Assets\vendors\owl.carousel\dist\assets\owl.theme.default.min.css" />
+    <Content Include="Assets\vendors\owl.carousel\dist\assets\owl.video.play.png" />
+    <Content Include="Assets\vendors\owl.carousel\dist\owl.carousel.min.js" />
+    <Content Include="Assets\vendors\pdfmake\build\pdfmake.min.js" />
+    <Content Include="Assets\vendors\pdfmake\build\vfs_fonts.js" />
+    <Content Include="Assets\vendors\peity\jquery.peity.min.js" />
+    <Content Include="Assets\vendors\pickr-widget\dist\pickr.min.css" />
+    <Content Include="Assets\vendors\pickr-widget\dist\pickr.min.js" />
+    <Content Include="Assets\vendors\popper.js\dist\umd\popper.min.js" />
+    <Content Include="Assets\vendors\raphael\raphael.min.js" />
+    <Content Include="Assets\vendors\select2\dist\css\select2.min.css" />
+    <Content Include="Assets\vendors\select2\dist\js\select2.full.min.js" />
+    <Content Include="Assets\vendors\switchery\dist\switchery.min.js" />
+    <Content Include="Assets\vendors\tablesaw\dist\tablesaw.css" />
+    <Content Include="Assets\vendors\tablesaw\dist\tablesaw.jquery.js" />
+    <Content Include="Assets\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-de-merc.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-es-merc.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-ru-mill.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-us-lcc-en.js" />
+    <Content Include="Assets\vendors\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Assets\vendors\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="Base\company_profile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Base\ca_profile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Base\company_db_table.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Base\ca_db_table.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ca_comp_fileupload\import_db.aspx" />
+    <Content Include="ca_comp_fileupload\company_file_upload_code.aspx" />
+    <Content Include="ca_comp_fileupload\CA_file_upload_code.aspx" />
+    <Content Include="ca_comp_fileupload\matrixTask.aspx" />
+    <Content Include="CompanyHome.aspx" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\News Cycle SIL OFL Font License 1.1.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="CAHome.aspx" />
+    <Content Include="images\CAlogo1.jpg" />
+    <Content Include="images\CAlogo2.jpg" />
+    <Content Include="images\CAlogo3.jpg" />
+    <Content Include="images\download.jpg" />
+    <Content Include="images\Ecommerce.jpg" />
+    <Content Include="images\pdf_image.png" />
+    <Content Include="images\pdf_images.png" />
+    <Content Include="images\pmslogo.png" />
+    <Content Include="images\Real estate.jpg" />
+    <Content Include="images\UnitGlo-Solutions-pvt-ltd-2016.png" />
+    <Content Include="images\unitglo.jpg" />
+    <Content Include="images\unnamed.jpg" />
+    <Content Include="images\wordimages.png" />
+    <Content Include="index.html" />
+    <Content Include="js\jszip.js" />
+    <Content Include="js\xlsx.full.min.js" />
+    <Content Include="js\xlsx.js" />
+    <Content Include="Master\BrandSettings.aspx" />
+    <Content Include="Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="News\News_And_Updates_Details.aspx" />
+    <Content Include="News\News_And_Updates.aspx" />
+    <Content Include="Reports\ClosingStockReport.aspx" />
+    <Content Include="Reports\StockLedger.aspx" />
+    <Content Include="Reports\SaleRegister.aspx" />
+    <Content Include="Reports\PurchaseRegister.aspx" />
+    <Content Include="Reports\CashBankBook.aspx" />
+    <Content Include="Reports\CreditorsStatement.aspx" />
+    <Content Include="Reports\DebtorsStatement.aspx" />
+    <Content Include="Reports\TrialBalance.aspx" />
+    <Content Include="Reports\AccountLedger.aspx" />
+    <Content Include="Reports\gstr2.aspx" />
+    <Content Include="Reports\JournalBook.aspx" />
+    <Content Include="SupperAdminHome.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\arrows-white.png" />
+    <Content Include="images\banar.png" />
+    <Content Include="images\bullet.png" />
+    <Content Include="images\graphic.jpg" />
+    <Content Include="images\banar1.png" />
+    <Content Include="images\pattern1.png" />
+    <Content Include="images\tp_logo.jpg" />
+    <Content Include="images\banar2.png" />
+    <Content Include="images\pattern.png" />
+    <Content Include="js\image_fade.js" />
+    <Content Include="js\jquery.easing-sooper.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.sooperfish.js" />
+    <Content Include="js\modernizr-1.5.min.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="Master\InventoryGroupDetails.aspx" />
+    <Content Include="Master\SubGroupDetails.aspx" />
+    <Content Include="Master\MasterSettings.aspx" />
+    <Content Include="Master\CompanyDetails.aspx" />
+    <Content Include="Master\AccountDetails.aspx" />
+    <Content Include="Master\StockDetails.aspx" />
+    <Content Include="Master\AddStock.aspx" />
+    <Content Include="Master\AddAccount.aspx" />
+    <Content Include="Master\AddCompany.aspx" />
+    <Content Include="Master\Puraches_Report.aspx" />
+    <Content Include="Reports\gstr1.aspx" />
+    <Content Include="Reports\CreditPrint.aspx" />
+    <Content Include="Reports\debitPrint.aspx" />
+    <Content Include="Reports\SalePrint.aspx" />
+    <Content Include="Reports\testPrint.aspx" />
+    <Content Include="Reports\PurchaseDetailsReportDisplay.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vouchers\JournalVouchersDetails.aspx" />
+    <Content Include="Vouchers\CreditDetails.aspx" />
+    <Content Include="Vouchers\CreditNote.aspx" />
+    <Content Include="Vouchers\DebitDetails.aspx" />
+    <Content Include="Vouchers\DebitNote.aspx" />
+    <Content Include="Vouchers\ExpensesVoucher.aspx" />
+    <Content Include="Vouchers\JournalEntry.aspx" />
+    <Content Include="Vouchers\ExpensesDetails.aspx" />
+    <Content Include="Vouchers\PurchaseDetails.aspx" />
+    <Content Include="Vouchers\PurchaseInvoice.aspx" />
+    <Content Include="Vouchers\SaleReturn.aspx" />
+    <Content Include="Vouchers\SaleDetails.aspx" />
+    <Content Include="Vouchers\SaleInvoice.aspx" />
+    <Content Include="Vouchers\PurchaseReturn.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMainPage.Master.cs">
+      <DependentUpon>AdminMainPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMainPage.Master.designer.cs">
+      <DependentUpon>AdminMainPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Base\DataBaseHealpare.cs" />
+    <Compile Include="Base\TableBase.cs" />
+    <Compile Include="ca_comp_fileupload\import_db.aspx.cs">
+      <DependentUpon>import_db.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\import_db.aspx.designer.cs">
+      <DependentUpon>import_db.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\company_file_upload_code.aspx.cs">
+      <DependentUpon>company_file_upload_code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\company_file_upload_code.aspx.designer.cs">
+      <DependentUpon>company_file_upload_code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\CA_file_upload_code.aspx.cs">
+      <DependentUpon>CA_file_upload_code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\CA_file_upload_code.aspx.designer.cs">
+      <DependentUpon>CA_file_upload_code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\matrixTask.aspx.cs">
+      <DependentUpon>matrixTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ca_comp_fileupload\matrixTask.aspx.designer.cs">
+      <DependentUpon>matrixTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyHome.aspx.cs">
+      <DependentUpon>CompanyHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompanyHome.aspx.designer.cs">
+      <DependentUpon>CompanyHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="CAHome.aspx.cs">
+      <DependentUpon>CAHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CAHome.aspx.designer.cs">
+      <DependentUpon>CAHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\BrandSettings.aspx.cs">
+      <DependentUpon>BrandSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\BrandSettings.aspx.designer.cs">
+      <DependentUpon>BrandSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\News_And_Updates_Details.aspx.cs">
+      <DependentUpon>News_And_Updates_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\News_And_Updates_Details.aspx.designer.cs">
+      <DependentUpon>News_And_Updates_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\News_And_Updates.aspx.cs">
+      <DependentUpon>News_And_Updates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\News_And_Updates.aspx.designer.cs">
+      <DependentUpon>News_And_Updates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClosingStockReport.aspx.cs">
+      <DependentUpon>ClosingStockReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ClosingStockReport.aspx.designer.cs">
+      <DependentUpon>ClosingStockReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockLedger.aspx.cs">
+      <DependentUpon>StockLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StockLedger.aspx.designer.cs">
+      <DependentUpon>StockLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SaleRegister.aspx.cs">
+      <DependentUpon>SaleRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SaleRegister.aspx.designer.cs">
+      <DependentUpon>SaleRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseRegister.aspx.cs">
+      <DependentUpon>PurchaseRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseRegister.aspx.designer.cs">
+      <DependentUpon>PurchaseRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CashBankBook.aspx.cs">
+      <DependentUpon>CashBankBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CashBankBook.aspx.designer.cs">
+      <DependentUpon>CashBankBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CreditorsStatement.aspx.cs">
+      <DependentUpon>CreditorsStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CreditorsStatement.aspx.designer.cs">
+      <DependentUpon>CreditorsStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DebtorsStatement.aspx.cs">
+      <DependentUpon>DebtorsStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\DebtorsStatement.aspx.designer.cs">
+      <DependentUpon>DebtorsStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TrialBalance.aspx.cs">
+      <DependentUpon>TrialBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TrialBalance.aspx.designer.cs">
+      <DependentUpon>TrialBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AccountLedger.aspx.cs">
+      <DependentUpon>AccountLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\AccountLedger.aspx.designer.cs">
+      <DependentUpon>AccountLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\gstr2.aspx.cs">
+      <DependentUpon>gstr2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\gstr2.aspx.designer.cs">
+      <DependentUpon>gstr2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\JournalBook.aspx.cs">
+      <DependentUpon>JournalBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\JournalBook.aspx.designer.cs">
+      <DependentUpon>JournalBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupperAdminHome.aspx.cs">
+      <DependentUpon>SupperAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupperAdminHome.aspx.designer.cs">
+      <DependentUpon>SupperAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainReport.Master.cs">
+      <DependentUpon>MainReport.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainReport.Master.designer.cs">
+      <DependentUpon>MainReport.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\InventoryGroupDetails.aspx.cs">
+      <DependentUpon>InventoryGroupDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\InventoryGroupDetails.aspx.designer.cs">
+      <DependentUpon>InventoryGroupDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SubGroupDetails.aspx.cs">
+      <DependentUpon>SubGroupDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\SubGroupDetails.aspx.designer.cs">
+      <DependentUpon>SubGroupDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterSettings.aspx.cs">
+      <DependentUpon>MasterSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\MasterSettings.aspx.designer.cs">
+      <DependentUpon>MasterSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CompanyDetails.aspx.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\CompanyDetails.aspx.designer.cs">
+      <DependentUpon>CompanyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AccountDetails.aspx.cs">
+      <DependentUpon>AccountDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\AccountDetails.aspx.designer.cs">
+      <DependentUpon>AccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\StockDetails.aspx.cs">
+      <DependentUpon>StockDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\StockDetails.aspx.designer.cs">
+      <DependentUpon>StockDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AddStock.aspx.cs">
+      <DependentUpon>AddStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\AddStock.aspx.designer.cs">
+      <DependentUpon>AddStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AddAccount.aspx.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\AddAccount.aspx.designer.cs">
+      <DependentUpon>AddAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AddCompany.aspx.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\AddCompany.aspx.designer.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Puraches_Report.aspx.cs">
+      <DependentUpon>Puraches_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Puraches_Report.aspx.designer.cs">
+      <DependentUpon>Puraches_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\gstr1.aspx.cs">
+      <DependentUpon>gstr1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\gstr1.aspx.designer.cs">
+      <DependentUpon>gstr1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CreditPrint.aspx.cs">
+      <DependentUpon>CreditPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CreditPrint.aspx.designer.cs">
+      <DependentUpon>CreditPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\debitPrint.aspx.cs">
+      <DependentUpon>debitPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\debitPrint.aspx.designer.cs">
+      <DependentUpon>debitPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SalePrint.aspx.cs">
+      <DependentUpon>SalePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SalePrint.aspx.designer.cs">
+      <DependentUpon>SalePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\testPrint.aspx.cs">
+      <DependentUpon>testPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\testPrint.aspx.designer.cs">
+      <DependentUpon>testPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PurchaseDetailsReportDisplay.aspx.cs">
+      <DependentUpon>PurchaseDetailsReportDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PurchaseDetailsReportDisplay.aspx.designer.cs">
+      <DependentUpon>PurchaseDetailsReportDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\JournalVouchersDetails.aspx.cs">
+      <DependentUpon>JournalVouchersDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\JournalVouchersDetails.aspx.designer.cs">
+      <DependentUpon>JournalVouchersDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\CreditDetails.aspx.cs">
+      <DependentUpon>CreditDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\CreditDetails.aspx.designer.cs">
+      <DependentUpon>CreditDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\CreditNote.aspx.cs">
+      <DependentUpon>CreditNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\CreditNote.aspx.designer.cs">
+      <DependentUpon>CreditNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\DebitDetails.aspx.cs">
+      <DependentUpon>DebitDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\DebitDetails.aspx.designer.cs">
+      <DependentUpon>DebitDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\DebitNote.aspx.cs">
+      <DependentUpon>DebitNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\DebitNote.aspx.designer.cs">
+      <DependentUpon>DebitNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\ExpensesVoucher.aspx.cs">
+      <DependentUpon>ExpensesVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\ExpensesVoucher.aspx.designer.cs">
+      <DependentUpon>ExpensesVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\JournalEntry.aspx.cs">
+      <DependentUpon>JournalEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\JournalEntry.aspx.designer.cs">
+      <DependentUpon>JournalEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\ExpensesDetails.aspx.cs">
+      <DependentUpon>ExpensesDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\ExpensesDetails.aspx.designer.cs">
+      <DependentUpon>ExpensesDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\PurchaseDetails.aspx.cs">
+      <DependentUpon>PurchaseDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\PurchaseDetails.aspx.designer.cs">
+      <DependentUpon>PurchaseDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\PurchaseInvoice.aspx.cs">
+      <DependentUpon>PurchaseInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\PurchaseInvoice.aspx.designer.cs">
+      <DependentUpon>PurchaseInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\SaleReturn.aspx.cs">
+      <DependentUpon>SaleReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\SaleReturn.aspx.designer.cs">
+      <DependentUpon>SaleReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\SaleDetails.aspx.cs">
+      <DependentUpon>SaleDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\SaleDetails.aspx.designer.cs">
+      <DependentUpon>SaleDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\SaleInvoice.aspx.cs">
+      <DependentUpon>SaleInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\SaleInvoice.aspx.designer.cs">
+      <DependentUpon>SaleInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vouchers\PurchaseReturn.aspx.cs">
+      <DependentUpon>PurchaseReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vouchers\PurchaseReturn.aspx.designer.cs">
+      <DependentUpon>PurchaseReturn.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\NewsCycle-Regular.eot" />
+    <Content Include="fonts\NewsCycle-Regular.ttf" />
+    <Content Include="fonts\YanoneKaffeesatz-Regular.eot" />
+    <Content Include="fonts\YanoneKaffeesatz-Regular.ttf" />
+    <Content Include="AdminMainPage.Master" />
+    <Content Include="packages.config" />
+    <Content Include="MainReport.Master" />
+    <Content Include="Assets\dist\fonts\dripicons\dripicons-v2.eot" />
+    <Content Include="Assets\dist\fonts\dripicons\dripicons-v2.ttf" />
+    <Content Include="Assets\dist\fonts\dripicons\dripicons-v2.woff" />
+    <Content Include="Assets\dist\fonts\dripicons\dripicons-v2d41d.eot" />
+    <Content Include="Assets\dist\fonts\fontawesome\fontawesome-webfont5b62.eot" />
+    <Content Include="Assets\dist\fonts\fontawesome\fontawesome-webfont5b62.ttf" />
+    <Content Include="Assets\dist\fonts\fontawesome\fontawesome-webfont5b62.woff" />
+    <Content Include="Assets\dist\fonts\fontawesome\fontawesome-webfont5b62.woff2" />
+    <Content Include="Assets\dist\fonts\fontawesome\fontawesome-webfontd41d.eot" />
+    <Content Include="Assets\dist\fonts\glyphicons\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\dist\fonts\glyphicons\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\dist\fonts\glyphicons\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\dist\fonts\glyphicons\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\dist\fonts\glyphicons\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Assets\dist\fonts\ionicons\ionicons78ce.eot" />
+    <Content Include="Assets\dist\fonts\ionicons\ionicons78ce.ttf" />
+    <Content Include="Assets\dist\fonts\ionicons\ionicons78ce.woff" />
+    <Content Include="Assets\dist\fonts\ionicons\ionicons78ce.woff2" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-arrows-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-arrows-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-arrows-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-arrows-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-elaboration-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-elaboration-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-elaboration-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-basic-elaboration-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-ecommerce-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-ecommerce-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-ecommerce-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-ecommerce-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-music-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-music-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-music-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-music-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-software-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-software-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-software-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-software-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-weather-10.eot" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-weather-10.ttf" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-weather-10.woff" />
+    <Content Include="Assets\dist\fonts\linea-icons\linea-weather-10d41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\dist\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\dist\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\dist\fonts\pe-icon-7\Pe-icon-7-strokebb1d.eot" />
+    <Content Include="Assets\dist\fonts\pe-icon-7\Pe-icon-7-strokebb1d.ttf" />
+    <Content Include="Assets\dist\fonts\pe-icon-7\Pe-icon-7-strokebb1d.woff" />
+    <Content Include="Assets\dist\fonts\pe-icon-7\Pe-icon-7-stroked41d.eot" />
+    <Content Include="Assets\dist\fonts\simple-line-icons\Simple-Line-Icons4c824c82.eot" />
+    <Content Include="Assets\dist\fonts\simple-line-icons\Simple-Line-Icons4c824c82.ttf" />
+    <Content Include="Assets\dist\fonts\simple-line-icons\Simple-Line-Icons4c824c82.woff" />
+    <Content Include="Assets\dist\fonts\simple-line-icons\Simple-Line-Icons4c824c82.woff2" />
+    <Content Include="Assets\dist\fonts\simple-line-icons\Simple-Line-Iconsd41dd41d.eot" />
+    <Content Include="Assets\dist\fonts\themify-icons\themify9f24.eot" />
+    <Content Include="Assets\dist\fonts\themify-icons\themify9f24.ttf" />
+    <Content Include="Assets\dist\fonts\themify-icons\themify9f24.woff" />
+    <Content Include="Assets\dist\fonts\themify-icons\themifyd41d.eot" />
+    <Content Include="Assets\dist\img\gallery\Thumbs.db" />
+    <Content Include="Assets\dist\img\Thumbs.db" />
+    <Content Include="Assets\vendors\dropify\dist\fonts\dropify.eot" />
+    <Content Include="Assets\vendors\dropify\dist\fonts\dropify.ttf" />
+    <Content Include="Assets\vendors\dropify\dist\fonts\dropify.woff" />
+    <Content Include="Assets\vendors\lightgallery\dist\fonts\lgd41d.eot" />
+    <Content Include="Assets\vendors\lightgallery\dist\fonts\lgd641.eot" />
+    <Content Include="Assets\vendors\lightgallery\dist\fonts\lgd641.ttf" />
+    <Content Include="Assets\vendors\lightgallery\dist\fonts\lgd641.woff" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="libman.json" />
+    <Content Include="Master\app.config" />
+    <Content Include="Base\configuration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\mlogo.cdr" />
+    <Content Include="Base\configuration - Copy.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\PMS.pubxml" />
+    <Content Include="upload\StockExcelTemplate.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="upload\AccountExcelTemplate.xlsx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+    <Folder Include="upload\SQL\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56103</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53130/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

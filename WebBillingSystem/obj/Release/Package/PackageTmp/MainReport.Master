@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainReport.master.cs" Inherits="WebBillingSystem.MainReport" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div align="center">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+            <table border="1" style="width: 90%;">
+                <tr>
+                    <td>
+                        <table style="width: 100%" border="1">
+                            <tr>
+                                <td style="width: 40%">
+                                    <div align="center">
+                                        <img src="images/banar.png" style="height: 110px; width: 320px;" />
+                                    </div>
+                                </td>
+                                <td style="width: 40%;">
+                                    <p style="float: right;">
+                                        Address:
+            <br />
+                                        Contact No:
+            <br />
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table style="width: 100%;">
+                                        <asp:ContentPlaceHolder ID="ContentRecivar" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table style="width: 100%;">
+
+                                        <asp:ContentPlaceHolder ID="ContentBill" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <table style="width: 100%;" border="1">
+                            <tr>
+                                <td style="width: 40%; height: 80px;">Terms & Conditions</td>
+                                <td style="width: 40%; height: 80px;">
+                                    <p style="" align="center">Signature</p>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

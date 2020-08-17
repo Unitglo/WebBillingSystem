@@ -1,0 +1,19 @@
+{
+  "branding_data": {
+    "login_page_name": "UNITGLO SOLUTIONS PVT LTD",
+    "login_page_logo": "/images/download.jpg",
+    "login_page_slider1": "/images/Ecommerce.jpg",
+    "login_page_slider2": "/images/Real estate.jpg",
+    "login_page_slider3": "/images/unnamed.jpg",
+    "login_page_header_msg1": "Understand and look deep into nature.",
+    "login_page_header_msg2": "Experience matters for good applications.",
+    "login_page_header_msg3": "Understand and look deep into nature.",
+    "login_page_description1": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. Again during the 90s as desktop publishers bundled the text with their software.",
+    "login_page_description2": "The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.",
+    "login_page_description3": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. Again during the 90s as desktop publishers bundled the text with their software."
+  },
+  "installation_type": "CA",
+  "pmslogo": "/images/pmslogo.png",
+  "default_database": "pms_system",
+  "default_prefix": ""
+}
