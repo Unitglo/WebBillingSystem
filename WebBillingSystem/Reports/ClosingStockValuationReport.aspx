@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="ClosingStockReport.aspx.cs" Inherits="WebBillingSystem.ClosingStockReport" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="ClosingStockValuationReport.aspx.cs" Inherits="WebBillingSystem.ClosingStockValuationReport" %>
 <asp:Content id="Content1" ContentPlaceHolderid="ContentPlaceHolder1" runat="server">
-
+    
   <!-- Breadcrumb -->
      <nav class="hk-breadcrumb" aria-label="breadcrumb">
          <ol class="breadcrumb breadcrumb-light bg-transparent">
@@ -186,7 +186,7 @@
             var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
             month_wise_tr += "<tr>" +
                         "<td colspan='1'>"+ edit_button + "</td>" +
-                        "<td colspan='2' >" + key + "</td>" +
+                        "<td colspan='10' >" + key + "</td>" +
                         "<tr id='month-" + key + "'></tr>"+
                         "</tr>";
         });
@@ -317,18 +317,54 @@
                     all_products[index].product_close_qty = product_month_qty;
                     all_products[index].product_close_cost = product_month_cost;
                     all_products[index].product_close_unit_rate = product_month_unit_rate ;
-                    all_products[index].product_close_value = product_month_cost;
+            all_products[index].product_close_value = product_month_cost;
+
+            // Closing Balance ( Cost Price ) 		
+
+            var cost_price =  (!isNaN(parseFloat(all_products[index].product_sale_price))?parseFloat(all_products[index].product_sale_price):0);
+            var market_price =  (!isNaN(parseFloat(all_products[index].product_mrp))?parseFloat(all_products[index].product_mrp):0);
+
             day_details += '' +
                 '<tr><td style="text-align:center; width: 80px;">' + key.product_group + '</td>' +
                 '<td style="text-align:center; width: 270px">' + key.product_name + '</td>' +
-                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0)+ '</td>' +
+
+                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
+                    '<td style="text-align: right; width: 100px;">' + (cost_price).toFixed(2) + '</td>' +
+                '<td style="text-align: right; width: 100px;">' + (cost_price*all_products[index].product_close_qty).toFixed(2) + '</td>' +
+
+                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
+                    '<td style="text-align: right; width: 100px;">' + (market_price).toFixed(2) + '</td>' +
+                '<td style="text-align: right; width: 100px;">' + (market_price*all_products[index].product_close_qty).toFixed(2) + '</td>' +
+
+                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty)) ? all_products[index].product_close_qty : 0).toFixed(2) + '</td>' +
+                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0).toFixed(2) + '</td>' +
+                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0).toFixed(2)+ '</td>' +
                 '</tr>';
 
         });
-        day_details = '<tr><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th> <th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th><tr>'+day_details;
-        $("#month-" + month).html("<td colspan='5'><table style='width: 100%;'>"+day_details+"</table></td>");
+        day_details = '<tr>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th>' +
+            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance(Cost Price)</th>' +
+            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance( Market Price )</th>' +
+            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance</th>' +
+            '</tr><tr>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+            '</tr>'+
+            '<tr> ' + day_details;
+        $("#month-" + month).html("<td colspan='11'><table style='width: 100%;'>"+day_details+"</table></td>");
 
     }
 
@@ -393,4 +429,4 @@
     }
 
  </script>
-</asp:Content>
+</asp:Content> 

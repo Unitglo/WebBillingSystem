@@ -183,11 +183,11 @@
         }
         var month_wise_tr = "";
         monthsName.forEach(function (key, index) {
-            var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
+            var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[key] + "' onClick='month_div(this)'></>";
             month_wise_tr += "<tr>" +
                         "<td colspan='1'>"+ edit_button + "</td>" +
                         "<td colspan='2' >" + key + "</td>" +
-                        "<tr id='month-" + key + "'></tr>"+
+                        "<tr id='month-" + key + "'><div id='month-" + key + "'></div></tr>"+
                         "</tr>";
         });
         $("#StockLedger tbody").html(month_wise_tr);
@@ -196,9 +196,8 @@
         });
         
     }
-    function month_div(obj) {
-        var m_name = $(obj).attr("data-month-name");
-        $("#month-"+m_name).toggle(20);
+    function month_div() {
+        - 
     }
     function show_details_of_month(month) {
         var day_details = "";

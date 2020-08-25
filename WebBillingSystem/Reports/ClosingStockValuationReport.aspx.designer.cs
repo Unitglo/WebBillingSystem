@@ -10,7 +10,7 @@
 namespace WebBillingSystem {
     
     
-    public partial class ClosingStockReport {
+    public partial class ClosingStockValuationReport {
         
         /// <summary>
         /// breadcrumb_title control.

@@ -11,7 +11,7 @@ using System.Data;
 namespace WebBillingSystem
 {
 
-    public partial class ClosingStockReport : System.Web.UI.Page
+    public partial class ClosingStockValuationReport : System.Web.UI.Page
     {
         DataBaseHealpare baseHealpare;
         //        public System.Collections.ArrayList journal_book_master;
@@ -134,6 +134,8 @@ namespace WebBillingSystem
                     product_open_unit_rate = "" + reader["stock_purc_price_per_unit"],
                     product_close_unit_rate = "0",
                     product_open_value = "" + reader["stock_opening_amt"],
+                    product_mrp = "" + reader["stock_mrp"],
+                    product_sale_price = "" + reader["stock_sale_price_without_gst"],                    
                     product_close_value = "0"
                 }
                 );

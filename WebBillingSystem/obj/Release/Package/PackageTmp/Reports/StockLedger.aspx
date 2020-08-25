@@ -104,7 +104,7 @@
                   <div class="row">
                     <div class="col-sm-12">    
                         <!-- start Table -->
-                        <table id="StockLedgerTable" class="table table-hover w-100 pb-30 dataTable dtr-inline table-bordered" role="grid">
+                        <table id="ClosingStockLedger" class="table table-hover w-100 pb-30 dataTable dtr-inline table-bordered" role="grid">
                             <thead>
 						        <tr>
                                     <th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Action</th>
@@ -175,7 +175,7 @@
      window.onload = function () {  
          $(".product_desc_class").select2();
          stock_details_display();
-         //$('#StockLedgerTable').removeClass('sorting_asc');        
+         //$('#ClosingStockLedger').removeClass('sorting_asc');        
     };
     
 
@@ -183,7 +183,7 @@
          var jsonString = '<%=json_month_stk_ledger_obj %>'; //for testing
          if (jsonString != '') {
              jsonString = JSON.parse(jsonString); //for testing
-         var table = $('#StockLedgerTable').DataTable({
+         var table = $('#ClosingStockLedger').DataTable({
                  data: jsonString,
                  autoWidth: false,
                  paging: false,
@@ -211,34 +211,34 @@
          }
          table.row.add($('<tr style="font-weight: bold;"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>')[0]).draw();
             
-         $('#StockLedgerTable tbody tr').find("td:eq(0)").css("text-align", "center");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "50px");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("text-align", "center");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "350px");
-         $('#StockLedgerTable tbody tr').find("td:eq(2)").css("text-align", "right");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "100px");
-         $('#StockLedgerTable tbody tr').find("td:eq(3)").css("text-align", "right");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "100px");
-         $('#StockLedgerTable tbody tr').find("td:eq(4)").css("text-align", "right");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "100px");
-         $('#StockLedgerTable tbody tr').find("td:eq(5)").css("text-align", "right");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "100px");
-         $('#StockLedgerTable tbody tr').find("td:eq(6)").css("text-align", "right");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "100px");
-         $('#StockLedgerTable tbody tr').find("td:eq(7)").css("text-align", "right");
-         $('#StockLedgerTable tbody tr').find("td:eq(1)").css("width", "100px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(0)").css("text-align", "center");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "50px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("text-align", "center");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "350px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(2)").css("text-align", "right");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "100px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(3)").css("text-align", "right");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "100px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(4)").css("text-align", "right");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "100px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(5)").css("text-align", "right");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "100px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(6)").css("text-align", "right");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "100px");
+         $('#ClosingStockLedger tbody tr').find("td:eq(7)").css("text-align", "right");
+         $('#ClosingStockLedger tbody tr').find("td:eq(1)").css("width", "100px");
          
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(0)').html("");
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(1)').html("Opening Balance");
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(2)').html('<label id="op_bal_qty_id" runat="server">0.00</label>');
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(3)').html('<label id="op_bal_val_id" runat="server">0.00</label>');
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(4)').html("");
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(5)').html("");
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(6)').html("");
-         $('#StockLedgerTable tbody tr:eq(0) td:eq(7)').html("");
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(0)').html("");
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(1)').html("Opening Balance");
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(2)').html('<label id="op_bal_qty_id" runat="server">0.00</label>');
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(3)').html('<label id="op_bal_val_id" runat="server">0.00</label>');
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(4)').html("");
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(5)').html("");
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(6)').html("");
+         $('#ClosingStockLedger tbody tr:eq(0) td:eq(7)').html("");
          
      //Format Second Table(call to this table)
-     $('#StockLedgerTable tbody').on('click', '.details-control', function() {
+     $('#ClosingStockLedger tbody').on('click', '.details-control', function() {
         var tr = $(this).closest('tr');
          var row = table.row(tr);
          
@@ -279,7 +279,7 @@
                         $(this.node()).addClass('shown');
                     }
                 });
-                $('#StockLedgerTable tbody tr:eq(1)').remove();
+                $('#ClosingStockLedger tbody tr:eq(1)').remove();
             }
          });
     }
@@ -293,11 +293,11 @@
             jsonStringDtl = JSON.parse(jsonStringDtl);
 
             if (obj[0] < 1) {
-                op_balance = $("#StockLedgerTable tbody tr").eq(0).find("td").eq(2).html();
-                op_balance_value =  $("#StockLedgerTable tbody tr").eq(0).find("td").eq(3).html();
+                op_balance = $("#ClosingStockLedger tbody tr").eq(0).find("td").eq(2).html();
+                op_balance_value =  $("#ClosingStockLedger tbody tr").eq(0).find("td").eq(3).html();
             } else {
-                op_balance = $("#StockLedgerTable tbody tr.RowClass").eq(obj[0]).find("td:eq(6)").html();      
-                op_balance_value = $("#StockLedgerTable tbody tr.RowClass").eq(obj[0]).find("td:last").html();      
+                op_balance = $("#ClosingStockLedger tbody tr.RowClass").eq(obj[0]).find("td:eq(6)").html();      
+                op_balance_value = $("#ClosingStockLedger tbody tr.RowClass").eq(obj[0]).find("td:last").html();      
             }
 
          var name_val = '<div class="'+ d.month +'"><table class="table table-hover dataTable" id="dtl_Table" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px; width: 100%;">';
@@ -326,8 +326,8 @@
 
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
-        $('#StockLedgerTable thead tr:eq(0)').find("th:eq(0)").text("");
-        $('#StockLedgerTable thead tr:eq(1)').find("th:eq(0)").text("");
+        $('#ClosingStockLedger thead tr:eq(0)').find("th:eq(0)").text("");
+        $('#ClosingStockLedger thead tr:eq(1)').find("th:eq(0)").text("");
 
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
             e.preventDefault();
@@ -336,9 +336,9 @@
 
     //Export To Word Document   
     function Export2Doc(element, filename = '') {
-        $('#StockLedgerTable thead tr:eq(0)').find("th:eq(0)").text("");
-        $('#StockLedgerTable thead tr:eq(1)').find("th:eq(0)").text("");
-        //$('#StockLedgerTable tbody tr').find("td:eq(0)").remove();
+        $('#ClosingStockLedger thead tr:eq(0)').find("th:eq(0)").text("");
+        $('#ClosingStockLedger thead tr:eq(1)').find("th:eq(0)").text("");
+        //$('#ClosingStockLedger tbody tr').find("td:eq(0)").remove();
         
         var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
         var postHtml = "</body></html>";

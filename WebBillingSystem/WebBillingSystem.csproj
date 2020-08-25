@@ -391,6 +391,7 @@
     <Content Include="Microsoft.Office.Interop.Excel.dll" />
     <Content Include="News\News_And_Updates_Details.aspx" />
     <Content Include="News\News_And_Updates.aspx" />
+    <Content Include="Reports\ClosingStockValuationReport.aspx" />
     <Content Include="Reports\ClosingStockReport.aspx" />
     <Content Include="Reports\StockLedger.aspx" />
     <Content Include="Reports\SaleRegister.aspx" />
@@ -533,6 +534,13 @@
     </Compile>
     <Compile Include="News\News_And_Updates.aspx.designer.cs">
       <DependentUpon>News_And_Updates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClosingStockValuationReport.aspx.cs">
+      <DependentUpon>ClosingStockValuationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ClosingStockValuationReport.aspx.designer.cs">
+      <DependentUpon>ClosingStockValuationReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\ClosingStockReport.aspx.cs">
       <DependentUpon>ClosingStockReport.aspx</DependentUpon>

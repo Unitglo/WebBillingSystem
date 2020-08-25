@@ -415,7 +415,7 @@
                                             <a class="nav-link" href="/Reports/StockLedger.aspx">STOCK LEDGER</a>
                                         </li>
                                          <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">CLOSING STOCK REPORT</a>
+                                            <a class="nav-link" href="/Reports/ClosingStockReport.aspx">CLOSING STOCK REPORT</a>
                                         </li>
                             
                                          <li class="nav-account">

@@ -14,74 +14,74 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- vector map CSS -->
-    <link href="/Assets/vendors/vectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" type="text/css" />
+    <link href="<%=default_prefix %>/Assets/vendors/vectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" type="text/css" />
 
 
     <!-- Data Table CSS -->
     <%--<link href="/Assets/vendors/datatables.net-responsive-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">--%>
-    <link href="/Assets/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
 
     <!-- Toggles CSS -->
-    <link href="/Assets/vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
-    <link href="/Assets/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
 
     <!-- Toastr CSS -->
-    <link href="/Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css">
 
-    <link href="/Assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/vendors/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
-    <link href="/Assets/dist/css/style.css" rel="stylesheet" type="text/css">
+    <link href="<%=default_prefix %>/Assets/dist/css/style.css" rel="stylesheet" type="text/css">
     <!-- jQuery -->
-    <script src="/Assets/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/Assets/vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/Assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Slimscroll JavaScript -->
-    <script src="/Assets/dist/js/jquery.slimscroll.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/jquery.slimscroll.js"></script>
 
     <!-- Fancy Dropdown JS -->
-    <script src="/Assets/dist/js/dropdown-bootstrap-extended.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/dropdown-bootstrap-extended.js"></script>
 
     <!-- FeatherIcons JavaScript -->
-    <script src="/Assets/dist/js/feather.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/feather.min.js"></script>
 
     <!-- Toggles JavaScript -->
-    <script src="/Assets/vendors/jquery-toggles/toggles.min.js"></script>
-    <script src="/Assets/dist/js/toggle-data.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/toggle-data.js"></script>
 
     <!-- Counter Animation JavaScript -->
-    <script src="/Assets/vendors/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="/Assets/vendors/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/jquery.counterup/jquery.counterup.min.js"></script>
 
     <!-- EChartJS JavaScript -->
-    <script src="/Assets/vendors/echarts/dist/echarts-en.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/echarts/dist/echarts-en.min.js"></script>
 
     <!-- Sparkline JavaScript -->
-    <script src="/Assets/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
 
     <!-- Vector Maps JavaScript -->
-    <script src="/Assets/vendors/vectormap/jquery-jvectormap-2.0.3.min.js"></script>
-    <script src="/Assets/vendors/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="/Assets/dist/js/vectormap-data.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/vectormap/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/vectormap-data.js"></script>
 
     <!-- Owl JavaScript -->
-    <script src="/Assets/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
 
     <!-- Toastr JS -->
-    <script src="/Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 
     <!-- Init JavaScript -->
-    <script src="/Assets/dist/js/init.js"></script>
-    <script src="/Assets/dist/js/dashboard-data.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/init.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/dashboard-data.js"></script>
 
-    <script src="/Assets/vendors/select2/dist/js/select2.full.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/select2/dist/js/select2.full.min.js"></script>
 
 
-    <link rel="stylesheet" href="/Assets/dist/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="<%=default_prefix %>/Assets/dist/css/jquery-ui.min.css">
     <%--    <script src="/Assets/dist/js/jquery-1.10.2.js"></script>--%>
-    <script src="/Assets/dist/js/jquery-ui.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/dist/js/jquery-ui.min.js"></script>
 
     <%--    <!-- jQuery -->
     <script src="vendors/jquery/dist/jquery.min.js"></script>
@@ -109,11 +109,11 @@
 
 
     <!-- Data Table JavaScript -->
-    <script src="/Assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="/Assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="/Assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
-    <script src="/Assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-    <script src="/Assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="<%=default_prefix %>/Assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />

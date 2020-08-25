@@ -181,12 +181,17 @@ namespace WebBillingSystem
                     string dbname = "";
                     if (firstname.Value != null)
                     {
-                         dbname = Regex.Replace(firstname.Value, @"[^0-9a-zA-Z]+", "");
+                        dbname = Regex.Replace(firstname.Value, @"[^0-9a-zA-Z]+", "");
+                        dbname = dbname+"_" + Regex.Replace(customerid.Value, @"[^0-9a-zA-Z]+", "");                        
                     }
                     string db_name = "db_pms_" + "_" + dbname + "_" + financialYear.Value;
                  
                     if (breadcrumb_title.InnerText.ToString() == "Add Company")
                     {
+                        baseHealpare.MessageBox(this, "Data Adding " + baseHealpare.InsertIntoTable(baseHealpare.TableAddCompany,
+                                            new string[] { "company_ucid", "company_db", "company_person_type", "company_surname", "company_middle_name", "company_first_name", "company_address_one", "company_address_two", "company_address_three", "company_district", "company_state", "company_state_code", "company_country", "company_pincode", "company_cin_number", "company_email", "company_phone_number", "company_gst_number", "company_pan_number", "company_trade_name", "company_gst_practitioner_ucid", "company_ca_ucid", "company_financial_year_start", "company_gst_id", "company_gst_password", "company_bank_name", "company_bank_branch_name", "company_bank_account_number", "company_bank_ifsc_code", "company_primary_sign_name", "company_primary_sign_designation", "company_primary_sign_address", "company_primary_sign_email", "company_primapry_sign_phone", "company_secondery_sign_name", "company_secondery_sign_designation", "company_secondery_sign_address", "company_secondery_sign_email", "company_secondery_sign_phone", "username", "password" },
+                                            new string[] { customerid.Value.ToUpper(), db_name, person_type.Value, surnamename.Value.ToUpper(), middlename.Value.ToUpper(), firstname.Value.ToUpper(), address1.Value.ToUpper(), address2.Value.ToUpper(), address3.Value.ToUpper(), district.Value.ToUpper(), Select_state.Value, state_code.Value, country.Value.ToUpper(), pincode.Value, cin_no.Value, email.Value, phone.Value, gst_no.Value.ToUpper(), pan_no.Value.ToUpper(), trade_name.Value.ToUpper(), gst_practinoer_ucid.Value.ToUpper(), ca_ucid.Value.ToUpper(), year_start_start.Value, gst_id.Value, password_field.Value, bank_name.Value.ToUpper(), branch_name.Value.ToUpper(), acc_no.Value, ifsc_no.Value.ToUpper(), primary_name.Value.ToUpper(), designation.Value.ToUpper(), address.Value.ToUpper(), email1.Value, mobile_no.Value, secondery_name.Value.ToUpper(), secondery_designation.Value.ToUpper(), secondery_address.Value, email2.Value, mobile_no2.Value, gst_id.Value, password_field.Value, })
+                            );
                         baseHealpare.MessageBox(this, " DB MESSAGE" + baseHealpare.CreateDataBase(SQLfile(), db_name));
 
                         baseHealpare.MessageBox(this, "Data Adding " + baseHealpare.InsertIntoTable(baseHealpare.TableAddCompany,

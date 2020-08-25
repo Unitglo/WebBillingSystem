@@ -182,6 +182,7 @@ namespace WebBillingSystem
                 account_sub_group.Items.Add(new ListItem(sub_drop["account_master_sub_group_name"].ToString(), sub_drop["account_master_sub_group_id"].ToString()));
             }
             account_sub_group.Items.Add(new ListItem("Add New", "add"));
+            if(sub_drop!=null)
             sub_drop.Close();
 
         }

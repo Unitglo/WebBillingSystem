@@ -13,6 +13,7 @@ namespace WebBillingSystem
 {
     public partial class Login : System.Web.UI.Page
     {
+        public string default_prefix = "";
         DataBaseHealpare baseHealpare;
         public string default_database = "";
         public string comp_logo = "";
@@ -42,6 +43,7 @@ namespace WebBillingSystem
         {
             string json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
             var myJObject = JObject.Parse(json);
+            default_prefix = myJObject.SelectToken("default_prefix").Value<string>(); ;
             selectedRoleURLS = myJObject.SelectToken("installation_type").Value<string>();
             pmslogo = myJObject.SelectToken("pmslogo").Value<string>();
             //roleid.Items[0].Attributes.Add("hidden", "");
@@ -61,6 +63,7 @@ namespace WebBillingSystem
             Session["installation_type"] = myJObject.SelectToken("installation_type").Value<string>();
             Session["pmslogo"] = myJObject.SelectToken("pmslogo").Value<string>();
             Session["default_database"] = myJObject.SelectToken("default_database").Value<string>();
+            Session["default_prefix"] = default_prefix;
 
         }
 

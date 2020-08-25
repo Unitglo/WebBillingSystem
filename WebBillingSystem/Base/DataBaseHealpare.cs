@@ -375,10 +375,12 @@ public class DataBaseHealpare : TableBase, IDisposable
     {
         try
         {
-            if (con.ConnectionString == "")
-                this.openConnection();
-            else
-                con.Open();
+           if (con != null && con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con=new MySqlConnection("server=localhost;user id=root;Password=;persist security info=False");
+            con.Open();
             MySqlCommand msqlCommand = new MySqlCommand();
             msqlCommand.Connection = con;
 
@@ -387,6 +389,7 @@ public class DataBaseHealpare : TableBase, IDisposable
             string tempString = db_sql+file;
             msqlCommand.CommandText = tempString;
             int temp = msqlCommand.ExecuteNonQuery();
+            HttpContext.Current.Session["pms_db"] = databases_name;
             this.closeConnection();
             if (temp > 0)
             {
