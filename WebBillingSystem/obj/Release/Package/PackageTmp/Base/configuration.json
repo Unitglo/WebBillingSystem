@@ -14,6 +14,6 @@
   },
   "installation_type": "CA",
   "pmslogo": "/images/pmslogo.png",
-  "default_database": "pms_test",
+  "default_database": "pms",
   "default_prefix": ""
 }

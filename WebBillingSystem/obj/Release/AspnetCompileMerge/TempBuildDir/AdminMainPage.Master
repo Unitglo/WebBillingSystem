@@ -419,7 +419,7 @@
                                         </li>
                             
                                          <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">CLOSING STOCK VALUATION REPORT</a>
+                                            <a class="nav-link" href="/Reports/ClosingStockValuationReport.aspx">CLOSING STOCK VALUATION REPORT</a>
                                         </li>
                             
                                          <li class="nav-account">
