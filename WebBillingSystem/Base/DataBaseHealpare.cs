@@ -241,9 +241,10 @@ public class DataBaseHealpare : TableBase, IDisposable
 
         if (HttpContext.Current.Request.IsLocal)
         {
-           con = new MySqlConnection("server=localhost;user id=root;Password=;database=" + pms + ";persist security info=False; convert zero datetime=True");
-        }
-        else
+//                con = new MySqlConnection("server=localhost;user id=root;Password=;database=" + pms + ";persist security info=False; convert zero datetime=True");
+                con = new MySqlConnection("server=127.0.0.1;user id=root;Password=;database=pms_demo;persist security info=False; convert zero datetime=True");
+            }
+            else
         {
                 //if (pms.Equals("pms"))
                 //{
@@ -379,7 +380,7 @@ public class DataBaseHealpare : TableBase, IDisposable
             {
                 con.Close();
             }
-            con=new MySqlConnection("server=localhost;user id=root;Password=;persist security info=False");
+            con=new MySqlConnection("server=127.0.0.1;user id=root;Password=;persist security info=False");
             con.Open();
             MySqlCommand msqlCommand = new MySqlCommand();
             msqlCommand.Connection = con;
@@ -389,7 +390,7 @@ public class DataBaseHealpare : TableBase, IDisposable
             string tempString = db_sql+file;
             msqlCommand.CommandText = tempString;
             int temp = msqlCommand.ExecuteNonQuery();
-            HttpContext.Current.Session["pms_db"] = databases_name;
+            //HttpContext.Current.Session["pms_db"] = databases_name;
             this.closeConnection();
             if (temp > 0)
             {

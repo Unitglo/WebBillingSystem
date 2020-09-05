@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdminMainPage.Master">
-      <publishTime>07/04/2020 17:32:16</publishTime>
+      <publishTime>08/25/2020 12:03:21</publishTime>
     </File>
     <File Include="Assets/dist/css/animate.css">
       <publishTime>08/13/2019 11:24:36</publishTime>
@@ -961,16 +961,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/30/2019 11:13:01</publishTime>
     </File>
     <File Include="Base/configuration.json">
-      <publishTime>08/24/2020 12:36:39</publishTime>
+      <publishTime>08/24/2020 19:19:00</publishTime>
     </File>
     <File Include="Base/table.txt">
       <publishTime>01/14/2020 17:00:38</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/24/2020 13:45:43</publishTime>
+      <publishTime>08/25/2020 13:35:47</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/24/2020 13:45:43</publishTime>
+      <publishTime>08/25/2020 13:35:46</publishTime>
     </File>
     <File Include="bin/Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.ttf">
       <publishTime>08/13/2019 11:24:36</publishTime>
@@ -997,7 +997,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/30/2019 11:13:01</publishTime>
     </File>
     <File Include="bin/Base/configuration.json">
-      <publishTime>08/24/2020 12:36:39</publishTime>
+      <publishTime>08/24/2020 19:19:00</publishTime>
     </File>
     <File Include="bin/Base/table.txt">
       <publishTime>01/14/2020 17:00:38</publishTime>
@@ -1060,10 +1060,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/07/2019 15:50:58</publishTime>
     </File>
     <File Include="bin/WebBillingSystem.dll">
-      <publishTime>08/24/2020 13:45:31</publishTime>
+      <publishTime>08/25/2020 13:35:36</publishTime>
     </File>
     <File Include="bin/WebBillingSystem.pdb">
-      <publishTime>08/24/2020 13:45:31</publishTime>
+      <publishTime>08/25/2020 13:35:36</publishTime>
     </File>
     <File Include="CAHome.aspx">
       <publishTime>02/26/2020 16:09:56</publishTime>
@@ -1267,7 +1267,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2019 17:06:26</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/24/2020 13:45:40</publishTime>
+      <publishTime>08/25/2020 13:35:43</publishTime>
     </File>
     <File Include="Reports/AccountLedger.aspx">
       <publishTime>06/06/2020 20:14:32</publishTime>
@@ -1276,7 +1276,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/23/2020 19:31:14</publishTime>
     </File>
     <File Include="Reports/ClosingStockReport.aspx">
-      <publishTime>08/21/2020 13:58:53</publishTime>
+      <publishTime>08/24/2020 19:25:21</publishTime>
+    </File>
+    <File Include="Reports/ClosingStockValuationReport.aspx">
+      <publishTime>08/25/2020 12:10:24</publishTime>
     </File>
     <File Include="Reports/CreditorsStatement.aspx">
       <publishTime>05/24/2020 12:45:24</publishTime>

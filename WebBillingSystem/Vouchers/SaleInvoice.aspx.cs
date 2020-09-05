@@ -283,15 +283,22 @@ namespace WebBillingSystem
             }
 
             //MySqlDataReader batch_drop_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddStockPuchaseDtl, " where status !=2");
-            MySqlDataReader batch_drop_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddStockPuchaseDtl, " RIGHT JOIN pms_purchase_invoice_mst ON pur_mst_auto_id = reference_id WHERE pms_purchase_invoice_mst.status != 2");
+            MySqlDataReader batch_drop_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddStockPuchaseDtl);
             branch_array = new System.Collections.ArrayList();
             while (batch_drop_reader != null && batch_drop_reader.Read())
             {
+                string invoice_date = "";
+                if (batch_drop_reader["invoice_date"].ToString() == "") {
+                    invoice_date = "2020-01-01";
+                }
+                else{
+                    invoice_date = batch_drop_reader["invoice_date"].ToString();
+                }
                 branch_array.Add(new
                 {
                     product_desc = batch_drop_reader["product_desc"],
                     batch = batch_drop_reader["batch"],
-                    invoice_date = Convert.ToDateTime(batch_drop_reader["invoice_date"].ToString()).ToString("yyyy-MM-dd"),
+                    invoice_date = Convert.ToDateTime(invoice_date).ToString("yyyy-MM-dd"),
                     qty = batch_drop_reader["qty"],
                     expiry_date = Convert.ToDateTime(batch_drop_reader["expiry_date"].ToString()).ToString("yyyy-MM-dd")
                 });

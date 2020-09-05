@@ -32,16 +32,26 @@ namespace WebBillingSystem
         public Boolean IsDBFound = true;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack )
+            {
+                Session.RemoveAll();
+            }
             load_files();
             baseHealpare = new DataBaseHealpare();
             if (baseHealpare.openConnection() == null)
                 {
                     IsDBFound = false;
                 }
-            }
+        }
         void load_files()
         {
-            string json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+            string json = "";
+            if (File.Exists("C:/PMS/Base/configuration.json"))
+            {
+                json = File.ReadAllText("C:/PMS/Base/configuration.json");
+            }else {
+                json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+            }
             var myJObject = JObject.Parse(json);
             default_prefix = myJObject.SelectToken("default_prefix").Value<string>(); ;
             selectedRoleURLS = myJObject.SelectToken("installation_type").Value<string>();
@@ -69,7 +79,9 @@ namespace WebBillingSystem
 
         protected void submit_db_details_event(object sender, EventArgs e)
         {
-            if(config_key_id.Value == "abc")
+            
+
+            if (config_key_id.Value == "abc")
             {
                 load_files();
                 baseHealpare.con = new MySqlConnection("server=localhost;user id=root;Password=;persist security info=False");

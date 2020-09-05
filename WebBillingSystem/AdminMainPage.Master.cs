@@ -16,7 +16,16 @@ namespace WebBillingSystem
         public string default_prefix = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            string json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+
+            string json = "";
+            if (File.Exists("C:/PMS/Base/configuration.json"))
+            {
+                json = File.ReadAllText("C:/PMS/Base/configuration.json");
+            }
+            else
+            {
+                json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+            }
             var myJObject = JObject.Parse(json);
             default_prefix = myJObject.SelectToken("default_prefix").Value<string>(); ;
             

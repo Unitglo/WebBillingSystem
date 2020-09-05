@@ -30,7 +30,15 @@ namespace WebBillingSystem
                 baseHealpare = new DataBaseHealpare();
                 hdnroleval_id.Value = Session["page_role"].ToString();
 
-                string json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+                string json = "";
+                if (File.Exists("C:/PMS/Base/configuration.json"))
+                {
+                    json = File.ReadAllText("C:/PMS/Base/configuration.json");
+                }
+                else
+                {
+                    json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+                }
                 var myJObject = JObject.Parse(json);
                 company_name_Id.Value = myJObject.SelectToken("$.branding_data.login_page_name").Value<string>();
 
@@ -121,7 +129,18 @@ namespace WebBillingSystem
             myJObject["installation_type"] = ""+Session["installation_type"];
             myJObject["pmslogo"] = "" + Session["pmslogo"];
             myJObject["default_database"] = "" + Session["default_database"];
-            File.WriteAllText(Server.MapPath("~/Base/configuration.json"), myJObject.ToString());
+            myJObject["default_prefix"] = "" + Session["default_prefix"];
+            
+            string json = "";
+            if (File.Exists("C:/PMS/Base/configuration.json"))
+            {
+                File.WriteAllText("C:/PMS/Base/configuration.json", myJObject.ToString());
+            }
+            else
+            {
+                //json = File.ReadAllText(Server.MapPath("~/Base/configuration.json"));
+                File.WriteAllText(Server.MapPath("~/Base/configuration.json"), myJObject.ToString());
+            }
         }
        
     }

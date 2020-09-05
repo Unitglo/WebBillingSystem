@@ -262,9 +262,10 @@ namespace WebBillingSystem
                                 for (int i = 0; i < dict.Count; i++)
                                 {
                                     dict[i]["stock_id"] = stock_id;
+                                    dict[i]["invoice_date"] = Session["start_date"].ToString();
                                     string[] result = dict[i].Select(kv => kv.Value.ToString()).ToArray();
                                     baseHealpare.MessageBox(this, "Data Adding " + baseHealpare.InsertIntoTable(baseHealpare.TableAddStockPuchaseDtl,
-                                            new string[] { "product_desc", "hsn_code", "uom", "batch", "expiry_date", "qty", "rate", "amount", "invoice_type", "reference_id" },
+                                            new string[] { "product_desc", "hsn_code", "uom", "batch", "expiry_date", "qty", "rate", "amount", "invoice_type", "reference_id", "invoice_date" },
                                              result));
 
                                 }
