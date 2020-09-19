@@ -49,8 +49,9 @@ namespace WebBillingSystem
             while (reader != null && reader.Read())
             {
                 string status_label = "";
-                string edit_button = "<a href='/Vouchers/SaleInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["sale_mst_id"]) + "' class='btn btn-sm btn-info fa fa-pencil' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
+                string edit_button = "<a href='/Vouchers/SaleInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["sale_mst_id"]) + "' class='btn btn-sm btn-info fa fa-pencil' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></a>  ";
                 edit_button += " " + "<a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/SaleInvoice.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + reader["sale_mst_id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
+                
                 if (reader["status"]+"" == "2") {
                     edit_button = "Invoice Cancel";
                 }
@@ -77,6 +78,9 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
+                //for view button
+                edit_button += " " + "<a href='/Vouchers/SaleInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["sale_mst_id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
+
                 purchase_master.Add(new
                 {
                     status_label = status_label,

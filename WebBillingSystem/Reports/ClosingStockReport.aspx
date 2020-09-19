@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="ClosingStockReport.aspx.cs" Inherits="WebBillingSystem.ClosingStockReport" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="~/Reports/ClosingStockReport.aspx.cs" Inherits="WebBillingSystem.ClosingStockReport" %>
 <asp:Content id="Content1" ContentPlaceHolderid="ContentPlaceHolder1" runat="server">
 
   <!-- Breadcrumb -->

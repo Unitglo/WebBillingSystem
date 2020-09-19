@@ -380,6 +380,8 @@
     <Content Include="fonts\News Cycle SIL OFL Font License 1.1.txt" />
     <Content Include="Global.asax" />
     <Content Include="CAHome.aspx" />
+    <Content Include="Reports\ClosingStockBatchReport.aspx" />
+    <Content Include="Reports\ClosingStockExpiryReport.aspx" />
     <Content Include="Updates.aspx" />
     <Content Include="images\CAlogo1.jpg" />
     <Content Include="images\CAlogo2.jpg" />
@@ -524,6 +526,20 @@
     </Compile>
     <Compile Include="CAHome.aspx.designer.cs">
       <DependentUpon>CAHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClosingStockBatchReport.aspx.cs">
+      <DependentUpon>ClosingStockBatchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ClosingStockBatchReport.aspx.designer.cs">
+      <DependentUpon>ClosingStockBatchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClosingStockExpiryReport.aspx.cs">
+      <DependentUpon>ClosingStockExpiryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ClosingStockExpiryReport.aspx.designer.cs">
+      <DependentUpon>ClosingStockExpiryReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Updates.aspx.cs">
       <DependentUpon>Updates.aspx</DependentUpon>

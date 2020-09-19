@@ -148,8 +148,10 @@ namespace WebBillingSystem
             account_master = new System.Collections.ArrayList();
             gstno_id = new System.Collections.ArrayList();
 
+
             while (company_reader != null && company_reader.Read())
             {
+
                 account_master.Add(new
                 {
                     account_id = company_reader["account_id"],

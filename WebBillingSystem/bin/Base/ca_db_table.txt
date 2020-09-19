@@ -724,6 +724,7 @@ INSERT INTO `pms_unit_of_measuremt` (`unit_id`, `unit_unitof_measuremt_name`, `s
 CREATE TABLE `pms_voucher_dr_cr_note_dtl` (
   `dtl_dr_cr_id` int(11) NOT NULL,
   `refrance_id` int(11) NOT NULL,
+  
   `document_no` varchar(16) NOT NULL,
   `againt_invoice` varchar(16) NOT NULL,
   `bill_party_name` varchar(50) NOT NULL,
@@ -732,6 +733,7 @@ CREATE TABLE `pms_voucher_dr_cr_note_dtl` (
   `hsn_code` varchar(20) NOT NULL,
   `uom` varchar(20) NOT NULL,
   `batch` varchar(50) NOT NULL,
+  `date_of_issue` date NOT NULL DEFAULT '0001-01-01',
   `expiry_date` date NOT NULL DEFAULT '0001-01-01',
   `quantity` int(11) NOT NULL,
   `rate` double(10,2) NOT NULL DEFAULT '0.00',

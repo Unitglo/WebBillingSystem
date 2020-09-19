@@ -452,6 +452,7 @@ CREATE TABLE `pms_purchase_invoice_dtl` (
   `pur_dtl_auto_id` int(11) NOT NULL,
   `reference_id` int(11) NOT NULL,
   `invoice_no` varchar(16) NOT NULL,
+  `invoice_date` date DEFAULT NULL,
   `product_desc` varchar(50) NOT NULL,
   `hsn_code` varchar(20) NOT NULL,
   `uom` varchar(50) NOT NULL,

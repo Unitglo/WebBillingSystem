@@ -61,6 +61,7 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
+                edit_button += " " + "<a href='/Vouchers/ExpensesVoucher.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["exp_voucher_no"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
 
 
                 expenses_master.Add(new

@@ -18,7 +18,7 @@
     
     
     <!-- Data Table CSS -->
-    <link href="<%=default_prefix %>/Assets/vendors/datatables.net-responsive-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
+    <link href="<%=default_prefix %>/Assets/vendors/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">    
     <link href="<%=default_prefix %>/Assets/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">    
 
     <!-- Toggles CSS -->
@@ -163,9 +163,9 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-                        <a class="dropdown-item" href="profile.html"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
-                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My balance</span></a>
-                        <a class="dropdown-item" href="inbox.html"><i class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
+                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
+                        <a class="dropdown-item" href="/Updates.aspx"><i class="dropdown-icon zmdi zmdi-cloud-download"></i><span>Updates</span></a>
+
                         <a class="dropdown-item" href="/Master/BrandSettings.aspx"><i class="dropdown-icon zmdi zmdi-settings"></i><span>Brand Settings</span></a>
                         <div class="dropdown-divider"></div>
                         <div class="sub-dropdown-menu show-on-hover">
@@ -212,7 +212,7 @@
                             { 
                                 
                                 %>
-                        <li class="nav-item active">
+                        <li class="nav-item ">
                             <a class="nav-link" href="/CompanyHome.aspx" >
                                 <span class="feather-icon"><i data-feather="layers"></i></span>
                                 <span class="nav-link-text">Dashboard</span>
@@ -305,47 +305,47 @@
                                 <span class="feather-icon"><i data-feather="edit"></i></span>
                                 <span class="nav-link-text">VOUCHER</span>
                             </a>
-                            <ul id="sale_drp" class="nav flex-column collapse collapse-level-1">
-                                <li class="nav-item">
+                            <ul id="sale_drp" class="nav flex-column collapse collapse-level-1 sales_details credit_details purchase_details purreturn_details payment_details receipt_details debit_details credit_details expense_details journal_details">
+                                <li class="nav-item ">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/SaleDetails.aspx">SALE</a>
+                                        <li class="nav-item sales_details">
+                                            <a class="nav-link " href="/Vouchers/SaleDetails.aspx" onclick="set_active_tag('sales_details')">SALE</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx?saleRetu=Sale Return">SALE RETURN</a>
+                                        <li class="nav-item credit_details">
+                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx?saleRetu=Sale Return" onclick="set_active_tag('credit_details')">SALE RETURN</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/PurchaseDetails.aspx">PURCHASE</a>
+                                        <li class="nav-item purchase_details">
+                                            <a class="nav-link" href="/Vouchers/PurchaseDetails.aspx" onclick="set_active_tag('purchase_details')">PURCHASE</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/DebitDetails.aspx?purRetu=Purchase Return ">PURCHASE RETURN</a>
+                                        <li class="nav-item purreturn_details">
+                                            <a class="nav-link" href="/Vouchers/DebitDetails.aspx?purRetu=Purchase Return " onclick="set_active_tag('purreturn_details')">PURCHASE RETURN</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/home.aspx">PAYMENT</a>
+                                        <li class="nav-item payment_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('payment_details')">PAYMENT</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/home.aspx">RECEIPT</a>
+                                        <li class="nav-item receipt_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('receipt_details')">RECEIPT</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/DebitDetails.aspx">DEBIT NOTE</a>
+                                        <li class="nav-item debit_details">
+                                            <a class="nav-link" href="/Vouchers/DebitDetails.aspx" onclick="set_active_tag('debit_details')">DEBIT NOTE</a>
                                         </li>
 
-                                         <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx">CREDIT NOTE</a>
+                                         <li class="nav-item credit_details">
+                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx" onclick="set_active_tag('credit_details')">CREDIT NOTE</a>
                                         </li>
                                        
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/ExpensesDetails.aspx">EXPENSES</a>
+                                        <li class="nav-item expense_details">
+                                            <a class="nav-link" href="/Vouchers/ExpensesDetails.aspx" onclick="set_active_tag('expense_details')">EXPENSES</a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/Vouchers/JournalVouchersDetails.aspx">JOURNAL ENTRY</a>
+                                        <li class="nav-item journal_details">
+                                            <a class="nav-link" href="/Vouchers/JournalVouchersDetails.aspx" onclick="set_active_tag('journal_details')">JOURNAL ENTRY</a>
                                         </li>
 
                                         </ul>
@@ -794,7 +794,15 @@
     $(".ContentPlaceHolder1").on("change", function () {
         feather.replace();
     });
-    
+    function set_active_tag(tab_name) {
+        sessionStorage.setItem('activenav', tab_name);
+    }
+    function set_active_class() {
+        $("." + sessionStorage.getItem('activenav')).addClass("active");
+        $("." + sessionStorage.getItem('activenav')).addClass("show");
+    }
+    set_active_class();
+
 </script>
 
 </html>

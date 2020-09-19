@@ -1310,17 +1310,35 @@
         function yesClick() {
             var JSONObject = new Array();          
             var values = {};
-                    values.party_name = seller_val;
-                    values.address = $(".seller_address").text();
-                    values.state = $(".seller_state").text();     
-                    values.statecode = $(".seller_state_code").text();
-                    values.gstin = $(".gstin").val();                                         
-                    JSONObject.push(values);
+            values.party_name = seller_val;
+            values.address = $(".seller_address").text();
+            values.state = $(".seller_state").text();     
+            values.statecode = $(".seller_state_code").text();
+            values.gstin = $(".gstin").val();                                         
+            JSONObject.push(values);
                 
-                var json_str = JSON.stringify(JSONObject); 
+            var json_str = JSON.stringify(JSONObject); 
             // $(".txthdnJsonAccount_class").val(json_str);
             window.location.href = window.location = '/Master/AddAccount?redirect=purchase&editId=<%=Request.QueryString["value"] %>&val=' + json_str;
         }
+  <% if (Request.QueryString["view"] != null)
+        { %>
+        $(document).ready(function () {
+            $(".ContentPlaceHolder1 input").prop("disabled", true);
+            $(".ContentPlaceHolder1 select").prop("disabled", true);
+            $(".ContentPlaceHolder1 button").prop("disabled", true);
+            $(".ContentPlaceHolder1 i").prop("disabled", true);
+            //$(".ContentPlaceHolder1 textarea").prop("disabled", true);
+            setTimeout(function () {
+                $(".ContentPlaceHolder1 .fa-pencil").hide();
+                $(".ContentPlaceHolder1 .fa-close").hide();
+            }, 500);
+            $(".ContentPlaceHolder1 textarea").prop("disabled", true);
+        });
+        <% } %>
+
+
+        
     </script>
 </asp:Content>
 

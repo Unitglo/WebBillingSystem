@@ -26,12 +26,11 @@ namespace WebBillingSystem
             client = new WebClient();
             client.DownloadProgressChanged += Client_DownloadProgressChanged;
             client.DownloadFileCompleted += Client_DownloadFileCompleted;
-            // Button1_Click(null, null);
+            // Button2_Click(null, null);
 
 
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
             string url = download_zip_url;
             if (!string.IsNullOrEmpty(url))
@@ -45,7 +44,7 @@ namespace WebBillingSystem
                 client.DownloadFileAsync(new Uri(url), download_path + filename);
             }
             // Response.Write("Download complete!");
-            lbdw.InnerText = "Download complete!";
+            lbdw.Text = "Download complete!";
         }
 
 
@@ -66,8 +65,10 @@ namespace WebBillingSystem
             }
             System.IO.Compression.ZipFile.ExtractToDirectory(download_path + zip_name, depoloy_path);//file name read from download url         
                                                                                                      // Response.Write("File Extracted Successfully");
-            lbex.InnerText = "File Extracted Successfully";
+            lbex.Text = "File Extracted Successfully";
 
         }
+
+      
     }
 }

@@ -242,11 +242,11 @@
                                 <span class="feather-icon"><i data-feather="file-text"></i></span>
                                 <span class="nav-link-text">NEWS</span>
                             </a>
-                            <ul id="News_Components_drp" class="nav flex-column collapse collapse-level-1">
+                            <ul id="News_Components_drp" class="nav flex-column collapse collapse-level-1 news_details">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
-                                        <li class="nav-company">
-                                            <a id="A1" runat="server" class="nav-link" href="/News/News_And_Updates_Details.aspx">NEWS AND UPDATE</a>
+                                        <li class="nav-item news_details">
+                                            <a id="A1" runat="server" class="nav-link" href="/News/News_And_Updates_Details.aspx"  onclick="set_active_tag('news_details')">NEWS AND UPDATE</a>
                                         </li>
                                         </ul>
                                     </li>
@@ -263,27 +263,27 @@
                                 <span class="feather-icon"><i data-feather="user"></i></span>
                                 <span class="nav-link-text">MASTER</span>
                             </a>
-                            <ul id="Components_drp" class="nav flex-column collapse collapse-level-1">
+                            <ul id="Components_drp" class="nav flex-column collapse collapse-level-1 compmast_details accmaster_details inventory_details master_details subgroup_details groupinven_details">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
 
-                                        <li class="nav-company">
-                                            <a id="CompanyDetails" runat="server" class="nav-link" href="/Master/CompanyDetails.aspx">COMPANY MASTER</a>
+                                        <li class="nav-item compmast_details">
+                                            <a id="CompanyDetails" runat="server" class="nav-link" href="/Master/CompanyDetails.aspx" onclick="set_active_tag('compmast_details')">COMPANY MASTER</a>
                                         </li>
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/Master/AccountDetails.aspx">ACCOUNT MASTER</a>
+                                        <li class="nav-item accmaster_details">
+                                            <a class="nav-link" href="/Master/AccountDetails.aspx" onclick="set_active_tag('accmaster_details')">ACCOUNT MASTER</a>
                                         </li>
-                                        <li class="nav-stock">
-                                            <a class="nav-link" href="/Master/StockDetails.aspx">INVENTORY MASTER</a>
+                                        <li class="nav-item inventory_details">
+                                            <a class="nav-link" href="/Master/StockDetails.aspx" onclick="set_active_tag('inventory_details')">INVENTORY MASTER</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Master/MasterSettings.aspx">MASTER SETTING</a>
+                                        <li class="nav-item master_details">
+                                            <a class="nav-link" href="/Master/MasterSettings.aspx" onclick="set_active_tag('master_details')">MASTER SETTING</a>
                                         </li>
-                                        <li class="nav-subgroup">
-                                            <a class="nav-link" href="/Master/SubGroupDetails.aspx">SUB GROUP ACCOUNT MASTER</a>
+                                        <li class="nav-item subgroup_details">
+                                            <a class="nav-link" href="/Master/SubGroupDetails.aspx" onclick="set_active_tag('subgroup_details')">SUB GROUP ACCOUNT MASTER</a>
                                         </li>
-                                        <li class="nav-group">
-                                            <a class="nav-link" href="/Master/InventoryGroupDetails.aspx">GROUP INVENTORY MASTER</a>
+                                        <li class="nav-item groupinven_details">
+                                            <a class="nav-link" href="/Master/InventoryGroupDetails.aspx" onclick="set_active_tag('groupinven_details')">GROUP INVENTORY MASTER</a>
                                         </li>
                                         
                                     </ul>
@@ -305,15 +305,15 @@
                                 <span class="feather-icon"><i data-feather="edit"></i></span>
                                 <span class="nav-link-text">VOUCHER</span>
                             </a>
-                            <ul id="sale_drp" class="nav flex-column collapse collapse-level-1 sales_details credit_details purchase_details purreturn_details payment_details receipt_details debit_details credit_details expense_details journal_details">
+                            <ul id="sale_drp" class="nav flex-column collapse collapse-level-1 sales_details salesret_details purchase_details purreturn_details payment_details receipt_details debit_details credit_details expense_details journal_details">
                                 <li class="nav-item ">
                                     <ul class="nav flex-column">
                                         <li class="nav-item sales_details">
                                             <a class="nav-link " href="/Vouchers/SaleDetails.aspx" onclick="set_active_tag('sales_details')">SALE</a>
                                         </li>
 
-                                        <li class="nav-item credit_details">
-                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx?saleRetu=Sale Return" onclick="set_active_tag('credit_details')">SALE RETURN</a>
+                                        <li class="nav-item salesret_details">
+                                            <a class="nav-link" href="/Vouchers/CreditDetails.aspx?saleRetu=Sale Return" onclick="set_active_tag('salesret_details')">SALE RETURN</a>
                                         </li>
 
                                         <li class="nav-item purchase_details">
@@ -366,76 +366,76 @@
                                 <span class="feather-icon"><i data-feather="file-text"></i></span>
                                 <span class="nav-link-text">REPORTS</span>
                             </a>
-                            <ul id="Comp_drp" class="nav flex-column collapse collapse-level-1">
+                            <ul id="Comp_drp" class="nav flex-column collapse collapse-level-1 account_details cashbk_details journbk_details trialbal_details perreg_details salreg_details debstat_details crest_details profit_details bal_details">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/Reports/AccountLedger.aspx">ACCOUNTS LEDGER</a>
+                                        <li class="nav-item account_details">
+                                            <a class="nav-link" href="/Reports/AccountLedger.aspx" onclick="set_active_tag('account_details')">ACCOUNTS LEDGER</a>
                                         </li>
-                                        <li class="nav-stock">
-                                            <a class="nav-link" href="/Reports/CashBankBook.aspx">CASH BOOK / BANK BOOK</a>
+                                        <li class="nav-item cashbk_details">
+                                            <a class="nav-link" href="/Reports/CashBankBook.aspx" onclick="set_active_tag('cashbk_details')">CASH BOOK / BANK BOOK</a>
                                         </li>
                                        <%-- <li class="nav-sett">
                                             <a class="nav-link" href="/home.aspx">BANK BOOK</a>
                                         </li>--%>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Reports/JournalBook.aspx">JOURNAL BOOK</a>
+                                        <li class="nav-item journbk_details">
+                                            <a class="nav-link" href="/Reports/JournalBook.aspx" onclick="set_active_tag('journbk_details')">JOURNAL BOOK</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Reports/TrialBalance.aspx">TRIAL BALANCE</a>
+                                        <li class="nav-item trialbal_details">
+                                            <a class="nav-link" href="/Reports/TrialBalance.aspx" onclick="set_active_tag('trialbal_details')">TRIAL BALANCE</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Reports/PurchaseRegister.aspx">PURCHASE REGISTER</a>
+                                        <li class="nav-item perreg_details">
+                                            <a class="nav-link" href="/Reports/PurchaseRegister.aspx" onclick="set_active_tag('perreg_details')">PURCHASE REGISTER</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Reports/SaleRegister.aspx">SALE REGISTER</a>
+                                        <li class="nav-item salreg_details">
+                                            <a class="nav-link" href="/Reports/SaleRegister.aspx" onclick="set_active_tag('salreg_details')">SALE REGISTER</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Reports/DebtorsStatement.aspx">DEBTORS STATEMENT</a>
+                                        <li class="nav-item debstat_details">
+                                            <a class="nav-link" href="/Reports/DebtorsStatement.aspx" onclick="set_active_tag('debstat_details')">DEBTORS STATEMENT</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/Reports/CreditorsStatement.aspx">CREDITORS STATEMENT</a>
+                                        <li class="nav-item crest_details">
+                                            <a class="nav-link" href="/Reports/CreditorsStatement.aspx" onclick="set_active_tag('crest_details')">CREDITORS STATEMENT</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">PROFIT AND LOSS ACCOUNTS</a>
+                                        <li class="nav-item profit_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('profit_details')">PROFIT AND LOSS ACCOUNTS</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">BALANCE SHEET</a>
+                                        <li class="nav-item bal_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('bal_details')">BALANCE SHEET</a>
                                         </li>
                                         <li class="nav-sett">
                                         <a class="nav-link" href="javascript:void(0);" data-toggle="collapse" data-target="#OtherReport_drp">
                                           <span class="feather-icon"><i data-feather="layout"></i></span>
                                           <span class="nav-link-text">OTHER REPORT</span>
                                         </a>
-                            <ul id="OtherReport_drp" class="nav flex-column collapse collapse-level-1">
+                            <ul id="OtherReport_drp" class="nav flex-column collapse collapse-level-1 stkled_details clost_details clval_details batch_details expiry_details bankre_details cashfl_details dep_details">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
 
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/Reports/StockLedger.aspx">STOCK LEDGER</a>
+                                        <li class="nav-item stkled_details">
+                                            <a class="nav-link" href="/Reports/StockLedger.aspx" onclick="set_active_tag('stkled_details')">STOCK LEDGER</a>
                                         </li>
-                                         <li class="nav-account">
-                                            <a class="nav-link" href="/Reports/ClosingStockReport.aspx">CLOSING STOCK REPORT</a>
-                                        </li>
-                            
-                                         <li class="nav-account">
-                                            <a class="nav-link" href="/Reports/ClosingStockValuationReport.aspx">CLOSING STOCK VALUATION REPORT</a>
+                                         <li class="nav-item clost_details">
+                                            <a class="nav-link" href="/Reports/ClosingStockReport.aspx" onclick="set_active_tag('clost_details')">CLOSING STOCK REPORT</a>
                                         </li>
                             
-                                         <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">BATCH WISE STOCK REPORT</a>
+                                         <li class="nav-item clval_details">
+                                            <a class="nav-link" href="/Reports/ClosingStockBatchReport.aspx" onclick="set_active_tag('clval_details')">CLOSING STOCK VALUATION REPORT</a>
                                         </li>
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">EXPIRY STOCK REPORT</a>
+                            
+                                         <li class="nav-item batch_details">
+                                            <a class="nav-link" href="/Reports/ClosingStockBatchExpiryReport.aspx" onclick="set_active_tag('batch_details')">BATCH WISE STOCK REPORT</a>
                                         </li>
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">BANK RECONCILIATION STATEMENT</a>
+                                        <li class="nav-item expiry_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('expiry_details')">EXPIRY STOCK REPORT</a>
                                         </li>
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">CASH FLOW STATEMENT</a>
+                                        <li class="nav-item bankre_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('bankre_details')">BANK RECONCILIATION STATEMENT</a>
                                         </li>
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">DEPRECIATION SCHEDULE</a>
+                                        <li class="nav-item cashfl_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('cashfl_details')">CASH FLOW STATEMENT</a>
+                                        </li>
+                                        <li class="nav-item dep_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('dep_details')">DEPRECIATION SCHEDULE</a>
                                         </li>
                             
                                     </ul>
@@ -538,30 +538,30 @@
                                 <span class="feather-icon"><i data-feather="printer"></i></span>
                                 <span class="nav-link-text">REPORT PRINTING</span>
                             </a>
-                            <ul id="ReportPrint_drp" class="nav flex-column collapse collapse-level-1">
+                            <ul id="ReportPrint_drp" class="nav flex-column collapse collapse-level-1 allacc_details trialb_details pfloss_details balsh_details alstled_details perchase_details sle_details">
                                 <li class="nav-item">
                                     <ul class="nav flex-column">
 
-                                        <li class="nav-account">
-                                            <a class="nav-link" href="/home.aspx">ALL ACCOUNTS LEDGER</a>
+                                        <li class="nav-item allacc_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('allacc_details')">ALL ACCOUNTS LEDGER</a>
                                         </li>
-                                        <li class="nav-stock">
-                                            <a class="nav-link" href="/Reports/TrialBalance.aspx">TRIAL BALANCE</a>
+                                        <li class="nav-item trialb_details">
+                                            <a class="nav-link" href="/Reports/TrialBalance.aspx" onclick="set_active_tag('trialb_details')">TRIAL BALANCE</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">PROFIT AND LOSS A/C</a>
+                                        <li class="nav-item pfloss_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('pfloss_details')">PROFIT AND LOSS A/C</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">BALANCE SHEET</a>
+                                        <li class="nav-item balsh_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('balsh_details')">BALANCE SHEET</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">ALL STOCK LEDGER</a>
+                                        <li class="nav-item alstled_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('alstled_details')">ALL STOCK LEDGER</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">PURCHASE REGISTER</a>
+                                        <li class="nav-item perchase_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('perchase_details')">PURCHASE REGISTER</a>
                                         </li>
-                                        <li class="nav-sett">
-                                            <a class="nav-link" href="/home.aspx">SALE REGISTER</a>
+                                        <li class="nav-item sle_details">
+                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('sle_details')">SALE REGISTER</a>
                                         </li>
                                         
                                     </ul>
@@ -682,7 +682,7 @@
                 <footer class="footer">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019</p>
+                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019 <version>0.0.1</version></p>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <p class="d-inline-block">Follow us</p>

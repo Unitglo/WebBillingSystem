@@ -32,8 +32,11 @@ namespace WebBillingSystem
             {
                 string status_label = "";
                 string edit_button = "<a href='/Vouchers/PurchaseInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
-                    
-                    char[] MyChar = { '~' };
+
+                //view button
+                edit_button += " " + "<a href='/Vouchers/PurchaseInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
+
+                char[] MyChar = { '~' };
                    //if (!master_id.Equals("0"))
                     edit_button += " " + "  <a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/PurchaseInvoice.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
                 if (reader["status"] + "" == "2")

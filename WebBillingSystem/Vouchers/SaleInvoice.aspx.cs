@@ -63,7 +63,8 @@ namespace WebBillingSystem
                 DateOfSupply_Id.Value = dateTime.ToString("yyyy-MM-dd");
                 
             }
-            
+
+
             if (Request.QueryString["value"] != null && Request.QueryString["delete"] != null)
             {
                 MySqlDataReader master_id_reader = baseHealpare.SelectManualQuery("SELECT sale_jv_id FROM `pms_sale_invoice_mst` WHERE `sale_mst_id` = " + System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString()))));

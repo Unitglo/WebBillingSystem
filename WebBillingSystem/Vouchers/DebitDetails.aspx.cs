@@ -76,6 +76,17 @@ namespace WebBillingSystem
                     }
                 }
 
+                edit_button += " " + "<a href='/Vouchers/DebitNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true'  class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
+                if (Request.QueryString["purRetu"] != null)
+                {
+                    edit_button = "<a href='/Vouchers/PurchaseReturn.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
+                }
+                else
+                {
+                    edit_button = "<a href='/Vouchers/DebitNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
+
+                }
+
                 debit_master.Add(new
                 {
                     status_label = status_label,

@@ -1,7 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="Updates.aspx.cs" Inherits="WebBillingSystem.Updates" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="Updates.aspx.cs" Inherits="WebBillingSystem.Updates" Async="true" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        &nbsp;&nbsp;&nbsp;&nbsp;<Label ID="lbdw" runat="server" Text=""></Label>
-        <Label ID="lbex" runat="server" Text=""></Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        
+    <asp:Label runat="server" ID="lbdw" ></asp:Label>
+        <asp:Label runat="server" ID="lbex" ></asp:Label>
+
 &nbsp;<header>
         <style>
              
@@ -9,7 +12,7 @@
             outline:none;
           
         }
-        .active{
+        .active1{
            font-size:0;
            width:50px;
            height:50px;
@@ -22,11 +25,13 @@
   
 }
     </style>
-       
+        <script src="/Assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+               <script src="/Assets/vendors/jquery/dist/jquery.min.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function () {
                 $(".button").click(function () {
-                    $(this).addClass("active");
+                    $(this).addClass("active1");
                 })
             })
         </script>
@@ -36,8 +41,41 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <Button runat="server" Text="Updates Available " class="button" ID="Button1" OnClick="Button1_Click" >Updates Available</Button>
 
 
      
+&nbsp;
+        <asp:Button ID="Button2" class="button" runat="server" Text="Updates Available" OnClick="Button2_Click" />
+
+    
+<script>
+    $(document).ready(function () {
+        
+        setTimeout(function () {
+            console.log($("version").html());
+            display();
+          
+        }, 500);
+    });
+    function display() {
+        $.ajax({
+            url: 'http://pms.unitglo.com/version.php',
+            method: 'post',
+            data:JSON.stringify(status),
+            contentType: 'application/json',
+            success: function (status) {
+                if (status == 1) {
+                    //    $('input [id="#Button2"]').attr('disabled', false);
+                    alert("Update required")
+                $('#Button2').prop('disabled', false);
+            
+               // window.location("Update required");
+                }
+                else (status == 0)
+                $('#Button2').prop('disabled', true);
+                alert("Update not required")
+             }
+        });
+    }
+</script>     
 </asp:Content>
