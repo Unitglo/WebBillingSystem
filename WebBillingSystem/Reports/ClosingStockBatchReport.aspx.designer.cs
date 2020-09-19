@@ -58,15 +58,6 @@ namespace WebBillingSystem {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl from_date_id;
         
         /// <summary>
-        /// to_date_id control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl to_date_id;
-        
-        /// <summary>
         /// linkbtnSearch control.
         /// </summary>
         /// <remarks>

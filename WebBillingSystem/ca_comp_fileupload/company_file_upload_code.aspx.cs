@@ -29,6 +29,18 @@ namespace WebBillingSystem
             string URI = "http://pms.unitglo.com/send_data.php";
             string address = URI;
             //byte[] result = UploadFiles(myParameters, files, values);
+            try{
+                if (!File.Exists(dumpPath))
+                {
+                    File.Create(dumpPath).Close();
+                }
+            }
+            catch (Exception exes)
+            {
+                File.Create(dumpPath).Close();
+            //    Console.WriteLine(Ex.ToString());
+            }
+            
             using (var stream = File.Open(dumpPath, FileMode.Open))
             {
                 var files = new[]
@@ -43,7 +55,7 @@ namespace WebBillingSystem
                 };
 
                     var values = new NameValueCollection
-                        {
+                         {
                             { "company_code", Session["company_code"].ToString() },
                             { "ca_code", Session["ca_code"].ToString() },
                             { "page_role", Session["page_role"].ToString() }

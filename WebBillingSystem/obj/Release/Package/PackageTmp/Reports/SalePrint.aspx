@@ -148,7 +148,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="4">
-                                                    <hr class="mt-0">
+                                                 <hr class="mt-0">
                                             </tr>
                                             <tr>
                                                 <td colspan="2">Place of Supply: </td>

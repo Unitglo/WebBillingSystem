@@ -33,8 +33,6 @@ namespace WebBillingSystem
                 string status_label = "";
                 string edit_button = "<a href='/Vouchers/PurchaseInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
 
-                //view button
-                edit_button += " " + "<a href='/Vouchers/PurchaseInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
 
                 char[] MyChar = { '~' };
                    //if (!master_id.Equals("0"))
@@ -68,6 +66,9 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
+                edit_button += " " + "<a href='/Vouchers/PurchaseInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
+
+
                 purchase_master.Add(new
                 {
                     status_label = status_label,

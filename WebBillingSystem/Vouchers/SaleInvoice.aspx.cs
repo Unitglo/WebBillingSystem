@@ -650,7 +650,7 @@ namespace WebBillingSystem
 
         protected void btnPrintClick(object sender, EventArgs e)
         {
-            Response.Redirect("/Reports/SalePrint.aspx?value=" + baseHealpare.EncodeUrl(this, "" + hdn_invoice_id.Value.ToString()));
+            Response.Redirect("/Prints/SalePrint.aspx?value=" + Request.QueryString["value"].ToString());
         }
 
         protected void cancel_event(object sender, EventArgs e)

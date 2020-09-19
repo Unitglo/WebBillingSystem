@@ -351,6 +351,7 @@
             '</tr><tr>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+

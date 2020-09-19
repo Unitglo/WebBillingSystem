@@ -934,6 +934,21 @@
                     warning_message("Your Supplier is not in Master, Do You want TO Add?");
                 }
             }
-        }       
+        }
+         <% if (Request.QueryString["view"] != null)
+        { %>
+        $(document).ready(function () {
+            $(".ContentPlaceHolder1 input").prop("disabled", true);
+            $(".ContentPlaceHolder1 select").prop("disabled", true);
+            $(".ContentPlaceHolder1 button").prop("disabled", true);
+            $(".ContentPlaceHolder1 i").prop("disabled", true);
+            //  $(".ContentPlaceHolder1 textarea").prop("disabled", true);
+            setTimeout(function () {
+                $(".ContentPlaceHolder1 .fa-pencil").hide();
+                $(".ContentPlaceHolder1 .fa-close").hide();
+            }, 500);
+            $(".ContentPlaceHolder1 textarea").prop("disabled", true);
+        });
+        <% } %> 
     </script>
 </asp:Content>

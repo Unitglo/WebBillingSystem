@@ -380,6 +380,8 @@
     <Content Include="fonts\News Cycle SIL OFL Font License 1.1.txt" />
     <Content Include="Global.asax" />
     <Content Include="CAHome.aspx" />
+    <Content Include="Prints\PurchaseInvoicePrint.aspx" />
+    <Content Include="Prints\SalePrint.aspx" />
     <Content Include="Reports\ClosingStockBatchReport.aspx" />
     <Content Include="Reports\ClosingStockExpiryReport.aspx" />
     <Content Include="Updates.aspx" />
@@ -449,7 +451,6 @@
     <Content Include="Reports\gstr1.aspx" />
     <Content Include="Reports\CreditPrint.aspx" />
     <Content Include="Reports\debitPrint.aspx" />
-    <Content Include="Reports\SalePrint.aspx" />
     <Content Include="Reports\testPrint.aspx" />
     <Content Include="Reports\PurchaseDetailsReportDisplay.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -526,6 +527,20 @@
     </Compile>
     <Compile Include="CAHome.aspx.designer.cs">
       <DependentUpon>CAHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prints\PurchaseInvoicePrint.aspx.cs">
+      <DependentUpon>PurchaseInvoicePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\PurchaseInvoicePrint.aspx.designer.cs">
+      <DependentUpon>PurchaseInvoicePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prints\SalePrint.aspx.cs">
+      <DependentUpon>SalePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\SalePrint.aspx.designer.cs">
+      <DependentUpon>SalePrint.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\ClosingStockBatchReport.aspx.cs">
       <DependentUpon>ClosingStockBatchReport.aspx</DependentUpon>
@@ -778,13 +793,6 @@
     </Compile>
     <Compile Include="Reports\debitPrint.aspx.designer.cs">
       <DependentUpon>debitPrint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\SalePrint.aspx.cs">
-      <DependentUpon>SalePrint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports\SalePrint.aspx.designer.cs">
-      <DependentUpon>SalePrint.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\testPrint.aspx.cs">
       <DependentUpon>testPrint.aspx</DependentUpon>

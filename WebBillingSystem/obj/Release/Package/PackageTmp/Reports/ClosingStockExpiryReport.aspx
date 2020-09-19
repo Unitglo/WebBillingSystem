@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="ClosingStockBatchReport.aspx.cs" Inherits="WebBillingSystem.ClosingStockBatchReport" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/AdminMainPage.Master" AutoEventWireup="true" CodeBehind="ClosingStockExpiryReport.aspx.cs" Inherits="WebBillingSystem.ClosingStockExpiryReport" %>
 <asp:Content id="Content1" ContentPlaceHolderid="ContentPlaceHolder1" runat="server">
-    
+
   <!-- Breadcrumb -->
      <nav class="hk-breadcrumb" aria-label="breadcrumb">
          <ol class="breadcrumb breadcrumb-light bg-transparent">
@@ -40,12 +40,12 @@
                           </div>
                            <div class="col-md-3 form-group">
                               <label>From Date :</label>
-                            <input type="date" runat="server" class="form-control from_date_class"  id="from_date_id" />
+                               <input type="date"  runat="server" class="form-control from_date_class" id="from_date_id" />
                           </div>
-                          <%--<div class="col-md-3 form-group">
+                          <div class="col-md-3 form-group">
                               <label>To Date :</label>
                             <input type="date" runat="server" class="form-control to_date_class"  id="to_date_id"/>
-                          </div>--%>
+                          </div>
                         </div>
                       <div class="row">
                           <div class="col-md-3 form-group">
@@ -167,7 +167,7 @@
     var monthsName = [ "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March" ];
     var monthNum = [ "4", "5", "6", "7", "8", "9", "10", "11", "12", "1", "2", "3" ];
     // main function
-     window.onload = function () {
+     window.onload = function () {  
          $(".product_desc_class").select2();
          stock_details_display();
     };
@@ -183,14 +183,12 @@
         }
         var month_wise_tr = "";
         monthsName.forEach(function (key, index) {
-            if (((new Date($(".from_date_class").val()).getMonth()) - 3) >= index) {
-                var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
-                month_wise_tr += "<tr>" +
-                    "<td colspan='1'>" + edit_button + "</td>" +
-                    "<td colspan='10' >" + key + "</td>" +
-                    "<tr id='month-" + key + "'></tr>" +
-                    "</tr>";
-            }
+            var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
+            month_wise_tr += "<tr>" +
+                        "<td colspan='1'>"+ edit_button + "</td>" +
+                        "<td colspan='2' >" + key + "</td>" +
+                        "<tr id='month-" + key + "'></tr>"+
+                        "</tr>";
         });
         $("#StockLedger tbody").html(month_wise_tr);
         monthsName.forEach(function (key, index) {
@@ -216,15 +214,16 @@
             var outword_qty = 0.00;
             var outword_cost = 0.00;
             month_wise_products.forEach(function (key1, index1) {
-                
+
                 if (key1.product_name == key.product_name && key1.product_monthname == month) {
                     //product_month_qty = key.product_open_qty;
                     //product_month_cost = key.product_open_cost;
                     //product_month_unit_rate = key.product_open_unit_rate;
                     //product_month_value = key.product_open_value;
-                    all_products[index]["batch"]=key1.batch;
+                   // all_products[index]["batch"]=key1.batch;
                     all_products[index]["expiry_date"]=key1.expiry_date;
-                    if (key1.product_static_type == "sales") {
+
+                  if (key1.product_static_type == "sales") {
                         // sale prize is high so cost is showing negative 
                         outword_qty = outword_qty + parseFloat(key1.product_qty);
                         outword_cost = outword_qty + parseFloat(key1.product_value);
@@ -320,22 +319,20 @@
                     all_products[index].product_close_qty = product_month_qty;
                     all_products[index].product_close_cost = product_month_cost;
                     all_products[index].product_close_unit_rate = product_month_unit_rate ;
-            all_products[index].product_close_value = product_month_cost;
+                    all_products[index].product_close_value = product_month_cost;
 
-            // Closing Balance ( Cost Price ) 		
+                    var cost_price =  (!isNaN(parseFloat(all_products[index].product_sale_price))?parseFloat(all_products[index].product_sale_price):0);
+                    var market_price =  (!isNaN(parseFloat(all_products[index].product_mrp))?parseFloat(all_products[index].product_mrp):0);
 
-            var cost_price =  (!isNaN(parseFloat(all_products[index].product_sale_price))?parseFloat(all_products[index].product_sale_price):0);
-            var market_price =  (!isNaN(parseFloat(all_products[index].product_mrp))?parseFloat(all_products[index].product_mrp):0);
-            
+
+
             day_details += '' +
                 '<tr><td style="text-align:center; width: 80px;">' + key.product_group + '</td>' +
                 '<td style="text-align:center; width: 270px">' + key.product_name + '</td>' +
-                '<td style="text-align:center; width: 270px">' + all_products[index].batch + '</td>' +
-              // '<td style="text-align:center; width: 270px">' + key.expiry_date + '</td>' +
-              '<td style="text-align:center; width: 270px">' + all_products[index].expiry_date + '</td>' +
+                '<td style="text-align:center; width: 270px">' + key.batch + '</td>' +
+                '<td style="text-align:center; width: 270px">' + all_products[index].expiry_date + '</td>' +
 
-
-                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
+                  '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
                     '<td style="text-align: right; width: 100px;">' + (cost_price).toFixed(2) + '</td>' +
                 '<td style="text-align: right; width: 100px;">' + (cost_price*all_products[index].product_close_qty).toFixed(2) + '</td>' +
 
@@ -347,38 +344,45 @@
                     '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0).toFixed(2) + '</td>' +
                     '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0).toFixed(2)+ '</td>' +
                 '</tr>';
-
         });
+                
         day_details = '<tr>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Batch</th>' +
-          '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Expiry Date</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Batch</th>' +
+         '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Expiry Date</th>' +
 
-           '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance(Cost Price)</th>' +
-            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance( Market Price )</th>' +
-            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance</th>' +
-            '</tr><tr>' +
+          '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance(Cost Price)</th>' +
+           '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance( Market Price )</th>' +
+           '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance</th>' +
+           '</tr><tr>' +  
 
-                        '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
 
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
 
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
 
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
-            '</tr>'+
-            '<tr> ' + day_details;
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+           '</tr>'+
+           '<tr> ' + day_details;
         $("#month-" + month).html("<td colspan='11'><table style='width: 100%;'>"+day_details+"</table></td>");
+
+
+
+
+      
+        //day_details = '<tr><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th> <th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th><tr>'+day_details;
+        //$("#month-" + month).html("<td colspan='5'><table style='width: 100%;'>"+day_details+"</table></td>");
 
     }
 
@@ -441,6 +445,6 @@
                         kendo.drawing.pdf.saveAs(group, "Exported.pdf")
                     });
         }
-    
+    }
  </script>
-</asp:Content> 
+</asp:Content>

@@ -36,17 +36,17 @@ namespace WebBillingSystem
             {
                 DateTime dateTime = DateTime.UtcNow.Date;
                 from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
-                to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
+                //to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
 
-                int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
-                if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
-                {
-                    from_date_id.Value = (year - 1) + "-04-01";
-                }
-                else
-                {
-                    from_date_id.Value = year + "-04-01";
-                }
+                //int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
+                //if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+                //{
+                //    from_date_id.Value = (year - 1) + "-04-01";
+                //}
+                //else
+                //{
+                //    from_date_id.Value = year + "-04-01";
+                //}
 
                 MySqlDataReader main_group = baseHealpare.SelectAllValues(baseHealpare.TableStockGroup, " where stock_nature_of_opration_id= 1");
                 while (main_group != null && main_group.Read())

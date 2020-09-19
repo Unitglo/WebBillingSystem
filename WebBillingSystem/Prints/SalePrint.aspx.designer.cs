@@ -10,33 +10,33 @@
 namespace WebBillingSystem {
     
     
-    public partial class Updates {
+    public partial class SalePrint {
         
         /// <summary>
-        /// Button2 control.
+        /// bill_to_party_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bill_to_party_name;
         
         /// <summary>
-        /// lbdw control.
+        /// bill_to_party_Seller_address control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbdw;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bill_to_party_Seller_address;
         
         /// <summary>
-        /// lbex control.
+        /// item_holder_tbody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbex;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl item_holder_tbody;
     }
 }

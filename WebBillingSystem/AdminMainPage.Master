@@ -682,7 +682,7 @@
                 <footer class="footer">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019 <version>0.0.1</version></p>
+                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019 <version>0.0.2</version></p>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <p class="d-inline-block">Follow us</p>
@@ -767,7 +767,7 @@
                     var temp_html = notification_html;
                     var temp_html = temp_html.replace("{{notification_title}}", value.file_name);
                     var temp_html = temp_html.replace("{{notification_time}}", value.file_date_time);
-                    var temp_html = temp_html.replace("{{action_url}}", "/ca_comp_fileupload/import_db.aspx?value=" + encodeURI(value.file_name));
+                    var temp_html = temp_html.replace("{{action_url}}", "/ca_comp_fileupload/import_db.aspx?value=" + encodeURI(value.file_name)+"&dir="+encodeURI(value.file_dir));
                     $(".notification_class").append(temp_html);
                     
                 });

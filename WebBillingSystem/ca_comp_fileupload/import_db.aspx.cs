@@ -20,16 +20,16 @@ namespace WebBillingSystem
             baseHealpare = new DataBaseHealpare();
             string company_ucid = (String)HttpContext.Current.Session["company_code"];
             string ca_ucid = (String)HttpContext.Current.Session["ca_code"];
-            string mode = "http://pms.unitglo.com/company/" + company_ucid + "/"+ca_ucid +"/"+ Request.QueryString["value"];
-            if(Session["page_role"] + "" == "CA") {
-                mode = "http://pms.unitglo.com/ca/" + ca_ucid + "/" + company_ucid + "/" + Request.QueryString["value"];
-            }
+            string mode = "http://pms.unitglo.com/"+ Server.UrlDecode(Request.QueryString["dir"])+"/" + Request.QueryString["value"];
             var webRequest = WebRequest.Create(mode);
 
             using (var response = webRequest.GetResponse())
             using (var content = response.GetResponseStream())
             using (var reader = new StreamReader(content))
             {
+
+                string a = Session["pms_db"].ToString();
+
                 var strContent = reader.ReadToEnd();
                 if (Session["pms_db"].ToString() != "pms" && Session["pms_db"].ToString() != "pms_system")
                 {
