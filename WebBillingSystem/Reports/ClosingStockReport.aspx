@@ -182,7 +182,7 @@
             month_wise_products = JSON.parse(month_wise_products  );
         }
         var month_wise_tr = "";
-        monthsName.forEach(function (key, index) {
+       /* monthsName.forEach(function (key, index) {
             if (((new Date($(".from_date_class").val()).getMonth()) - 3) >= index) {
             var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
             month_wise_tr += "<tr>" +
@@ -192,11 +192,14 @@
                 "</tr>";
             }
             
-        });
+        });*/
+        month_wise_tr = "<tr id='month-0'></tr>";
+         
         $("#StockLedger tbody").html(month_wise_tr);
-        monthsName.forEach(function (key, index) {
-            show_details_of_month(key);
-        });
+        //monthsName.forEach(function (key, index) {
+        //    show_details_of_month(key);
+        //});
+        show_details_of_month(0);
         
     }
     function month_div(obj) {
@@ -217,8 +220,9 @@
             var outword_qty = 0.00;
             var outword_cost = 0.00;
             month_wise_products.forEach(function (key1, index1) {
-
-                if (key1.product_name == key.product_name && key1.product_monthname == month) {
+//
+  //              if (key1.product_name == key.product_name && key1.product_monthname == month) {
+                if (key1.product_name == key.product_name ) {
                     //product_month_qty = key.product_open_qty;
                     //product_month_cost = key.product_open_cost;
                     //product_month_unit_rate = key.product_open_unit_rate;

@@ -733,7 +733,8 @@ namespace WebBillingSystem
 
         protected void btnPrintClick(object sender, EventArgs e)
         {
-            Response.Redirect("/Reports/debitPrint.aspx?purRetu=PurchaseReturn&value=" + baseHealpare.EncodeUrl(this, "" + hdnDOC_id.Value.ToString()));
+            // Response.Redirect("/Reports/debitPrint.aspx?purRetu=PurchaseReturn&value=" + baseHealpare.EncodeUrl(this, "" + hdnDOC_id.Value.ToString()));
+            Response.Redirect("/Prints/PurchaseReturnPrint.aspx?purRetu=PurchaseReturn&value=" + Request.QueryString["value"].ToString());
 
         }
 

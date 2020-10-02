@@ -455,5 +455,11 @@ namespace WebBillingSystem
                 }
             }
         }
+
+        protected void btnPrintClick(object sender, EventArgs e)
+        {
+            Response.Redirect("/Prints/ExpensePrint.aspx?value=" + Request.QueryString["value"].ToString());
+
+        }
     }
 }

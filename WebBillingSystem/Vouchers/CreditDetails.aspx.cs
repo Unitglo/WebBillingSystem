@@ -40,11 +40,11 @@ namespace WebBillingSystem
                 string edit_button = "";
                 if (Request.QueryString["saleRetu"] != null)
                 {
-                    edit_button = "<a href='/Vouchers/SaleReturn.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
+                    edit_button += "<a href='/Vouchers/SaleReturn.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
                     edit_button += " " + "<a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/SaleReturn.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
                 } else 
                 {
-                    edit_button = "<a href='/Vouchers/CreditNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
+                    edit_button += "<a href='/Vouchers/CreditNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></>  ";
                     edit_button += " " + "<a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/CreditNote.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
                 }
 
@@ -78,14 +78,13 @@ namespace WebBillingSystem
                     }
 
                 }
-                edit_button += " " + "<a href='/Vouchers/CreditNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></a>";
                if(Request.QueryString["saleRetu"] != null)
                 {
-                    edit_button = "<a href='/Vouchers/SaleReturn.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
+                    edit_button += "<a href='/Vouchers/SaleReturn.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
                 }
                 else
                 {
-                    edit_button = "<a href='/Vouchers/CreditNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
+                    edit_button += "<a href='/Vouchers/CreditNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
 
                 }
 

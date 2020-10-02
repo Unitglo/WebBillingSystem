@@ -380,8 +380,13 @@
     <Content Include="fonts\News Cycle SIL OFL Font License 1.1.txt" />
     <Content Include="Global.asax" />
     <Content Include="CAHome.aspx" />
+    <Content Include="Prints\CreditNotePrint.aspx" />
+    <Content Include="Prints\DebitNotePrint.aspx" />
+    <Content Include="Prints\ExpensePrint.aspx" />
     <Content Include="Prints\PurchaseInvoicePrint.aspx" />
+    <Content Include="Prints\PurchaseReturnPrint.aspx" />
     <Content Include="Prints\SalePrint.aspx" />
+    <Content Include="Prints\SaleReturnPrint.aspx" />
     <Content Include="Reports\ClosingStockBatchReport.aspx" />
     <Content Include="Reports\ClosingStockExpiryReport.aspx" />
     <Content Include="Updates.aspx" />
@@ -528,6 +533,27 @@
     <Compile Include="CAHome.aspx.designer.cs">
       <DependentUpon>CAHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Prints\CreditNotePrint.aspx.cs">
+      <DependentUpon>CreditNotePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\CreditNotePrint.aspx.designer.cs">
+      <DependentUpon>CreditNotePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prints\DebitNotePrint.aspx.cs">
+      <DependentUpon>DebitNotePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\DebitNotePrint.aspx.designer.cs">
+      <DependentUpon>DebitNotePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prints\ExpensePrint.aspx.cs">
+      <DependentUpon>ExpensePrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\ExpensePrint.aspx.designer.cs">
+      <DependentUpon>ExpensePrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Prints\PurchaseInvoicePrint.aspx.cs">
       <DependentUpon>PurchaseInvoicePrint.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -535,12 +561,26 @@
     <Compile Include="Prints\PurchaseInvoicePrint.aspx.designer.cs">
       <DependentUpon>PurchaseInvoicePrint.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Prints\PurchaseReturnPrint.aspx.cs">
+      <DependentUpon>PurchaseReturnPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\PurchaseReturnPrint.aspx.designer.cs">
+      <DependentUpon>PurchaseReturnPrint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Prints\SalePrint.aspx.cs">
       <DependentUpon>SalePrint.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Prints\SalePrint.aspx.designer.cs">
       <DependentUpon>SalePrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prints\SaleReturnPrint.aspx.cs">
+      <DependentUpon>SaleReturnPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prints\SaleReturnPrint.aspx.designer.cs">
+      <DependentUpon>SaleReturnPrint.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reports\ClosingStockBatchReport.aspx.cs">
       <DependentUpon>ClosingStockBatchReport.aspx</DependentUpon>

@@ -715,7 +715,9 @@ namespace WebBillingSystem
       
         protected void btnPrintClick(object sender, EventArgs e)
         {
-            Response.Redirect("/Reports/debitPrint.aspx?value=" + baseHealpare.EncodeUrl(this, "" + hdnDOC_id.Value.ToString()));
+            // Response.Redirect("/Reports/debitPrint.aspx?value=" + baseHealpare.EncodeUrl(this, "" + hdnDOC_id.Value.ToString()));
+            Response.Redirect("/Prints/DebitNotePrint.aspx?value=" + Request.QueryString["value"].ToString());
+
         }
 
         protected void cancel_event(object sender, EventArgs e)

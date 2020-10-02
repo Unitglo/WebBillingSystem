@@ -11,7 +11,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdminMainPage.Master">
-      <publishTime>09/14/2020 19:11:18</publishTime>
+      <publishTime>09/19/2020 20:38:25</publishTime>
     </File>
     <File Include="Assets/dist/css/animate.css">
       <publishTime>09/05/2020 13:04:20</publishTime>
@@ -947,7 +947,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
     <File Include="Base/ca_db_table.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 18:20:41</publishTime>
     </File>
     <File Include="Base/ca_profile.txt">
       <publishTime>09/05/2020 13:04:20</publishTime>
@@ -962,7 +962,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
     <File Include="Base/configuration.json">
-      <publishTime>09/18/2020 14:15:42</publishTime>
+      <publishTime>09/19/2020 20:07:46</publishTime>
     </File>
     <File Include="Base/table.txt">
       <publishTime>01/14/2020 17:00:38</publishTime>
@@ -977,7 +977,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
     <File Include="bin/Base/ca_db_table.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 18:20:41</publishTime>
     </File>
     <File Include="bin/Base/ca_profile.txt">
       <publishTime>09/05/2020 13:04:20</publishTime>
@@ -992,7 +992,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
     <File Include="bin/Base/configuration.json">
-      <publishTime>09/18/2020 14:15:42</publishTime>
+      <publishTime>09/19/2020 20:07:46</publishTime>
     </File>
     <File Include="bin/Base/table.txt">
       <publishTime>01/14/2020 17:00:38</publishTime>
@@ -1100,10 +1100,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2020 13:04:22</publishTime>
     </File>
     <File Include="bin/WebBillingSystem.dll">
-      <publishTime>09/19/2020 13:51:54</publishTime>
+      <publishTime>09/22/2020 20:21:18</publishTime>
     </File>
     <File Include="bin/WebBillingSystem.pdb">
-      <publishTime>09/19/2020 13:51:54</publishTime>
+      <publishTime>09/22/2020 20:21:18</publishTime>
     </File>
     <File Include="bin/zh-Hans/Microsoft.Build.resources.dll">
       <publishTime>05/29/2019 13:24:11</publishTime>
@@ -1315,6 +1315,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="packages.config">
       <publishTime>09/05/2020 13:04:22</publishTime>
     </File>
+    <File Include="Prints/PurchaseInvoicePrint.aspx">
+      <publishTime>09/19/2020 20:50:24</publishTime>
+    </File>
+    <File Include="Prints/SalePrint.aspx">
+      <publishTime>09/19/2020 13:46:54</publishTime>
+    </File>
     <File Include="Reports/AccountLedger.aspx">
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
@@ -1322,13 +1328,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
     <File Include="Reports/ClosingStockBatchReport.aspx">
-      <publishTime>09/12/2020 15:02:44</publishTime>
+      <publishTime>09/19/2020 20:38:01</publishTime>
     </File>
     <File Include="Reports/ClosingStockExpiryReport.aspx">
-      <publishTime>09/11/2020 13:38:46</publishTime>
+      <publishTime>09/19/2020 20:37:07</publishTime>
     </File>
     <File Include="Reports/ClosingStockReport.aspx">
-      <publishTime>09/08/2020 20:03:30</publishTime>
+      <publishTime>09/19/2020 20:36:14</publishTime>
     </File>
     <File Include="Reports/ClosingStockValuationReport.aspx">
       <publishTime>09/10/2020 15:19:52</publishTime>

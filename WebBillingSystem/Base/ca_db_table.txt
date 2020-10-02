@@ -794,7 +794,14 @@ CREATE TABLE `pms_voucher_dr_cr_note_mst` (
 
 ALTER TABLE `pms_voucher_dr_cr_note_mst`
   ADD PRIMARY KEY (`dr_cr_Id`);
-
 ALTER TABLE `pms_voucher_dr_cr_note_mst`
   MODIFY `dr_cr_Id` int(11) NOT NULL AUTO_INCREMENT;
+
+INSERT INTO `pms_master_setting_all_prefix_series_number` (`id`, `generated_no`, `series_no`, `count`, `status`, `default_date`) VALUES
+(2, 'debit', 'DR/19-20/', 1, 0, '2020-03-06 16:53:47'),
+(3, 'credit', 'CR/19-20/', 1, 0, '2020-03-06 16:53:47'),
+(4, 'invoice', 'PMT/19-20/', 1, 0, '2020-03-08 14:52:15');
+INSERT INTO `pms_master_settings` (`master_sett_id`, `terms_condition_tax_invoice`, `authorized_signatory_tax_invoice`, `authorized_signatory_other_voucher`, `mrp_details`, `mrp_invoice_details`, `sale_price_details`, `sale_price_details_info`, `expiry_monitoring_system`, `expiry_monitoring_system_info`, `expiry_details_tax_invoice`, `batch_wise_details`, `batch_wise_details_info`, `batch_wise_details_tax_invoice`, `stock_out_method`, `stock_valuation_method`, `unit_conversion_method_required`, `prefix_generate_invoice_no`, `invoiceno`, `prefix_generate_debit_no`, `debitno`, `prefix_generate_credit_no`, `creditno`, `journal_accounting_entry`, `extra_information_tax_invoice`, `caption_name1`, `currency_sign_before_amount`, `status`, `default_date`) VALUES
+(1, '1 E OE 2 Subject to Patna Jurisdiction 3 Late Payment Interest 24 4 Error in bills can only be brought forth within 7 days', '', '', '1', '', '1', '1000', '1', '2020-05-01', '1', '1', 'A', '1', 'FIFO', '	Cost or Market Price whichever is lower	Cost Price	Market Price	Average Cost Price', '1', 1, '0', 1, '1', 1, '1', '1', '0', '', '1', 0, '2020-03-06 16:53:47');
+
 COMMIT;

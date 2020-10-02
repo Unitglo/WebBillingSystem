@@ -1327,6 +1327,8 @@
             $(".ContentPlaceHolder1 input").prop("disabled", true);
             $(".ContentPlaceHolder1 select").prop("disabled", true);
             $(".ContentPlaceHolder1 button").prop("disabled", true);
+            $("#ContentPlaceHolder1_btnPrint").prop("disabled", false);
+
             $(".ContentPlaceHolder1 i").prop("disabled", true);
             //$(".ContentPlaceHolder1 textarea").prop("disabled", true);
             setTimeout(function () {

@@ -1,9 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SalePrint.aspx.cs" Inherits="WebBillingSystem.SalePrint" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SaleReturnPrint.aspx.cs" Inherits="WebBillingSystem.SaleReturnPrint" %>
 <html>
-  
-    <table style="width:100%;text-align:center" >
-        
-        <tr><td>
+
+    <table style="width: 100%;text-align:center">
+          <tr><td>
              <b style="font-size:larger"> <label runat="server" id="auth_name" /></b>
          </td></tr>
         <tr><td>
@@ -13,13 +12,13 @@
        
            
         <tr><td>
-         <b style="font-size:larger">  State :  <label runat="server" id="s_state" /></b>
-     <b style="font-size:larger">State Code: <label runat="server" id="state_code" /></b>
+         <b style="font-size:larger">  State :  <label runat="server" id="doc_state" /></b>
+     <b style="font-size:larger">State Code: <label runat="server" id="doc_state_code" /></b>
 
             </td></tr>
         <tr><td>
  <b style="font-size:larger">Email Id:<label runat="server" id="Label1" /></b>
-    <b style="font-size:larger">Telephone No:<label runat="server" id="Label2" /></b>
+ <b style="font-size:larger">Telephone No:<label runat="server" id="Label2" /></b>
 
             </td>
             </tr>
@@ -31,19 +30,99 @@
          <tr><td>
             <b style="font-size:larger"> GSTIN : <label runat="server" id="headergstin" /></b><hr />
             </td></tr>
-              <tr style="background-color:lightblue"> <td> <b style="font-size:xx-large">Tax Invoice </b></td></tr>
+                      <tr style="background-color:lightblue"> <td> <b style="font-size:xx-large">Tax Invoice </b></td></tr>
 
-    
+        
        </table>&nbsp;
-    <table style="width:80%">
-      <tr ><td style="text-align:left">
-    <b style="font-size:medium">Invoice Number: <label runat="server" id="bill_to_party_invoice_no" /></b></td>
-            
-   <td  style="text-align:right"> <b style="font-size:medium">Invoice date: <label runat="server" id="bill_to_party_invoice_date" /></b>
+    <table style="width:70%">
+     <tr><td style="text-align:left">
+    <b style="font-size:medium">Invoice Number: <label runat="server" id="headeragainst_invoice" /></b></td>
+        
+   <td style="text-align:right"> <b style="font-size:medium">Invoice date: <label runat="server" id="bill_to_party_invoice_date" /></b>
 
-            </td></tr></table>
+            </td></tr>
+        </table>
     <table style="width:100%">
+       
+        
+       
+         <tr>
+            <td style="width:50%">
+                <table style="width: 100%; text-align: left;">
+                                       
+                                        
+                                        <tbody><tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                            
+                                        </tbody><tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 25%;">Document No  </td>
+                                                <td colspan="2">:
+                                                <label runat="server" id="document_no" />     
+                                                </td><td></td><td></td>
+                                           </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                            <tr>
+                                                <td colspan="2">Date of Issue </td>
+                                                <td colspan="2">:
+                                                <label runat="server" id="date_of_issue" />     
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                           
+                                         
+                                        </tbody>
+                                    </table>
+                </td>
+
+                  <td style="width:50%">
+                <table style="width: 100%; text-align: left;">
+                                       
+                                        
+                                        <tbody><tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                            
+                                        </tbody><tbody>
+                                            <tr>
+                                                <td colspan="2" style="width: 25%;">Against invoice </td>
+                                                <td colspan="2">:
+                                                <label runat="server" id="against_invoice" />     
+                                                </td><td></td><td></td>
+                                           </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                            <tr>
+                                                <td colspan="2">Date of Invoice </td>
+                                                <td colspan="2">:
+                                                <label runat="server" id="date_of_invoice" />     
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                           
+                                         
+                                        </tbody>
+                                    </table>
+                </td>
+
+
+             </tr>
         <tr>
+        
             <td style="width:50%">
                 <table style="width: 100%; text-align: left;">
                                         <thead style="text-align:center; border:groove;">
@@ -167,10 +246,9 @@
                                         </tbody>
                                     </table>
                 </td>
-            
                 </td>
             </tr>
-      </table> 
+    </table>
     <!-- Product details table  -->
     <br>
  <table class="table table-light table-bordered mb-0 table-responsive" id="myTable" style="border: 1px solid; width: 100%;">
@@ -184,11 +262,11 @@
 							<th style="border: 2px solid;"> Batch</th>
                             <th style="border: 2px solid;"> Expiry Date</th>
 							<th style="border: 2px solid;"> Qty</th>
-							<th style="border: 2px solid;  display:none;">Rate</th>
+							
 							<th style="border: 2px solid;"> Amount</th>
 							<th style="border: 2px solid;"> Discount</th>
 							<th style="border: 2px solid;"> Taxable Value</th>
-                            <th style="border: 2px solid;"> IGST Rate</th>
+                              <th style="border: 2px solid;"> IGST Rate</th>
                             <th style="border: 2px solid;"> IGST Amount</th>
                             <th style="border: 2px solid;"> CGST Rate</th>
                             <th style="border: 2px solid;"> CGST Amount</th>
@@ -205,13 +283,12 @@
                             <td style="border:1px solid!important;" class="uom">KGS-KILOGRAMS</td>
                             <td style="border:1px solid!important;" class="batchClass">0</td>
                             <td style="border:1px solid!important;" class="expiryClass">2021-01-19</td>
-                            <td style="border:1px solid!important;" class="qty">1198.00</td>
-                            <td style="border:1px solid!important; display:none;" class="rate">64.69</td>
+                            <td style="border:1px solid!important;" class="qty">1</td>
                             <td style="border:1px solid!important;" class="amount">77500.00</td>
                             <td style="border:1px solid!important;" class="discount">0.00</td>
                             <td style="border:1px solid!important;" class="tax-value">77500.00</td>
-                            <td style="border: 1px solid !important; display: none;" class="igst-rate">0</td>
-                            <td style="border: 1px solid !important; display: none;" class="igst-amount">0</td>
+                       <td style="border:1px solid!important;" class="igst-rate">6.00</td>
+                            <td style="border:1px solid!important;" class="igst-amount">4650</td>
                             <td style="border:1px solid!important;" class="cgst-rate">6.00</td>
                             <td style="border:1px solid!important;" class="cgst-amount">4650</td>
                             <td style="border:1px solid!important;" class="sgst-rate">6.00</td>
@@ -221,15 +298,14 @@
                       <tfoot class="border: 1px solid;">
                       <tr>
                           <th colspan="6" id="foot_tot" class="text-center font-weight-600" style="border: 2px solid"><b>Total</b></th>
-                          <th id="tot_row_Quant" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid"></th>
-<%--                          <th id="tot_row_Rate" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid; ">0</th>--%>
+                          <th id="tot_row_Quant" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">1.00</th>
+                          <th id="tot_Rate" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid; display:none;">0</th>
                           <th id="tot_row_Amt" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
                           <th id="tot_row_Dis" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
                           <th id="tot_row_Taxval" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
                           <th id="tot_row_igst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-                         <th id="tot_row_cgst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-                         <th id="tot_row_sgst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-
+                          <th id="tot_row_cgst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
+                          <th id="tot_row_sgst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
                           <th id="tot_row_Amt_tax" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">86800.00</th>
                       </tr>
                          <tr>
@@ -300,8 +376,7 @@
                 
                     
             
-                        </table> 
-        
+                        </table>    
                    </tfoot>
                    
 </html>

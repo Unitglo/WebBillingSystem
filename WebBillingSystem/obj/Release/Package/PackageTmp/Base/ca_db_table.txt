@@ -520,7 +520,8 @@ CREATE TABLE `pms_sale_invoice_dtl` (
   `sale_dtl_id` int(11) NOT NULL,
   `reference_id` int(11) NOT NULL,
   `invoice_no` varchar(16) NOT NULL,
-  `product_desc` varchar(50) NOT NULL,
+ `invoice_date` date DEFAULT NULL,
+   `product_desc` varchar(50) NOT NULL,
   `hsn_code` varchar(20) NOT NULL,
   `uom` varchar(50) NOT NULL,
   `batch` varchar(50) NOT NULL,
@@ -724,6 +725,8 @@ INSERT INTO `pms_unit_of_measuremt` (`unit_id`, `unit_unitof_measuremt_name`, `s
 CREATE TABLE `pms_voucher_dr_cr_note_dtl` (
   `dtl_dr_cr_id` int(11) NOT NULL,
   `refrance_id` int(11) NOT NULL,
+ `invoice_date` date DEFAULT NULL,
+ 
   `document_no` varchar(16) NOT NULL,
   `againt_invoice` varchar(16) NOT NULL,
   `bill_party_name` varchar(50) NOT NULL,
@@ -759,7 +762,8 @@ ALTER TABLE `pms_voucher_dr_cr_note_dtl`
 CREATE TABLE `pms_voucher_dr_cr_note_mst` (
   `dr_cr_Id` int(11) NOT NULL,
   `document_no` varchar(16) NOT NULL,
-  `date_of_issue` date NOT NULL DEFAULT '0001-01-01',
+ `invoice_date` date DEFAULT NULL,
+   `date_of_issue` date NOT NULL DEFAULT '0001-01-01',
   `doc_state` varchar(20) NOT NULL,
   `doc_state_code` int(11) NOT NULL DEFAULT '0',
   `against_invoice` varchar(16) NOT NULL,

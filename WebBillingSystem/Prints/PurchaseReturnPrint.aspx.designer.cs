@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebBillingSystem.Prints {
+namespace WebBillingSystem {
     
     
-    public partial class PurchaseInvoicePrint {
+    public partial class PurchaseReturnPrint {
         
         /// <summary>
         /// auth_name control.
@@ -31,22 +31,22 @@ namespace WebBillingSystem.Prints {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl address;
         
         /// <summary>
-        /// s_state control.
+        /// doc_state control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl s_state;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl doc_state;
         
         /// <summary>
-        /// haederstate_code control.
+        /// doc_state_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl haederstate_code;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl doc_state_code;
         
         /// <summary>
         /// Label1 control.
@@ -67,58 +67,67 @@ namespace WebBillingSystem.Prints {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label2;
         
         /// <summary>
-        /// gstin control.
+        /// headergstin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gstin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl headergstin;
         
         /// <summary>
-        /// invoice_num control.
+        /// bill_to_party_invoice_no control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoice_num;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bill_to_party_invoice_no;
         
         /// <summary>
-        /// invoice_date1 control.
+        /// bill_to_party_invoice_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoice_date1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bill_to_party_invoice_date;
         
         /// <summary>
-        /// invoice_no control.
+        /// document_no control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoice_no;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl document_no;
         
         /// <summary>
-        /// invoice_date control.
+        /// date_of_issue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl invoice_date;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl date_of_issue;
         
         /// <summary>
-        /// reverse_charge control.
+        /// against_invoice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl reverse_charge;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl against_invoice;
+        
+        /// <summary>
+        /// date_of_invoice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl date_of_invoice;
         
         /// <summary>
         /// bill_to_party_name control.
@@ -166,6 +175,51 @@ namespace WebBillingSystem.Prints {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl bill_to_party_state_code;
         
         /// <summary>
+        /// ship_to_party_ship_party_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ship_to_party_ship_party_name;
+        
+        /// <summary>
+        /// ship_to_party_ship_party_address control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ship_to_party_ship_party_address;
+        
+        /// <summary>
+        /// ship_to_party_ship_party_gstin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ship_to_party_ship_party_gstin;
+        
+        /// <summary>
+        /// ship_to_party_ship_party_state control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ship_to_party_ship_party_state;
+        
+        /// <summary>
+        /// ship_to_party_ship_party_state_code control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ship_to_party_ship_party_state_code;
+        
+        /// <summary>
         /// item_holder_tbody control.
         /// </summary>
         /// <remarks>
@@ -182,6 +236,15 @@ namespace WebBillingSystem.Prints {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableCell tot_row_Quant;
+        
+        /// <summary>
+        /// tot_Rate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell tot_Rate;
         
         /// <summary>
         /// tot_row_Amt control.

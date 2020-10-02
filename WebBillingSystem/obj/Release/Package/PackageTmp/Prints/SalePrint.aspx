@@ -1,48 +1,21 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SalePrint.aspx.cs" Inherits="WebBillingSystem.SalePrint" %>
 <html>
-  
-    <table style="width:100%;text-align:center" >
-        
-        <tr><td>
-             <b style="font-size:larger"> <label runat="server" id="auth_name" /></b>
-         </td></tr>
-        <tr><td>
-             <b style="font-size:larger"> <label runat="server" id="address" /></b>
-            </td>
-            </tr>
-       
-           
-        <tr><td>
-         <b style="font-size:larger">  State :  <label runat="server" id="s_state" /></b>
-     <b style="font-size:larger">State Code: <label runat="server" id="state_code" /></b>
 
-            </td></tr>
-        <tr><td>
- <b style="font-size:larger">Email Id:<label runat="server" id="Label1" /></b>
-    <b style="font-size:larger">Telephone No:<label runat="server" id="Label2" /></b>
-
-            </td>
-            </tr>
-
-         <tr><td>
-
-             </td>
-            </tr>
-         <tr><td>
-            <b style="font-size:larger"> GSTIN : <label runat="server" id="headergstin" /></b><hr />
-            </td></tr>
-              <tr style="background-color:lightblue"> <td> <b style="font-size:xx-large">Tax Invoice </b></td></tr>
-
-    
-       </table>&nbsp;
-    <table style="width:80%">
-      <tr ><td style="text-align:left">
-    <b style="font-size:medium">Invoice Number: <label runat="server" id="bill_to_party_invoice_no" /></b></td>
-            
-   <td  style="text-align:right"> <b style="font-size:medium">Invoice date: <label runat="server" id="bill_to_party_invoice_date" /></b>
-
-            </td></tr></table>
-    <table style="width:100%">
+    <table style="width: 100%;">
+        <tr><td>Invoice Number</td>
+            <td></td></tr>
+        <tr><td>Invoice date</td>
+            <td></td></tr>
+        <tr><td>Company Name</td>
+            <td></td></tr>
+        <tr><td>Company Address</td>
+            <td></td></tr>
+        <tr><td>Company GST no.</td>
+            <td></td></tr>
+        <tr><td>Company Sate Code</td>
+            <td></td></tr>
+        <tr><td>Company Sate </td>
+            <td></td></tr>
         <tr>
             <td style="width:50%">
                 <table style="width: 100%; text-align: left;">
@@ -58,8 +31,8 @@
                                             
                                         </tbody><tbody>
                                             <tr>
-                                                <td colspan="2" style="width: 25%;">Name  </td>
-                                                <td colspan="2">:
+                                                <td colspan="2" style="width: 25%;">Name  :</td>
+                                                <td colspan="2">
                                                 <label runat="server" id="bill_to_party_name" />     
                                                 </td><td></td><td></td>
                                            </tr>
@@ -78,10 +51,9 @@
                                                     <hr class="mt-0">
                                             </td></tr>
                                             <tr>
-                                                <td colspan="2">GSTIN  </td>
-                                                <td colspan="2"> :
-                                          <label runat="server" id="bill_to_party_gstin" />     
-      
+                                                <td colspan="2">GSTIN  :</td>
+                                                <td colspan="2"> 
+                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -89,13 +61,11 @@
                                                     <hr class="mt-0">
                                             </td></tr>
                                             <tr>
-                                                <td colspan="2">State </td>
+                                                <td>State </td>
                                                 <td>:
-                                          <label runat="server" id="bill_to_party_s_state" />     
                                                 </td>
-                                                <td colspan="2">Code: 
-                                               
-                                           <label runat="server" id="bill_to_party_state_code" /> 
+                                                <td>Code </td>
+                                                <td>:
                                                 </td>
                                             </tr>
                                              <tr>
@@ -108,7 +78,7 @@
             <td style="width: 50%;" >
                 <table style="width: 100%; text-align: left;">
                                         <thead style="text-align:center; border:groove;">
-                                            <tr><th colspan="4" style="border-right: groove;">Ship to Party </th>
+                                            <tr><th colspan="4" style="border-right: groove;">Bill to Party </th>
                                             
                                         </tr></thead>  
                                         
@@ -119,10 +89,9 @@
                                             
                                         </tbody><tbody>
                                             <tr>
-                                                <td colspan="2" style="width: 25%;">Name  </td>
-                                                <td colspan="2">:
-                                        <label runat="server" id="ship_to_party_ship_party_name" />     
-       
+                                                <td colspan="2" style="width: 25%;">Name  :</td>
+                                                <td colspan="2">
+                                                     
                                                 </td><td></td><td></td>
                                            </tr>
                                             <tr>
@@ -131,19 +100,7 @@
                                             </td></tr>
                                             <tr>
                                                 <td colspan="2">Address </td>
-                                                 <td colspan="2">:
-                                         <label runat="server" id="ship_to_party_ship_party_address" />     
-                                          </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="4">
-                                                    <hr class="mt-0">
-                                            </td></tr>
-                                            <tr>
-                                                <td colspan="2">GSTIN  </td>
-                                                <td colspan="2"> :
-                                    <label runat="server" id="ship_to_party_ship_party_gstin" />     
-     
+                                                <td colspan="2">:
                                                 </td>
                                             </tr>
                                             <tr>
@@ -151,14 +108,22 @@
                                                     <hr class="mt-0">
                                             </td></tr>
                                             <tr>
-                                                <td colspan="2">State </td>
+                                                <td colspan="2">GSTIN  :</td>
+                                                <td colspan="2"> 
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <hr class="mt-0">
+                                            </td></tr>
+                                            <tr>
+                                                <td>State </td>
                                                 <td>:
-                                                      <label runat="server" id="ship_to_party_ship_party_state" /> 
                                                 </td>
-                                                <td colspan="2">Code: 
-                                              
-                                          <label runat="server" id="ship_to_party_ship_party_state_code" /> 
-                                               </td>
+                                                <td>Code </td>
+                                                <td>:
+                                                </td>
                                             </tr>
                                              <tr>
                                                 <td colspan="4">
@@ -167,10 +132,9 @@
                                         </tbody>
                                     </table>
                 </td>
-            
                 </td>
             </tr>
-      </table> 
+    </table>
     <!-- Product details table  -->
     <br>
  <table class="table table-light table-bordered mb-0 table-responsive" id="myTable" style="border: 1px solid; width: 100%;">
@@ -220,48 +184,47 @@
 						</tr></tbody>
                       <tfoot class="border: 1px solid;">
                       <tr>
-                          <th colspan="6" id="foot_tot" class="text-center font-weight-600" style="border: 2px solid"><b>Total</b></th>
-                          <th id="tot_row_Quant" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid"></th>
-<%--                          <th id="tot_row_Rate" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid; ">0</th>--%>
-                          <th id="tot_row_Amt" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
-                          <th id="tot_row_Dis" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-                          <th id="tot_row_Taxval" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
-                          <th id="tot_row_igst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-                         <th id="tot_row_cgst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-                         <th id="tot_row_sgst" runat="server" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
-
-                          <th id="tot_row_Amt_tax" runat="server" colspan="1" class="text-right font-weight-600" style="border: 2px solid">86800.00</th>
+                          <th colspan="6" id="foot_tot" class="text-center font-weight-600" style="border: 2px solid"><b>total</b></th>
+                          <th id="tot_Quant" colspan="1" class="text-right font-weight-600" style="border: 2px solid">1198.00</th>
+                          <th id="tot_Rate" colspan="1" class="text-right font-weight-600" style="border: 2px solid; display:none;">0</th>
+                          <th id="tot_Amt" colspan="1" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
+                          <th id="tot_Dis" colspan="1" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
+                          <th id="tot_Taxval" colspan="1" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
+                          <th id="tot_Igst" colspan="2" class="text-right font-weight-600" style="border: 2px solid; display: none;">0.00</th>
+                          <th id="tot_Cgst" colspan="2" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
+                          <th id="tot_Sgst" colspan="2" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
+                          <th id="tot_Amt_tax" colspan="1" class="text-right font-weight-600" style="border: 2px solid">86800.00</th>
                       </tr>
                          <tr>
-                            <th colspan="12" class="text-center font-weight-600" style="border: 2px solid"><b>Total Invoice amount in words</b></th>
+                            <th colspan="10" class="text-center font-weight-600" style="border: 2px solid"><b>Total Invoice amount in words</b></th>
                            <th colspan="4" class="text-center font-weight-600" style="border: 2px solid">Total Amount before Tax</th>
-                          <th id="tot_invoice_beforetax" runat="server" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
+                          <th id="tot_invoice_tax" class="text-right font-weight-600" style="border: 2px solid">77500.00</th>
                       </tr>
                      <tr>
-                            <th colspan="12" class="text-center font-weight-600" style="border-right: 2px solid; border-left: 2px solid;"></th>
+                            <th colspan="10" class="text-center font-weight-600" style="border-right: 2px solid; border-left: 2px solid;"></th>
                            <th colspan="4" class="text-center font-weight-600" style="border: 2px solid">Add: IGST</th>
-                          <th id="tot_add_igst" runat="server" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
+                          <th id="tot_add_igst" class="text-right font-weight-600" style="border: 2px solid">0.00</th>
                       </tr>
                       <tr>
-                            <th colspan="12" class="text-center font-weight-600" style="border-right: 2px solid; border-left: 2px solid;"></th>
+                            <th colspan="10" class="text-center font-weight-600" style="border-right: 2px solid; border-left: 2px solid;"></th>
                            <th colspan="4" class="text-center font-weight-600" style="border: 2px solid">Add: CGST</th>
-                          <th id="tot_add_cgst" runat="server" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
+                          <th id="tot_add_cgst" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
                       </tr>
                       <tr>
-                            <th colspan="12" class="text-center font-weight-600" style="border-right: 2px solid; border-left: 2px solid;"></th>
+                            <th colspan="10" class="text-center font-weight-600" style="border-right: 2px solid; border-left: 2px solid;"></th>
                            <th colspan="4" class="text-center font-weight-600" style="border: 2px solid">Add: SGST</th>
-                          <th id="tot_add_sgst" runat="server" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
+                          <th id="tot_add_sgst" class="text-right font-weight-600" style="border: 2px solid">4650.00</th>
                       </tr>
                       <tr>
-                            <th colspan="12" class="text-center font-weight-600" style="border: 2px solid"></th>
+                            <th colspan="10" class="text-center font-weight-600" style="border: 2px solid"></th>
                            <th colspan="4" class="text-center font-weight-600" style="border: 2px solid">Total Amount after Tax:</th>
-                          <th id="tot_amt_aftertax" runat="server" class="text-right font-weight-600" style="border: 2px solid">86800.00</th>
+                          <th id="tot_amt_add_cgst" class="text-right font-weight-600" style="border: 2px solid">86800.00</th>
                       </tr>
 
                           <tr>
                             <th colspan="5" class="text-center font-weight-600" style="border: 2px solid">Bank Details</th>
                               <th colspan="3" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
-                              <th colspan="4" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
+                              <th colspan="2" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
                            <th colspan="4" class="text-center font-weight-600" style="border: 2px solid">GST on Reverse Charge</th>
                           <th class="text-right font-weight-600" style="border: 2px solid">0</th>
                       </tr>
@@ -269,39 +232,28 @@
                           <tr>
                             <th colspan="5" class="text-left font-weight-600" style="border: 2px solid">Bank Name :  <input name="ctl00$ContentPlaceHolder1$bank_name" type="text" id="ContentPlaceHolder1_bank_name" value="UNITED BANK OF INDIA"> <br> Bank A/C   : <input name="ctl00$ContentPlaceHolder1$bankAc_Id" type="text" id="ContentPlaceHolder1_bankAc_Id" value="9658745632145"> </th>
                               <th colspan="3" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
-                              <th colspan="4" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
+                              <th colspan="2" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
                            <th colspan="5" class="text-center font-weight-600" style="border-right: 2px solid; font-size:12px;">Ceritified that the particulars given above are true and correct</th>
                       </tr>
 
                           <tr>
                             <th colspan="5" class="text-left font-weight-600" style="border: 2px solid">Bank IFSC :  <input name="ctl00$ContentPlaceHolder1$bankIFSC_id" type="text" id="ContentPlaceHolder1_bankIFSC_id" value="UTBI000548"></th>
                               <th colspan="3" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
-                              <th colspan="4" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
+                              <th colspan="2" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
                            <th colspan="5" class="text-center font-weight-600" style="border-right: 2px solid;"></th>
                       </tr>
 
                       <tr style="height:100px">
                             <th colspan="5" class="text-center font-weight-600" style="border: 2px solid; vertical-align: text-top;">Terms and Conditions 
                                 <br><label id="ContentPlaceHolder1_termcond_Id" class="termCond_class">1 E OE 2 Subject to Patna Jurisdiction 3 Late Payment Interest 24 4 Error in bills can only be brought forth within 7 days</label>
-                          
-                                 </th>
-                        
+                            </th>
                               <th colspan="3" class="text-center font-weight-600" style="border: 2px solid; vertical-align: bottom;">Common Seal</th>
-                              <th colspan="4" class="text-center font-weight-600" style="border: 2px solid"></th>
+                              <th colspan="2" class="text-center font-weight-600" style="border: 2px solid"></th>
                            <th colspan="5" class="text-center font-weight-600" style="border: 2px solid; vertical-align: bottom;">
                                <label id="ContentPlaceHolder1_sign_Id" class="sign_class" style="vertical-align: text-top;">SUNIL KUMAR TIWARY</label><br>
                                Authorised signatory
                            </th>
                       </tr>
-                      
-    <tr>
-
-    </tr>
-                
-                    
-            
-                        </table> 
-        
                    </tfoot>
-                   
+                 </table>
 </html>

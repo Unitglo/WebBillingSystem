@@ -745,7 +745,9 @@ namespace WebBillingSystem
         }
         protected void btnPrintClick(object sender, EventArgs e)
         {
-            Response.Redirect("/Reports/CreditPrint.aspx?saleRetu=SaleReturn&value=" + baseHealpare.EncodeUrl(this, "" + hdnDOC_id.Value.ToString()));
+           // Response.Redirect("/Reports/CreditPrint.aspx?saleRetu=SaleReturn&value=" + baseHealpare.EncodeUrl(this, "" + hdnDOC_id.Value.ToString()));
+            Response.Redirect("/Prints/SaleReturnPrint.aspx?value=" + Request.QueryString["value"].ToString());
+
         }
 
         protected void cancel_event(object sender, EventArgs e)
