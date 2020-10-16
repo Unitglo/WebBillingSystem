@@ -35,6 +35,7 @@ namespace WebBillingSystem
             if (!Page.IsPostBack)
             {
                 DateTime dateTime = DateTime.UtcNow.Date;
+                from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
                 //from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
                 //to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
 
@@ -104,27 +105,29 @@ namespace WebBillingSystem
             }
 
         }
-        protected void details() {
+        protected void details()
+        {
             string product_name_condition_group = "";
 
             if (!product_desc_id.Value.Equals("0"))
             {
-//                product_name_condition_group = " t1.product_name ='" + product_desc_id.Value + "' and";
-                product_name_condition_group =   " and pms_stock.stock_product_name like '%"+ product_desc_id.Value + "%' ";
+                //                product_name_condition_group = " t1.product_name ='" + product_desc_id.Value + "' and";
+                product_name_condition_group = " and pms_stock.stock_product_name like '%" + product_desc_id.Value + "%' ";
             }
             //            product_name_condition_group = "pms_stock.product_name ='WRITING PAPER(GRAPHICA)58.5X91 / 18.6 KG'";
             MySqlDataReader reader = null;
-           
+
             // day wise details 
             all_products = new System.Collections.ArrayList();
             month_wise_products = new System.Collections.ArrayList();
 
-            reader = baseHealpare.SelectManualQuery("select pms_stock.*,pms_stock_addgroup.stock_group_name from pms_stock left join pms_stock_addgroup on pms_stock_addgroup.stock_group_id = pms_stock.stock_group and pms_stock.stock_nature_of_opration = pms_stock_addgroup.stock_nature_of_opration_id where pms_stock.stock_nature_of_opration = 1 "+ product_name_condition_group);
+            reader = baseHealpare.SelectManualQuery("select pms_stock.*,pms_stock_addgroup.stock_group_name from pms_stock left join pms_stock_addgroup on pms_stock_addgroup.stock_group_id = pms_stock.stock_group and pms_stock.stock_nature_of_opration = pms_stock_addgroup.stock_nature_of_opration_id where pms_stock.stock_nature_of_opration = 1 " + product_name_condition_group);
             while (reader != null && reader.Read())
             {
                 //stock_purc_price_per_unit , stock_opening_amt
                 all_products.Add(
-                new {
+                new
+                {
                     product_name = "" + reader["stock_product_name"],
                     product_group = "" + reader["stock_group_name"],
                     product_open_qty = "" + reader["stock_opening_qty"],
@@ -136,7 +139,7 @@ namespace WebBillingSystem
                     product_open_value = "" + reader["stock_opening_amt"],
                     product_close_value = "0",
                     batch = reader["stock_batch"],
-                    expiry_date=reader["stock_expiry_date"]
+                    expiry_date = reader["stock_expiry_date"]
                 }
                 );
 
@@ -155,11 +158,11 @@ namespace WebBillingSystem
                     product_name = reader["product_name"],
                     product_qty = reader["quantity"],
                     batch = reader["batch"],
-                    expiry_date=reader["expiry_date"],
+                    expiry_date = reader["expiry_date"],
                     product_value = reader["value"],
                     product_month = reader["month"],
                     product_monthname = reader["monthname"],
-                    product_static_type = reader["static_type"]                    
+                    product_static_type = reader["static_type"]
                 });
             }
             if (reader != null)

@@ -53,7 +53,7 @@ namespace WebBillingSystem
                     edit_button = "Invoice Cancel";
                 }
                 //1. role check  2. status check 3. label set
-                if (Session["role_code"].ToString() == "CA")
+                if (Session["page_role"].ToString() == "CA")
                 {
                     if (debit_reader["ca_approved_status"].ToString() == "3")
                     {
@@ -65,7 +65,16 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
-                else if (Session["role_code"].ToString() == "COMPANY")
+
+                if (Session["page_role"].ToString() == "CA" && debit_reader["ca_approved_status"].ToString() == "1")
+                {
+                    edit_button += "";
+                    status_label = "Open";
+
+                }
+
+
+                else if (Session["page_role"].ToString() == "COMPANY")
                 {
                     if (debit_reader["ca_approved_status"].ToString() == "3" || debit_reader["ca_approved_status"].ToString() == "1")
                     {
@@ -205,5 +214,7 @@ namespace WebBillingSystem
                 Response.Redirect("~/Vouchers/CreditNote.aspx");
             }
         }
+
+       
     }
 }

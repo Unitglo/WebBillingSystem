@@ -35,14 +35,14 @@ namespace WebBillingSystem
 
 
                 char[] MyChar = { '~' };
-                   //if (!master_id.Equals("0"))
-                    edit_button += " " + "  <a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/PurchaseInvoice.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
+                //if (!master_id.Equals("0"))
+                edit_button += " " + "  <a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/PurchaseInvoice.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + reader["pur_mst_auto_id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
                 if (reader["status"] + "" == "2")
                 {
                     edit_button = "Invoice Cancel";
                 }
                 //1. role check  2. status check 3. label set
-                if (Session["role_code"].ToString() == "CA")
+                if (Session["page_role"].ToString() == "CA")
                 {
                     if (reader["ca_approved_status"].ToString() == "3")
                     {
@@ -54,8 +54,18 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
-                else if (Session["role_code"].ToString() == "COMPANY")
+
+                if (Session["page_role"].ToString() == "CA" && reader["ca_approved_status"].ToString() == "1")
                 {
+                     edit_button += "";
+                    status_label = "Open";
+
+                }
+
+
+                else if (Session["page_role"].ToString() == "COMPANY")
+                {
+
                     if (reader["ca_approved_status"].ToString() == "3" || reader["ca_approved_status"].ToString() == "1")
                     {
                         edit_button = "";

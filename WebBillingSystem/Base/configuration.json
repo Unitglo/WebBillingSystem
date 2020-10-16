@@ -13,7 +13,7 @@
     "login_page_description3": "The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. Again during the 90s as desktop publishers bundled the text with their software."
   },
   "installation_type": "CA",
-//  "installation_type": "COMPANY",
+ // "installation_type": "COMPANY",
   "pmslogo": "/images/pmslogo.png",
   "default_database": "pms_demo",
   "default_prefix": ""

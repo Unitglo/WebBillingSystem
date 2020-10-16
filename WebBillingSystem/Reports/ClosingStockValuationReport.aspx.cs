@@ -19,6 +19,7 @@ namespace WebBillingSystem
         //        public System.Collections.ArrayList json_day_stk_ledger_array;
         public System.Collections.ArrayList all_products;
         public System.Collections.ArrayList month_wise_products;
+        public string stock_valuation_method;
         public string all_products_json;
         public string month_wise_products_json;
 
@@ -32,21 +33,44 @@ namespace WebBillingSystem
         {
             baseHealpare = new DataBaseHealpare();
 
-            if (!Page.IsPostBack)
+            MySqlDataReader Sett_reader = baseHealpare.SelectAllValues(baseHealpare.master_settings_table, "where status = 0");
+            while (Sett_reader != null && Sett_reader.Read())
             {
-                DateTime dateTime = DateTime.UtcNow.Date;
-                from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
-                to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
-
-                int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
-                if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+                // 	<option value="CMPL">Cost or Market Price whichever is lower</option>
+                //<option selected="selected" value="CP">Cost Price</option>
+                //<option value="MP"></option>
+                stock_valuation_method = "" + Sett_reader["stock_valuation_method"].ToString();
+                if (stock_valuation_method == "Market Price")
                 {
-                    from_date_id.Value = (year - 1) + "-04-01";
+                    stock_valuation_method = "MP";
+                }
+                else if (stock_valuation_method == "Cost Price")
+                {
+                    stock_valuation_method = "CP";
                 }
                 else
                 {
-                    from_date_id.Value = year + "-04-01";
+                    stock_valuation_method = "CMPL";
                 }
+            }
+            if (Sett_reader != null)
+                Sett_reader.Close();
+
+            if (!Page.IsPostBack)
+            {
+                DateTime dateTime = DateTime.UtcNow.Date;
+                //from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
+                //to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
+
+                //int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
+                //if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+                //{
+                //    from_date_id.Value = (year - 1) + "-04-01";
+                //}
+                //else
+                //{
+                //    from_date_id.Value = year + "-04-01";
+                //}
 
                 MySqlDataReader main_group = baseHealpare.SelectAllValues(baseHealpare.TableStockGroup, " where stock_nature_of_opration_id= 1");
                 while (main_group != null && main_group.Read())
@@ -104,27 +128,30 @@ namespace WebBillingSystem
             }
 
         }
-        protected void details() {
+        protected void details()
+        {
             string product_name_condition_group = "";
 
             if (!product_desc_id.Value.Equals("0"))
             {
-//                product_name_condition_group = " t1.product_name ='" + product_desc_id.Value + "' and";
-                product_name_condition_group =   " and pms_stock.stock_product_name like '%"+ product_desc_id.Value + "%' ";
+                //                product_name_condition_group = " t1.product_name ='" + product_desc_id.Value + "' and";
+                product_name_condition_group = " and pms_stock.stock_product_name like '%" + product_desc_id.Value + "%' ";
             }
             //            product_name_condition_group = "pms_stock.product_name ='WRITING PAPER(GRAPHICA)58.5X91 / 18.6 KG'";
             MySqlDataReader reader = null;
-           
+
             // day wise details 
             all_products = new System.Collections.ArrayList();
             month_wise_products = new System.Collections.ArrayList();
 
-            reader = baseHealpare.SelectManualQuery("select pms_stock.*,pms_stock_addgroup.stock_group_name from pms_stock left join pms_stock_addgroup on pms_stock_addgroup.stock_group_id = pms_stock.stock_group and pms_stock.stock_nature_of_opration = pms_stock_addgroup.stock_nature_of_opration_id where pms_stock.stock_nature_of_opration = 1 "+ product_name_condition_group);
+            reader = baseHealpare.SelectManualQuery("select pms_stock.*,pms_stock_addgroup.stock_group_name from pms_stock left join pms_stock_addgroup on pms_stock_addgroup.stock_group_id = pms_stock.stock_group and pms_stock.stock_nature_of_opration = pms_stock_addgroup.stock_nature_of_opration_id where pms_stock.stock_nature_of_opration = 1 " + product_name_condition_group);
             while (reader != null && reader.Read())
             {
                 //stock_purc_price_per_unit , stock_opening_amt
                 all_products.Add(
-                new {
+                new
+                {
+                    pms_stock_id = ""+reader["pms_stock_id"],
                     product_name = "" + reader["stock_product_name"],
                     product_group = "" + reader["stock_group_name"],
                     product_open_qty = "" + reader["stock_opening_qty"],
@@ -135,8 +162,17 @@ namespace WebBillingSystem
                     product_close_unit_rate = "0",
                     product_open_value = "" + reader["stock_opening_amt"],
                     product_mrp = "" + reader["stock_mrp"],
-                    product_sale_price = "" + reader["stock_sale_price_without_gst"],                    
-                    product_close_value = "0"
+                    product_valuation_qty = "0" + reader["product_valuation_qty"],
+                    product_valuation_rate = "0" + reader["product_valuation_rate"],
+                    product_valuation_amt = "0" + reader["product_valuation_amt"],
+                    close_product_valuation_qty = "0" + reader["valuation_close_qty"],
+                    close_product_valuation_rate = "0" + reader["valuation_close_rate"],
+                    colse_product_valuation_amt = "0" + reader["valuation_close_amt"],
+                    product_sale_price = "" + reader["stock_sale_price_without_gst"],
+                    product_close_value = "0",
+                    batch = reader["stock_batch"],
+                    expiry_date = reader["stock_expiry_date"]
+
                 }
                 );
 
@@ -147,7 +183,9 @@ namespace WebBillingSystem
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 all_products_json = serializer.Serialize(all_products);
             }
-            reader = baseHealpare.SelectManualQuery("SELECT t1.product_name,t1.qty as quantity, t1.value, t1.month, t1.monthname, t1.static_type from    ( SELECT invoice_type static_type, monthname(`invoice_date`) monthname, month(`invoice_date`) month, sum(pms_sale_invoice_dtl.qty) qty, sum(pms_sale_invoice_dtl.tax_val) value,product_desc product_name FROM `pms_sale_invoice_dtl` where status != 2 group by monthname(`invoice_date`),product_desc UNION SELECT invoice_type type, monthname(`invoice_date`) monthname, month(`invoice_date`) month, sum(pms_purchase_invoice_dtl.qty) qty, sum(pms_purchase_invoice_dtl.tax_val) value,product_desc product_name FROM `pms_purchase_invoice_dtl`where invoice_type = 'purchase' and status != 2 group by monthname(invoice_date),product_desc UNION select note_type static_type, monthname(pms_voucher_dr_cr_note_dtl.date_of_issue) monthname, month(pms_voucher_dr_cr_note_dtl.date_of_issue) month, sum(pms_voucher_dr_cr_note_dtl.quantity) qty, sum(pms_voucher_dr_cr_note_dtl.tax_value) value,pms_voucher_dr_cr_note_dtl.product_name from pms_voucher_dr_cr_note_dtl right join pms_voucher_dr_cr_note_mst on refrance_id = dr_cr_Id where note_type = 'purchaseReturn' and pms_voucher_dr_cr_note_dtl.status != 2 group by monthname(pms_voucher_dr_cr_note_dtl.date_of_issue),pms_voucher_dr_cr_note_dtl.product_name UNION    select note_type static_type, monthname(pms_voucher_dr_cr_note_dtl.date_of_issue) monthname, month(pms_voucher_dr_cr_note_dtl.date_of_issue) month, sum(pms_voucher_dr_cr_note_dtl.quantity) qty, sum(pms_voucher_dr_cr_note_dtl.tax_value) value,pms_voucher_dr_cr_note_dtl.product_name from pms_voucher_dr_cr_note_dtl right join pms_voucher_dr_cr_note_mst on refrance_id = dr_cr_Id where note_type = 'saleReturn'and pms_voucher_dr_cr_note_dtl.status != 2 group by monthname(pms_voucher_dr_cr_note_dtl.date_of_issue),pms_voucher_dr_cr_note_dtl.product_name) t1 where t1.month >0 ");
+            //            int month = Int32.Parse(Convert.ToDateTime(from_date_id.Value.ToString()).ToString("MM"));
+
+            reader = baseHealpare.SelectManualQuery(" SELECT t1.product_name,t1.qty as quantity, t1.value, t1.month, t1.monthname, t1.static_type,t1.batch from    (SELECT invoice_type static_type, monthname(`invoice_date`) monthname, month(`invoice_date`) month, sum(pms_sale_invoice_dtl.qty) qty, sum(pms_sale_invoice_dtl.tax_val) value, product_desc product_name, batch FROM `pms_sale_invoice_dtl` where status != 2 group by monthname(`invoice_date`), product_desc, batch UNION SELECT invoice_type type, monthname(`invoice_date`) monthname, month(`invoice_date`) month, sum(pms_purchase_invoice_dtl.qty) qty, sum(pms_purchase_invoice_dtl.tax_val) value, product_desc product_name, batch FROM `pms_purchase_invoice_dtl`where invoice_type = 'purchase' and status != 2 group by monthname(invoice_date), product_desc, batch UNION select note_type static_type, monthname(pms_voucher_dr_cr_note_dtl.date_of_issue) monthname, month(pms_voucher_dr_cr_note_dtl.date_of_issue) month, sum(pms_voucher_dr_cr_note_dtl.quantity) qty, sum(pms_voucher_dr_cr_note_dtl.tax_value) value, pms_voucher_dr_cr_note_dtl.product_name, batch from pms_voucher_dr_cr_note_dtl right join pms_voucher_dr_cr_note_mst on refrance_id = dr_cr_Id where note_type = 'purchaseReturn' and pms_voucher_dr_cr_note_dtl.status != 2 group by monthname(pms_voucher_dr_cr_note_dtl.date_of_issue), pms_voucher_dr_cr_note_dtl.product_name, batch UNION  select note_type static_type, monthname(pms_voucher_dr_cr_note_dtl.date_of_issue) monthname, month(pms_voucher_dr_cr_note_dtl.date_of_issue) month, sum(pms_voucher_dr_cr_note_dtl.quantity) qty, sum(pms_voucher_dr_cr_note_dtl.tax_value) value, pms_voucher_dr_cr_note_dtl.product_name, batch from pms_voucher_dr_cr_note_dtl right join pms_voucher_dr_cr_note_mst on refrance_id = dr_cr_Id where note_type = 'saleReturn'and pms_voucher_dr_cr_note_dtl.status != 2 group by monthname(pms_voucher_dr_cr_note_dtl.date_of_issue), pms_voucher_dr_cr_note_dtl.product_name, batch) t1 where t1.month>0 ");
             while (reader != null && reader.Read())
             {
                 month_wise_products.Add(new
@@ -155,9 +193,10 @@ namespace WebBillingSystem
                     product_name = reader["product_name"],
                     product_qty = reader["quantity"],
                     product_value = reader["value"],
+                    batch = reader["batch"],
                     product_month = reader["month"],
                     product_monthname = reader["monthname"],
-                    product_static_type = reader["static_type"]                    
+                    product_static_type = reader["static_type"]
                 });
             }
             if (reader != null)
@@ -174,5 +213,23 @@ namespace WebBillingSystem
             company_name_id.InnerHtml = product_desc_id.Value;
             details();
         }
+        protected void save_closing_stock_value(object sender, EventArgs e)
+        {
+          //  baseHealpare.MessageBox(this, "" + close_stock_json.Value);
+            var dict = new JavaScriptSerializer().Deserialize<List<Dictionary<string, object>>>(close_stock_json.Value);
+            baseHealpare = new DataBaseHealpare();
+            for (int i = 0; i < dict.Count; i++)
+            {
+                baseHealpare.UpdateValue(baseHealpare.TableAddStock,
+                    new string[] { "product_valuation_qty", "product_valuation_rate", "product_valuation_amt", "valuation_close_qty", "valuation_close_rate", "valuation_close_amt" },
+                    new string[] { dict[i]["product_valuation_qty"].ToString(), dict[i]["product_valuation_rate"].ToString(), dict[i]["product_valuation_amt"].ToString(), dict[i]["valuation_close_qty"].ToString(), dict[i]["valuation_close_rate"].ToString(), dict[i]["valuation_close_amt"].ToString() },
+                    "pms_stock_id='" + dict[i]["pms_stock_id"] + "'");
+            }
+
+            //  var dict = new JavaScriptSerializer().Deserialize<List<Dictionary<string, object>>>(close_stock_json.InnerHtml.ToString());
+                         //save_closing_stock_value
+
+        }
+
     }
 }

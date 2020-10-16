@@ -86,28 +86,33 @@
                 <div id="div_export_id">
                 
                    <div style="text-align:center; display:none;" class="row">
-                         
-                         <div class="col-lg-12" style="padding-right: 0px; padding-left: 0px;">
+                       
+                         <div class="col-lg-12" style="padding-right: 0px; padding-left: 0px;text-align:center">
 						    <div class="card-group hk-dash-type-2">
                                     <div class="card card-sm">
 										<div class="card-body bg-light" style="text-align: -webkit-center;">
-                                            <table>
-                                                <tr><td><h4 id="comp_name_id" runat="server"></h4></td></tr>
-                                                <tr><td style="width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
-                                                <tr><td> Address -<label runat="server" id="comp_add_id"></label></td></tr>
-                                                <tr><td>Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
-                                                <tr><td>Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
-                                                <tr><td>GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
-                                                <tr><td>PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
-                                                <tr><td>CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
-                                            </table>
+                                            
+                                          <table style="text-align:center">
+                                                 <tr><td colspan="8" style="text-align:center"><h4 id="comp_name_id" runat="server"></h4></td></tr>
+                                                <tr><td  colspan="8" style="text-align:center;width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center"> Address -<label runat="server" id="comp_add_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
+                                                <tr><td colspan="8" style="text-align:center">Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
+                                    
+                                                   </table>
+                                              
+                                            </div>
 										</div>
-									</div>
-                                   					
+								
+                                   	</div>				
 									                                  
 								</div>
                             </div>
-                         </div> 
+                       
+               
                         <hr class="mt-0"/>
                      <div id="det_id" class="row">
                         <div class="col-lg-12" style="padding-right: 0px; padding-left: 0px;">
@@ -160,11 +165,14 @@
     /*.table {
              height: 500px;
         }*/
+  
+
     table.dataTable thead th, table.dataTable thead td, table.dataTable tbody th, table.dataTable tbody td {
                 padding: 0px !important;
         }
         .table th, td {
             font-size: 12px;
+
         }
         label {
             margin-bottom: 1px;
@@ -449,7 +457,8 @@
         $('#dtl_Table  tbody').find('tr:eq(0)').remove();
 
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
-            e.preventDefault();
+        e.preventDefault();
+        location.reload(true);
     });
 
 

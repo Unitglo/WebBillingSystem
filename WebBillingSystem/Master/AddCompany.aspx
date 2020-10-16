@@ -142,7 +142,7 @@
 										
 										<div class="col-md-4 form-group">
                                                 <label for="lastName">CA UCID</label>
-                                                <input class="form-control" id="ca_ucid" runat="server" placeholder="" value="" type="text" style="text-transform: uppercase;">
+                                                <input class="form-control" id="ca_ucid" runat="server" placeholder=""   value="" type="text" style="text-transform: uppercase;">
                                         </div>
 										
 										<div class="col-md-4 form-group">
@@ -357,7 +357,21 @@
    //        $pwd.attr('type', 'text');
    //       // $pwd.attr('type', 'password');
    //    }
-   //}
+        //}
+
+
+ 
+        <%if (Request.QueryString["value"] != null && Session["page_role"].ToString() == "COMPANY")
+        {
+   %>       
+                    $("#ContentPlaceHolder1_ca_ucid").prop("disabled", true);
+                    $("#ContentPlaceHolder1_customerid").prop("disabled", true);
+               
+        <%  }
+        %>
+
+   
+       
     </script>
 
 

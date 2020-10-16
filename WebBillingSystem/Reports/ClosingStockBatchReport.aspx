@@ -14,7 +14,7 @@
         <!-- Title -->
         <div class="hk-pg-header mb-10">
             <div>
-                <h4 class="hk-pg-title" runat="server" id="Header_ID"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="book"></i></span></span>Closing Stock Report</h4>
+                <h4 class="hk-pg-title" runat="server" id="Header_ID"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="book"></i></span></span>Closing Stock Batch Report</h4>
              </div>
         </div>
         <!-- /Title -->
@@ -97,7 +97,7 @@
                      </div>                    
                  
                   <div class="row">
-                    <div class="col-sm-12">    
+                    <div class="col-sm-12" style="height:700px;border:1px solid black;overflow-y:scroll;overflow-x:scroll">    
                         <!-- start Table -->
 
                         <table class="table table-hover w-100 pb-30 dtr-inline table-bordered" role="grid" id="StockLedger">
@@ -115,7 +115,7 @@
                                 </tr>--%>
 
                             </thead>                                           
-                            <tbody>
+                            <tbody class="sidebar">
 
                             </tbody>
 					     </table>
@@ -147,21 +147,28 @@
         .card.card-sm .card-body {
             padding: 0px !important;
         }
+        
+     
+  
+  
+
+
+ 
     </style>
-    
+    
      <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous">
     </script>
 
-     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    
+     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    
 
 <script type="text/javascript">
     var monthsName = [ "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March" ];
@@ -191,14 +198,30 @@
                     "</tr>";
             }
         });*/
-
                   month_wise_tr += "" +
                     "<tr id='month-0'></tr>" +
                     "";
       
         $("#StockLedger tbody").html(month_wise_tr);
   //      monthsName.forEach(function (key, index) {
-            show_details_of_month(0);
+        show_details_of_month(0);
+        $("#month-0 table").append("<tr><th>TOTAL</th>"+
+           "<th class=''></th>"+
+            "<th class=''></th>"+
+             "<th class=''></th>"+
+           "<th class='cost_price'></th>"+
+           "<th class='cost_qty'></th>"+
+           "<th class='cost_value'></th>"+
+
+           //  "<th class='market_qty'></th>"+
+           //"<th class='market_rate'></th>"+
+           //"<th class='market_value'></th>"+
+
+           //  "<th class='closingbal_qty'></th>"+
+           //"<th class='closingbal_rate'></th>"+
+           //"<th class='closingbal_value'></th>"+
+           "</tr>");
+        calTotal();
     //    });
         
     }
@@ -210,7 +233,6 @@
         var day_details = "";
         
         all_products.forEach(function (key, index) {
-
             var product_month_qty = parseFloat(all_products[index].product_open_qty);
             var product_month_cost =parseFloat( all_products[index].product_open_value);
             var product_month_unit_rate = parseFloat(all_products[index].product_open_unit_rate);
@@ -226,6 +248,7 @@
                     //product_month_cost = key.product_open_cost;
                     //product_month_unit_rate = key.product_open_unit_rate;
                     //product_month_value = key.product_open_value;
+                   
                     all_products[index]["batch"]=key1.batch;
                     all_products[index]["expiry_date"]=key1.expiry_date;
                     if (key1.product_static_type == "sales") {
@@ -238,7 +261,6 @@
                     if (key1.product_static_type == "saleReturn") {
                         inword_qty = inword_qty + parseFloat(key1.product_qty);
                         inword_cost = inword_qty + parseFloat(key1.product_value);
-
                         //                      product_month_cost = product_month_cost +(product_month_unit_rate * product_month_qty);
                         //                      product_month_qty = product_month_qty + key1.product_qty;                       
                     }
@@ -258,45 +280,34 @@
                         //product_month_cost = product_month_cost -(product_month_unit_rate * product_month_qty);
                         //product_month_qty = product_month_qty - key1.product_qty;                       
                     }
-
-
                     //                    all_products[index].product_close_qty = key1.product_qty;
                     //                    all_products[index].product_close_cost = key1.product_value/key1.product_qty;
                     //                    all_products[index].product_close_unit_rate = key1.product_value/key1.product_qty;
                     //                    all_products[index].product_close_value = key1.product_value;
-
-
                     //all_products[index].product_close_qty = key.product_qty;
                     //all_products[index].product_close_cost = key.product_close_cost;
                     //all_products[index].product_close_unit_rate = key.product_close_unit_rate;
                     //all_products[index].product_close_value = key.product_value;
-
                     //all_products[index].product_close_qty = key.product_qty;
                     //all_products[index].product_close_cost = key.product_close_cost;
                     //all_products[index].product_close_unit_rate = key.product_close_unit_rate;
                     //all_products[index].product_close_value = key.product_value;
-
                 }
             });
-
             /*
             product_close_qty
             product_close_cost
             product_close_unit_rate
             product_close_value
             */
-
             /*
             product_open_cost
             product_open_qty
             product_open_unit_rate
             product_open_value
             */
-
-
             //            product_month_unit_rate
             //            product_month_value
-
             var temp_unit_rate = product_month_cost / product_month_qty;
             var temp_unit_rate1 = outword_cost / outword_qty;
             var temp_unit_rate2 = inword_cost / inword_qty;
@@ -315,19 +326,15 @@
                    product_month_cost = temp_unit_rate * product_month_qty;
                    product_month_unit_rate = temp_unit_rate;
                    product_month_value = temp_unit_rate * product_month_qty;
-
                     all_products[index].product_open_qty = product_month_qty ;
                     all_products[index].product_open_cost = product_month_cost;
                     all_products[index].product_open_unit_rate = product_month_unit_rate ;
                     all_products[index].product_open_value = product_month_cost;
-
                     all_products[index].product_close_qty = product_month_qty;
                     all_products[index].product_close_cost = product_month_cost;
                     all_products[index].product_close_unit_rate = product_month_unit_rate ;
             all_products[index].product_close_value = product_month_cost;
-
             // Closing Balance ( Cost Price ) 		
-
             var cost_price =  (!isNaN(parseFloat(all_products[index].product_sale_price))?parseFloat(all_products[index].product_sale_price):0);
             var market_price =  (!isNaN(parseFloat(all_products[index].product_mrp))?parseFloat(all_products[index].product_mrp):0);
             
@@ -337,63 +344,48 @@
                 '<td style="text-align:center; width: 270px">' + all_products[index].batch + '</td>' +
               // '<td style="text-align:center; width: 270px">' + key.expiry_date + '</td>' +
               '<td style="text-align:center; width: 270px">' + all_products[index].expiry_date + '</td>' +
-
-
                 '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
                     '<td style="text-align: right; width: 100px;">' + (cost_price).toFixed(2) + '</td>' +
                 '<td style="text-align: right; width: 100px;">' + (cost_price*all_products[index].product_close_qty).toFixed(2) + '</td>' +
-
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + (market_price).toFixed(2) + '</td>' +
-                '<td style="text-align: right; width: 100px;">' + (market_price*all_products[index].product_close_qty).toFixed(2) + '</td>' +
-
-                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty)) ? all_products[index].product_close_qty : 0).toFixed(2) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0).toFixed(2) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0).toFixed(2)+ '</td>' +
+                //    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0).toFixed(2) + '</td>' +
+                //    '<td style="text-align: right; width: 100px;">' + (market_price).toFixed(2) + '</td>' +
+                //'<td style="text-align: right; width: 100px;">' + (market_price*all_products[index].product_close_qty).toFixed(2) + '</td>' +
+                //'<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty)) ? all_products[index].product_close_qty : 0).toFixed(2) + '</td>' +
+                //    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0).toFixed(2) + '</td>' +
+                //    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0).toFixed(2)+ '</td>' +
                 '</tr>';
-
         });
         day_details = '<tr>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Batch</th>' +
           '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Expiry Date</th>' +
-
            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance(Cost Price)</th>' +
-            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance( Market Price )</th>' +
-            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Closing Balance</th>' +
+            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center;display:none; width:50px;">Closing Balance( Market Price )</th>' +
+            '<th colspan="3" data-orderable="false" style="border: 2px solid; text-align:center;display:none; width:50px;">Closing Balance</th>' +
             '</tr><tr>' +
-
-                        '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
-
+         '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;"></th>'+
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
             '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
-
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
-
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
-            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+            //'<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+            //'<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+            //'<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
+            //'<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th>' +
+            //'<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th>' +
+            //'<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th>'+
             '</tr>'+
             '<tr> ' + day_details;
         $("#month-" + month).html("<td colspan='11'><table style='width: 100%;'>"+day_details+"</table></td>");
-
     }
-
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
-
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
             e.preventDefault();
     });
-
-
     //Export To Word Document   
     function Export2Doc(element, filename = '') {
         var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
@@ -405,34 +397,26 @@
         });
         // Specify link url
         var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
-
         // Specify file name
         filename = filename ? filename + '.doc' : 'document.doc';
-
         // Create download link element
         var downloadLink = document.createElement("a");
-
         document.body.appendChild(downloadLink);
-
         if (navigator.msSaveOrOpenBlob) {
             navigator.msSaveOrOpenBlob(blob, filename);
         } else {
             // Create a link to the file
             downloadLink.href = url;
-
             // Setting the file name
             downloadLink.download = filename;
-
             //triggering the function
             downloadLink.click();
         }
         document.body.removeChild(downloadLink);
     }
-
         function ExportPdf() { 
             //$('#dtl_Table thead tr').remove();
             //$('#dtl_Table  tbody').find('tr:eq(0)').remove();
-
             kendo.drawing
                 .drawDOM("#div_export_id", 
                 { 
@@ -444,6 +428,68 @@
                     .then(function(group){
                         kendo.drawing.pdf.saveAs(group, "Exported.pdf")
                     });
+        }
+
+        function calTotal(){
+            var cost_prise_total_qty = 0.00;
+            var cost_prise_total_rate = 0.00;
+            var cost_price_total_value=0.00;
+
+            var market_price_total_qty=0.00;
+            var market_prise_total_rate = 0.00;
+            var market_price_total_value=0.00;
+
+            var closingbal_price_total_qty=0.00;
+            var closingbal_prise_total_rate = 0.00;
+            var closingbal_price_total_value=0.00;
+            $("#StockLedger table tr").each(function(index,data){
+                var temp_cost_qty = parseFloat($(this.cells[4]).html());
+                var temp_cost_prise = parseFloat($(this.cells[5]).html());
+                var temp_cost_value = parseFloat($(this.cells[6]).html());
+
+                var temp_market_qty = parseFloat($(this.cells[7]).html());
+                var temp_market_rate = parseFloat($(this.cells[8]).html());
+                var temp_market_value = parseFloat($(this.cells[9]).html());
+
+                var temp_closbal_qty = parseFloat($(this.cells[10]).html());
+                var temp_closbal_rate = parseFloat($(this.cells[11]).html());
+                var temp_closbal_value = parseFloat($(this.cells[12]).html());
+
+                if(!isNaN(temp_cost_qty))
+                    cost_prise_total_qty =(parseFloat(cost_prise_total_qty)+temp_cost_qty).toFixed(2);
+                if(!isNaN(temp_cost_prise) )
+                    cost_prise_total_rate=(parseFloat( cost_prise_total_rate)+parseFloat(temp_cost_prise)).toFixed(2);
+                if(!isNaN(temp_cost_value))
+                    cost_price_total_value = (parseFloat(cost_price_total_value)+parseFloat(temp_cost_value)).toFixed(2);
+        
+                //if(!isNaN(temp_market_qty))
+                //    market_price_total_qty = parseFloat(market_price_total_qty)+temp_market_qty;
+                //if(!isNaN(temp_market_rate) )
+                //    market_prise_total_rate=parseFloat( market_prise_total_rate)+parseFloat(temp_market_rate);
+                //if(!isNaN(temp_market_value))
+                //    market_price_total_value = parseFloat(market_price_total_value)+parseFloat(temp_market_value);
+
+
+                //if(!isNaN(temp_closbal_qty))
+                //    closingbal_price_total_qty = parseFloat(closingbal_price_total_qty)+temp_closbal_qty;
+                //if(!isNaN(temp_closbal_rate) )
+                //    closingbal_prise_total_rate=parseFloat( closingbal_prise_total_rate)+parseFloat(temp_closbal_rate);
+                //if(!isNaN(temp_closbal_value) )
+                //    closingbal_price_total_value=parseFloat( closingbal_price_total_value)+parseFloat(temp_closbal_value);
+            });
+            console.log(cost_prise_total_rate);
+
+            $(".cost_price").html(cost_prise_total_qty);
+            $(".cost_qty").html(cost_prise_total_rate);
+            $(".cost_value").html(cost_price_total_value);
+ 
+            //$(".market_qty").html(market_price_total_qty);
+            //$(".market_rate").html(market_prise_total_rate);
+            //$(".market_value").html(market_price_total_value);
+
+            //$(".closingbal_qty").html(closingbal_price_total_qty);
+            //$(".closingbal_rate").html(closingbal_prise_total_rate);
+            //$(".closingbal_value").html(closingbal_price_total_value);
         }
     
  </script>

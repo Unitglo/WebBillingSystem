@@ -31,6 +31,15 @@ namespace WebBillingSystem {
         protected global::System.Web.UI.HtmlControls.HtmlInputText account_head;
         
         /// <summary>
+        /// account_ucid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText account_ucid;
+        
+        /// <summary>
         /// account_main_group control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,24 @@ namespace WebBillingSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect account_sub_group;
+        
+        /// <summary>
+        /// natural_assets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect natural_assets;
+        
+        /// <summary>
+        /// Text1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
         
         /// <summary>
         /// account_party_name control.

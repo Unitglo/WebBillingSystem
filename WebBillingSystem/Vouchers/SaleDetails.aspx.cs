@@ -56,7 +56,7 @@ namespace WebBillingSystem
                     edit_button = "Invoice Cancel";
                 }
                 //1. role check  2. status check 3. label set
-                if (Session["role_code"].ToString() == "CA")
+                if (Session["page_role"].ToString() == "CA")
                 {
                     if (reader["ca_approved_status"].ToString() =="3" ) {
                         edit_button = "";
@@ -66,7 +66,17 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
-                else if (Session["role_code"].ToString() == "COMPANY")
+                if (Session["page_role"].ToString() == "CA" && reader["ca_approved_status"].ToString() == "1")
+                {
+                    edit_button += "";
+                    status_label = "Open";
+
+                }
+
+
+
+
+                else if (Session["page_role"].ToString() == "COMPANY")
                 {
                     if (reader["ca_approved_status"].ToString() == "3" || reader["ca_approved_status"].ToString() == "1")
                     {

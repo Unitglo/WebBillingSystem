@@ -42,10 +42,10 @@
                               <label>From Date :</label>
                                <input type="date"  runat="server" class="form-control from_date_class" id="from_date_id" />
                           </div>
-<%--                          <div class="col-md-3 form-group">
+                          <div class="col-md-3 form-group">
                               <label>To Date :</label>
                             <input type="date" runat="server" class="form-control to_date_class"  id="to_date_id"/>
-                          </div>--%>
+                          </div>
                         </div>
                       <div class="row">
                           <div class="col-md-3 form-group">
@@ -183,14 +183,12 @@
         }
         var month_wise_tr = "";
         monthsName.forEach(function (key, index) {
-            if (((new Date($(".from_date_class").val()).getMonth()) - 3) >= index) {
-                var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
-                month_wise_tr += "<tr>" +
-                    "<td colspan='1'>" + edit_button + "</td>" +
-                    "<td colspan='2' >" + key + "</td>" +
-                    "<tr id='month-" + key + "'></tr>" +
-                    "</tr>";
-            }
+            var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
+            month_wise_tr += "<tr>" +
+                        "<td colspan='1'>"+ edit_button + "</td>" +
+                        "<td colspan='2' >" + key + "</td>" +
+                        "<tr id='month-" + key + "'></tr>"+
+                        "</tr>";
         });
         $("#StockLedger tbody").html(month_wise_tr);
         monthsName.forEach(function (key, index) {

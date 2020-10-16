@@ -18,8 +18,9 @@ namespace WebBillingSystem
             baseHealpare = new DataBaseHealpare();
             //  System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString())))  - invoice id 
             MySqlDataReader reader = baseHealpare.SelectAllValues(baseHealpare.TableAddSaleMst, " where sale_mst_id =" + "'" + System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString()))) + "'");
-            while (reader != null && reader.Read())                
+            while (reader != null && reader.Read())
             {
+
                 bill_to_party_name.InnerText = reader["seller_name"].ToString();
                 bill_to_party_Seller_address.InnerText = reader["Seller_address"].ToString();
                 bill_to_party_gstin.InnerText = reader["gstin"].ToString();
@@ -31,7 +32,7 @@ namespace WebBillingSystem
                 ship_to_party_ship_party_state.InnerText = reader["ship_party_state"].ToString();
                 ship_to_party_ship_party_state_code.InnerText = reader["ship_party_state_code"].ToString();
                 bill_to_party_invoice_no.InnerText = reader["invoice_no"].ToString();
-                bill_to_party_invoice_date.InnerText = reader["invoice_date"].ToString();
+                bill_to_party_invoice_date.InnerText =reader["invoice_date"].ToString();
                 auth_name.InnerText = reader["auth_name"].ToString();
                 state_code.InnerText = reader["state_code"].ToString();
                 headergstin.InnerText = reader["gstin"].ToString();

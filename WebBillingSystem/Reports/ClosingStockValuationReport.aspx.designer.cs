@@ -58,13 +58,13 @@ namespace WebBillingSystem {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl from_date_id;
         
         /// <summary>
-        /// to_date_id control.
+        /// close_stock_json control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl to_date_id;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText close_stock_json;
         
         /// <summary>
         /// linkbtnSearch control.
@@ -74,6 +74,15 @@ namespace WebBillingSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton linkbtnSearch;
+        
+        /// <summary>
+        /// SaveClosingStockValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SaveClosingStockValue;
         
         /// <summary>
         /// comp_name_id control.

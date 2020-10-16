@@ -626,7 +626,7 @@
              $(".txthdn_Json").val(json_str);
              
              $('[id*=textVal1]').val($(".Stock_Out_Method option:selected").text());
-             $('[id*=textVal2]').val($(".stockValuation_Method").text());
+             $('[id*=textVal2]').val($(".stockValuation_Method option:selected").text());
         }
         invoiceAddChange();
         addDebitnoChange();

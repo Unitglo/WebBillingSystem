@@ -28,9 +28,13 @@
                             <div class="row">
                                 <div class="col-sm">
                                         <div class="row">   
-                                            <div class="col-md-12 form-group">
+                                            <div class="col-md-6 form-group">
                                                 <label for="account_head">Account Head : *</label>
                                                 <input class="form-control" name="account_head" runat="server" id="account_head" placeholder="" value="" type="text" onkeydown="upperCaseF(this)" onchange='if ($(".chkpartyname").prop("checked") == true) { $(".accounPartyName").val($("[id*=account_head]").val()); } else { $(".accounPartyName").val("");}'>
+                                            </div>
+                                               <div class="col-md-6 form-group">
+                                                <label for="account_ucid"> UCID</label>
+                                                <input class="form-control" name="account_ucid" onkeydown="upperCaseF(this)" runat="server" id="account_ucid" placeholder="" value="" type="text">
                                             </div>											
                                         </div>
 										
@@ -51,8 +55,8 @@
 											
 										<div class="col-md-6 mb-10">
                                                 <label for="account_sub_group">Under Sub Group : *</label>
-                                                <select class="form-control custom-select d-block w-100 sub_group"  runat="server" id="account_sub_group" name="account_sub_group" >
-                                                    <option data-group="SHOW" value="0">Select...</option>
+                                                <select class="form-control custom-select d-block w-100 sub_group"  runat="server" id="account_sub_group" name="account_sub_group" onchange="showassests()">
+                                                    <option data-group="SHOW" value="0" >Select...</option>
                                                     <option data-group="SHOW" value="add">Add New </option>
                                       <%--              <option data-group="Share Holder Fund" value="Share Capital">Share Capital</option>
 													<option data-group="Share Holder Fund" value="Reserves and surplus">Reserves and surplus</option>
@@ -90,7 +94,27 @@
 													<option data-group="Expenses" value="Direct expenses">Direct expenses</option>--%>
                                                 </select>
                                             </div>
-										</div>										
+										</div>	
+                               <div class="row" id="assets" style="display:none" >
+                                          
+											<div class="col-md-6 mb-10">
+                                                <label for="natural_assets">Natural assets</label>
+                                                 <select class="form-control custom-select d-block w-100" id="natural_assets" runat="server">
+                                                    <option value="Furnitures & Fixtures" class="furniture">Furnitures & Fixtures</option>
+                                                    <option value="Plant & Machinery" class="plant">Plant & Machinery</option>
+                                                        <option value="Building" class="building">Building</option>
+                                                        <option value="Ship" class="ship">Ship</option>
+                                                        <option value="Intangible assets" class="intangible_assets">Intangible assets</option>
+												</select>
+                                            </div>
+                                     <div class="col-md-6 form-group">
+                                                <label for="Text1">Rate Depreciation :</label> &nbsp;&nbsp;
+                                                <input class="form-control 	rate of depreciation" name="rate of depreciation"  runat="server" id="Text1" placeholder="" value="" type="text" onkeydown="upperCaseF(this)">
+                                            </div>
+											
+										</div>	
+										     
+                                    									
 										<div class="row">
                                             <div class="col-md-6 form-group">
                                                 <label for="account_party_name">Party Name :</label> &nbsp;&nbsp;
@@ -202,6 +226,8 @@
                                                 <label for="account_cin_number">CIN Number</label>
                                                 <input class="form-control" name="account_cin_number" onkeydown="upperCaseF(this)" runat="server" id="account_cin_number" placeholder="" value="" type="text">
                                             </div>
+
+                                           
 										   
 										   <div class="col-md-6 form-group">
                                                 <label for="account_phone_number">Phone Number</label>
@@ -424,6 +450,43 @@
             $("#p_id").html("Do you want to Changes All Vouchers(<b style=\"font-weight: bold;\">" + str + "</b>)?");
         }
     }
+
+    function showassests() {
+        var option_text = $(".sub_group option:selected").text();
+        $("#assets").hide();
+        $("option.intangible_assets").hide();
+        
+        //if (option_text == "Intangible assets" || option_text == "Tangible assets") {
+        //    $("#assets").show();
+        //}
+
+        if (option_text == "Tangible assets") {
+            $("#assets").show();
+            $("option.furniture").prop("selected", true);
+            $(".furniture").show();
+            $(".plant").show();
+            $(".building").show();
+            $(".ship").show();
+            $(".intangible_assets").hide();
+        }
+        if (option_text == "Intangible assets") {
+            $("#assets").show();
+            $("option.intangible_assets").show();
+            $("option.intangible_assets").prop("selected", true);
+            $(".furniture").hide();
+            $(".plant").hide();
+            $(".building").hide();
+            $(".ship").hide();
+            
+        }
+     
+        
+        
+ } 
+ //on ready call       
+    
+        
+   
 </script>
 
 </asp:Content>

@@ -20,20 +20,27 @@ namespace WebBillingSystem
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["page_role"].ToString() == "CA") {
+    //       if (Session["page_role"].ToString() == "CA") {
                 Session["pms_db"] = Session["primary_db"];
                 baseHealpare = new DataBaseHealpare();
-                MySqlDataReader comp_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddCompany, " where company_ca_ucid=" + "'" + Session["ca_id"] + "'" + "and status=0");
-                comp_master = new System.Collections.ArrayList();
+            MySqlDataReader comp_reader;
+            if (Session["page_role"].ToString() == "CA")
+            {
+                comp_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddCompany, " where company_ca_ucid=" + "'" + Session["ca_id"] + "'" + "and status=0");
+            }
+            else {
+                comp_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddCompany, " where company_ucid=" + "'" + Session["company_code"] + "'" + "and status=0");
+            }
+            comp_master = new System.Collections.ArrayList();
                 while (comp_reader != null && comp_reader.Read())
                 {
                     comp_master.Add(new
                     {
                         company_id = comp_reader["company_id"],
-                        company_ucid = comp_reader["company_ucid"],                        
+                        company_ucid = comp_reader["company_ucid"],
                         company_db = comp_reader["company_db"],
-                        company_person_type = comp_reader["company_person_type"],                       
-                        surnamename = "<a href='/home.aspx?value="  + baseHealpare.EncodeUrl(this,""+comp_reader["company_ucid"]) + "'>"+ comp_reader["company_first_name"] + " " + comp_reader["company_middle_name"] + " "+ comp_reader["company_surname"] + "</a>",
+                        company_person_type = comp_reader["company_person_type"],
+                        surnamename = "<a href='/home.aspx?value=" + baseHealpare.EncodeUrl(this, "" + comp_reader["company_ucid"]) + "'>" + comp_reader["company_first_name"] + " " + comp_reader["company_middle_name"] + " " + comp_reader["company_surname"] + "</a>",
                         company_surname = comp_reader["company_surname"],
                         company_middle_name = comp_reader["company_middle_name"],
                         company_first_name = comp_reader["company_first_name"],
@@ -72,10 +79,13 @@ namespace WebBillingSystem
                         company_secondery_sign_phone = comp_reader["company_secondery_sign_phone"],
                         username = comp_reader["username"],
                         password = comp_reader["password"],
-                        edit_button = "<a href='/Master/AddCompany.aspx?value=" + baseHealpare.EncodeUrl(this, "" + comp_reader["company_id"]) + "' class='btn btn-sm btn-info fa fa-pencil' data-toggle='tooltip-primary' data-placement='top' title='Edit Record'></>"
+                        edit_button = "<a href='/Master/AddCompany.aspx?value=" + baseHealpare.EncodeUrl(this, "" + comp_reader["company_id"]) + "'&edit=true' class='btn btn-sm btn-info fa fa-pencil' id='btnedit'  data-toggle='tooltip-primary' data-placement='top'  title='Edit Record'></a>"
 
                     });
-                    //Session["company"] = comp_reader["company_ucid"];
+                       
+        
+       
+            //Session["company"] = comp_reader["company_ucid"];
                     //Session["company_name"] = comp_reader["company_surname"] + " " + comp_reader["company_middle_name"] + " " + comp_reader["company_first_name"];
                     //Session["pms_db"] = comp_reader["company_db"];
                 }
@@ -86,9 +96,10 @@ namespace WebBillingSystem
                     json_obj = serializer.Serialize(comp_master);
                 }
 
-            } else {
-                Response.Redirect("/Login.aspx");
-            }
+    //       }
+    //        else {
+    //              Response.Redirect("/Login.aspx");
+    //        }
         }
 
         //public void comp_name_change()
@@ -102,5 +113,7 @@ namespace WebBillingSystem
         {
             Response.Redirect("~/Master/AddCompany.aspx");
         }
+
+        
     }
 }

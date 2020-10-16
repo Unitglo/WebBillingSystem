@@ -1,0 +1,8 @@
+﻿ALTER TABLE `pms_stock` ADD `product_valuation_qty` TEXT NOT NULL COMMENT 'reflect from valuation report ' AFTER `stock_minimum_stock_reminder`, ADD `product_valuation_rate` TEXT NOT NULL COMMENT 'reflect from valuation report' AFTER `product_valuation_qty`, ADD `product_valuation_amt` TEXT NOT NULL COMMENT 'reflect from valuation report' AFTER `product_valuation_rate`, ADD `valuation_close_qty` TEXT NOT NULL COMMENT 'reflect from valuation report' AFTER `product_valuation_amt`, ADD `valuation_close_rate` TEXT NOT NULL COMMENT 'reflect from valuation report' AFTER `valuation_close_qty`, ADD `valuation_close_amt` TEXT NOT NULL COMMENT 'reflect from valuation report' AFTER `valuation_close_rate`;
+COMMIT;
+
+ALTER TABLE pms_account_master ADD `UCID` varchar(50) NOT NULL
+
+ALTER TABLE pms_account_master ADD `rate of depreciation` text NOT NULL DEFAULT '\'0\'' COMMENT 'non_current assests sungroup tangiable assets then value will be set'
+
+ALTER TABLE pms_account_master ADD   `natural_assets` text NOT NULL DEFAULT '\' \'' COMMENT 'noncurrent assets subgroup tangiable assets valuw will be set

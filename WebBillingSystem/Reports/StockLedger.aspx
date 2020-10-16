@@ -62,20 +62,20 @@
                 </div>
                 <div id="editor"></div>
                 <div id="div_export_id">                
-                   <div style="text-align:center; display:none;" class="row">                         
+                   <div style="text-align:center; display:none; text-align:center" class="row">                         
                          <div class="col-lg-12" style="padding-right: 0px; padding-left: 0px;">
 						    <div class="card-group hk-dash-type-2">
                                     <div class="card card-sm">
 										<div class="card-body bg-light" style="text-align: -webkit-center;">
-                                            <table>
-                                                <tr><td><h4 id="comp_name_id" runat="server"></h4></td></tr>
-                                                <tr><td style="width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
-                                                <tr><td> Address -<label runat="server" id="comp_add_id"></label></td></tr>
-                                                <tr><td>Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
-                                                <tr><td>Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
-                                                <tr><td>GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
-                                                <tr><td>PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
-                                                <tr><td>CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
+                                            <table class="company_details_table">
+                                                <tr><td colspan="14" style="text-align:center"><h4 id="comp_name_id" runat="server"></h4></td></tr>
+                                                <tr><td colspan="14" style="text-align:center; width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center"> Address -<label runat="server" id="comp_add_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
+                                                <tr><td colspan="14" style="text-align:center">Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
                                             </table>
 										</div>
 									</div>				                                  
@@ -88,15 +88,15 @@
                              <div class="card-group hk-dash-type-2">
                                  <div class="card card-sm">
 									<div class="card-body bg-light" style="text-align: -webkit-center;">
-                                        <table><tbody>
-                                             <tr><td> <h5 id="company_name_id" runat="server"></h5></td></tr>
+                                        <table><tbody style="text-align:center">
+                                             <tr><td colspan="8" style="text-align:center"> <h5 id="company_name_id" runat="server"></h5></td></tr>
                                              <%--<tr><td> Auth.Dealer - <label id="auth_dealer_id" runat="server"></label></td></tr>
                                              <tr><td> <label runat="server" id="state_id"></label></td></tr>
                                              <tr><td> <label runat="server" id="address_id"></label></td></tr>
                                              <tr><td> GSTIN NO - <label runat="server" id="gstin_id"></label></td></tr>
                                              <tr><td> State Code - <label runat="server" id="statecode_id"></label></td></tr>--%>
                                              <%--<tr><td> <h4>Stock Ledger</h4></td></tr>--%>
-                                             <tr><td><label runat="server" id="date_id"></label></td></tr>
+                                             <tr><td colspan="8" style="text-align:center"><label runat="server" id="date_id"></label></td></tr>
                                        </tbody></table>
                          </div></div></div></div>
                      </div>                    
@@ -326,7 +326,7 @@
 
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
-        $('#ClosingStockLedger thead tr:eq(0)').find("th:eq(0)").text("");
+      $('#ClosingStockLedger thead tr:eq(0)').find("th:eq(0)").text("");
         $('#ClosingStockLedger thead tr:eq(1)').find("th:eq(0)").text("");
 
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
@@ -391,4 +391,9 @@
     }
 
  </script>
+    <style>
+        .company_details_table tr td,.company_details_table tr td h4 {
+        text-align:center;
+        }
+    </style>
 </asp:Content>

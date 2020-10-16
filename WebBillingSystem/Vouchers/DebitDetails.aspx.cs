@@ -51,7 +51,7 @@ namespace WebBillingSystem
                 }
 
                 //1. role check  2. status check 3. label set
-                if (Session["role_code"].ToString() == "CA")
+                if (Session["page_role"].ToString() == "CA")
                 {
                     if (debit_reader["ca_approved_status"].ToString() == "3")
                     {
@@ -63,7 +63,15 @@ namespace WebBillingSystem
                         status_label = "Open";
                     }
                 }
-                else if (Session["role_code"].ToString() == "COMPANY")
+
+                if (Session["page_role"].ToString() == "CA" && debit_reader["ca_approved_status"].ToString() == "1")
+                {
+                    edit_button += "";
+                    status_label = "Open";
+
+                }
+
+                else if (Session["page_role"].ToString() == "COMPANY")
                 {
                     if (debit_reader["ca_approved_status"].ToString() == "3" || debit_reader["ca_approved_status"].ToString() == "1")
                     {
@@ -82,7 +90,7 @@ namespace WebBillingSystem
                 }
                 else
                 {
-                    edit_button = "<a href='/Vouchers/DebitNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
+                    edit_button += "<a href='/Vouchers/DebitNote.aspx?value=" + baseHealpare.EncodeUrl(this, "" + debit_reader["dr_cr_Id"]) + "&view=true' class='btn btn-sm btn-warning fa fa-eye' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='View Record'></>  ";
 
                 }
 

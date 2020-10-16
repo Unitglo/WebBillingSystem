@@ -141,6 +141,7 @@ namespace WebBillingSystem
                     while (reader != null && reader.Read())
                     {
                         account_head.Value = reader["account_head"].ToString();
+                       account_ucid.Value = reader["UCID"].ToString();
                         account_main_group.SelectedIndex = account_main_group.Items.IndexOf(account_main_group.Items.FindByValue(reader["account_main_group"].ToString()));
                         sub_value = reader["account_sub_group"].ToString();
                         account_party_name.Value = reader["account_party_name"].ToString();
@@ -155,10 +156,14 @@ namespace WebBillingSystem
                         account_gst_number.Value = reader["account_gst_number"].ToString();
                         account_pan_number.Value = reader["account_pan_number"].ToString();
                         account_cin_number.Value = reader["account_cin_number"].ToString();
+                     
+
                         account_phone_number.Value = reader["account_phone_number"].ToString();
                         account_email.Value = reader["account_email"].ToString();
                         account_opening_balance.Value = reader["account_opening_balance"].ToString();
                         account_opening_balance_type.SelectedIndex = account_opening_balance_type.Items.IndexOf(account_opening_balance_type.Items.FindByText(reader["account_opening_balance_type"].ToString()));
+                        Text1.Value = reader["rate of depreciation"].ToString();
+                        natural_assets.Value = reader["natural_assets"].ToString();
                     }
                     if (reader != null)
                     {
@@ -241,8 +246,8 @@ namespace WebBillingSystem
                     {
                         comfirm_master.Close();
                         baseHealpare.InsertIntoTable(baseHealpare.TableAddAccount,
-                                        new string[] { "account_head", "account_main_group", "account_sub_group", "account_party_name", "account_inventory_value_affected", "account_add_one", "account_add_two", "account_district", "account_state", "account_state_code", "account_country", "account_pin_code", "account_gst_number", "account_pan_number", "account_cin_number", "account_phone_number", "account_email", "account_opening_balance", "account_opening_balance_type" },
-                                        new string[] { account_head.Value.ToString(), account_main_group.Value.ToString(), account_sub_group.Value.ToString(), account_party_name.Value.ToString(), account_invenory_value.Value.ToString(), account_add_one.Value.ToString(), account_add_two.Value.ToString(), account_district.Value.ToString(), account_state.Value.ToString(), account_state_code.Value.ToString(), account_country.Value.ToString(), account_pincode.Value.ToString(), account_gst_number.Value.ToString(), account_pan_number.Value.ToString(), account_cin_number.Value.ToString(), account_phone_number.Value.ToString(), account_email.Value.ToString(), account_balance.ToString(), account_opening_balance_type.Value.ToString() });
+                                        new string[] { "account_head", "account_main_group", "account_sub_group", "account_party_name", "account_inventory_value_affected", "account_add_one", "account_add_two", "account_district", "account_state", "account_state_code", "account_country", "account_pin_code", "account_gst_number", "account_pan_number", "account_cin_number", "account_phone_number", "account_email", "account_opening_balance", "account_opening_balance_type", "UCID", "rate of depreciation", "natural_assets" },
+                                        new string[] { account_head.Value.ToString(), account_main_group.Value.ToString(), account_sub_group.Value.ToString(), account_party_name.Value.ToString(), account_invenory_value.Value.ToString(), account_add_one.Value.ToString(), account_add_two.Value.ToString(), account_district.Value.ToString(), account_state.Value.ToString(), account_state_code.Value.ToString(), account_country.Value.ToString(), account_pincode.Value.ToString(), account_gst_number.Value.ToString(), account_pan_number.Value.ToString(), account_cin_number.Value.ToString(), account_phone_number.Value.ToString(), account_email.Value.ToString(), account_balance.ToString(), account_opening_balance_type.Value.ToString(), account_ucid.Value.ToString(), Text1.Value.ToString(), natural_assets.Value.ToString() });
                         
                     }
                     else {
