@@ -561,3 +561,10 @@ ul#images li {
   width: 155px;
   height: 300px;
 }
+
+/*on i button description*/
+.badge.badge-pill {
+    border-radius: 50px;
+}
+
+

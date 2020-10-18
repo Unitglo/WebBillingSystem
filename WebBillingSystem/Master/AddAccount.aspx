@@ -484,9 +484,36 @@
         
  } 
  //on ready call       
-    
+     function soneedithowassests() {
+        var option_text = $(".sub_group option:selected").text();
+        $("#assets").hide();
+        $("option.intangible_assets").hide();
         
-   
+        //if (option_text == "Intangible assets" || option_text == "Tangible assets") {
+        //    $("#assets").show();
+        //}
+
+        if (option_text == "Tangible assets") {
+            $("#assets").show();
+//            $("option.furniture").prop("selected", true);
+            $(".furniture").show();
+            $(".plant").show();
+            $(".building").show();
+            $(".ship").show();
+            $(".intangible_assets").hide();
+        }
+        if (option_text == "Intangible assets") {
+            $("#assets").show();
+            $("option.intangible_assets").show();
+  //          $("option.intangible_assets").prop("selected", true);
+            $(".furniture").hide();
+            $(".plant").hide();
+            $(".building").hide();
+            $(".ship").hide();            
+        }
+ } 
+    if (($(".breadcrumb-item .active").html() + "").indexOf("Add") == -1)
+        soneedithowassests();
 </script>
 
 </asp:Content>

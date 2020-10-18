@@ -15,6 +15,6 @@
   "installation_type": "CA",
  // "installation_type": "COMPANY",
   "pmslogo": "/images/pmslogo.png",
-  "default_database": "pms",
+  "default_database": "pms_demo",
   "default_prefix": ""
 }

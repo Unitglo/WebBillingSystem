@@ -11,1435 +11,1468 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdminMainPage.Master">
-      <publishTime>09/14/2020 19:11:18</publishTime>
+      <publishTime>10/18/2020 16:38:44</publishTime>
     </File>
     <File Include="Assets/dist/css/animate.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/dripicons.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/font-awesome.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/glyphicons.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/ionicons.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/jquery-ui.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/jquery-ui.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/linea-icon.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/material-design-iconic-font.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/pe-icon-7-stroke.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/simple-line-icons.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/style.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/css/themify-icons.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/dripicons/dripicons-v2.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/dripicons/dripicons-v2.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/dripicons/dripicons-v2.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/dripicons/dripicons-v2.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/dripicons/dripicons-v2d41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/fontawesome/fontawesome-webfont5b62.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/fontawesome/fontawesome-webfont5b62.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/fontawesome/fontawesome-webfont5b62.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/fontawesome/fontawesome-webfont5b62.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/fontawesome/fontawesome-webfont5b62.woff2">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/fontawesome/fontawesome-webfontd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/glyphicons/glyphicons-halflings-regular.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/glyphicons/glyphicons-halflings-regular.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/glyphicons/glyphicons-halflings-regular.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/glyphicons/glyphicons-halflings-regular.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/glyphicons/glyphicons-halflings-regular.woff2">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/glyphicons/glyphicons-halflings-regulard41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/ionicons/ionicons78ce.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/ionicons/ionicons78ce.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/ionicons/ionicons78ce.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/ionicons/ionicons78ce.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/ionicons/ionicons78ce.woff2">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-arrows-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-arrows-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-arrows-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-arrows-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-arrows-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-elaboration-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-elaboration-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-elaboration-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-elaboration-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-basic-elaboration-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-ecommerce-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-ecommerce-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-ecommerce-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-ecommerce-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-ecommerce-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-music-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-music-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-music-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-music-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-music-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-software-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-software-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-software-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-software-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-software-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-weather-10.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-weather-10.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-weather-10.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-weather-10.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/linea-icons/linea-weather-10d41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.woff2">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/pe-icon-7/Pe-icon-7-strokebb1d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/pe-icon-7/Pe-icon-7-strokebb1d.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/pe-icon-7/Pe-icon-7-strokebb1d.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/pe-icon-7/Pe-icon-7-strokebb1d.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/pe-icon-7/Pe-icon-7-stroked41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/simple-line-icons/Simple-Line-Icons4c824c82.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/simple-line-icons/Simple-Line-Icons4c824c82.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/simple-line-icons/Simple-Line-Icons4c824c82.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/simple-line-icons/Simple-Line-Icons4c824c82.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/simple-line-icons/Simple-Line-Icons4c824c82.woff2">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/simple-line-icons/Simple-Line-Iconsd41dd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/themify-icons/themify9f24.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/themify-icons/themify9f24.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/themify-icons/themify9f24.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/themify-icons/themify9f24.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/fonts/themify-icons/themifyd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/1foldericon.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/2image.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/3videoicon.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/4image.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/5psdicon.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/6image.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar10.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar11.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar12.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar3.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar4.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar5.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar6.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar7.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar8.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/avatar9.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/bg1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/bg2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/card-ae.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/card-mc.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/card-visa.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/cropper.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock10.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock11.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock12.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock13.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock14.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock15.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock3.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock4.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock5.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock6.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock7.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock8.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/mock9.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/gallery/Thumbs.db">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/img-thumb.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/img-thumb1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/invoice-logo.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/jpgicon.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/landing-pg/herobg.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/layout1.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/layout2.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/layout3.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo-dark.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo-light.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo3.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo4.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/logo5.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/mastercard.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/pdficon.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/product-thumb1.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/product-thumb2.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/product-thumb3.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/signature.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide3.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide4.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide5.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide6.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/slide7.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/Thumbs.db">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/img/trans-bg.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/areacharts-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/barcharts-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/bootstrap-table-data.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/cropperjs-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/dashboard-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/dashboard2-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/dashboard3-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/dataTables-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/daterangepicker-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/dropdown-bootstrap-extended.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/easypiechart-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/editable-table-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/feather.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/fm-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/form-file-upload-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/form-wizard-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/froogaloop2.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/fullcalendar-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/gallery-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/gmap-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/init.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/inputspinner-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/jquery-1.10.2.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/jquery-ui.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/jquery-ui.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/jquery.slimscroll.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/linecharts-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/login-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/nestable-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/owl-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/peity-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/pickr-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/piecharts-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/rangeslider-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/realtimecharts-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/select2-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/sparkline-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/tablesaw-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/tinymce-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/toast-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/toggle-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/tooltip-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/twitterFetcher.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/validation-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/vectormap-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/dist/js/widgets-data.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/bootstrap-input-spinner/src/bootstrap-input-spinner.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/bootstrap-table/dist/bootstrap-table.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/bootstrap-table/dist/bootstrap-table.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/bootstrap/dist/css/bootstrap.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/bootstrap/dist/js/bootstrap.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/cropperjs/dist/cropper.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/cropperjs/dist/cropper.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-buttons/js/buttons.flash.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-buttons/js/buttons.html5.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-buttons/js/buttons.print.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/css/jquery.dataTables.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/images/sort_asc.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/images/sort_asc_disabled.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/images/sort_both.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/images/sort_desc.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/images/sort_desc_disabled.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-dt/js/dataTables.dataTables.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-responsive-dt/css/responsive.dataTables.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/datatables.net/js/jquery.dataTables.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/daterangepicker/daterangepicker.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/daterangepicker/daterangepicker.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropify/dist/css/dropify.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropify/dist/fonts/dropify.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropify/dist/fonts/dropify.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropify/dist/fonts/dropify.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropify/dist/fonts/dropify.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropify/dist/js/dropify.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropzone/dist/dropzone.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/dropzone/dist/dropzone.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/easy-pie-chart/dist/jquery.easypiechart.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/echarts/dist/echarts-en.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/editable-table/mindmup-editabletable.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/editable-table/numeric-input-example.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/excanvas.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/jquery.flot.crosshair.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/jquery.flot.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/jquery.flot.pie.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/jquery.flot.resize.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/jquery.flot.stack.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/flot/jquery.flot.time.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/fullcalendar/dist/fullcalendar.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/fullcalendar/dist/fullcalendar.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/ion-rangeslider/css/ion.rangeSlider.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/ion-rangeslider/css/ion.rangeSlider.skinHTML5.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/ion-rangeslider/js/ion.rangeSlider.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-steps/build/jquery.steps.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-steps/demo/css/jquery.steps.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-toast-plugin/dist/jquery.toast.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-toggles/css/themes/toggles-light.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-toggles/css/toggles.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery-toggles/toggles.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery.counterup/jquery.counterup.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery.flot.tooltip/js/jquery.flot.tooltip.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery.sparkline/dist/jquery.sparkline.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery/dist/jquery.min.3.4.1.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jquery/dist/jquery.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/jszip/dist/jszip.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/css/lightgallery.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/fonts/lgd41d.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/fonts/lgd641.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/fonts/lgd641.svg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/fonts/lgd641.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/fonts/lgd641.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/img/loading.gif">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/img/video-play.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/img/vimeo-play.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/img/youtube-play.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/lightgallery/dist/js/lightgallery-all.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/moment/min/moment.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/morris.js/morris.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/morris.js/morris.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/nestable2/dist/jquery.nestable.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/nestable2/dist/jquery.nestable.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/owl.carousel/dist/assets/owl.carousel.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/owl.carousel/dist/assets/owl.theme.default.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/owl.carousel/dist/assets/owl.video.play.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/owl.carousel/dist/owl.carousel.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/pdfmake/build/pdfmake.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/pdfmake/build/vfs_fonts.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/peity/jquery.peity.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/pickr-widget/dist/pickr.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/pickr-widget/dist/pickr.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/popper.js/dist/umd/popper.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/raphael/raphael.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/select2/dist/css/select2.min.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/select2/dist/js/select2.full.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/switchery/dist/switchery.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/tablesaw/dist/tablesaw.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/tablesaw/dist/tablesaw.jquery.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/tinymce/tinymce.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-2.0.3.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-2.0.3.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-de-merc.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-es-merc.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-ru-mill.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-us-aea-en.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-us-lcc-en.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/vectormap/jquery-jvectormap-world-mill-en.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Assets/vendors/waypoints/lib/jquery.waypoints.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
+    </File>
+    <File Include="Base/alter_query.txt">
+      <publishTime>10/18/2020 16:37:14</publishTime>
     </File>
     <File Include="Base/ca_db_table.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Base/ca_profile.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Base/company_db_table.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Base/company_profile.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Base/configuration - Copy.json">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Base/configuration.json">
-      <publishTime>09/18/2020 14:15:42</publishTime>
+      <publishTime>10/16/2020 09:27:37</publishTime>
     </File>
     <File Include="Base/table.txt">
       <publishTime>01/14/2020 17:00:38</publishTime>
     </File>
     <File Include="bin/Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.woff">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Assets/dist/fonts/material-design-iconic-font/Material-Design-Iconic-Fontd1f1.woff2">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
+    </File>
+    <File Include="bin/Base/alter_query.txt">
+      <publishTime>10/18/2020 16:37:14</publishTime>
     </File>
     <File Include="bin/Base/ca_db_table.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Base/ca_profile.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Base/company_db_table.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Base/company_profile.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Base/configuration - Copy.json">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Base/configuration.json">
-      <publishTime>09/18/2020 14:15:42</publishTime>
+      <publishTime>10/16/2020 09:27:37</publishTime>
     </File>
     <File Include="bin/Base/table.txt">
       <publishTime>01/14/2020 17:00:38</publishTime>
     </File>
     <File Include="bin/cs/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/de/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/DocumentFormat.OpenXml.dll">
-      <publishTime>09/05/2020 13:04:22</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/en/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/es/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/fr/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/it/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/ja/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/ko/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Build.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Build.Framework.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Data.Tools.Com.Interop.dll">
-      <publishTime>09/04/2020 21:12:10</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll">
-      <publishTime>09/04/2020 21:12:10</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll">
-      <publishTime>09/04/2020 21:12:10</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/mysql.data.entity.EF6.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/MySqlBackup.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/NLog.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/pl/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/pt-BR/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/System.Collections.Immutable.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/System.IO.Compression.ZipFile.dll">
-      <publishTime>09/05/2020 13:04:28</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Extensions.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Primitives.dll">
-      <publishTime>09/05/2020 13:04:24</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/System.Runtime.InteropServices.RuntimeInformation.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/System.Threading.Tasks.Dataflow.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/tr/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/upload/StockExcelTemplate.xlsx">
-      <publishTime>09/05/2020 13:04:22</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/WebBillingSystem.dll">
-      <publishTime>09/19/2020 13:51:54</publishTime>
+      <publishTime>10/18/2020 16:38:58</publishTime>
     </File>
     <File Include="bin/WebBillingSystem.pdb">
-      <publishTime>09/19/2020 13:51:54</publishTime>
+      <publishTime>10/18/2020 16:38:58</publishTime>
     </File>
     <File Include="bin/zh-Hans/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="bin/zh-Hant/Microsoft.Build.resources.dll">
-      <publishTime>05/29/2019 13:24:11</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="CAHome.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="ca_comp_fileupload/CA_file_upload_code.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="ca_comp_fileupload/company_file_upload_code.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="ca_comp_fileupload/import_db.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="ca_comp_fileupload/matrixTask.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="CompanyHome.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/15/2020 17:18:20</publishTime>
     </File>
     <File Include="fonts/News Cycle SIL OFL Font License 1.1.txt">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="fonts/NewsCycle-Regular.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="fonts/NewsCycle-Regular.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="fonts/YanoneKaffeesatz-Regular.eot">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="fonts/YanoneKaffeesatz-Regular.ttf">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="home.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/11/2020 16:15:38</publishTime>
     </File>
     <File Include="images/1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/arrows-white.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/banar.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/banar1.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/banar2.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/bullet.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/CAlogo1.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/CAlogo2.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/CAlogo3.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/download.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/Ecommerce.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/graphic.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/mlogo.cdr">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/pattern.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/pattern1.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/pdf_image.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/pdf_images.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/pmslogo.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/Real estate.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/tp_logo.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/UnitGlo-Solutions-pvt-ltd-2016.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/unitglo.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/unnamed.jpg">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="images/wordimages.png">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="index.html">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/image_fade.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/jquery.easing-sooper.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/jquery.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/jquery.sooperfish.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/jszip.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/modernizr-1.5.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/xlsx.full.min.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="js/xlsx.js">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="libman.json">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="LogOut.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="MainReport.Master">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/AccountDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/AddAccount.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/18/2020 16:36:04</publishTime>
     </File>
     <File Include="Master/AddCompany.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/09/2020 12:52:44</publishTime>
     </File>
     <File Include="Master/AddStock.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/app.config">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/BrandSettings.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/CompanyDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/06/2020 14:06:56</publishTime>
     </File>
     <File Include="Master/InventoryGroupDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/MasterSettings.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/14/2020 13:45:12</publishTime>
     </File>
     <File Include="Master/Puraches_Report.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/StockDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Master/SubGroupDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Microsoft.Office.Interop.Excel.dll">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="News/News_And_Updates.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="News/News_And_Updates_Details.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/05/2020 13:04:22</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
+    </File>
+    <File Include="Prints/CreditNotePrint.aspx">
+      <publishTime>10/01/2020 20:01:04</publishTime>
+    </File>
+    <File Include="Prints/DebitNotePrint.aspx">
+      <publishTime>10/01/2020 20:04:18</publishTime>
+    </File>
+    <File Include="Prints/ExpensePrint.aspx">
+      <publishTime>10/01/2020 20:02:24</publishTime>
+    </File>
+    <File Include="Prints/PurchaseInvoicePrint.aspx">
+      <publishTime>10/01/2020 20:01:24</publishTime>
+    </File>
+    <File Include="Prints/PurchaseReturnPrint.aspx">
+      <publishTime>10/01/2020 20:01:40</publishTime>
+    </File>
+    <File Include="Prints/SalePrint.aspx">
+      <publishTime>10/01/2020 20:00:50</publishTime>
+    </File>
+    <File Include="Prints/SaleReturnPrint.aspx">
+      <publishTime>10/01/2020 20:04:40</publishTime>
     </File>
     <File Include="Reports/AccountLedger.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/05/2020 17:53:06</publishTime>
+    </File>
+    <File Include="Reports/BalanceSheet.aspx">
+      <publishTime>10/15/2020 13:25:50</publishTime>
     </File>
     <File Include="Reports/CashBankBook.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/ClosingStockBatchReport.aspx">
-      <publishTime>09/12/2020 15:02:44</publishTime>
+      <publishTime>10/11/2020 15:23:22</publishTime>
     </File>
     <File Include="Reports/ClosingStockExpiryReport.aspx">
-      <publishTime>09/11/2020 13:38:46</publishTime>
+      <publishTime>10/11/2020 15:21:34</publishTime>
     </File>
     <File Include="Reports/ClosingStockReport.aspx">
-      <publishTime>09/08/2020 20:03:30</publishTime>
+      <publishTime>10/11/2020 15:08:52</publishTime>
     </File>
     <File Include="Reports/ClosingStockValuationReport.aspx">
-      <publishTime>09/10/2020 15:19:52</publishTime>
+      <publishTime>10/16/2020 09:54:05</publishTime>
     </File>
     <File Include="Reports/CreditorsStatement.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/07/2020 19:07:10</publishTime>
     </File>
     <File Include="Reports/CreditPrint.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/debitPrint.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/DebtorsStatement.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/07/2020 18:54:26</publishTime>
     </File>
     <File Include="Reports/gstr1.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/gstr2.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/JournalBook.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/05/2020 15:09:38</publishTime>
+    </File>
+    <File Include="Reports/ProfitLoss.aspx">
+      <publishTime>10/14/2020 21:02:08</publishTime>
     </File>
     <File Include="Reports/PurchaseDetailsReportDisplay.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/PurchaseRegister.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/SalePrint.aspx">
       <publishTime>09/19/2020 13:51:09</publishTime>
     </File>
     <File Include="Reports/SaleRegister.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Reports/StockLedger.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/08/2020 18:36:30</publishTime>
     </File>
     <File Include="Reports/testPrint.aspx">
       <publishTime>09/05/2020 13:04:20</publishTime>
     </File>
     <File Include="Reports/TrialBalance.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="SalesInvoice.aspx">
       <publishTime>08/13/2019 11:24:35</publishTime>
     </File>
     <File Include="Site.Mobile.Master">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="SupperAdminHome.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Updates.aspx">
-      <publishTime>09/19/2020 12:28:17</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="upload/AccountExcelTemplate.xlsx">
-      <publishTime>09/05/2020 13:04:22</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="upload/StockExcelTemplate.xlsx">
-      <publishTime>09/05/2020 13:04:22</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Vouchers/CreditDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>10/12/2020 22:27:58</publishTime>
     </File>
     <File Include="Vouchers/CreditNote.aspx">
-      <publishTime>09/14/2020 19:45:08</publishTime>
+      <publishTime>09/24/2020 13:10:38</publishTime>
     </File>
     <File Include="Vouchers/DebitDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Vouchers/DebitNote.aspx">
-      <publishTime>09/14/2020 19:54:58</publishTime>
+      <publishTime>09/24/2020 13:10:54</publishTime>
     </File>
     <File Include="Vouchers/ExpensesDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Vouchers/ExpensesVoucher.aspx">
-      <publishTime>09/14/2020 19:55:28</publishTime>
+      <publishTime>09/24/2020 13:09:08</publishTime>
     </File>
     <File Include="Vouchers/JournalEntry.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Vouchers/JournalVouchersDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Vouchers/PurchaseDetails.aspx">
-      <publishTime>09/05/2020 13:04:20</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
     <File Include="Vouchers/PurchaseInvoice.aspx">
-      <publishTime>09/14/2020 19:54:08</publishTime>
+      <publishTime>09/24/2020 13:08:06</publishTime>
     </File>
     <File Include="Vouchers/PurchaseReturn.aspx">
-      <publishTime>09/14/2020 19:34:56</publishTime>
+      <publishTime>09/24/2020 13:08:24</publishTime>
     </File>
     <File Include="Vouchers/SaleDetails.aspx">
-      <publishTime>09/14/2020 13:30:06</publishTime>
+      <publishTime>10/07/2020 13:53:26</publishTime>
     </File>
     <File Include="Vouchers/SaleInvoice.aspx">
-      <publishTime>09/14/2020 19:45:30</publishTime>
+      <publishTime>09/28/2020 16:00:48</publishTime>
     </File>
     <File Include="Vouchers/SaleReturn.aspx">
-      <publishTime>09/14/2020 19:13:50</publishTime>
+      <publishTime>09/24/2020 13:04:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/19/2020 13:51:55</publishTime>
+      <publishTime>09/19/2020 20:53:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

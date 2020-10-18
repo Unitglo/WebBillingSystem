@@ -23,9 +23,11 @@
                 <!-- Title -->
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title" id="header_id" runat="server"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span>Credit Note Details</h4>
-                    <asp:Button ID="btnAdd" class="btn btn-primary btn-just-icon btn-round" runat="server" Text="+" OnClick="btnAddClick" data-toggle="tooltip-dark" data-placement="top" title="Add Credit Note"/>
-                </div>
+               <asp:Button ID="btnAdd" class="btn btn-primary btn-just-icon btn-round" runat="server" Text="+" OnClick="btnAddClick" data-toggle="tooltip-dark" data-placement="top" title="Add Credit Note" Width="24px"/>
+
+                     </div>
                 
+
                 <!-- /Title -->
 
                <!-- fileupload -->

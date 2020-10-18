@@ -403,6 +403,8 @@
         <div class="row">
             <div class="col-sm">
                 <asp:Button runat="server" class="btn btn-primary" type="submit" ID="submit_expenses_details" Text="Save" OnClick="submit_expenses_details_event" OnClientClick="saveValue();" data-toggle="tooltip-dark" data-placement="top" title="Save Data" />
+              <asp:Button runat="server" class="btn btn-info" id="btnPrint" text="Print" OnClick="btnPrintClick" data-toggle="tooltip-dark" data-placement="top" title="Print Data Sale"/>
+
             </div>
         </div>
 
@@ -941,6 +943,8 @@
             $(".ContentPlaceHolder1 input").prop("disabled", true);
             $(".ContentPlaceHolder1 select").prop("disabled", true);
             $(".ContentPlaceHolder1 button").prop("disabled", true);
+            $("#ContentPlaceHolder1_btnPrint").prop("disabled", false);
+
             $(".ContentPlaceHolder1 i").prop("disabled", true);
             //  $(".ContentPlaceHolder1 textarea").prop("disabled", true);
             setTimeout(function () {

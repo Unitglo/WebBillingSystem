@@ -61,3 +61,4 @@ G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\bin\ru\Microsof
 G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\bin\tr\Microsoft.Build.resources.dll
 G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\bin\zh-Hans\Microsoft.Build.resources.dll
 G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\bin\zh-Hant\Microsoft.Build.resources.dll
+G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\bin\Base\alter_query.txt

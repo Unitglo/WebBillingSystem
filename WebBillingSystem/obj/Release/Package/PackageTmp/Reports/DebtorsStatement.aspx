@@ -13,6 +13,9 @@
          }
          
      </style>
+      <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
+
 <div>
    <!-- Breadcrumb -->
             <nav class="hk-breadcrumb" aria-label="breadcrumb">
@@ -37,20 +40,20 @@
             <section class="bg-light hk-sec-wrapper">
 
                 <!-- Row2 -->
-                <%--<div class="row">
-                      <div class="col-md-4 form-group">
+                <div class="row">
+                     <%-- <div class="col-md-4 form-group">
                               <label>Account Head :</label>
                               <select runat="server" class="form-control select2 account_head_class"  id="account_head_id" name="account_head_name" onchange="Debtors_Statement_Display();">
                               </select>
-                      </div>
+                      </div>--%>
                       <div class="col-md-4 form-group"> 
                           <br />
-                              <asp:LinkButton runat="server" ID="linkbtnSearch"  class="btn btn-xs btn-light"><i class="fa fa-search" style="font-size: 20px;" data-toggle="tooltip-dark" data-placement="top" title="Search Records"></i></asp:LinkButton>
+<%--                              <asp:LinkButton runat="server" ID="linkbtnSearch"  class="btn btn-xs btn-light"><i class="fa fa-search" style="font-size: 20px;" data-toggle="tooltip-dark" data-placement="top" title="Search Records"></i></asp:LinkButton>--%>
                               &nbsp;<button id="btnExport" value="Excel" class="btn btn-xs btn-light" data-toggle="tooltip-dark" data-placement="top" title="Export to Excel"><i class="fa fa-file-excel-o" style="font-size:20px;color:forestgreen"></i></button>
-                              &nbsp;<button id="btnPDF" class="btn btn-xs btn-light" data-toggle="tooltip-dark" data-placement="top" title="Export to PDF"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red"></i></button>
-                              &nbsp;<button id="btnWordDoc" class="btn btn-xs btn-light" value="Word" data-toggle="tooltip-dark" data-placement="top" title="Export To Word Document"><i class="fa fa-file-word-o" style="font-size: 20px;color:blue"></i></button>
+                              &nbsp;<button id="btnPDF" class="btn btn-xs btn-light" onclick="ExportPdf()" data-toggle="tooltip-dark" data-placement="top" title="Export to PDF"><i class="fa fa-file-pdf-o" style="font-size:20px;color:red"></i></button>
+                              &nbsp;<button id="btnWordDoc" class="btn btn-xs btn-light" value="Word" data-toggle="tooltip-dark" data-placement="top" title="Export To Word Document"  onclick="Export2Doc('div_export_head_id', 'word-content-account-ledger');"><i class="fa fa-file-word-o" style="font-size: 20px;color:blue"></i></button>
                        </div>
-                </div>--%>
+                </div>
                <!-- end Row2 -->
 
                 <div id="div_export_head_id">                
@@ -67,7 +70,10 @@
 							   </div>
                            </div>
                      </div>
-                  
+                
+                   
+
+
              <div class="row">
              <div class="col-sm-12">    
                         <!-- start Table -->                        
@@ -117,10 +123,106 @@
     </div>
   </div>
     <script>
-        window.onload = function () {
+      
+ window.onload = function () {
             //$(".account_head_class").select2();
             Debtors_Statement_Display();
         };
+
+        function ExportToExcel(obj) {
+            $(obj).parent().parent().find("th:eq(0)").text("");
+
+            var contents = $(obj).parent().parent().find("td:eq(1)").html();
+            contents = $("#det_id").html() + "<div> Month : " + contents + $("." + contents).html() + "</div>";
+            window.open('data:application/vnd.ms-excel,' + encodeURIComponent(contents));
+        }
+        //Export To Excel Per Year
+        $("#btnExport").click(function (e) {
+            //if ($('#chk_display_narration_id').prop('checked') == false) {
+            //    $("#AccountLedgerTable #note_tr_id").remove();
+            //}
+            $('#DebtorsStatementTable thead tr:eq(0)').find("th:eq(0)").text("");
+            $('#dtl_Table thead tr').remove();
+            $('#dtl_Table  tbody').find('tr:eq(0)').remove();
+
+            window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_head_id]').html()));
+            e.preventDefault();
+        });
+
+
+       
+        //Export To PDF
+      
+        function ExportPdf() {
+         // $('#DebtorsStatementTable thead').find("tr:eq(0)").remove();
+            $('#dtl_Table thead tr').remove();
+            $('#dtl_Table  tbody').find('tr:eq(0)').remove();
+            kendo.drawing
+             .drawDOM("#div_export_head_id", 
+            { 
+                paperSize: "A4",
+                margin: { top: "1cm", bottom: "1cm" },
+                scale: 0.6,
+                height: 500
+            })
+                .then(function(group){
+                  kendo.drawing.pdf.saveAs(group, "Exported.pdf")
+                
+                });
+        }
+
+        //Export To Word Document  
+       function Export2Doc(element, filename = '') {
+           
+            //$('#DebtorsStatementTable thead tr:eq(0)').find("th:eq(0)").text("");
+            //    $('#dtl_Table thead tr').remove();        
+            //    $('#dtl_Table  tbody').find('tr:eq(0)').remove();
+
+                var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
+                var postHtml = "</body></html>";
+                var html = preHtml + document.getElementById(element).innerHTML + postHtml;
+        
+                var blob = new Blob(['\ufeff', html], {
+                    type: 'application/msword'
+                });
+           
+                // Specify link url
+                var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+
+                // Specify file name
+                filename = filename ? filename + '.doc' : 'document.doc';
+
+                // Create download link element
+                var downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+
+                if (navigator.msSaveOrOpenBlob) {
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                } else {
+                    // Create a link to the file
+                    downloadLink.href = url;
+
+                    // Setting the file name
+                    downloadLink.download = filename;
+
+                    //triggering the function
+                    downloadLink.click();
+                }
+                document.body.removeChild(downloadLink);
+            }
+    
+        
+           
+                
+                  
+
+
+
+
+
+
+
    
         function Debtors_Statement_Display() {
             $('#DebtorsStatementTable> tbody').html('');

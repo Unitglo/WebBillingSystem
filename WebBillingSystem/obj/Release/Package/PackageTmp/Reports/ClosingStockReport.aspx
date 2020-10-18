@@ -39,13 +39,13 @@
                               </select>
                           </div>
                            <div class="col-md-3 form-group">
-                              <label>From Date :</label>
+                              <label>Till Date :</label>
                             <input type="date" runat="server" class="form-control from_date_class"  id="from_date_id" />
                           </div>
-                          <div class="col-md-3 form-group">
+<%--                          <div class="col-md-3 form-group">
                               <label>To Date :</label>
                             <input type="date" runat="server" class="form-control to_date_class"  id="to_date_id"/>
-                          </div>
+                          </div>--%>
                         </div>
                       <div class="row">
                           <div class="col-md-3 form-group">
@@ -69,14 +69,14 @@
                                     <div class="card card-sm">
 										<div class="card-body bg-light" style="text-align: -webkit-center;">
                                             <table>
-                                                <tr><td><h4 id="comp_name_id" runat="server"></h4></td></tr>
-                                                <tr><td style="width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
-                                                <tr><td> Address -<label runat="server" id="comp_add_id"></label></td></tr>
-                                                <tr><td>Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
-                                                <tr><td>Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
-                                                <tr><td>GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
-                                                <tr><td>PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
-                                                <tr><td>CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center"><h4 id="comp_name_id" runat="server"></h4></td></tr>
+                                                <tr><td colspan="8" style="text-align:center;width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center"> Address -<label runat="server" id="comp_add_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
+                                                <tr><td colspan="8" style="text-align:center">Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
+                                                <tr><td colspan="8" style="text-align:center">CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
                                             </table>
 										</div>
 									</div>				                                  
@@ -90,7 +90,7 @@
                                  <div class="card card-sm">
 									<div class="card-body bg-light" style="text-align: -webkit-center;">
                                         <table><tbody>
-                                             <tr><td> <h5 id="company_name_id" runat="server"></h5></td></tr>
+                                             <tr><td colspan="4" style="text-align:center"> <h5 id="company_name_id" runat="server"></h5></td></tr>
                                             
                                        </tbody></table>
                          </div></div></div></div>
@@ -116,9 +116,12 @@
 
                             </thead>                                           
                             <tbody>
-
+                                 
+                           
+                         
                             </tbody>
-					     </table>
+                          
+                         </table>
                         <!-- /start Table -->
 	                    </div> 
                     </div>
@@ -148,20 +151,20 @@
             padding: 0px !important;
         }
     </style>
-    
+    
      <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous">
     </script>
 
-     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    
+     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    
 
 <script type="text/javascript">
     var monthsName = [ "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March" ];
@@ -182,19 +185,31 @@
             month_wise_products = JSON.parse(month_wise_products  );
         }
         var month_wise_tr = "";
-        monthsName.forEach(function (key, index) {
+       /* monthsName.forEach(function (key, index) {
+            if (((new Date($(".from_date_class").val()).getMonth()) - 3) >= index) {
             var edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand' data-month-name='" + key + "' data-month-num='" + monthNum[index] + "' onClick='month_div(this)'></a>";
             month_wise_tr += "<tr>" +
                         "<td colspan='1'>"+ edit_button + "</td>" +
                         "<td colspan='2' >" + key + "</td>" +
                         "<tr id='month-" + key + "'></tr>"+
-                        "</tr>";
-        });
+                "</tr>";
+            }
+            
+        });*/
+        month_wise_tr = "<tr id='month-0'></tr>";
+         
         $("#StockLedger tbody").html(month_wise_tr);
-        monthsName.forEach(function (key, index) {
-            show_details_of_month(key);
-        });
-        
+        //monthsName.forEach(function (key, index) {
+        //    show_details_of_month(key);
+        //});
+        show_details_of_month(0);
+        $("#month-0 table").append("<tr><th>TOTAL</th>"+
+            "<th class=''></th>"+
+            "<th class='cost_price'></th>"+
+            "<th class='cost_qty'></th>"+
+            "<th class='cost_value'></th>"+
+            "</tr>");
+        calTotal();
     }
     function month_div(obj) {
         var m_name = $(obj).attr("data-month-name");
@@ -204,7 +219,6 @@
         var day_details = "";
         
         all_products.forEach(function (key, index) {
-
             var product_month_qty = parseFloat(all_products[index].product_open_qty);
             var product_month_cost =parseFloat( all_products[index].product_open_value);
             var product_month_unit_rate = parseFloat(all_products[index].product_open_unit_rate);
@@ -214,13 +228,13 @@
             var outword_qty = 0.00;
             var outword_cost = 0.00;
             month_wise_products.forEach(function (key1, index1) {
-
-                if (key1.product_name == key.product_name && key1.product_monthname == month) {
+//
+  //              if (key1.product_name == key.product_name && key1.product_monthname == month) {
+                if (key1.product_name == key.product_name ) {
                     //product_month_qty = key.product_open_qty;
                     //product_month_cost = key.product_open_cost;
                     //product_month_unit_rate = key.product_open_unit_rate;
                     //product_month_value = key.product_open_value;
-
                     if (key1.product_static_type == "sales") {
                         // sale prize is high so cost is showing negative 
                         outword_qty = outword_qty + parseFloat(key1.product_qty);
@@ -231,7 +245,6 @@
                     if (key1.product_static_type == "saleReturn") {
                         inword_qty = inword_qty + parseFloat(key1.product_qty);
                         inword_cost = inword_qty + parseFloat(key1.product_value);
-
                         //                      product_month_cost = product_month_cost +(product_month_unit_rate * product_month_qty);
                         //                      product_month_qty = product_month_qty + key1.product_qty;                       
                     }
@@ -251,45 +264,34 @@
                         //product_month_cost = product_month_cost -(product_month_unit_rate * product_month_qty);
                         //product_month_qty = product_month_qty - key1.product_qty;                       
                     }
-
-
                     //                    all_products[index].product_close_qty = key1.product_qty;
                     //                    all_products[index].product_close_cost = key1.product_value/key1.product_qty;
                     //                    all_products[index].product_close_unit_rate = key1.product_value/key1.product_qty;
                     //                    all_products[index].product_close_value = key1.product_value;
-
-
                     //all_products[index].product_close_qty = key.product_qty;
                     //all_products[index].product_close_cost = key.product_close_cost;
                     //all_products[index].product_close_unit_rate = key.product_close_unit_rate;
                     //all_products[index].product_close_value = key.product_value;
-
                     //all_products[index].product_close_qty = key.product_qty;
                     //all_products[index].product_close_cost = key.product_close_cost;
                     //all_products[index].product_close_unit_rate = key.product_close_unit_rate;
                     //all_products[index].product_close_value = key.product_value;
-
                 }
             });
-
             /*
             product_close_qty
             product_close_cost
             product_close_unit_rate
             product_close_value
             */
-
             /*
             product_open_cost
             product_open_qty
             product_open_unit_rate
             product_open_value
             */
-
-
             //            product_month_unit_rate
             //            product_month_value
-
             var temp_unit_rate = product_month_cost / product_month_qty;
             var temp_unit_rate1 = outword_cost / outword_qty;
             var temp_unit_rate2 = inword_cost / inword_qty;
@@ -308,38 +310,38 @@
                    product_month_cost = temp_unit_rate * product_month_qty;
                    product_month_unit_rate = temp_unit_rate;
                    product_month_value = temp_unit_rate * product_month_qty;
-
                     all_products[index].product_open_qty = product_month_qty ;
                     all_products[index].product_open_cost = product_month_cost;
                     all_products[index].product_open_unit_rate = product_month_unit_rate ;
                     all_products[index].product_open_value = product_month_cost;
-
                     all_products[index].product_close_qty = product_month_qty;
                     all_products[index].product_close_cost = product_month_cost;
                     all_products[index].product_close_unit_rate = product_month_unit_rate ;
                     all_products[index].product_close_value = product_month_cost;
-            day_details += '' +
-                '<tr><td style="text-align:center; width: 80px;">' + key.product_group + '</td>' +
-                '<td style="text-align:center; width: 270px">' + key.product_name + '</td>' +
-                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0) + '</td>' +
-                    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0)+ '</td>' +
-                '</tr>';
-
+                    day_details += '' +
+                        '<tr><td style="text-align:center; width: 80px;">' + key.product_group + '</td>' +
+                        '<td style="text-align:center; width: 270px">' + key.product_name + '</td>' +
+                        '<td style="text-align: right; width: 100px;" class="prodqua">' + ((!isNaN(all_products[index].product_close_qty))?all_products[index].product_close_qty:0) + '</td>' +
+                            '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_unit_rate)) ? all_products[index].product_close_unit_rate : 0) + '</td>' +
+                            '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0)+ '</td>' +
+                     '</tr>';
+                
         });
+     
+        
         day_details = '<tr><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th> <th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Quantity</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Rate</th><th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:100px;">Value</th><tr>'+day_details;
         $("#month-" + month).html("<td colspan='5'><table style='width: 100%;'>"+day_details+"</table></td>");
-
     }
+   
+
+   
+       
 
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
-
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
             e.preventDefault();
     });
-
-
     //Export To Word Document   
     function Export2Doc(element, filename = '') {
         var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
@@ -351,34 +353,26 @@
         });
         // Specify link url
         var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
-
         // Specify file name
         filename = filename ? filename + '.doc' : 'document.doc';
-
         // Create download link element
         var downloadLink = document.createElement("a");
-
         document.body.appendChild(downloadLink);
-
         if (navigator.msSaveOrOpenBlob) {
             navigator.msSaveOrOpenBlob(blob, filename);
         } else {
             // Create a link to the file
             downloadLink.href = url;
-
             // Setting the file name
             downloadLink.download = filename;
-
             //triggering the function
             downloadLink.click();
         }
         document.body.removeChild(downloadLink);
     }
-
     function ExportPdf() { 
         //$('#dtl_Table thead tr').remove();
         //$('#dtl_Table  tbody').find('tr:eq(0)').remove();
-
             kendo.drawing
                 .drawDOM("#div_export_id", 
                 { 
@@ -391,6 +385,29 @@
                     kendo.drawing.pdf.saveAs(group, "Exported.pdf")
                 });
     }
+    function calTotal(){
+        var cost_prise_total_qty = 0.00;
+        var cost_prise_total_rate = 0.00;
+        var cost_price_total_value=0.00;
+        $("#StockLedger table tr").each(function(index,data){
+            var temp_cost_qty = parseFloat($(this.cells[2]).html());
+            var temp_cost_prise = parseFloat($(this.cells[3]).html());
+            var temp_cost_value = parseFloat($(this.cells[4]).html());
+ 
+            if(!isNaN(temp_cost_qty))
+                cost_prise_total_qty =(parseFloat(cost_prise_total_qty)+temp_cost_qty).toFixed(2);
+            if(!isNaN(temp_cost_prise) )
+                cost_prise_total_rate=(parseFloat( cost_prise_total_rate)+parseFloat(temp_cost_prise)).toFixed(2);
+            if(!isNaN(temp_cost_value))
+                cost_price_total_value = (parseFloat(cost_price_total_value)+parseFloat(temp_cost_value)).toFixed(2);
+        
+        });
+        console.log(cost_prise_total_rate);
 
+        $(".cost_price").html(cost_prise_total_qty);
+        $(".cost_qty").html(cost_prise_total_rate);
+        $(".cost_value").html(cost_price_total_value);
+ 
+    }
  </script>
 </asp:Content>
