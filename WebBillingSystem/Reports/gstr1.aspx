@@ -869,8 +869,8 @@
             //p_json_obj.data.splice(0, 1);
             for (var i = 0; i < count; i++) {
                 //if (i > 0) {
-                    $('#outwardSupply_Table> tbody:last').append('<tr>' +
-
+                $('#outwardSupply_Table> tbody:last').append('<tr>' +
+                
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['recename'] + '</td>' +
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['gstno'] + '</td>' +
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['statename'] + '</td>' +
@@ -953,13 +953,13 @@
                 var count = JSON.parse(jsonSettings).length;
                 for (var i = 0; i < count; i++) {
                     $('#CRDRNOTE_Table> tbody:last').append('<tr>' +
-
+                   
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['recename'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['gstno'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['istate'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['pos'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['type'] + '</td>' +
-                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['drcrno'] + '</td>' +
+                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['drcrditno'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['drcrdate'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['reason'] + '</td>' +
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['hsn'] + '</td>' +
@@ -1021,7 +1021,7 @@
                              );
 
                 }--%>
-
+            //financialyear();
         }
 
         function exportHTML() {
@@ -1302,15 +1302,43 @@ console.log(workbookXML);
  //     }
  //   }
  // }
- //           });
-        var date = new Date();
-     
+        //           });
+
+
+        // need to be modify 
+
+
+    var date = new Date();
+    var FromDateId = "";
+    var ToDateId = "";
+    var year = date.getFullYear();
+    //function financialyear() {
+      
+    //    if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+    //    {
+    //        alert("hi")
+    //        FromDateId = (year - 1) + "-04-01";
+    //    }
+    //    else {
+    //        FromDateId = year + "-04-01";
+    //    }
+
+    //    date.innerHTML = FromDateId + " TO " + ToDateId;
+    //}
+       
+        
+   
+  
+   
+    
+  
         function monthChange() {
             
             var firstDay = date.getFullYear() + "-" +  $('.month_class').val() + "-" + 1; 
              var lastDay = date.getFullYear() + "-" + $('.month_class').val() + "-" + daysInMonth($('.month_class').val(), date.getFullYear()); 
             $("[id*=hdnMonthFromDateId]").val(firstDay);
             $("[id*=hdnMonthToDateId]").val(lastDay);
+            year();
             
         }
 

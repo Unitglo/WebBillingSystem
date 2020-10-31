@@ -61,6 +61,7 @@ namespace WebBillingSystem
                     if (reader["ca_approved_status"].ToString() =="3" ) {
                         edit_button = "";
                         status_label = "Freezed";
+                         
                     }
                     else{
                         status_label = "Open";

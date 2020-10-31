@@ -24,7 +24,7 @@
                 <!-- Title -->
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span>Expenses Vouchers Details</h4>
-                    <input type="button" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" rel="tooltip" data-toggle="modal"  data-original-title="Add New Region" style="float: right;" value="+"/>
+                    <input type="button" id="Addbtn" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" rel="tooltip" data-toggle="modal"  data-original-title="Add New Region" style="float: right;" value="+"/>
                 </div>
                  <!-- /Title -->
                 <br />
@@ -187,18 +187,31 @@
                 $(".class_Total").css("width", "50px");
     }
     window.onload = function () {
+        loadModalDiv();
         purchase_details_display();
         $("#table_div_id").hide();
         purchase_details();
         $("a.exportExpeExcel").removeClass("dt-button buttons-excel buttons-html5");
         $("a.exportExpeExcel").addClass("btn btn-info btn-sm btn-just-icon btn-round");
-
+       
     };
 
-    function loadModalDiv()
+   function loadModalDiv()
     {
-        location.href = '/Vouchers/ExpensesVoucher';
-    }
+      
+       <%if (Session["page_role"].ToString() == "CA")
+    {%>
+      
+       $("#Addbtn").hide();
+      
+      <% }%>
+   <%else{%>
+       $("#Addbtn").show();
+       $("#Addbtn").click(function(){ 
+           location.href = '/Vouchers/ExpensesVoucher';
+       })
+ <% }%>
+  }
 
     function Export2Doc(element, filename = '') {
         $(".exportExpeExcel").hide();

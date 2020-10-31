@@ -31,10 +31,21 @@ namespace WebBillingSystem
                 from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
                 to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
 
-                int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
+                int year = 2020;
+                try
+                {
+                    year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
+                }
+                catch (Exception e1)
+                {
+                    year = Int32.Parse(Convert.ToDateTime(dateTime).ToString("yyyy"));
+                }
+                //   int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
                 if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
                 {
-                    from_date_id.Value = (year - 1) + "-04-01";
+                    //from_date_id.Value = (year - 1) + "-04-01";
+                    from_date_id.Value = dateTime.AddYears(-1).ToString("yyyy-MM-dd");
+
                 }
                 else
                 {

@@ -40,7 +40,12 @@ namespace WebBillingSystem
                     if (sess_login_reader != null)
                         sess_login_reader.Close();
                     String alter_OBJ = File.ReadAllText(Server.MapPath("~/Base/alter_query.txt"));
-                    baseHealpare.SelectManualQuery(alter_OBJ);
+                   ;
+                    foreach (String alter_query in alter_OBJ.Split(';'))
+                    {
+                        baseHealpare.SelectManualQuery(alter_query);
+                    }
+
 
                     if (Session["role_code"] != null)
                         if (Session["role_code"] + "" == "SUPERADMIN")

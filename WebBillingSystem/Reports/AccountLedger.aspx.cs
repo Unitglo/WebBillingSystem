@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
+
 namespace WebBillingSystem
 {
     public partial class AccountLedger : System.Web.UI.Page
@@ -29,19 +30,25 @@ namespace WebBillingSystem
                 from_date_id.Value = dateTime.ToString("yyyy-MM-dd");
                 to_date_id.Value = dateTime.ToString("yyyy-MM-dd");
 
-                int year = Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
+                int year = 2020;
+                try {
+                  year=  Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("yyyy"));
+                }
+                catch (Exception e1) {
+                    year = Int32.Parse(Convert.ToDateTime(dateTime).ToString("yyyy"));
+                }
                 if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
                 {
-                    from_date_id.Value = (year - 1) + "-04-01";
+                    //from_date_id.Value = (year - 1) + "-04-01";
+                from_date_id.Value = dateTime.AddYears(-1).ToString("yyyy-MM-dd");
                 }
                 else
                 {
-                    from_date_id.Value = year + "-04-01";
+                     from_date_id.Value = year + "-04-01";                   
                 }
 
-                date_id.InnerHtml = Convert.ToDateTime(from_date_id.Value.ToString()).ToString("d-MMM-yyyy") + " TO " + Convert.ToDateTime(to_date_id.Value.ToString()).ToString("d-MMM-yyyy");
-
-                //account_main_group.Items.Clear();
+            date_id.InnerHtml = Convert.ToDateTime(from_date_id.Value.ToString()).ToString("d-MMM-yyyy") + " TO " + Convert.ToDateTime(to_date_id.Value.ToString()).ToString("d-MMM-yyyy");
+                 //account_main_group.Items.Clear();
                 MySqlDataReader main_drop = baseHealpare.SelectAllValues(baseHealpare.TableAccountMainGroup, " where status=0");
                 while (main_drop != null && main_drop.Read())
                 {

@@ -241,8 +241,8 @@ public class DataBaseHealpare : TableBase, IDisposable
 
         if (HttpContext.Current.Request.IsLocal)
         {
-                con = new MySqlConnection("server=localhost;user id=root;Password=;database=" + pms + ";persist security info=False; convert zero datetime=True");
-//                con = new MySqlConnection("server=127.0.0.1;user id=root;Password=;database=pms_demo;persist security info=False; convert zero datetime=True");
+               con = new MySqlConnection("server=localhost;user id=root;Password=;database=" + pms + ";persist security info=False; convert zero datetime=True");
+  //             con = new MySqlConnection("server=127.0.0.1;user id=root;Password=;database=pms_demo;persist security info=False; convert zero datetime=True");
             }
             else
         {

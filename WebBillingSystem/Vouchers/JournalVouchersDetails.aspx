@@ -22,7 +22,7 @@
                 <!-- Title -->
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span>Journal Vouchers Details</h4>
-                    &nbsp&nbsp<input type="button" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" rel="tooltip" data-toggle="tooltip-dark" data-placement="top" title="Add new Journal Entry" style="float: right;" value="+"/>
+                    &nbsp&nbsp<input type="button" id="Addbtn" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" rel="tooltip" data-toggle="tooltip-dark" data-placement="top" title="Add new Journal Entry" style="float: right;" value="+"/>
                 </div>                
                 <!-- /Title -->
 
@@ -201,11 +201,22 @@ tr.shown td.details-control {
                 $("table#dtl_Table.dataTable").css("display", "contents");
             }
         });
+        loadModalDiv();
     }
 
     function loadModalDiv()
     {
-        location.href = '/Vouchers/JournalEntry';
-    }    
+        <%  if (Session["page_role"].ToString() == "CA")
+    {%>
+        $("#Addbtn").hide();
+      
+      <% }%>
+   <%else{%>
+        $("#Addbtn").show();
+        $("#Addbtn").click(function () {
+            location.href = '/Vouchers/JournalEntry';
+        })
+ <% }%>
+  }
 </script>
 </asp:Content>

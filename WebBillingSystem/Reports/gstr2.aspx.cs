@@ -44,6 +44,7 @@ namespace WebBillingSystem
 
         string FromDateId = "";
         string ToDateId = "";
+        string date_id;
         protected void search_jv_details_event(object sender, EventArgs e)
         {
             Grid.Visible = true;
@@ -58,6 +59,19 @@ namespace WebBillingSystem
                 FromDateId = hdnQuarterFromDateId.Value;
                 ToDateId = hdnQuarterToDateId.Value;
             }
+
+            int year = 2020;
+            if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+            {
+                FromDateId = (year - 1) + "-04-01";
+            }
+            else
+            {
+                FromDateId = year + "-04-01";
+            }
+             date_id = FromDateId + " TO " + ToDateId;
+
+
 
             MySqlDataReader msq_reader = baseHealpare.SelectManualQuery("SELECT purchasemst.seller_name as suppliername, purchasemst.gstin as gstno, purchasemst.s_state as statename, '' as pos, purchasemst.invoice_no no, purchasemst.invoice_date idate, total_cost as invoice_value, purchasedtl.hsn_code as hsncode, purchasedtl.product_desc goodservice, purchasedtl.tax_val taxval, purchasedtl.qty qauty, purchasedtl.uom unit, purchasedtl.igst_rate igstrate, purchasedtl.igst_amt igstamt, purchasedtl.cgst_rate cgstrate, purchasedtl.cgst_amt cgstamt, purchasedtl.sgst_rate sgstrate, purchasedtl.sgst_amount sgstamt, 0 cessrate, 0 cessamt, purchasemst.`reverse_charge` revcharge, '' eligi_itc, total_igst total_tax_igst, total_cgst total_tax_cgst, total_sgst total_tax_sgst, 0 total_tax_cess, 0 portcode, '' regular, '' itemtype FROM `pms_purchase_invoice_mst` as purchasemst LEFT JOIN pms_purchase_invoice_dtl AS purchasedtl ON purchasemst.pur_mst_auto_id = purchasedtl.reference_id where purchasemst.invoice_date between '" + FromDateId + "' and '" + ToDateId + "'");
             sheettwomaster = new System.Collections.ArrayList();

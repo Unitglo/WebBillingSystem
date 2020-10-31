@@ -258,6 +258,7 @@ namespace WebBillingSystem
         }
         string FromDateId = "";
         string ToDateId = "";
+        string date_id;
         protected void search_jv_details_event(object sender, EventArgs e)
         {
             Grid.Visible = true;
@@ -271,6 +272,20 @@ namespace WebBillingSystem
                 FromDateId = hdnQuarterFromDateId.Value;
                 ToDateId = hdnQuarterToDateId.Value;
             }
+            int year = 2020;
+            if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+            {
+                FromDateId = (year - 1) + "-04-01";
+            }
+            else
+            {
+                FromDateId = year + "-04-01";
+            }
+            
+
+       date_id = FromDateId + " TO " + ToDateId;
+        
+
 
             MySqlDataReader msq_reader = baseHealpare.SelectManualQuery("SELECT salemst.seller_name as recename, salemst.gstin as gstno, salemst.s_state as statename, `place_of_supply` as pos, salemst.invoice_no no, salemst.invoice_date idate, `total_cost` as invoice_value, saledtl.hsn_code as hsncode, saledtl.product_desc goodservice, saledtl.tax_val taxval, saledtl.qty qauty, saledtl.uom unit, saledtl.igst_rate igstrate, saledtl.igst_amt igstamt, saledtl.cgst_rate cgstrate, saledtl.cgst_amt cgstamt, saledtl.sgst_rate sgstrate, saledtl.sgst_amount sgstamt, 0 cessrate, 0 cessamt, salemst.`reverse_charge` revcharge, '' ecomoperator, 0 comp_gstin, 0 exporttype, 0 shipbillno, 0 shipbilldate, 0 portcode, `sale_invoice_type` regular, '' itemtype FROM `pms_sale_invoice_mst` as salemst LEFT JOIN pms_sale_invoice_dtl AS saledtl ON salemst.sale_mst_id = saledtl.reference_id  where salemst.invoice_date between '" + FromDateId + "' and '" + ToDateId + "'");
             sheettwomaster = new System.Collections.ArrayList();
@@ -368,7 +383,6 @@ namespace WebBillingSystem
                 json_Amendment_outward_supply_obj = serializer.Serialize(sheetthreemaster);
 
             }
-            
             reader = baseHealpare.SelectManualQuery("SELECT drcrmst.bill_party_name recename, drcrmst.bill_party_gstin gstno, drcrmst.bill_party_state statename, drcrmst.bill_party_address pos, drcrmst.note_type type, drcrmst.document_no as drcrditno, drcrmst.date_of_issue drcrdate, drcrmst.remarks reason, drcrdtl.hsn_code hsn, drcrdtl.product_name goodservice, drcrdtl.quantity qauty, drcrdtl.uom unit, drcrmst.against_invoice origino, drcrmst.date_of_invoice origidate, 0 diffvalue, drcrdtl.igst_rate igstrate, drcrdtl.igst_amount igstamount, drcrdtl.cgst_rate cgstrate, drcrdtl.cgst_amount cgstamount, drcrdtl.sgst_rate sgstrate, drcrdtl.sgst_amount sgstamount, 0 cessrate, 0 cessamount, '' revcharge, 0 pregst FROM pms_voucher_dr_cr_note_mst drcrmst RIGHT JOIN pms_voucher_dr_cr_note_dtl drcrdtl ON drcrdtl.refrance_id = drcrmst.dr_cr_Id WHERE drcrmst.note_type = 'credit' and drcrmst.status = 0 and drcrmst.date_of_issue between '" + FromDateId + "' and '" + ToDateId + "'");
             sheetfourmaster = new System.Collections.ArrayList();
 
@@ -427,7 +441,8 @@ namespace WebBillingSystem
                     pos = reader["pos"],
                     type = reader["type"],
                     drcrditno = reader["drcrditno"],
-                    drcrdate = reader["drcrdate"],                    
+                    drcrdate = reader["drcrdate"],
+                  //  drcrdate = Convert.ToDateTime(reader["drcrdate"]).ToString("dd.MM.yyyy"),
                     revdrcrno = reader["revdrcrno"],                    
                     revdrcrdate = reader["revdrcrdate"],                    
                     reason = reader["reason"],

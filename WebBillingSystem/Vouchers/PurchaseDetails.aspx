@@ -34,7 +34,7 @@
                 <!-- Title -->
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span>Purchase Invoice Details</h4>
-                    <input type="button" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" rel="tooltip" style="float: right;" value="+" data-toggle="tooltip-dark" data-placement="top" title="Add new Purchase Entry"/>
+                    <input type="button" id="Addbtn" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" rel="tooltip" style="float: right;" value="+" data-toggle="tooltip-dark" data-placement="top" title="Add new Purchase Entry"/>
                 </div>
                  <!-- /Title -->
 
@@ -210,13 +210,23 @@
         purchase_details();
         $("a.exportPurExcel").removeClass("dt-button buttons-excel buttons-html5");
         $("a.exportPurExcel").addClass("btn btn-info btn-sm btn-just-icon btn-round");
-
+        loadModalDiv();
     };
 
-    function loadModalDiv()
+     function loadModalDiv()
     {
-        location.href = '/Vouchers/Purchaseinvoice';
-    }
+      <%  if (Session["page_role"].ToString() == "CA")
+    {%>
+         $("#Addbtn").hide();
+       
+      <% }%>
+         <%else{%>
+         $("#Addbtn").Show();
+         $("#Addbtn").click(function(){ 
+             location.href = '/Vouchers/Purchaseinvoice';
+         })
+ <% }%>
+  }
 
     function Export2Doc(element, filename = '') {
         $(".exportPurExcel").hide();

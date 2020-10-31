@@ -200,3 +200,43 @@ G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\obj\Debug\WebBi
 G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\obj\Debug\WebBillingSystem.csproj.CopyComplete
 G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\obj\Debug\WebBillingSystem.dll
 G:\akash\Account Project\smita\WebBillingSystem\WebBillingSystem\obj\Debug\WebBillingSystem.pdb
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\alter_query.txt
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\company_profile.txt
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\ca_profile.txt
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\company_db_table.txt
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\ca_db_table.txt
+D:\WebBillingSystem-master\WebBillingSystem\bin\Assets\dist\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.ttf
+D:\WebBillingSystem-master\WebBillingSystem\bin\Assets\dist\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.woff
+D:\WebBillingSystem-master\WebBillingSystem\bin\Assets\dist\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.woff2
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\configuration.json
+D:\WebBillingSystem-master\WebBillingSystem\bin\Base\configuration - Copy.json
+D:\WebBillingSystem-master\WebBillingSystem\bin\upload\StockExcelTemplate.xlsx
+D:\WebBillingSystem-master\WebBillingSystem\bin\WebBillingSystem.dll.config
+D:\WebBillingSystem-master\WebBillingSystem\bin\WebBillingSystem.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\WebBillingSystem.pdb
+D:\WebBillingSystem-master\WebBillingSystem\bin\DocumentFormat.OpenXml.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\EntityFramework.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\EntityFramework.SqlServer.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\MySql.Data.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\mysql.data.entity.EF6.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\MySqlBackup.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\Newtonsoft.Json.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\NLog.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\System.IO.Compression.ZipFile.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\System.Net.Http.Extensions.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\System.Net.Http.Primitives.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\WebBillingSystem-master\WebBillingSystem\bin\DocumentFormat.OpenXml.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\EntityFramework.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\EntityFramework.SqlServer.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\Newtonsoft.Json.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\NLog.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\System.Net.Http.Extensions.xml
+D:\WebBillingSystem-master\WebBillingSystem\bin\System.Net.Http.Primitives.xml
+D:\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.csproj.App.config
+D:\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.csproj.ResolveComReference.cache
+D:\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.dll
+D:\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.pdb
+D:\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.csprojResolveAssemblyReference.cache
