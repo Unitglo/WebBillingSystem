@@ -32,6 +32,18 @@ namespace WebBillingSystem
         public Boolean IsDBFound = true;
         protected void Page_Load(object sender, EventArgs e)
         {
+       //     string mysqlconstr = System.Configuration.ConfigurationManager.ConnectionStrings["Mysqlcon"].ConnectionString;
+
+
+
+
+            //MySql.Data.MySqlClient.MySqlConnection cn = new MySqlConnection(mysqlconstr);
+            //if (cn.State == System.Data.ConnectionState.Open)
+            //{
+            //    cn.Close();
+            //}
+
+            //cn.Open();
             if (!Page.IsPostBack )
             {
                 Session.RemoveAll();

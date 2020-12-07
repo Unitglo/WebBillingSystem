@@ -202,11 +202,10 @@ namespace WebBillingSystem
 
                 });
             }
-            if(reader != null)
+
+            if (reader != null)
             {
                 reader.Close();
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-                json_acc_head_obj = serializer.Serialize(acc_head_arrylist);
             }
             reader = baseHealpare.SelectManualQuery("SELECT sum(stock_opening_amt) openi_amt_cnt,sum(valuation_close_amt) close_amt_cnt  FROM pms_stock WHERE status = 0");
             while (reader != null && reader.Read())
@@ -216,8 +215,26 @@ namespace WebBillingSystem
             }
             if (reader != null)
             {
+                string edit_button = "<a href='/Reports/ClosingStockValuationReport.aspx' class='btn btn-xs btn-light details-control-accHead fa fa-share' data-toggle='tooltip-dark' data-placement='top' title='Expand'></>";
                 reader.Close();
+                acc_head_arrylist.Add(new
+                {
+                    edit_button_acc = edit_button,
+                    sub_group_name_acc = "Inventories",
+                    perticulars_acc = "Closing Stock",
+                    open_Bal_debit_acc = "0",
+                    open_Bal_credit_acc = openi_amt_cnt,
+                    transaction_debit_acc = "0",
+                    transaction_credit_acc = "0",
+                    close_Bal_debit_acc = "0",
+                    close_Bal_credit_acc = close_amt_cnt
+
+                });
+
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                json_acc_head_obj = serializer.Serialize(acc_head_arrylist);
             }
+
         }
     }
 }

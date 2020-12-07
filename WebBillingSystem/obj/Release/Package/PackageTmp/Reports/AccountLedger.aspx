@@ -501,53 +501,53 @@
         document.body.removeChild(downloadLink);
     }
 
-    //Export To Word Document
-    function ExportToDocMonth(element) {
+        //Export To Word Document
+        function ExportToDocMonth(element) {
 
-        var filename = "Account Ledger Month Report";
-        contents = $(element).parent().parent().find("td:eq(1)").html();
-        contents = $("#det_id").html() + "<div> Month : " + contents + $("." + contents).html()+"</div>";
+            var filename = "Account Ledger Month Report";
+            contents = $(element).parent().parent().find("td:eq(1)").html();
+            contents = $("#det_id").html() + "<div> Month : " + contents + $("." + contents).html()+"</div>";
 
-        $(element).parent().parent().find("th:eq(0)").text("");
+            $(element).parent().parent().find("th:eq(0)").text("");
 
-        var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
-        var postHtml = "</body></html>";
-        var html = preHtml + contents + postHtml;
+            var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
+            var postHtml = "</body></html>";
+            var html = preHtml + contents + postHtml;
         
-        var blob = new Blob(['\ufeff', html], {
-            type: 'application/msword'
-        });
-        // Specify link url
-        var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+            var blob = new Blob(['\ufeff', html], {
+                type: 'application/msword'
+            });
+            // Specify link url
+            var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
 
-        // Specify file name
-        filename = filename ? filename + '.doc' : 'document.doc';
+            // Specify file name
+            filename = filename ? filename + '.doc' : 'document.doc';
 
-        // Create download link element
-        var downloadLink = document.createElement("a");
+            // Create download link element
+            var downloadLink = document.createElement("a");
 
-        document.body.appendChild(downloadLink);
+            document.body.appendChild(downloadLink);
 
-        if (navigator.msSaveOrOpenBlob) {
-            navigator.msSaveOrOpenBlob(blob, filename);
-        } else {
-            // Create a link to the file
-            downloadLink.href = url;
+            if (navigator.msSaveOrOpenBlob) {
+                navigator.msSaveOrOpenBlob(blob, filename);
+            } else {
+                // Create a link to the file
+                downloadLink.href = url;
 
-            // Setting the file name
-            downloadLink.download = filename;
+                // Setting the file name
+                downloadLink.download = filename;
 
-            //triggering the function
-            downloadLink.click();
+                //triggering the function
+                downloadLink.click();
+            }
+            document.body.removeChild(downloadLink);
         }
-        document.body.removeChild(downloadLink);
-    }
 
 
-//Export To PDF
-    function ExportPdf() { 
-        $('#dtl_Table thead tr').remove();
-        $('#dtl_Table  tbody').find('tr:eq(0)').remove();
+        //Export To PDF
+        function ExportPdf() { 
+            $('#dtl_Table thead tr').remove();
+            $('#dtl_Table  tbody').find('tr:eq(0)').remove();
 
             kendo.drawing
                 .drawDOM("#div_export_id", 
@@ -558,25 +558,27 @@
                     height: 500
                 })
                     .then(function(group){
-                    kendo.drawing.pdf.saveAs(group, "Exported.pdf")
-                });
-    }
-
-    $(document).ready(function() { 
-                var specialElementHandlers = {
-                    '#editor': function(element, renderer) { return true; }
-                };
-
-                $('.btnPdfMonth').click(function() {
-                    var doc = new jsPDF();
-
-                    doc.fromHTML($('#div_export_id').html(), 15, 15, {
-                        'width': 170,'elementHandlers': specialElementHandlers
+                        kendo.drawing.pdf.saveAs(group, "Exported.pdf")
                     });
+        }
 
-                    doc.save('sample-file.pdf');
-                });  
-            });
+        $(document).ready(function() { 
+            var specialElementHandlers = {
+                '#editor': function(element, renderer) { return true; }
+            };
+
+            $('.btnPdfMonth').click(function() {
+                
+                var doc = new jsPDF();
+                 
+                doc.fromHTML($('#div_export_id').html(), 15, 15, {
+                    'width': 170,'elementHandlers': specialElementHandlers
+                });
+
+                doc.save('sample-file.pdf');
+            });  
+        });
+    
     ////Export To PDF Monthwise
     // function ExportMonthPdf(){ 
     //        var doc = new jsPDF();

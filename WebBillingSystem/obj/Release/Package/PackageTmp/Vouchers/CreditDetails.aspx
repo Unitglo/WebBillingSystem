@@ -229,13 +229,23 @@
         debit_details();
         $("a.exportCreditExcel").removeClass("dt-button buttons-excel buttons-html5");
         $("a.exportCreditExcel").addClass("btn btn-info btn-sm btn-just-icon btn-round");
-
+        btnAddClick();
     };
 
-    function loadModalDiv()
+    function btnAddClick()
     {
-        location.href = '/Vouchers/CreditNote';
-    }
+      <%  if (Session["page_role"].ToString() == "CA")
+    {%>
+        $("#ContentPlaceHolder1_btnAdd").hide();
+       
+      <% }%>
+   <%else{%>
+        $("#ContentPlaceHolder1_btnAdd").show();
+        $("#Addbtn").click(function(){ 
+            location.href = '/Vouchers/CreditNote';
+        })
+ <% }%>
+  }
 
     function Export2Doc(element, filename = '') {
         $(".exportCreditExcel").hide();

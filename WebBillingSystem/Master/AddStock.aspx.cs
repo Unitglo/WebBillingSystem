@@ -36,6 +36,7 @@ namespace WebBillingSystem
                 {
                     inv_nature_operation.Items.Add(new ListItem(nature_operation["nature_of_opration_name"].ToString(), nature_operation["stock_nature_of_opration_id"].ToString()));
                 }
+                if(nature_operation!=null)
                 nature_operation.Close();
 
                 MySqlDataReader unit_of_Measurement = baseHealpare.SelectAllValues(baseHealpare.TableUnitofmeasurment, " where status=0");

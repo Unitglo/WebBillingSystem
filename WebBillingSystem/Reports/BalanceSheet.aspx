@@ -93,12 +93,10 @@
                             <tbody>
                                  <tr>
                                     
-                                    <th onclick="show_details(this)" data-name="Purchase of stock-in-trade" >Purchase of stock-in-trade</th>
+                                  <%--  <th onclick="show_details(this)" data-name="Purchase of stock-in-trade" >Purchase of stock-in-trade</th>
 							        <td class="purchase_of_stock_in_trade_amt1"></td>
-							        <td class="purchase_of_stock_in_trade_amt2">0.00</td>
-                                    <th>Closing Stock</th>
-							        <td class="clossing_stock_am1"></td>
-							        <td class="clossing_stock_am2">0.00</td>
+							        <td class="purchase_of_stock_in_trade_amt2">0.00</td>--%>
+                                   
                                 </tr>
                               <%--  <tr>
                                     
@@ -299,7 +297,7 @@
                                 <th  onclick="show_details(this)" data-name="Inventories">Inventories</th>
 							        <td class="inventories_amt1"></td>
 							        <td class="inventories_amt2">0.00</td>
-                               </tr>
+                                      </tr>
                                    <tr>
                                              <th  onclick="show_details(this)" data-name="Short-term borrowings">Short-term borrowings</th>
 							        <td class="short_term_amt1"></td>
@@ -938,9 +936,9 @@
             var totalsum1 = 0.00;
             var totalsum2 = 0.00;
          //   var amtdifference = 0.00;
-            totalsum1 = (parseFloat($(".purchase_of_stock_in_trade_amt2").html()) + parseFloat($(".share_capital_amt2").html()) + parseFloat($(".reserve_surplus_amt2").html()) + parseFloat($(".profit_loss_amt2").html()) + parseFloat($(".money_warranty_amt2").html()) + parseFloat($(".pending_allotment_amt2").html()) + parseFloat($(".long_term_borrowing_amt2").html()) + parseFloat($(".defered_tax_lia_amt2").html()) + parseFloat($(".other_long_temlia_amt2").html()) + parseFloat($(".long_temprov_amt2").html()) + parseFloat($(".short_term_amt2").html()) + parseFloat($(".trade_payables_amt2").html()) + parseFloat($(".other_current_lia_amt2").html()) + parseFloat($(".short_term_prov_amt2").html())).toFixed(2);
+            totalsum1 = ( parseFloat($(".share_capital_amt2").html()) + parseFloat($(".reserve_surplus_amt2").html()) + parseFloat($(".profit_loss_amt2").html()) + parseFloat($(".money_warranty_amt2").html()) + parseFloat($(".pending_allotment_amt2").html()) + parseFloat($(".long_term_borrowing_amt2").html()) + parseFloat($(".defered_tax_lia_amt2").html()) + parseFloat($(".other_long_temlia_amt2").html()) + parseFloat($(".long_temprov_amt2").html()) + parseFloat($(".short_term_amt2").html()) + parseFloat($(".trade_payables_amt2").html()) + parseFloat($(".other_current_lia_amt2").html()) + parseFloat($(".short_term_prov_amt2").html())).toFixed(2);
         
-             totalsum2 = (parseFloat($(".clossing_stock_am2").html()) + parseFloat($(".tangiable_assets_amt2").html()) + parseFloat($(".intangiable_assets_amt2").html()) + parseFloat($(".capital_work_amt2").html()) + parseFloat($(".intan_assests_underdevelop_amt2").html()) + parseFloat($(".non_current_investment_amt2").html()) + parseFloat($(".deffered_tx_amt2").html()) + parseFloat($(".long_term_loan_amt2").html()) + parseFloat($(".othernon_current_amt2").html()) + parseFloat($(".current_investments_amt2").html()) + parseFloat($(".inventories_amt2").html()) + parseFloat($(".trade_receivables_amt2").html()) + parseFloat($(".cash_cash_equivalent_amt2").html()) + parseFloat($(".short_termloan_advances_amt2").html()) + parseFloat($(".other_current_assets_amt2").html())).toFixed(2);
+             totalsum2 = ( parseFloat($(".tangiable_assets_amt2").html()) + parseFloat($(".intangiable_assets_amt2").html()) + parseFloat($(".capital_work_amt2").html()) + parseFloat($(".intan_assests_underdevelop_amt2").html()) + parseFloat($(".non_current_investment_amt2").html()) + parseFloat($(".deffered_tx_amt2").html()) + parseFloat($(".long_term_loan_amt2").html()) + parseFloat($(".othernon_current_amt2").html()) + parseFloat($(".current_investments_amt2").html()) + parseFloat($(".inventories_amt2").html()) + parseFloat($(".trade_receivables_amt2").html()) + parseFloat($(".cash_cash_equivalent_amt2").html()) + parseFloat($(".short_termloan_advances_amt2").html()) + parseFloat($(".other_current_assets_amt2").html())).toFixed(2);
 
             // amtdifference = totalsum1 - totalsum2;
              console.log(totalsum1);

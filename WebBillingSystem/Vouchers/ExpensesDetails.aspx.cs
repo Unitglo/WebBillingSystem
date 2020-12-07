@@ -24,6 +24,7 @@ namespace WebBillingSystem
         {
             baseHealpare = new DataBaseHealpare();
             MySqlDataReader reader = baseHealpare.SelectAllValues(baseHealpare.expenses_voucher_mst, "ORDER BY `manual_id` ASC");
+
             expenses_master = new System.Collections.ArrayList();
 
             while (reader != null && reader.Read())

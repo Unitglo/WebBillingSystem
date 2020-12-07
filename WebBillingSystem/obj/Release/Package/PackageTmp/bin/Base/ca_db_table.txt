@@ -430,6 +430,8 @@ ALTER TABLE `pms_master_setting_all_prefix_series_number`
 ALTER TABLE `pms_master_setting_all_prefix_series_number`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+  INSERT INTO `pms_master_setting_all_prefix_series_number` (`id`, `generated_no`, `series_no`, `count`, `status`, `default_date`) VALUES (2, 'debit', 'DR/19-20/', 0, 0, '2020-03-06 16:53:47'), (3, 'credit', 'CR/19-20/', 0, 0, '2020-03-06 16:53:47'), (4, 'invoice', 'PMT/19-20/', 0, 0, '2020-03-08 14:52:15');
+
 CREATE TABLE `pms_news_and_update` (
   `auto_id` int(11) NOT NULL,
   `pms_news_title` text NOT NULL,

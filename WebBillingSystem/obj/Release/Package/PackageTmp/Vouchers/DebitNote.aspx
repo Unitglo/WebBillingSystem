@@ -806,6 +806,7 @@
         var prodcutObject = null;
 
         window.onload = function () {
+
             $(".tr_gst_Id").hide();
         select2_options();
 
@@ -1051,9 +1052,28 @@
                 $(".txtqty_class").html(p_json_obj[i]['quantity']);
                 $(".total").html(p_json_obj[i]['tax_value'] + p_json_obj[i]['discount']);
                 $(".txtdisc").html(p_json_obj[i]['discount']);
-                $(".txtIgst_class").val(p_json_obj[i]['igst_amount']);
-                $(".txtCgst_class").val(p_json_obj[i]['cgst_amount']);
-                $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+
+                //$(".txtIgst_class").val(p_json_obj[i]['igst_amount']);
+                //$(".txtCgst_class").val(p_json_obj[i]['cgst_amount']);
+                //$(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+
+                if (p_json_obj[i]['igst_amount'] == 0) {
+                 
+                    $(".chkcgst_class").prop('checked', true);
+                    $(".chkigst_class").prop('checked', false);
+                    $(".txtCgst_class").val(p_json_obj[i]['cgst_amount']).show();
+                    $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']).show();
+                    $("#tot_Cgst").show();
+                    $("#tot_Sgst").show();
+                }
+                else {
+                    $(".chkcgst_class").prop('checked', false);
+                    $(".chkigst_class").prop('checked', true);
+                    $(".txtIgst_class").val(p_json_obj[i]['igst_amount']).show();
+                    $("#tot_Igst").show();
+                }
+
+
                 addproduct();            
             }
             
@@ -1139,6 +1159,25 @@
                     sgstrate = "0";
                     sgstAmt ="0";
                 }
+
+                if ($(".chkigst_class").prop("checked") == true) {
+                    igstrate = gstRate;
+                    igstAmt = $(".txtIgst_class").val();
+                    cgstrate = "0";
+                    cgstAmt = "0";
+                    sgstrate = "0";
+                    sgstAmt = "0";
+
+                }
+                else {
+                    cgstrate = gstVal;
+                    cgstAmt = $(".txtCgst_class").val();
+                    sgstrate = gstVal;
+                    sgstAmt = $(".txtSgst_class").val();
+                    igstrate = "0";
+                    igstAmt = "0";
+                }
+
                 $('#myTable> tbody:last').append('<tr>'+
                   '<td style="border:1px solid!important;" class="product-discription">'+ (i + 1)  +'</td>'+ 
                   '<td style="border:1px solid!important;" class="product-discription">'+ $("[id*=txtproduct_name]").val()  +'</td>'+ 
@@ -1174,7 +1213,18 @@
                     $('td:nth-child(16),th:nth-child(16)').show();
                     $('td:nth-child(17),th:nth-child(17)').show();
                     $("#tot_Igst").hide();
-                    
+
+                    if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop("checked") == false) {
+                        $('td:nth-child(12),th:nth-child(12)').show();
+                        $('td:nth-child(13),th:nth-child(13)').show();
+                        $('td:nth-child(14),th:nth-child(14)').hide();
+                        $('td:nth-child(15),th:nth-child(15)').hide();
+                        $('td:nth-child(16),th:nth-child(16)').hide();
+                        $('td:nth-child(17),th:nth-child(17)').hide();
+                        $("#tot_Igst").show();
+                        $("#tot_Cgst").hide();
+                        $("#tot_Sgst").hide();
+                    }
 
                 }else{
                     $('td:nth-child(12),th:nth-child(12)').show();
@@ -1186,6 +1236,17 @@
                     $("#tot_Cgst").hide();
                     $("#tot_Sgst").hide();
 
+                    if ($(".chkcgst_class").prop("checked") == true) {
+                        $('td:nth-child(12),th:nth-child(12)').hide();
+                        $('td:nth-child(13),th:nth-child(13)').hide();
+                        $('td:nth-child(14),th:nth-child(14)').show();
+                        $('td:nth-child(15),th:nth-child(15)').show();
+                        $('td:nth-child(16),th:nth-child(16)').show();
+                        $('td:nth-child(17),th:nth-child(17)').show();
+                        $("#tot_Igst").hide();
+                        $("#tot_Cgst").show();
+                        $("#tot_Sgst").show();
+                    }
                 }
 
                calculate();
@@ -1514,6 +1575,17 @@
                 $(".txtIgst_class").show();
                 $(".txtCgst_class").hide();
                 $(".txtSgst_class").hide();
+
+                if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop('checked', false)) {
+                    //$(".chkigst_class").prop('checked', true);
+                    //$(".chkcgst_class").prop('checked', false);
+                    $(".txtIgst_class").show();
+                    $(".txtCgst_class").hide();
+                    $(".txtSgst_class").hide();
+                    $("#tot_Igst").show();
+                    $("#tot_Cgst").hide();
+                    $("#tot_Sgst").hide();
+                }
             checkgst();
             }
 
@@ -1524,6 +1596,17 @@
             $(".txtIgst_class").hide();
             $(".txtCgst_class").show();
             $(".txtSgst_class").show();
+
+            if ($(".chkcgst_class").prop("checked") == true && $(".chkigst_class").prop("checked") == false) {
+
+                //   $(".chkcgst_class").prop('checked', true);
+                $(".txtIgst_class").hide();
+                $(".txtCgst_class").show();
+                $(".txtSgst_class").show();
+                $("#tot_Igst").hide();
+                $("#tot_Cgst").show();
+                $("#tot_Sgst").show();
+            }
             checkgst();
         }
 

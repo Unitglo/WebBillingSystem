@@ -549,6 +549,8 @@ namespace WebBillingSystem
                 sale_setvalue_dtl_master.Add(new
                 {
                     invoice_no = sale_setvalue_dtl_reader["invoice_no"],
+                   // invoice_date = Convert.ToDateTime(sale_setvalue_dtl_reader["invoice_date"]).ToString("yyyy-MM-dd"),
+
                     product_desc = sale_setvalue_dtl_reader["product_desc"],
                     hsn_code = sale_setvalue_dtl_reader["hsn_code"],
                     qty = sale_setvalue_dtl_reader["qty"],
@@ -603,8 +605,8 @@ namespace WebBillingSystem
                     }
                     series_id.Value = series_id.Value.ToString() + "" + cont.ToString("000000");
                     string refrance_id = baseHealpare.InsertIntoTableGetID(baseHealpare.TableAddDebitCreditMst,
-                                        new string[] { "document_no", "date_of_issue", "doc_state", "doc_state_code", "against_invoice", "date_of_invoice", "bill_party_name", "bill_party_address", "bill_party_gstin", "bill_party_state", "bill_party_state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "note_type", "remarks" },
-                                        new string[] { series_id.Value.ToString(), dateIssue.Value.ToString(), doc_state.InnerText.ToString(), doc_code.InnerText.ToString(), hdninvoice_id.Value.ToString(), dateInvoice.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), shipname.Value.ToString(), shipaddr.Value.ToString(), shipgstin.Value.ToString(), shipstate.Value.ToString(), shipcode.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), note_type.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " ") }
+                                        new string[] { "document_no", "date_of_issue", "doc_state", "doc_state_code", "against_invoice", "date_of_invoice", "bill_party_name", "bill_party_address", "bill_party_gstin", "bill_party_state", "bill_party_state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "note_type", "remarks", "invoice_date" },
+                                        new string[] { series_id.Value.ToString(), dateIssue.Value.ToString(), doc_state.InnerText.ToString(), doc_code.InnerText.ToString(), hdninvoice_id.Value.ToString(), dateInvoice.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), shipname.Value.ToString(), shipaddr.Value.ToString(), shipgstin.Value.ToString(), shipstate.Value.ToString(), shipcode.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), note_type.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " "), dateInvoice.Value.ToString() }
                                         );
                     if (Regex.IsMatch(refrance_id, "^[0-9]+$"))
                     {
@@ -615,11 +617,13 @@ namespace WebBillingSystem
                         for (int i = 0; i < dict.Count; i++)
                         {
                             dict[i]["refrance_id"] = refrance_id;
+                            dict[i]["invoice_date"] = dateInvoice.Value.ToString();
+
                             dict[i]["INVOICENO"] = series_id.Value.ToString();
                             string[] result = dict[i].Select(kv => kv.Value.ToString()).ToArray();
 
                             baseHealpare.MessageBox(this, "Data Adding " + baseHealpare.InsertIntoTable(baseHealpare.TableAddDebitCreditDtl,
-                                                new string[] { "document_no", "againt_invoice", "date_of_issue", "bill_party_name", "ship_party_name", "product_name", "hsn_code", "uom", "batch", "expiry_date", "quantity", "rate", "amount", "discount", "tax_value", "igst_rate", "igst_amount", "cgst_rate", "cgst_amount", "sgst_rate", "sgst_amount", "total", "refrance_id" },
+                                                new string[] {"document_no", "againt_invoice", "date_of_issue", "bill_party_name", "ship_party_name", "product_name", "hsn_code", "uom", "batch", "expiry_date", "quantity", "rate", "amount", "discount", "tax_value", "igst_rate", "igst_amount", "cgst_rate", "cgst_amount", "sgst_rate", "sgst_amount", "total", "refrance_id", "invoice_date" },
                                                  result));
                         }
                     }
@@ -630,8 +634,8 @@ namespace WebBillingSystem
                     string ca_status_condition = baseHealpare.ApprovalCheckStatus();
 
                     string msg = baseHealpare.UpdateValue(baseHealpare.TableAddDebitCreditMst,
-                                        new string[] { "date_of_issue", "doc_state", "doc_state_code", "against_invoice", "date_of_invoice", "bill_party_name", "bill_party_address", "bill_party_gstin", "bill_party_state", "bill_party_state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "note_type", "remarks" },
-                                        new string[] { dateIssue.Value.ToString(), doc_state.InnerText.ToString(), doc_code.InnerText.ToString(), hdninvoice_id.Value.ToString(), dateInvoice.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), shipname.Value.ToString(), shipaddr.Value.ToString(), shipgstin.Value.ToString(), shipstate.Value.ToString(), shipcode.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), note_type.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " ") },
+                                        new string[] { "date_of_issue", "doc_state", "doc_state_code", "against_invoice", "date_of_invoice", "bill_party_name", "bill_party_address", "bill_party_gstin", "bill_party_state", "bill_party_state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "note_type", "remarks","invoice_date" },
+                                        new string[] { dateIssue.Value.ToString(), doc_state.InnerText.ToString(), doc_code.InnerText.ToString(), hdninvoice_id.Value.ToString(), dateInvoice.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), shipname.Value.ToString(), shipaddr.Value.ToString(), shipgstin.Value.ToString(), shipstate.Value.ToString(), shipcode.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), note_type.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " ") , dateInvoice.Value.ToString() },
                                         "dr_cr_Id = " + "'" + jv_credit_id + "'" + ca_status_condition
                                         );
 
@@ -653,10 +657,11 @@ namespace WebBillingSystem
                     for (int i = 0; i < dict.Count; i++)
                     {
                         dict[i]["refrance_id"] = jv_credit_id;
-                        
-                        string[] result = dict[i].Select(kv => kv.Value.ToString()).ToArray();
+                         dict[i]["invoice_date"] = dateInvoice.Value.ToString();
+
+                            string[] result = dict[i].Select(kv => kv.Value.ToString()).ToArray();
                         baseHealpare.MessageBox(this, "Data Updating " + baseHealpare.InsertIntoTable(baseHealpare.TableAddDebitCreditDtl,
-                                                                  new string[] { "document_no", "againt_invoice", "date_of_issue", "bill_party_name", "ship_party_name", "product_name", "hsn_code", "uom", "batch", "expiry_date", "quantity", "rate", "amount", "discount", "tax_value", "igst_rate", "igst_amount", "cgst_rate", "cgst_amount", "sgst_rate", "sgst_amount", "total", "refrance_id" },
+                                                                  new string[] { "document_no", "againt_invoice", "date_of_issue", "bill_party_name", "ship_party_name", "product_name", "hsn_code", "uom", "batch", "expiry_date", "quantity", "rate", "amount", "discount", "tax_value", "igst_rate", "igst_amount", "cgst_rate", "cgst_amount", "sgst_rate", "sgst_amount", "total", "refrance_id", "invoice_date" },
                                                                    result));
                     }
                         baseHealpare.MessageBox(this, "Data Updated ");

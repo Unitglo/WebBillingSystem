@@ -76,6 +76,177 @@ namespace WebBillingSystem {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtoutwardSupplyId;
         
         /// <summary>
+        /// adReInvoicepend_lbl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl1;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl2;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl3;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl4;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl5;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl6;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl7;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl8;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl9;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl10;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl11;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl12;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl13;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl14;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl15;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl16;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl17;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl18;
+        
+        /// <summary>
+        /// adReInvoicepend_lbl19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl adReInvoicepend_lbl19;
+        
+        /// <summary>
         /// AdvancePaid_withoutInvoice_lbl1 control.
         /// </summary>
         /// <remarks>

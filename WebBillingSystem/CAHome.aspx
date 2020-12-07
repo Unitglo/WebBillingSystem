@@ -27,6 +27,7 @@
     <div class="hk-pg-header align-items-top">
                     <div style="padding: 15px;">
 						<h4 class="hk-pg-title font-weight-600 mb-10"><%=ca_name %></h4>
+                        <h4 class="hk-pg-title font-weight-600 mb-10"><%=ca_code %></h4>
 						<%--<h6 class="hk-pg-title font-weight-600 mb-10" style="color: #151397;"><%= address_name %></h6>
 						<h6 class="hk-pg-title font-weight-600 mb-10" style="color: #3e95cd;"><%= gst_no %></h6>--%>
 						<%--<p>Questions about onboarding lead data? <a href="#">Learn more.</a></p>--%>

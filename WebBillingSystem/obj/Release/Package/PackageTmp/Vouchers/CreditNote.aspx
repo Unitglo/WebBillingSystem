@@ -354,7 +354,7 @@
 
                                             <tr>
                                                 <td colspan="1">Total Amount </td>
-                                                <td colspan="3">:
+                                                <td colspan="3" id="foot_tot">:
                                                     <label id="lblTotal" name="lblTotal" class="total" runat="server" ></label>
                                                 </td>
                                             </tr>
@@ -416,7 +416,7 @@
                             <th style="border: 2px solid;">CGST Amount</th>
                             <th style="border: 2px solid;">SGST Rate</th>
                             <th style="border: 2px solid;">SGST Amount</th>
-                            <th style="border: 2px solid;">TOTAL</th>
+                            <th style="border: 2px solid;" colspan="3">TOTAL</th>
 							<th style="border: 2px solid;">Action</th>
 						</tr>
                             </thead>
@@ -425,7 +425,7 @@
 						</tbody>
                       <tfoot class="border: 1px solid;">
                       <tr>
-                          <th id="tot_tot" colspan="6" class="text-center font-weight-600" style="border: 2px solid"><b>total</b></th>
+                          <th id="tot_tot" colspan="4" class="text-center font-weight-600" style="border: 2px solid"><b>total</b></th>
                           <th id="tot_Quant" class="text-right font-weight-600" style="border: 2px solid">0</th>
                           <th id="tot_Rate" class="text-right font-weight-600" style="border: 2px solid; display:none;">0</th>
                           <th id="tot_Amt" class="text-right font-weight-600" style="border: 2px solid">0</th>
@@ -791,9 +791,11 @@
             }
         }
         
+
   window.onload = function () {
         $(".tr_gst_Id").hide();
         select2_options();
+
         select_options();
         select1_options();
         settingsCheck();
@@ -1042,9 +1044,26 @@
                 $(".total").html(p_json_obj[i]['tax_value'] + p_json_obj[i]['discount']);
                 $(".txtdisc").html(p_json_obj[i]['discount']);
                   
-                $(".txtIgst_class").val(p_json_obj[i]['igst_amount']);
-                $(".txtCgst_class").val(p_json_obj[i]['cgst_amount']);
-                $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+                //$(".txtIgst_class").val(p_json_obj[i]['igst_amount']);
+                //$(".txtCgst_class").val(p_json_obj[i]['cgst_amount']);
+                //$(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+
+                if (p_json_obj[i]['igst_amount'] == 0) {
+                   
+                    $(".chkcgst_class").prop('checked', true);
+                    $(".chkigst_class").prop('checked', false);
+                    $(".txtCgst_class").val(p_json_obj[i]['cgst_amount']).show();
+                    $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']).show();
+                    $("#tot_Cgst").show();
+                    $("#tot_Sgst").show();
+                }
+                else {
+                    $(".chkcgst_class").prop('checked', false);
+                    $(".chkigst_class").prop('checked', true);
+                    $(".txtIgst_class").val(p_json_obj[i]['igst_amount']).show();
+                    $("#tot_Igst").show();
+                }
+
                 addproduct();
             }
         }
@@ -1127,6 +1146,23 @@
                     sgstrate = "0";
                     sgstAmt ="0";
                 }
+                if ($(".chkigst_class").prop("checked") == true) {
+                    igstrate = gstRate;
+                    igstAmt = $(".txtIgst_class").val();
+                    cgstrate = "0";
+                    cgstAmt = "0";
+                    sgstrate = "0";
+                    sgstAmt = "0";
+
+                }
+                else {
+                    cgstrate = gstVal;
+                    cgstAmt = $(".txtCgst_class").val();
+                    sgstrate = gstVal;
+                    sgstAmt = $(".txtSgst_class").val();
+                    igstrate = "0";
+                    igstAmt = "0";
+                }
 
                 $('#myTable> tbody:last').append('<tr>'+
                     '<td style="border:1px solid!important;" class="product-discription">'+ (i + 1)  +'</td>'+ 
@@ -1146,7 +1182,7 @@
                     '<td style="border:1px solid!important;" class="cgst-amount">'+ cgstAmt +'</td>' +
                     '<td style="border:1px solid!important;" class="sgst-rate">'+ sgstrate +'</td>'+
                     '<td style="border:1px solid!important;" class="sgst-amount">'+ sgstAmt +'</td>' +
-                    '<td style="border:1px solid!important;" class="tot_class">'+ tot +'</td>' +
+                    '<td colspan="3" style="border:1px solid!important;" class="tot_class">' + tot + '</td>' +
                     '<td  style="border:1px solid!important;"><i class="fa fa-pencil" style="font-size:25px;color:#17a2b8" aria-hidden="true" onclick="editRow(this), removeRow(this)"></i><i class="fa fa-close" name="record" style="font-size:30px;color:red" aria-hidden="true" onclick="removeRow(this)"></i>'
                   + '</tr>'               
                   ); 
@@ -1162,8 +1198,21 @@
                     $('td:nth-child(16),th:nth-child(16)').show();
                     $('td:nth-child(17),th:nth-child(17)').show();
                     $("#tot_Igst").hide();
+
+                    if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop("checked") == false) {
+                        $('td:nth-child(12),th:nth-child(12)').show();
+                        $('td:nth-child(13),th:nth-child(13)').show();
+                        $('td:nth-child(14),th:nth-child(14)').hide();
+                        $('td:nth-child(15),th:nth-child(15)').hide();
+                        $('td:nth-child(16),th:nth-child(16)').hide();
+                        $('td:nth-child(17),th:nth-child(17)').hide();
+                        $("#tot_Igst").show();
+                        $("#tot_Cgst").hide();
+                        $("#tot_Sgst").hide();
+                    }
                     
-                }else {
+                } else {
+               
                     $('td:nth-child(12),th:nth-child(12)').show();
                     $('td:nth-child(13),th:nth-child(13)').show();
                     $('td:nth-child(14),th:nth-child(14)').hide();
@@ -1171,7 +1220,19 @@
                     $('td:nth-child(16),th:nth-child(16)').hide();
                     $('td:nth-child(17),th:nth-child(17)').hide();
                     $("#tot_Cgst").hide();
-                    $("#tot_Sgst").hide();                 
+                    $("#tot_Sgst").hide();
+
+                    if ($(".chkcgst_class").prop("checked") == true) {
+                        $('td:nth-child(12),th:nth-child(12)').hide();
+                        $('td:nth-child(13),th:nth-child(13)').hide();
+                        $('td:nth-child(14),th:nth-child(14)').show();
+                        $('td:nth-child(15),th:nth-child(15)').show();
+                        $('td:nth-child(16),th:nth-child(16)').show();
+                        $('td:nth-child(17),th:nth-child(17)').show();
+                        $("#tot_Igst").hide();
+                        $("#tot_Cgst").show();
+                        $("#tot_Sgst").show();
+                    }
                 }
                 calculate();
 
@@ -1502,6 +1563,17 @@
                 $(".txtIgst_class").show();
                 $(".txtCgst_class").hide();
                 $(".txtSgst_class").hide();
+
+                if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop('checked', false)) {
+                    //$(".chkigst_class").prop('checked', true);
+                    //$(".chkcgst_class").prop('checked', false);
+                    $(".txtIgst_class").show();
+                    $(".txtCgst_class").hide();
+                    $(".txtSgst_class").hide();
+                    $("#tot_Igst").show();
+                    $("#tot_Cgst").hide();
+                    $("#tot_Sgst").hide();
+                }
             checkgst();
             }
 
@@ -1512,6 +1584,17 @@
             $(".txtIgst_class").hide();
             $(".txtCgst_class").show();
             $(".txtSgst_class").show();
+
+            if ($(".chkcgst_class").prop("checked") == true && $(".chkigst_class").prop("checked") == false) {
+
+                //   $(".chkcgst_class").prop('checked', true);
+                $(".txtIgst_class").hide();
+                $(".txtCgst_class").show();
+                $(".txtSgst_class").show();
+                $("#tot_Igst").hide();
+                $("#tot_Cgst").show();
+                $("#tot_Sgst").show();
+            }
             checkgst();
         }
 

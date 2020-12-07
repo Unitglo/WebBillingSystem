@@ -69,14 +69,14 @@
                                     <div class="card card-sm">
 										<div class="card-body bg-light" style="text-align: -webkit-center;">
                                             <table>
-                                                <tr><td><h4 id="comp_name_id" runat="server"></h4></td></tr>
-                                                <tr><td style="width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
-                                                <tr><td> Address -<label runat="server" id="comp_add_id"></label></td></tr>
-                                                <tr><td>Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
-                                                <tr><td>Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
-                                                <tr><td>GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
-                                                <tr><td>PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
-                                                <tr><td>CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center"><h4 id="comp_name_id" runat="server"></h4></td></tr>
+                                                <tr><td colspan="14" style="text-align:center;width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center"> Address -<label runat="server" id="comp_add_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
+                                                <tr><td colspan="14" style="text-align:center">Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
                                             </table>
 										</div>
 									</div>				                                  
@@ -186,8 +186,10 @@
             all_products = JSON.parse(all_products  );
         }
         if (month_wise_products != '') {
+            debugger
             month_wise_products = JSON.parse(month_wise_products  );
         }
+
         var month_wise_tr = "";
       /*  monthsName.forEach(function (key, index) {
             if (((new Date($(".from_date_class").val()).getMonth()) - 3) >= index) {
@@ -221,6 +223,7 @@
            //"<th class='closingbal_rate'></th>"+
            //"<th class='closingbal_value'></th>"+
            "</tr>");
+        
         calTotal();
     //    });
         
@@ -248,7 +251,7 @@
                     //product_month_cost = key.product_open_cost;
                     //product_month_unit_rate = key.product_open_unit_rate;
                     //product_month_value = key.product_open_value;
-                   
+         
                     all_products[index]["batch"]=key1.batch;
                     all_products[index]["expiry_date"]=key1.expiry_date;
                     if (key1.product_static_type == "sales") {
@@ -383,11 +386,14 @@
     }
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
+        $("th:hidden").remove();
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
             e.preventDefault();
     });
     //Export To Word Document   
     function Export2Doc(element, filename = '') {
+        $("th:hidden").remove();
+
         var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
         var postHtml = "</body></html>";
         var html = preHtml + document.getElementById(element).innerHTML + postHtml;
@@ -415,6 +421,7 @@
         document.body.removeChild(downloadLink);
     }
         function ExportPdf() { 
+            $("th:hidden").remove();
             //$('#dtl_Table thead tr').remove();
             //$('#dtl_Table  tbody').find('tr:eq(0)').remove();
             kendo.drawing
