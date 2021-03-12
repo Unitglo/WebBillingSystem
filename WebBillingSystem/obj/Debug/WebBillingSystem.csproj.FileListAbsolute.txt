@@ -304,6 +304,7 @@ G:\akash\Account Project\smita\WebBillingSystem-master\WebBillingSystem\obj\Debu
 G:\akash\Account Project\smita\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.csproj.CopyComplete
 G:\akash\Account Project\smita\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.dll
 G:\akash\Account Project\smita\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.pdb
+<<<<<<< HEAD
 D:\pms\WebBillingSystem-master\WebBillingSystem\bin\Base\alter_query.txt
 D:\pms\WebBillingSystem-master\WebBillingSystem\bin\Base\company_profile.txt
 D:\pms\WebBillingSystem-master\WebBillingSystem\bin\Base\ca_profile.txt
@@ -344,3 +345,5 @@ D:\pms\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.cspro
 D:\pms\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.csproj.ResolveComReference.cache
 D:\pms\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.dll
 D:\pms\WebBillingSystem-master\WebBillingSystem\obj\Debug\WebBillingSystem.pdb
+=======
+>>>>>>> 49616a7362a43454a2c8a13a555d433de20addf3
