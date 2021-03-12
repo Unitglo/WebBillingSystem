@@ -70,14 +70,14 @@
                                     <div class="card card-sm">
 										<div class="card-body bg-light" style="text-align: -webkit-center;">
                                             <table>
-                                                <tr><td><h4 id="comp_name_id" runat="server"></h4></td></tr>
-                                                <tr><td style="width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
-                                                <tr><td> Address -<label runat="server" id="comp_add_id"></label></td></tr>
-                                                <tr><td>Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
-                                                <tr><td>Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
-                                                <tr><td>GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
-                                                <tr><td>PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
-                                                <tr><td>CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center"><h4 id="comp_name_id" runat="server"></h4></td></tr>
+                                                <tr><td colspan="14" style="text-align:center;width:100px;">Trade Name -<label id="comp_trade_name_id" runat="server"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center"> Address -<label runat="server" id="comp_add_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">Email  - <label runat="server" id="comp_email_id"></label></td> </tr>
+                                                <tr><td colspan="14" style="text-align:center">Phone  - <label runat="server" id="comp_phone_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">GST No - <label runat="server" id="comp_gst_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">PAN No - <label runat="server" id="comp_pan_no_id"></label></td></tr>
+                                                <tr><td colspan="14" style="text-align:center">CIN No - <label runat="server" id="comp_cin_no_id"></label></td></tr>
                                             </table>
 										</div>
 									</div>				                                  
@@ -343,8 +343,8 @@
                 '<td style="text-align:center; width: 270px">' + key.product_name + '</td>' +
                 '<td style="text-align:center; width: 270px;display:none">' + all_products[index].batch + '</td>' +
                 // '<td style="text-align:center; width: 270px">' + key.expiry_date + '</td>' +
-                '<td style="text-align:center; width: 270px;display:none ">' + all_products[index].expiry_date + '</td>' +
-                '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_qty)) ? all_products[index].product_close_qty : 0).toFixed(2) + '</td>' +
+                '<td style="text-align:center; width: 270px;display:none">' + all_products[index].expiry_date + '</td>' +
+                '<td style="text-align: right; width: 100px;" id="quantityid">' + ((!isNaN(all_products[index].product_close_qty)) ? all_products[index].product_close_qty : 0).toFixed(2) + '</td>' +
                 '<td style="text-align: right; width: 100px;">' + (cost_price).toFixed(2) + '</td>' +
                 '<td style="text-align: right; width: 100px;">' + (cost_price * all_products[index].product_close_qty).toFixed(2) + '</td>' +
                 '<td onkeyup="td_change(this)" contenteditable="true" style="text-align: right; width: 100px;">' + temp_product_valuation_qty.toFixed(2) + '</td>' +
@@ -481,7 +481,8 @@
             $(this).find("td").eq(9).html($(this).find("td").eq(6).html());
             $(this).find("td").eq(10).html($(this).find("td").eq(4).html());
             $(this).find("td").eq(11).html($(this).find("td").eq(5).html());
-            $(this).find("td").eq(12).html($(this).find("td").eq(6).html());          
+            $(this).find("td").eq(12).html($(this).find("td").eq(6).html());  
+            
         })
        
      
@@ -489,16 +490,30 @@
         $(".market_qty").html( $(".cost_price").html());
         $(".market_rate").html( $(".cost_qty").html());
         $(".market_value").html( $(".cost_value").html());
+
+        $(".closingbal_qty").html( $(".market_qty").html());
+        $(".closingbal_rate").html( $(".market_rate").html());
+        $(".closingbal_value").html( $(".market_value").html());
+
+
         }
       
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
+        debugger
+        //document.getElementById('quantityid').style.visibility = 'visible';
+        $("th:hidden,td:hidden").remove();
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
-            e.preventDefault();
+       e.preventDefault();
+        
     });
+    
     //Export To Word Document   
     function Export2Doc(element, filename = '') {
+        $("th:hidden,td:hidden").remove();
+
         var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
+   
         var postHtml = "</body></html>";
         var html = preHtml + document.getElementById(element).innerHTML + postHtml;
         
@@ -515,7 +530,7 @@
         if (navigator.msSaveOrOpenBlob) {
             navigator.msSaveOrOpenBlob(blob, filename);
         } else {
-            // Create a link to the file
+            debugger // Create a link to the file
             downloadLink.href = url;
             // Setting the file name
             downloadLink.download = filename;
@@ -523,8 +538,14 @@
             downloadLink.click();
         }
         document.body.removeChild(downloadLink);
+
     }
+    
+
+
         function ExportPdf() { 
+            $("th:hidden,td:hidden").remove();
+
             //$('#dtl_Table thead tr').remove();
             //$('#dtl_Table  tbody').find('tr:eq(0)').remove();
             kendo.drawing

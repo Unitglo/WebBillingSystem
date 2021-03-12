@@ -93,10 +93,11 @@
 <script>
     //data-table-Expenses-details
 
-    function purchase_details() {
-
+    function expense_details() {
+    
         var jsonString = JSON.parse('<%=json_expenses_obj %>') //for testing
-          //Load  datatable
+        //Load  datatable
+       
         var table = $('#data-table-Expenses-details').DataTable({
             dom: 'Bfrtip',
             buttons: [{
@@ -139,58 +140,61 @@
 
     }
 
-    function purchase_details_display() {
-
+    function expense_details_display() {
+        debugger
         var jsonString = JSON.parse('<%=json_expenses_obj %>') //for testing
-          //Load  datatable
-        var table = $('#data-table-Expenses-details-display').DataTable({
-           data: jsonString,
-           autoWidth: false,
+        //Load  datatable
+        //if (jsonString != '') {
+        //    jsonString = JSON.parse(jsonString);
+            var table = $('#data-table-Expenses-details-display').DataTable({
+                data: jsonString,
+                autoWidth: false,
            
-            language: { search: "",
-                searchPlaceholder: "Search",
-                sLengthMenu: "_MENU_items"
+                language: { search: "",
+                    searchPlaceholder: "Search",
+                    sLengthMenu: "_MENU_items"
 
-            },
-            columns: [
-                { "data": "edit_button" },
-                { "data": "status_label" },
-                { "data": "exp_voucher_no" },
-                { "data": "exp_voucher_date" },
-                { "data": "exp_supplier_name" },
-                { "data": "expenses_head" },
-                { "data": "total_cost" },
-                { "data": "total_gst" },
-    ]
-        });
-
-        $('#data-table-Expenses-details-display thead tr').clone(true).appendTo('#data-table-Expenses-details-display thead');
-        $('#data-table-Expenses-details-display thead tr:eq(1) th').each(function (i) {
-            var title = $(this).text();
-            $(this).html('<input type="text" class="class_' + title + '"  placeholder="Search ' + title + '" />');
-            $('input', this).on('keyup change', function () {
-                if (table.column(i).search() !== this.value) {
-                    table
-                        .column(i)
-                        .search(this.value)
-                        .draw();
-                }
+                },
+                columns: [
+                    { "data": "edit_button" },
+                    { "data": "status_label" },
+                    { "data": "exp_voucher_no" },
+                    { "data": "exp_voucher_date" },
+                    { "data": "exp_supplier_name" },
+                    { "data": "expenses_head" },
+                    { "data": "total_cost" },
+                    { "data": "total_gst" },
+                ]
             });
-        });
+
+            $('#data-table-Expenses-details-display thead tr').clone(true).appendTo('#data-table-Expenses-details-display thead');
+            $('#data-table-Expenses-details-display thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" class="class_' + title + '"  placeholder="Search ' + title + '" />');
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
       
-                $(".class_Action").css("display", "none");
-                $(".class_Data").css("width", "50px");
-                $(".class_Exp").css("width", "50px");
-                $(".class_exp").css("width", "50px");
-                $(".class_Suppliers").css("width", "50px");                
-                $(".class_Expenses").css("width", "50px");                
-                $(".class_Total").css("width", "50px");
-    }
+            $(".class_Action").css("display", "none");
+            $(".class_Data").css("width", "50px");
+            $(".class_Exp").css("width", "50px");
+            $(".class_exp").css("width", "50px");
+            $(".class_Suppliers").css("width", "50px");                
+            $(".class_Expenses").css("width", "50px");                
+            $(".class_Total").css("width", "50px");
+        }
+    
     window.onload = function () {
         loadModalDiv();
-        purchase_details_display();
+        expense_details_display();
         $("#table_div_id").hide();
-        purchase_details();
+        expense_details();
         $("a.exportExpeExcel").removeClass("dt-button buttons-excel buttons-html5");
         $("a.exportExpeExcel").addClass("btn btn-info btn-sm btn-just-icon btn-round");
        

@@ -22,7 +22,7 @@ namespace WebBillingSystem
             baseHealpare = new DataBaseHealpare();
             if (!Page.IsPostBack)
             {
-
+                
                 if (Request.QueryString["value"] != null && Request.QueryString["delete"] != null)
                 {
                     baseHealpare.DeleteValue(baseHealpare.news_and_update_table, "auto_id=" + System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString()))));

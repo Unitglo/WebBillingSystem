@@ -220,8 +220,24 @@
             debit_details(); 
             $("a.exportDebitExcel").removeClass("dt-button buttons-excel buttons-html5");
             $("a.exportDebitExcel").addClass("btn btn-info btn-sm btn-just-icon btn-round");
-
+            btnAddClick();
         };
+
+ function btnAddClick()
+    {
+      <%  if (Session["page_role"].ToString() == "CA")
+    {%>
+        $("#ContentPlaceHolder1_btnAdd").hide();
+       
+      <% }%>
+   <%else{%>
+        $("#ContentPlaceHolder1_btnAdd").show();
+        $("#Addbtn").click(function(){ 
+            location.href = '/Vouchers/DebitNote';
+        })
+ <% }%>
+  }
+
 
         function Export2Doc(element, filename = '') {
             $(".exportDebitExcel").hide();

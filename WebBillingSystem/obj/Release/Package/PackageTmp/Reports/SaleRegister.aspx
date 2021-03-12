@@ -45,6 +45,25 @@
                             </div>
                          </div>                    
                  
+   <div id="det_id" class="row">
+                        <div class="col-lg-12" style="padding-right: 0px; padding-left: 0px;">
+                             <div class="card-group hk-dash-type-2">
+                                 <div class="card card-sm">
+									<div class="card-body bg-light" style="text-align: -webkit-center;">
+                                        <table><tbody>
+                                             <tr><td> <h5 id="company_name_id" runat="server"></h5></td></tr>
+                                             <tr><td> Auth.Dealer - <label id="auth_dealer_id" runat="server"></label></td></tr>
+                                             <tr><td> <label runat="server" id="state_id"></label></td></tr>
+                                             <tr><td> <label runat="server" id="address_id"></label></td></tr>
+                                             <tr><td> GSTIN NO - <label runat="server" id="gstin_id"></label></td></tr>
+                                             <tr><td> State Code - <label runat="server" id="statecode_id"></label></td></tr>
+                                             <tr><td> <h4>Accounts Ledger</h4></td></tr>
+                                             <tr><td> For <label runat="server" id="date_id"></label></td></tr>
+                                       </tbody></table>
+                         </div></div></div></div>
+                     </div>    
+
+
                   <div class="row">
                     <div class="col-sm-12">    
                         <!-- start Table -->                        
@@ -307,6 +326,72 @@
             $("."+ data_obj).html(name_val_Day + '</tbody></table>');
         }
     }
-    
+    function ExportToExcel(obj) {
+        $(obj).parent().parent().find("th:eq(0)").text("");
+
+        var contents = $(obj).parent().parent().find("td:eq(1)").html();
+        contents = $("#det_id").html() + "<div> Month : " + contents + $("." + contents).html() + "</div>";
+        window.open('data:application/vnd.ms-excel,' + encodeURIComponent(contents));
+    }
+    function ExportToDocMonth(element) {
+
+        var filename = "Sale Register Month Report";
+        contents = $(element).parent().parent().find("td:eq(1)").html();
+        contents = $("#det_id").html() + "<div> Month : " + contents + $("." + contents).html() + "</div>";
+
+        $(element).parent().parent().find("th:eq(0)").text("");
+
+        var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Journal Book</title></head><body style='text-align:center'>";
+        var postHtml = "</body></html>";
+        var html = preHtml + contents + postHtml;
+
+        var blob = new Blob(['\ufeff', html], {
+            type: 'application/msword'
+        });
+        // Specify link url
+        var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+
+        // Specify file name
+        filename = filename ? filename + '.doc' : 'document.doc';
+
+        // Create download link element
+        var downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if (navigator.msSaveOrOpenBlob) {
+            navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+            // Create a link to the file
+            downloadLink.href = url;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+        document.body.removeChild(downloadLink);
+    }
+
+
+    function ExportPdf() {
+       
+      debugger
+        $('#dtl_Table thead tr').remove();
+        $('#dtl_Table  tbody').find('tr:eq(0)').remove();
+
+        kendo.drawing
+            .drawDOM("#div_export_id",
+            {
+                paperSize: "A4",
+                margin: { top: "1cm", bottom: "1cm" },
+                scale: 0.8,
+                height: 500
+            })
+                .then(function (group) {
+                    kendo.drawing.pdf.saveAs(group, "Exported.pdf")
+                });
+    }
  </script>
 </asp:Content>

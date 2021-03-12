@@ -406,7 +406,7 @@ namespace WebBillingSystem
 
                     if (cnt > 0)
                     {
-                        reader = baseHealpare.SelectAllValues(baseHealpare.TableAddSaleDtl, " where reference_id=" + "'" + System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString()))) + "'");
+                        reader = baseHealpare.SelectAllValues(baseHealpare.TableAddSaleDtl, " where  reference_id=" + "'" + System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString()))) + "'");
                         purchase_master = new System.Collections.ArrayList();
 
                         while (reader != null && reader.Read())
@@ -414,7 +414,7 @@ namespace WebBillingSystem
                             purchase_master.Add(new
                             {
                                 invoice_no = reader["invoice_no"],
-                                batch = reader["batch"],
+                              batch = reader["batch"],
                                 expiry_date = Convert.ToDateTime(reader["expiry_date"].ToString()).ToString("yyyy-MM-dd"),
                                 product_desc = reader["product_desc"],
                                 hsn_code = reader["hsn_code"],
@@ -496,8 +496,8 @@ namespace WebBillingSystem
                     series_id.Value = series_id.Value.ToString() + "" + cont.ToString("000000");
 
                     string reference_id = baseHealpare.InsertIntoTableGetID(baseHealpare.TableAddSaleMst,
-                                        new string[] { "invoice_no", "invoice_irn_no", "sale_invoice_type", "invoice_date", "reverse_charge", "i_state", "statecode", "transport_mode", "vehicle_no", "date_of_supply", "place_of_supply", "seller_name", "Seller_address", "gstin", "s_state", "state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_state_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "bank_name", "bank_ac_no", "bank_ifsc_code", "company_name", "terms_and_condition", "auth_name", "payment_mode", "payment_status", "remark" },
-                                        new string[] { series_id.Value.ToString(), Invoice_IRN_No_id.Value.ToString(), Invoice_type_id.Value.ToString(), input_date.Value.ToString(), reverse_charge.Value.ToString(), state_name.InnerText.ToString(), state_code.InnerText.ToString(), txtTransportMode.Value, VehicleNumber_Id.Value, DateOfSupply_Id.Value, PlaceOfSupply_Id.Value, billname.Value, billaddr.Value.ToString(), billgstin.Value.ToString(), billstate.Value.ToString(), billcode.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), bank_name.Value.ToString(), bankAc_Id.Value.ToString(), bankIFSC_id.Value.ToString(), hdn_company_id.Value.ToString(), terms_and_condition_id.Value.ToString(), hdn_auth_name_id.Value.ToString(), payment_mode.Value.ToString(), payment_status.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " ") }
+                                        new string[] { "invoice_no", "invoice_irn_no", "sale_invoice_type", "invoice_date", "reverse_charge", "i_state", "statecode", "transport_mode", "vehicle_no", "date_of_supply", "place_of_supply", "seller_name", "Seller_address", "gstin", "s_state", "state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_state_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "bank_name", "bank_ac_no", "bank_ifsc_code", "company_name", "terms_and_condition", "auth_name", "payment_mode", "payment_status", "remark", "invoice_type" },
+                                        new string[] { series_id.Value.ToString(), Invoice_IRN_No_id.Value.ToString(), Invoice_type_id.Value.ToString(), input_date.Value.ToString(), reverse_charge.Value.ToString(), state_name.InnerText.ToString(), state_code.InnerText.ToString(), txtTransportMode.Value, VehicleNumber_Id.Value, DateOfSupply_Id.Value, PlaceOfSupply_Id.Value, billname.Value, billaddr.Value.ToString(), billgstin.Value.ToString(), billstate.Value.ToString(), billcode.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), bank_name.Value.ToString(), bankAc_Id.Value.ToString(), bankIFSC_id.Value.ToString(), hdn_company_id.Value.ToString(), terms_and_condition_id.Value.ToString(), hdn_auth_name_id.Value.ToString(), payment_mode.Value.ToString(), payment_status.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " "), Invoice_type_id.Value.ToString() }
                                         );
                     if (Regex.IsMatch(reference_id, "^[0-9]+$"))
                     {
@@ -508,12 +508,13 @@ namespace WebBillingSystem
                         for (int i = 0; i < dict.Count; i++)
                         {
                             dict[i]["reference_id"] = reference_id;
-                            dict[i]["INVOICENO"] = series_id.Value.ToString();
+                        dict[i]["INVOICENO"] = series_id.Value.ToString();
+                            dict[i]["invoice_date"] = input_date.Value.ToString();
                             string[] result = dict[i].Select(kv => kv.Value.ToString()).ToArray();
                             string[] keys = dict[i].Select(kv => kv.Key.ToString()).ToArray();
 
                             baseHealpare.MessageBox(this, "Data Adding " + baseHealpare.InsertIntoTable(baseHealpare.TableAddSaleDtl,
-                                                                            new string[] { "invoice_no", "product_desc", "hsn_code", "uom", "batch", "expiry_date", "qty", "rate", "amount", "discount", "tax_val", "igst_rate", "igst_amt", "cgst_rate", "cgst_amt", "sgst_rate", "sgst_amount", "reference_id" },
+                                                                            new string[] { "invoice_no", "product_desc", "hsn_code", "uom", "batch", "expiry_date", "qty", "rate", "amount", "discount", "tax_val", "igst_rate", "igst_amt", "cgst_rate", "cgst_amt", "sgst_rate", "sgst_amount", "reference_id", "invoice_date" },
                                                     result));
                         }
                     }
@@ -524,7 +525,7 @@ namespace WebBillingSystem
                     string ca_status_condition = baseHealpare.ApprovalCheckStatus();
 
                     string msg = baseHealpare.UpdateValue(baseHealpare.TableAddSaleMst,
-                                 new string[] { "invoice_irn_no", "sale_invoice_type", "invoice_date", "reverse_charge", "i_state", "statecode", "transport_mode", "vehicle_no", "date_of_supply", "place_of_supply", "seller_name", "Seller_address", "gstin", "s_state", "state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_state_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "bank_name", "bank_ac_no", "bank_ifsc_code", "company_name", "terms_and_condition", "auth_name", "payment_mode", "payment_status", "remark" },
+                                 new string[] { "invoice_irn_no", "sale_invoice_type", "invoice_date", "reverse_charge", "i_state", "statecode", "transport_mode", "vehicle_no", "date_of_supply", "place_of_supply", "seller_name", "Seller_address", "gstin", "s_state", "state_code", "ship_party_name", "ship_party_address", "ship_party_gstin", "ship_party_state", "ship_party_state_code", "total_cost", "total_gst", "total_igst", "total_cgst", "total_sgst", "total_discount", "bank_name", "bank_ac_no", "bank_ifsc_code", "company_name", "terms_and_condition", "auth_name", "payment_mode", "payment_status", "invoice_type", "remark" },
                                  new string[] { Invoice_IRN_No_id.Value.ToString(), Invoice_type_id.Value.ToString(), input_date.Value.ToString(), reverse_charge.Value.ToString(), state_name.InnerText.ToString(), state_code.InnerText.ToString(), txtTransportMode.Value, VehicleNumber_Id.Value, DateOfSupply_Id.Value, PlaceOfSupply_Id.Value, billname.Value, billaddr.Value.ToString(), billgstin.Value.ToString(), billstate.Value.ToString(), billcode.Value.ToString(), sell_name.Value.ToString(), sell_address.Value.ToString(), txtgstin.Value.ToString(), txt_sell_state.Value.ToString(), txt_sell_state_code.Value.ToString(), total_cost.Value.ToString(), total_gst.Value.ToString(), total_igst.Value.ToString(), total_cgst.Value.ToString(), total_sgst.Value.ToString(), total_discount.Value.ToString(), bank_name.Value.ToString(), bankAc_Id.Value.ToString(), bankIFSC_id.Value.ToString(), hdn_company_id.Value.ToString(), terms_and_condition_id.Value.ToString(), hdn_auth_name_id.Value.ToString(), payment_mode.Value.ToString(), payment_status.Value.ToString(), Regex.Replace(txtremark.Value.ToString(), @"[^0-9a-zA-Z]+", " ") },
                                  "sale_mst_id=" + "'" + System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString()))) + "' " + ca_status_condition
                 );
@@ -551,12 +552,13 @@ namespace WebBillingSystem
                         for (int i = 0; i < dict.Count; i++)
                         {
                             dict[i]["reference_id"] = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(Server.UrlDecode(Request.QueryString["value"].ToString())));
+                            dict[i]["invoice_date"] = input_date.Value.ToString();
 
                             string[] result = dict[i].Select(kv => kv.Value.ToString()).ToArray();
 
 
                             baseHealpare.InsertIntoTable(baseHealpare.TableAddSaleDtl,
-                                               new string[] { "invoice_no", "product_desc", "hsn_code", "uom", "batch", "expiry_date", "qty", "rate", "amount", "discount", "tax_val", "igst_rate", "igst_amt", "cgst_rate", "cgst_amt", "sgst_rate", "sgst_amount", "reference_id" },
+                                               new string[] { "invoice_no","product_desc", "hsn_code", "uom", "batch", "expiry_date", "qty", "rate", "amount", "discount", "tax_val", "igst_rate", "igst_amt", "cgst_rate", "cgst_amt", "sgst_rate", "sgst_amount", "reference_id" , "invoice_date" },
                                                 result);
                         }
 

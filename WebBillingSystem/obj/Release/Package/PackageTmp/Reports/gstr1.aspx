@@ -271,7 +271,7 @@
         <hr class="mt-10">
         <script type="text/javascript">
    function export_outwardSupply(elem) {
-                
+  
         var table = document.getElementById("outwardSupply_Table");
         var html = table.outerHTML;
         var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
@@ -392,6 +392,7 @@
      <hr class="mt-10">
         <script type="text/javascript">
             function export_Amendment_outward_supply(elem) {
+          
       var table = document.getElementById("Amendment_outward_supply_Table");
   var html = table.outerHTML;
   var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
@@ -496,6 +497,7 @@
      <hr class="mt-10">
         <script type="text/javascript">
             function export_CRDRNOTE(elem) {
+            
                 var table = document.getElementById("CRDRNOTE_Table");
   var html = table.outerHTML;
   var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
@@ -869,8 +871,8 @@
             //p_json_obj.data.splice(0, 1);
             for (var i = 0; i < count; i++) {
                 //if (i > 0) {
-                    $('#outwardSupply_Table> tbody:last').append('<tr>' +
-
+                $('#outwardSupply_Table> tbody:last').append('<tr>' +
+                
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['recename'] + '</td>' +
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['gstno'] + '</td>' +
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['statename'] + '</td>' +
@@ -953,13 +955,13 @@
                 var count = JSON.parse(jsonSettings).length;
                 for (var i = 0; i < count; i++) {
                     $('#CRDRNOTE_Table> tbody:last').append('<tr>' +
-
+                   
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['recename'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['gstno'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['istate'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['pos'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['type'] + '</td>' +
-                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['drcrno'] + '</td>' +
+                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['drcrditno'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['drcrdate'] + '</td>' +
                               '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['reason'] + '</td>' +
                              '<td colspan="1" style="border: 1px solid #ccc; border-color:black;">' + p_json_obj[i]['hsn'] + '</td>' +
@@ -1021,10 +1023,10 @@
                              );
 
                 }--%>
-
+            //financialyear();
         }
 
-        function exportHTML() {
+        //function exportHTML() {
             //var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
             //     "xmlns:w='urn:schemas-microsoft-com:office:word' " +
             //     "xmlns='http://www.w3.org/TR/REC-html40'>" +
@@ -1034,22 +1036,26 @@
             //var href = $('a').hide();
             //var btn = $(".btn").hide();
             //var file = $("[id*=FileUpload1").hide();
-            $('a').remove();
-            $(".btn").remove();
-            $("[id*=FileUpload1").remove();
 
+        //    $('a').remove();
+        //    $(".btn").remove();
+        //    $("[id*=FileUpload1").remove();
+          
             
-            var sourceHTML = document.getElementById("Grid").innerHTML;
-            var source = 'data:application/vnd.ms-word,' + encodeURIComponent(sourceHTML);
-            var fileDownload = document.createElement("a");
-            document.body.appendChild(fileDownload);
-            fileDownload.href = source;
-            fileDownload.download = 'document.doc';
-            fileDownload.click();
-            document.body.removeChild(fileDownload);
-            window.location.reload();
+        //    var sourceHTML = document.getElementById("Grid").innerHTML;
+        //    var source = 'data:application/vnd.ms-word,' + encodeURIComponent(sourceHTML);
+        //    var fileDownload = document.createElement("a");
+        //    document.body.appendChild(fileDownload);
+        //    fileDownload.href = source;
+        //    fileDownload.download = 'document.doc';
+        //    fileDownload.click();
+        //    document.body.removeChild(fileDownload);
+        //    window.location.reload();
 
-        }
+        //}
+       
+      
+   
 
         //function exportHTML() {
         //    //outward Supply
@@ -1222,7 +1228,44 @@ console.log(workbookXML);
   link.click();
   document.body.removeChild(link);
 }
- })();
+})();
+
+function exportHTML() {
+    //$('a').remove();
+    //$(".btn").remove();
+    //$("[id*=FileUpload1").remove();
+
+
+    var sourceHTML = document.getElementById("gstin_Table");
+    var sourceHTML1 = document.getElementById("outwardSupply_Table");
+    var sourceHTML2 = document.getElementById("Amendment_outward_supply_Table");
+    var sourceHTML3 = document.getElementById("CRDRNOTE_Table");
+    var sourceHTML4 = document.getElementById("Amendment_CRDRNOTES_Table");
+    var sourceHTML5 = document.getElementById("Advance_Received_InvoicePending_Table");
+    var sourceHTML6 = document.getElementById("Earlier_Advance_Invoice_Issued_Table");
+
+    var html = sourceHTML.outerHTML;
+    var html1 = sourceHTML1.outerHTML;
+    var html2 = sourceHTML2.outerHTML;
+    var html3 = sourceHTML3.outerHTML;
+    var html4 = sourceHTML4.outerHTML;
+    var html5 = sourceHTML5.outerHTML;
+    var html6 = sourceHTML6.outerHTML;
+
+    //var source = 'data:application/vnd.ms-word,' + encodeURIComponent(html);
+    var source = 'data:application/vnd.ms-word,' + escape(html + " " + html1 + "" + html2 + " " + html3+" "+html4+" "+html5+ " "+html6);
+   
+    var fileDownload = document.createElement("a");
+    debugger
+    document.body.appendChild(fileDownload);
+    fileDownload.href = source;
+    fileDownload.download = 'document.doc';
+    fileDownload.click();
+    document.body.removeChild(fileDownload);
+    window.location.reload();
+
+}
+
         //***************************************************************************
 
     //    function tablesToExcel(tables) {
@@ -1302,15 +1345,43 @@ console.log(workbookXML);
  //     }
  //   }
  // }
- //           });
-        var date = new Date();
-     
+        //           });
+
+
+        // need to be modify 
+
+
+    var date = new Date();
+    var FromDateId = "";
+    var ToDateId = "";
+    var year = date.getFullYear();
+    //function financialyear() {
+      
+    //    if (Int32.Parse(Convert.ToDateTime(Session["start_date"].ToString()).ToString("MM")) < 4)
+    //    {
+    //        alert("hi")
+    //        FromDateId = (year - 1) + "-04-01";
+    //    }
+    //    else {
+    //        FromDateId = year + "-04-01";
+    //    }
+
+    //    date.innerHTML = FromDateId + " TO " + ToDateId;
+    //}
+       
+        
+   
+  
+   
+    
+  
         function monthChange() {
             
             var firstDay = date.getFullYear() + "-" +  $('.month_class').val() + "-" + 1; 
              var lastDay = date.getFullYear() + "-" + $('.month_class').val() + "-" + daysInMonth($('.month_class').val(), date.getFullYear()); 
             $("[id*=hdnMonthFromDateId]").val(firstDay);
             $("[id*=hdnMonthToDateId]").val(lastDay);
+            year();
             
         }
 

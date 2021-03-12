@@ -218,7 +218,7 @@
     }
     function show_details_of_month(month) {
         var day_details = "";
-        
+        debugger
         all_products.forEach(function (key, index) {
             var product_month_qty = parseFloat(all_products[index].product_open_qty);
             var product_month_cost =parseFloat( all_products[index].product_open_value);
@@ -229,12 +229,14 @@
             var outword_qty = 0.00;
             var outword_cost = 0.00;
             month_wise_products.forEach(function (key1, index1) {
+            
                 if (key1.product_name == key.product_name ) {
                     //product_month_qty = key.product_open_qty;
                     //product_month_cost = key.product_open_cost;
                     //product_month_unit_rate = key.product_open_unit_rate;
                     //product_month_value = key.product_open_value;
-                   // all_products[index]["batch"]=key1.batch;
+                    // all_products[index]["batch"]=key1.batch;
+                    all_products[index]["batch"]=key1.batch;
                     all_products[index]["expiry_date"]=key1.expiry_date;
                   if (key1.product_static_type == "sales") {
                         // sale prize is high so cost is showing negative 
@@ -337,7 +339,7 @@
                 //    '<td style="text-align: right; width: 100px;">' + ((!isNaN(all_products[index].product_close_value ))?all_products[index].product_close_value :0).toFixed(2)+ '</td>' +
                 '</tr>';
         });
-                
+         debugger       
         day_details = '<tr>' +
            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Group</th>' +
            '<th colspan="1" data-orderable="false" style="border: 2px solid; text-align:center; width:50px;">Product Name</th>' +
@@ -405,7 +407,8 @@
         }
         document.body.removeChild(downloadLink);
     }
-        function ExportPdf() { 
+        function ExportPdf() {
+           
             $('#dtl_Table thead tr').remove();
             $('#dtl_Table  tbody').find('tr:eq(0)').remove();
             kendo.drawing

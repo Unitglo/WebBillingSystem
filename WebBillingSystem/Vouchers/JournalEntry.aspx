@@ -374,7 +374,8 @@
                 if ($("#lblError").html()!="") {
                  $("#exampleModalCenter").modal('hide');
                         
-                    } else {
+                } else {
+               
                         $("#exampleModalCenter").modal('show');                        
                     }
             }

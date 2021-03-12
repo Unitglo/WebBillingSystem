@@ -356,7 +356,7 @@
                           <th id="tot_Cgst" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0</th>
                           <th id="tot_Sgst" colspan="2" class="text-right font-weight-600" style="border: 2px solid">0</th>
                           <th id="tot_Amt_tax" class="text-right font-weight-600" style="border: 2px solid">0</th>
-                          <th colspan="3" class="text-right font-weight-600" style="border: 2px solid"></th>
+                          <th  class="text-right font-weight-600" style="border: 2px solid"></th>
                         
                       </tr>
                          <tr>
@@ -725,10 +725,12 @@
             $(".totalwithouttax").val($("#tot_invoice_tax").text());
             if ($(".state-code").text() == $(".seller_state_code").text()) {
                 $(".totalgst").val(parseFloat($("#tot_add_cgst").text()) + parseFloat($("#tot_add_sgst").text())); 
-                
+
             } else {
                 $(".totalgst").val($("#tot_add_igst").text());
             }
+
+           
             
             $(".totaligst").val(parseFloat($("#tot_add_igst").text()));
             $(".totalcgst").val($("#tot_add_cgst").text());
@@ -740,7 +742,7 @@
         }
         
         function CalculateTotal() {
-            
+        
             var amount = $("[id*=txtAmount]").val();
             var qty =  $("[id*=txtQty]").val(); 
             var Total = (parseFloat(amount)*parseFloat(qty));
@@ -818,6 +820,26 @@
                     sgstAmt ="0";
                 }
 
+                if ($(".chkigst_class").prop("checked") == true) {
+                
+                    igstrate = gstRate;
+                    igstAmt = $(".txtIgst_class").val();
+                   cgstrate = "0";
+                    cgstAmt = "0";
+                    sgstrate = "0";
+                    sgstAmt = "0";
+
+                }
+                else {
+                    cgstrate = gstVal;
+                    cgstAmt = $(".txtCgst_class").val();
+                    sgstrate = gstVal;
+                    sgstAmt = $(".txtSgst_class").val();
+                    igstrate = "0";
+                    igstAmt = "0";
+                }
+
+
                 $('#myTable> tbody:last').append('<tr>'+
                     '<td style="border:1px solid!important;" class="product-discription">'+ (i + 1)  +'</td>'+ 
                     '<td style="border:1px solid!important;" class="product-discription">'+ $("[id*=txtproduct_name]").val()  +'</td>'+ 
@@ -854,9 +876,24 @@
                     $('td:nth-child(15),th:nth-child(15)').show();
                     $('td:nth-child(16),th:nth-child(16)').show();
                     $("#tot_Igst").hide();
-                    document.getElementById("tot_Igst").colSpan = "0"; 
+                    document.getElementById("tot_Igst").colSpan = "0";
+
+                    if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop("checked") == false) {
+                        $('td:nth-child(11),th:nth-child(11)').show();
+                        $('td:nth-child(12),th:nth-child(12)').show();
+                        $('td:nth-child(13),th:nth-child(13)').hide();
+                        $('td:nth-child(14),th:nth-child(14)').hide();
+                        $('td:nth-child(15),th:nth-child(15)').hide();
+                        $('td:nth-child(16),th:nth-child(16)').hide();
+                        //$('td:nth-child(17),th:nth-child(17)').hide();
+                        $("#tot_Igst").show();
+                        $("#tot_Cgst").hide();
+                        $("#tot_Sgst").hide();
+                        document.getElementById("tot_Igst").colSpan = "2";
+                    }
                     
                 } else {
+                   
                     $('td:nth-child(11),th:nth-child(11)').show();
                     $('td:nth-child(12),th:nth-child(12)').show();
                     $('td:nth-child(13),th:nth-child(13)').hide();
@@ -865,8 +902,22 @@
                     $('td:nth-child(16),th:nth-child(16)').hide();
                     $("#tot_Cgst").hide();
                     $("#tot_Sgst").hide();
-                    document.getElementById("tot_Cgst").colSpan = "0"; 
-                    document.getElementById("tot_Sgst").colSpan = "0"; 
+                    $("#tot_Igst").show();
+             //document.getElementById("tot_Cgst").colSpan = "0"; 
+             //document.getElementById("tot_Sgst").colSpan = "0";
+
+                    if ($(".chkcgst_class").prop("checked") == true) {
+                  $('td:nth-child(11),th:nth-child(11)').hide();
+                 $('td:nth-child(12),th:nth-child(12)').hide();
+                 $('td:nth-child(13),th:nth-child(13)').show();
+                 $('td:nth-child(14),th:nth-child(14)').show();
+                 $('td:nth-child(15),th:nth-child(15)').show();
+                 $('td:nth-child(16),th:nth-child(16)').show();
+                // $('td:nth-child(17),th:nth-child(17)').show();
+                 $("#tot_Igst").hide();
+                 $("#tot_Cgst").show();
+                 $("#tot_Sgst").show();
+             }
                    }
                calculate();
                 $("[id*=txtproduct_name]").val("");
@@ -1047,7 +1098,9 @@
                         values.CAMT =  $(tr).find('td:eq(13)').text();
                         values.SRATE = $(tr).find('td:eq(14)').text();
                         values.SAMT =  $(tr).find('td:eq(15)').text();
-                    }                    
+                    }
+                  
+
                     values.STATUS = "0";
                     values.INVOICETYPE = "purchase";
                     JSONObject.push(values);
@@ -1080,9 +1133,26 @@
                 $(".txtdisc_class").val(p_json_obj[i]['discount']);
                 
 
-                $(".txtIgst_class").val(p_json_obj[i]['igst_amt']);
-                $(".txtCgst_class").val(p_json_obj[i]['cgst_amt']);
-                $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);                
+                //$(".txtIgst_class").val(p_json_obj[i]['igst_amt']);
+                //$(".txtCgst_class").val(p_json_obj[i]['cgst_amt']);
+                //$(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+
+                if (p_json_obj[i]['igst_amt'] == 0) {
+
+                    $(".chkcgst_class").prop('checked', true);
+                    $(".chkigst_class").prop('checked', false);
+                    $(".txtCgst_class").val(p_json_obj[i]['cgst_amt']).show();
+                    $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']).show();
+                    $("#tot_Cgst").show();
+                    $("#tot_Sgst").show();
+                }
+                else {
+                    $(".chkcgst_class").prop('checked', false);
+                    $(".chkigst_class").prop('checked', true);
+                    $(".txtIgst_class").val(p_json_obj[i]['igst_amt']).show();
+                    $("#tot_Igst").show();
+                }
+
                 addproduct();            
             }            
         }        
@@ -1119,7 +1189,8 @@
                 $(".txtdisc_class").html(p_json_obj[i]['discount']);                
                 CalculateTotal();
                 addproduct();                              
-            }            
+            }
+          
         } 
 
       //  var jsonSettings = null;
@@ -1168,6 +1239,7 @@
                 } else{
                     $('td:nth-child(6),th:nth-child(6)').hide();
                     document.getElementById("foot_tot").colSpan = "4";
+                   
                     $("[id*=tot_Dis]").show();
                     $("[id*=tot_Taxval]").show();
                 }
@@ -1188,6 +1260,10 @@
                 } else{
                     $('td:nth-child(19),th:nth-child(19)').hide();
                     //mrp_sell_price =p_json_obj[i]['sale_price_details_info']
+                }
+                if ($(".chkigst_class").prop("checked") == true) {
+                 
+                    $("#tot_Igst").show();
                 }
 
                 if(p_json_obj[i]['journal_accounting_entry'] == "1"){
@@ -1288,12 +1364,26 @@
 
 
         function chkigstcheck() {
-                $(".chkcgst_class").prop('checked', false);
+        $(".chkcgst_class").prop('checked', false);
                 $(".chksgst_class").prop('checked', false);
                 $(".chkigst_class").prop('checked', true);
                 $(".txtIgst_class").show();
-                $(".txtCgst_class").hide();
-                $(".txtSgst_class").hide();
+             $(".txtCgst_class").hide();
+             $(".txtSgst_class").hide();
+             $("#tot_Igst").show();
+
+             if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop('checked', false)) {
+                 //$(".chkigst_class").prop('checked', true);
+                 //$(".chkcgst_class").prop('checked', false);
+                 $(".txtIgst_class").show();
+                 $(".txtCgst_class").hide();
+                 $(".txtSgst_class").hide();
+                 $("#tot_Igst").show();
+                 $("#tot_Cgst").hide();
+                 $("#tot_Sgst").hide();
+             }
+
+
             checkgst();
             }
 
@@ -1304,6 +1394,17 @@
             $(".txtIgst_class").hide();
             $(".txtCgst_class").show();
             $(".txtSgst_class").show();
+
+            if ($(".chkcgst_class").prop("checked") == true && $(".chkigst_class").prop("checked") == false) {
+
+                //   $(".chkcgst_class").prop('checked', true);
+                $(".txtIgst_class").hide();
+                $(".txtCgst_class").show();
+                $(".txtSgst_class").show();
+                $("#tot_Igst").hide();
+                $("#tot_Cgst").show();
+                $("#tot_Sgst").show();
+            }
             checkgst();
         }
        

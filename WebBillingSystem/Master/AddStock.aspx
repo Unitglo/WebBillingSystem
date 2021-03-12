@@ -176,7 +176,8 @@
                                                 <input class="form-control" runat="server" id="inv_minimum_stock_reminder" placeholder="" value="0.00" type="text">
                                             </div>
                                            </div>
-                                    <hr class="hr-light-30 mt-10">
+                                    <hr class="hr-light-30 mt-10" style="border-width:30px">
+                                    <label>In the case of multiple batch in the Opening Stock-Enter Opening balance here for batchwise details </label>
                                            <div class="row">
                                             <div class="col-md-4 form-group" id="expiry_date_id_div">
                                                 <label>Expiry Date :</label>

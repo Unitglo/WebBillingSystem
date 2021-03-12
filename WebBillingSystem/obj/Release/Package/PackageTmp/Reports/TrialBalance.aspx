@@ -20,6 +20,8 @@
          .rotate_angle {
             transform: rotate(90deg);
         }
+         
+         
      </style>
 <div>
    <!-- Breadcrumb -->
@@ -116,13 +118,18 @@
                                     <th class="border border-dark" runat="server" id="total_cr_tran"></th>
                                     <th class="border border-dark" runat="server" id="total_dr_cl_bal"></th>
                                     <th class="border border-dark" runat="server" id="total_cr_cl_bal"></th>
-                              </tr>
+                           
+                                   </tr>
+                               
                           </tfoot>
+                      
 					   </table>
+                      
                         <!-- /start Table -->
 	              </div> 
                 </div>
              </div>
+              
             <div id="div_export_ledger_id"> 
              <div class="row">
              <div class="col-sm-12">    
@@ -153,16 +160,36 @@
                          <tfoot style="border-top: solid;">
                               <tr>
                                     <th class="border border-dark" colspan="2">Grand Total</th>
+                                
                                     <th class="border border-dark" runat="server" id="total_dr_open_bal_ledger"></th>
                                     <th class="border border-dark" runat="server" id="total_cr_open_bal_ledger"></th>
                                     <th class="border border-dark" runat="server" id="total_dr_tran_ledger"></th>
                                     <th class="border border-dark" runat="server" id="total_cr_tran_ledger"></th>
                                     <th class="border border-dark" runat="server" id="total_dr_cl_bal_ledger"></th>
                                     <th class="border border-dark" runat="server" id="total_cr_cl_bal_ledger"></th>
-                              </tr>
+                         
+                                    </tr>
+                            
                           </tfoot>
+                            
 					   </table>
                         <!-- /start Table -->
+                
+
+               <table style="margin:auto">
+                     <tr>
+                    <td  style="width:300px;visibility:hidden"></td>
+                     <td style="margin: 10px; padding: 5px;width:38px;" class="difference"></td>  
+                      <td  style="width:150px;visibility:hidden"></td>
+                     
+
+                         <td style="margin: 10px; padding: 5px;width:38px;" class="transaction"></td>
+                          <td style="width:150px;visibility:hidden"></td>
+                         <td style="margin: 10px; padding: 5px;" class="closingbal" colspan="2"></td>
+                     </tr>
+
+               </table>
+                    
 	              </div> 
                 </div>
               </div>
@@ -274,7 +301,7 @@
                              return intVal(a) + intVal(b);
                          }, 0 );
                  
-                   
+                 
                          // Update footer by showing the total with the reference of the column index
 	                          $("[id*=total_dr_open_bal_ledger]").html(convert_number(opebaldrTotal));
                               $("[id*=total_cr_open_bal_ledger]").html(convert_number(opebalcrTotal));
@@ -282,8 +309,10 @@
                               $("[id*=total_cr_tran_ledger]").html(convert_number(trancrTotal));
                               $("[id*=total_dr_cl_bal_ledger]").html(convert_number(clbaldrTotal));
                               $("[id*=total_cr_cl_bal_ledger]").html(convert_number(clbalcrTotal));
-                         },
 
+                            
+                         },
+                   
                 });
             }
 
@@ -297,7 +326,8 @@
             $('#TrialBalanceGroupTable tbody tr').find("td:eq(7)").css("text-align", "right");
 
      }
-    
+   
+
         function trial_Balance_group_display() {
             var jsonString =main_group_cl_bal(); //for testing
                 var table = $('#TrialBalanceGroupTable').DataTable({
@@ -382,7 +412,7 @@
                      $("[id*=total_dr_cl_bal]").html(convert_number(clbaldrTotal));
                      $("[id*=total_cr_cl_bal]").html(convert_number(clbalcrTotal));
                 },
-
+         
                 });
             
             $('#TrialBalanceGroupTable tbody tr').find("td:eq(0)").css("width", "80px");
@@ -393,7 +423,7 @@
             $('#TrialBalanceGroupTable tbody tr').find("td:eq(5)").css("text-align", "right");
             $('#TrialBalanceGroupTable tbody tr').find("td:eq(6)").css("text-align", "right");
             $('#TrialBalanceGroupTable tbody tr').find("td:eq(7)").css("text-align", "right");
-
+            diff();
             //Format Second Table(call to this table)
      $('#TrialBalanceGroupTable tbody').on('click', '.details-control', function() {
         var tr = $(this).closest('tr');
@@ -411,8 +441,29 @@
             tr.addClass('shown');
              $(tr).find(".fa-angle-right").css("transform", "rotate(90deg)");
          }
+       
         });
-     }
+ 
+        }
+        function diff()
+        {
+            
+            var amtdifference = 0;
+            var amttransaction = 0;
+            var closingbal = 0;
+            amtdifference = (($("#ContentPlaceHolder1_total_dr_open_bal").html()) - ($("#ContentPlaceHolder1_total_cr_open_bal").html())).toFixed(2);
+
+            amttransaction = (($("#ContentPlaceHolder1_total_dr_tran").html()) - ($("#ContentPlaceHolder1_total_cr_tran").html())).toFixed(2);
+
+            closingbal = (($("#ContentPlaceHolder1_total_dr_cl_bal").html()) - ($("#ContentPlaceHolder1_total_cr_cl_bal").html())).toFixed(2);
+
+            console.log(amtdifference);
+            console.log(amttransaction);
+            console.log(closingbal);
+            $(".difference").html(amtdifference);
+            $(".transaction").html(amttransaction);
+            $(".closingbal").html(closingbal);
+        }
 
         function main_group_cl_bal() {
              var jsonString = '<%=json_main_group_obj %>'; //for testing
@@ -605,9 +656,11 @@
     }
 
         function ExportPdf() {
-             var options = {};
+        
+           var options = {};
              var pdf = new jsPDF('p', 'pt', 'a4');
-             pdf.addHTML($("#div_export_group_id"), 15, 15, options, function() {
+             pdf.addHTML($("#div_export_group_id"), 15, 15, options, function () {
+                 debugger
                pdf.save('TrailBalance.pdf');
              });
         }

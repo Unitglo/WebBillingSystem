@@ -127,9 +127,9 @@
                 <li class="nav-item">
                     <a id="" class=" navbar_search_btn nav-link nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="search"></i></span></a>
                 </li>
-                <li class="nav-item">
+              <%--  <li class="nav-item">
                     <a id="" class="settings_toggle_btn nav-link nav-link-hover" href="javascript:void(0);"><span class="feather-icon"><i data-feather="settings"></i></span></a>
-                </li>
+                </li>--%>
                 <li class="nav-item dropdown dropdown-notifications">
                     <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="notification_click()"><span class="feather-icon"><i data-feather="bell"></i></span><span class="badge-wrap"><span class="badge badge-violet badge-indicator badge-indicator-sm badge-pill pulse"></span></span></a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -168,13 +168,13 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
+                        <a class="dropdown-item" href="/CAHome"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
                         <a class="dropdown-item" href="/Updates.aspx"><i class="dropdown-icon zmdi zmdi-cloud-download"></i><span>Updates</span></a>
 
                         <a class="dropdown-item" href="/Master/BrandSettings.aspx"><i class="dropdown-icon zmdi zmdi-settings"></i><span>Brand Settings</span></a>
                         <div class="dropdown-divider"></div>
                         <div class="sub-dropdown-menu show-on-hover">
-                            <a href="#" class="dropdown-toggle dropdown-item no-caret"><i class="zmdi zmdi-check text-success"></i>Online</a>
+<%--                            <a href="#" class="dropdown-toggle dropdown-item no-caret"><i class="zmdi zmdi-check text-success"></i>Online</a>--%>
                             <div class="dropdown-menu open-left-side">
                                 <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-check text-success"></i><span>Online</span></a>
                                 <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-circle-o text-warning"></i><span>Busy</span></a>
@@ -317,7 +317,8 @@
                                             <a class="nav-link link-with-badge " href="/Vouchers/SaleDetails.aspx" onclick="set_active_tag('sales_details')">SALE
 <%--                                                <button class="badge badge-violet badge-pill" title data-original-title="Tooltip on top">i</button>--%>
                                              
-                                                <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Sale :- 
+                                                 <button type="button" class="badge badge-violet badge-pill"  data-toggle="popover" data-trigger="hover" data-border-width="200%" data-original-title="Title" title="Sale :-"
+    data-content="                              
         All sale / Tax Invoice will be issued here. Further, it also give option to make extra entry in related Sales Journal.
                                                     OUR FORMAT OF SALES / TAX INVOICE IS FULLY COMPLIANT 
             WITH THE GST LAW
@@ -350,7 +351,7 @@
         (q) signature or digital signature of the supplier or his authorised representative: 
 "
         
-                                                    data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                                   >
                                                    i</button>
                                                  </a> 
                                       </li>
@@ -359,8 +360,7 @@
 
                                         <li class="nav-item salesret_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/CreditDetails.aspx?saleRetu=Sale Return" onclick="set_active_tag('salesret_details')">SALE RETURN
-                                               <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="SaleReturn :- All sale Return / Tax Invoice Return will be issued here. Further, it also give option to make extra entry in related Sales Journal." 
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                              <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="SaleReturn :-" data-content="All sale Return / Tax Invoice Return will be issued here. Further, it also give option to make extra entry in related Sales Journal.">
                                                    i</button>
                                
                                             </a>
@@ -368,23 +368,23 @@
 
                                         <li class="nav-item purchase_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/PurchaseDetails.aspx" onclick="set_active_tag('purchase_details')">PURCHASE
-                                                    <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="PURCHASE :-All trade goods purchased will be entered here. The format is echo copy of sale invoice and contain all relevant field that is required to be entered therein." 
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                                    <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="PURCHASE :-" data-content="All trade goods purchased will be entered here. The format is echo copy of sale invoice and contain all relevant field that is required to be entered therein." >
+                            
                                                    i</button>
                                             </a>
                                         </li>
 
                                         <li class="nav-item purreturn_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/DebitDetails.aspx?purRetu=Purchase Return " onclick="set_active_tag('purreturn_details')">PURCHASE RETURN
-                                                  <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Purchase Return :-All trade goods purchased, if return ,  will be entered here. The format is echo copy of sale invoice and contain all relevant field that is required to be entered therein." 
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                                   <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Purchase Return :-" data-content="All trade goods purchased, if return ,  will be entered here. The format is echo copy of sale invoice and contain all relevant field that is required to be entered therein." >
+                            
                                                    i</button>
                                             </a>
                                         </li>
 
                                         <li class="nav-item payment_details">
                                             <a class="nav-link link-with-badge" href="/home.aspx" onclick="set_active_tag('payment_details')">PAYMENT
-                                        <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Payment Voucher :-When an advance taken is required to be returned without delivery of goods / Services then Refund Voucher will be used
+                                        <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Payment Voucher:-" data-content="When an advance taken is required to be returned without delivery of goods / Services then Refund Voucher will be used
                                             Relevant excerpts of GST Law 
                            Section 31(3)(e) of Central Goods and Services Tax Act 2017 ( CGST Act ) ,
 
@@ -402,7 +402,7 @@
                          (j) whether the tax is payable on reverse charge basis; and 
                          (k) signature or digital signature of the supplier or his authorised representative."
     
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                           >
                                                    i</button>
 
 
@@ -411,7 +411,7 @@
 
                                         <li class="nav-item receipt_details">
                                             <a class="nav-link link-with-badge" href="/home.aspx" onclick="set_active_tag('receipt_details')">RECEIPT
-                                             <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Receipt Voucher :-Where ever and whenever you receive an advance from party for the sale of a goods / services this format will be used for it, As you have to charge GST on advance also.
+                                             <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Receipt Voucher :-" data-content="Where ever and whenever you receive an advance from party for the sale of a goods / services this format will be used for it, As you have to charge GST on advance also.
                                                  Relevant excerpts of GST Law
                                                  Section 31(3)(d) of Central Goods and Services Tax Act 2017 
 ( CGST Act ) ,
@@ -432,14 +432,14 @@ Rule 50 Central Goods and Services Tax Rule 2017 ( CGST Rule )
 Provided that where at the time of receipt of advance,-
 (i)the rate of tax is not determinable, the tax shall be paid at the rate of eighteen per cent.; 
 (ii) the nature of supply is not determinable, the same shall be treated as inter-State supply." 
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                           >
                                                    i</button>
                                              </a>
                                         </li>
 
                                         <li class="nav-item debit_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/DebitDetails.aspx" onclick="set_active_tag('debit_details')">DEBIT NOTE
-                            <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Debit Note :- In case of sale to a party, a Debit note is required to be issued, it will be issued here. The cases for issue of Debit  note are short supply.
+                            <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Debit Note :-" data-content="In case of sale to a party, a Debit note is required to be issued, it will be issued here. The cases for issue of Debit  note are short supply.
                                 Relevant excerpts of GST Law
                                 Section 34(3) of Central Goods and Services Tax Act 2017 ( CGST Act ) ,
                                 34 (3) Where a tax invoice has been issued for supply of any goods or services or both and the taxable value or tax charged in that tax invoice is found to be less than the taxable value or tax payable in respect of such supply, the registered person, who has supplied such goods or services or both, shall issue to the recipient a debit note containing such particulars as may be prescribed.
@@ -456,14 +456,14 @@ Provided that where at the time of receipt of advance,-
 (h) serial number and date of the corresponding tax invoice or, as the case may be, bill of supply; 
 (i) value of taxable supply of goods or services, rate of tax and the amount of the tax credited or, as the case may be, debited to the recipient; and 
 (j) signature or digital signature of the supplier or his authorised representative."
-                      data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                    >
                                                    i</button>
                                             </a>
                                         </li>
 
                                          <li class="nav-item credit_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/CreditDetails.aspx" onclick="set_active_tag('credit_details')">CREDIT NOTE
-                                                 <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Credit Note :- In case of sale to a party a credit note is required to be issued it will be issued here. The cases for issue of credit note are short supply, Sale Return, or defective goods.
+                                                 <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Credit Note :-" data-content="In case of sale to a party a credit note is required to be issued it will be issued here. The cases for issue of credit note are short supply, Sale Return, or defective goods.
                                                      Relevant excerpts of GST Law
                                                      Section 34(1) of Central Goods and Services Tax Act 2017 ( CGST Act ) ,
                                                      34. (1) Where a tax invoice has been issued for supply of any goods or services or both and the taxable value or tax charged in that tax invoice is found to exceed the taxable value or tax payable in respect of such supply, or where the goods supplied are returned by the recipient, or where goods or services or both supplied are found to be deficient, the registered person, who has supplied such goods or services or both, may issue to the recipient a credit note containing such particulars as may be prescribed.
@@ -481,23 +481,23 @@ Provided that where at the time of receipt of advance,-
                         (i) value of taxable supply of goods or services, rate of tax and the amount of the tax credited or, as the case may be, debited to the recipient; and 
                         (j) signature or digital signature of the supplier or his authorised representative."
 
-                                                data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                               >
                                                    i</button>
                                             </a>
                                         </li>
                                        
                                         <li class="nav-item expense_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/ExpensesDetails.aspx" onclick="set_active_tag('expense_details')">EXPENSES
-                                                <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Expenses Voucher :-Whenever you purchase a goods / Services related to Expenses where GST is charged and input tax credit is available this voucher will be used to book such expenses." 
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                                <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Expenses Voucher :-" data-content="Whenever you purchase a goods / Services related to Expenses where GST is charged and input tax credit is available this voucher will be used to book such expenses." 
+                                                     >
                                                    i</button>
                                             </a>
                                         </li>
 
                                         <li class="nav-item journal_details">
                                             <a class="nav-link link-with-badge" href="/Vouchers/JournalVouchersDetails.aspx" onclick="set_active_tag('journal_details')">JOURNAL ENTRY
-                                              <button type="button" class="badge badge-violet badge-pill" data-toggle="tooltip-primary" data-placement="top" title="Journals :-all other kind of accounting entry will be entered here." 
-                             data-original-title="Tooltip on top" aria-describedby="tooltip410830">
+                                             <button type="button" class="badge badge-violet badge-pill" data-toggle="popover"  data-trigger="hover" data-original-title="Title" title="Journals :-" data-content="all other kind of accounting entry will be entered here." 
+                            >
                                                    i</button>
                                             </a>
                                         </li>
@@ -697,25 +697,25 @@ Provided that where at the time of receipt of advance,-
                                     <ul class="nav flex-column">
 
                                         <li class="nav-item allacc_details">
-                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('allacc_details')">ALL ACCOUNTS LEDGER</a>
+                                            <a class="nav-link" href="/Reports/AccountLedger.aspx" onclick="set_active_tag('allacc_details')">ALL ACCOUNTS LEDGER</a>
                                         </li>
                                         <li class="nav-item trialb_details">
                                             <a class="nav-link" href="/Reports/TrialBalance.aspx" onclick="set_active_tag('trialb_details')">TRIAL BALANCE</a>
                                         </li>
                                         <li class="nav-item pfloss_details">
-                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('pfloss_details')">PROFIT AND LOSS A/C</a>
+                                            <a class="nav-link" href="/Reports/ProfitLoss.aspx" onclick="set_active_tag('pfloss_details')">PROFIT AND LOSS A/C</a>
                                         </li>
                                         <li class="nav-item balsh_details">
-                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('balsh_details')">BALANCE SHEET</a>
+                                            <a class="nav-link" href="/Reports/BalanceSheet.aspx" onclick="set_active_tag('balsh_details')">BALANCE SHEET</a>
                                         </li>
                                         <li class="nav-item alstled_details">
-                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('alstled_details')">ALL STOCK LEDGER</a>
+                                            <a class="nav-link" href="/Reports/StockLedger.aspx" onclick="set_active_tag('alstled_details')">ALL STOCK LEDGER</a>
                                         </li>
                                         <li class="nav-item perchase_details">
-                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('perchase_details')">PURCHASE REGISTER</a>
+                                            <a class="nav-link" href="/Reports/PurchaseRegister.aspx" onclick="set_active_tag('perchase_details')">PURCHASE REGISTER</a>
                                         </li>
                                         <li class="nav-item sle_details">
-                                            <a class="nav-link" href="/home.aspx" onclick="set_active_tag('sle_details')">SALE REGISTER</a>
+                                            <a class="nav-link" href="/Reports/SaleRegister.aspx" onclick="set_active_tag('sle_details')">SALE REGISTER</a>
                                         </li>
                                         
                                     </ul>
@@ -836,7 +836,7 @@ Provided that where at the time of receipt of advance,-
                 <footer class="footer">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019 <version>0.0.5</version></p>
+                            <p>Pampered by<a href="https://unitglo.com/" class="text-dark" >Unitglo Solution Pvt. ltd.</a> © 2019 <version>0.0.6</version></p>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <p class="d-inline-block">Follow us</p>

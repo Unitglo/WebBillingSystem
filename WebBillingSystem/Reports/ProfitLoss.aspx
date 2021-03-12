@@ -114,7 +114,7 @@
                                     <th onclick="show_details(this)" data-name="Purchase of stock-in-trade" >Purchase of stock-in-trade</th>
 							        <td class="purchase_of_stock_in_trade_amt1"></td>
 							        <td class="purchase_of_stock_in_trade_amt2">0.00</td>
-                                    <th>Closing Stock</th>
+                                    <th><a href='/Reports/ClosingStockValuationReport.aspx' class='btn btn-xs btn-light details-control-accHead fa fa-share' data-toggle='tooltip-dark' data-placement='top' title='Expand'></a>Closing Stock</th>
 							        <td class="clossing_stock_am1"></td>
 							        <td class="clossing_stock_am2">0.00</td>
                                 </tr>
@@ -378,7 +378,7 @@
                 $(".clossing_stock_am2").html("" + close_amt_cnt );
             
             $(".type2_amt_total2").html(""+(parseFloat($(".clossing_stock_am2").html()) + parseFloat($(".revenue_from_operations_amt2").html()))+"");
-            var gross_profit2 =(parseFloat($(".type2_amt_total2").html()))- (parseFloat($(".openning_stock_amt2").html())+parseFloat($(".cost_of_material_consumed_amt2").html())+parseFloat($(".purchase_of_stock_in_trade_amt2").html())+parseFloat($(".direct_expenses_amt2").html()));
+            var gross_profit2 =((parseFloat($(".type2_amt_total2").html()))- (parseFloat($(".openning_stock_amt2").html())+parseFloat($(".cost_of_material_consumed_amt2").html())+parseFloat($(".purchase_of_stock_in_trade_amt2").html())+parseFloat($(".direct_expenses_amt2").html()))).toFixed(2);
   //          var gross_profit1 = parseFloat($(".openning_stock_amt1").html())+parseFloat($(".cost_of_material_consumed_amt1").html())+parseFloat($(".purchase_of_stock_in_trade_amt1").html())+parseFloat($(".direct_expenses_amt1").html());
             //$(".clossing_stock_am1")
 //            $(".gross_profit_amt1").html(gross_profit1);
@@ -386,7 +386,7 @@
             $(".type1_amt_total2").html($(".type2_amt_total2").html());
 //            type2_amt_total1
             var total_type2 = 0.0;
-            total_type2 = parseFloat($(".gross_profit_amt2").html()) + parseFloat($(".other_income_amt2").html()) + parseFloat($(".loss_accounts_amt2").html());
+            total_type2 = (parseFloat($(".gross_profit_amt2").html()) + parseFloat($(".other_income_amt2").html()) + parseFloat($(".loss_accounts_amt2").html())).toFixed(2);
             $(".total_type2").html(total_type2);                
             $(".total_type1").html(total_type2);
             var net_profit_amt2 =parseFloat($(".total_type2").html())-(parseFloat($(".employee_benefit_expenses_amt2").html())+parseFloat($(".finance_costs_amt2").html())+parseFloat($(".other_expenses_amt2").html())+parseFloat($(".depreciation_and_amortization_expenses_amt2").html()));            

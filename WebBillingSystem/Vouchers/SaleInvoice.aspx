@@ -943,6 +943,7 @@
                    // $(".tr_gst_Id").show();
                     if ($(".state-code").text() == $(".Bill_Party_stateCode_class").text()) {
                         chkcgstcheck();
+                       
                     } else {
                         chkigstcheck();
                     }
@@ -967,6 +968,7 @@
             
            var availablegstin = JSON.parse('<%=json_gstin_name%>');
             $(".Bill_Party_gstin_class").autocomplete({
+                
                 source: availablegstin,
                 select: function (event, ui) {
                     var index = availablegstin.indexOf(ui.item.value);
@@ -1170,7 +1172,7 @@
                     cgstrate = gstVal;
                     cgstAmt = $(".txtCgst_class").val();
                     sgstrate = gstVal;
-                    sgstAmt = $(".txtSgst_class").val();                    
+                    sgstAmt = $(".txtSgst_class").val();
                 } else {
                     igstrate = gstRate;
                     igstAmt = $(".txtIgst_class").val();                    
@@ -1179,6 +1181,24 @@
                     sgstrate = "0";
                     sgstAmt ="0";
                 }
+                if ($(".chkigst_class").prop("checked") == true) {
+                    igstrate = gstRate;
+                    igstAmt = $(".txtIgst_class").val();
+                    cgstrate = "0";
+                    cgstAmt = "0";
+                    sgstrate = "0";
+                    sgstAmt = "0";
+
+                  }
+                else{
+                   cgstrate = gstVal;
+                    cgstAmt = $(".txtCgst_class").val();
+                    sgstrate = gstVal;
+                    sgstAmt = $(".txtSgst_class").val();
+                    igstrate = "0";
+                    igstAmt = "0";
+                }
+               
 
                 if ($(".Batch_class option:selected").val() == undefined) {
                     $(".Batch_class").val("0");
@@ -1221,6 +1241,20 @@
                     $('td:nth-child(17),th:nth-child(17)').show();
                     $("#tot_Igst").hide();
                     
+                    if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop("checked") == false) {
+                     $('td:nth-child(12),th:nth-child(12)').show();
+                        $('td:nth-child(13),th:nth-child(13)').show();
+                        $('td:nth-child(14),th:nth-child(14)').hide();
+                        $('td:nth-child(15),th:nth-child(15)').hide();
+                        $('td:nth-child(16),th:nth-child(16)').hide();
+                        $('td:nth-child(17),th:nth-child(17)').hide();
+                        $("#tot_Igst").show();
+                        $("#tot_Cgst").hide();
+                        $("#tot_Sgst").hide();
+                    }
+                   
+                   
+
                 } else {
                     $('td:nth-child(12),th:nth-child(12)').show();
                     $('td:nth-child(13),th:nth-child(13)').show();
@@ -1229,7 +1263,19 @@
                     $('td:nth-child(16),th:nth-child(16)').hide();
                     $('td:nth-child(17),th:nth-child(17)').hide();
                      $("#tot_Cgst").hide();
-                    $("#tot_Sgst").hide();
+                     $("#tot_Sgst").hide();
+
+                     if ($(".chkcgst_class").prop("checked") == true) {
+                         $('td:nth-child(12),th:nth-child(12)').hide();
+                         $('td:nth-child(13),th:nth-child(13)').hide();
+                         $('td:nth-child(14),th:nth-child(14)').show();
+                         $('td:nth-child(15),th:nth-child(15)').show();
+                         $('td:nth-child(16),th:nth-child(16)').show();
+                         $('td:nth-child(17),th:nth-child(17)').show();
+                         $("#tot_Igst").hide();
+                         $("#tot_Cgst").show();
+                         $("#tot_Sgst").show();
+                     }
                     }
                 calculate();
                 $("[id*=txtproduct_name]").val("");
@@ -1585,7 +1631,7 @@
         }
 
          function updateval(data) {
-            
+            //call on edit
             jsonPurchase = data;
             var p_json_obj = JSON.parse(jsonPurchase);
             var count = JSON.parse(jsonPurchase).length;
@@ -1617,9 +1663,27 @@
                 //    $(".chkcgst_class").prop('checked', false);
                 //    $(".chkigst_class").prop('checked', true);
                 //}
-                $(".txtIgst_class").val(p_json_obj[i]['igst_amt']);
-                $(".txtCgst_class").val(p_json_obj[i]['cgst_amt']);
-                $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+                //$(".txtIgst_class").val(p_json_obj[i]['igst_amt']);
+                //$(".txtCgst_class").val(p_json_obj[i]['cgst_amt']);
+                //$(".txtSgst_class").val(p_json_obj[i]['sgst_amount']);
+               // $(".txtIgst_class").val(p_json_obj[i]['igst_amt'])
+               if (p_json_obj[i]['igst_amt'] == 0)
+                {
+                  
+                        $(".chkcgst_class").prop('checked', true);
+                        $(".chkigst_class").prop('checked', false);
+                        $(".txtCgst_class").val(p_json_obj[i]['cgst_amt']).show();
+                        $(".txtSgst_class").val(p_json_obj[i]['sgst_amount']).show();
+                        $("#tot_Cgst").show();
+                        $("#tot_Sgst").show();
+                }
+                else
+                {
+                   $(".chkcgst_class").prop('checked', false);
+                   $(".chkigst_class").prop('checked', true);
+                    $(".txtIgst_class").val(p_json_obj[i]['igst_amt']).show();
+                    $("#tot_Igst").show();
+                }
 
                 addDetails();           
             }            
@@ -1804,17 +1868,66 @@
                 $(".txtIgst_class").show();
                 $(".txtCgst_class").hide();
                 $(".txtSgst_class").hide();
-            checkgst();
+
+                //if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop("checked") == false) {
+          
+                   
+                //}
+               
+                if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop('checked', false)) 
+                {
+                 //$(".chkigst_class").prop('checked', true);
+                    //$(".chkcgst_class").prop('checked', false);
+                    $(".txtIgst_class").show();
+                    $(".txtCgst_class").hide();
+                    $(".txtSgst_class").hide();
+                    $("#tot_Igst").show();
+                    $("#tot_Cgst").hide();
+                    $("#tot_Sgst").hide();
+                 }
+                else {
+                    $(".chkigst_class").prop('checked', true);
+                    $(".chkcgst_class").prop('checked', true);
+                   $(".txtIgst_class").show();
+                    $(".txtCgst_class").show();
+                    $(".txtSgst_class").show();
+                    $("#tot_Igst").show();
+                    $("#tot_Cgst").show();
+                    $("#tot_Sgst").show();
+                }
+               checkgst();
             }
 
         function chkcgstcheck() {
-            $(".chkcgst_class").prop('checked', true);
+          $(".chkcgst_class").prop('checked', true);
            // $(".chksgst_class").prop('checked', true);
             $(".chkigst_class").prop('checked', false);
             $(".txtIgst_class").hide();
             $(".txtCgst_class").show();
             $(".txtSgst_class").show();
-            checkgst();
+        
+            if ($(".chkcgst_class").prop("checked") == true && $(".chkigst_class").prop("checked") == false) {
+
+             //   $(".chkcgst_class").prop('checked', true);
+                $(".txtIgst_class").hide();
+                $(".txtCgst_class").show();
+                $(".txtSgst_class").show();
+                $("#tot_Igst").hide();
+                $("#tot_Cgst").show();
+                $("#tot_Sgst").show();
+            }
+            else {
+            
+        // $(".chkigst_class").prop('checked', true);
+     //       $(".chkcgst_class").prop('checked', true);
+            $(".txtIgst_class").show();
+            $(".txtCgst_class").show();
+            $(".txtSgst_class").show();
+            $("#tot_Igst").show();
+            $("#tot_Cgst").show();
+            $("#tot_Sgst").show();
+            }
+           checkgst();
         }
 
         function yesClick() {

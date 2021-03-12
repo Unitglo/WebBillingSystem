@@ -64,8 +64,9 @@
                        <br /><br /><asp:Button runat="server" class="btn btn-primary" ID="btnSearch" Text="Search" OnClick="search_jv_details_event"/>
                        <button id="btn-export" class="btn btn-light btn-just-icon btn-round" onclick="exportHTML();">Export to word doc</button>
                        <a id="dlink"  style="display:none;"></a>
-                       <input type="button" class="btn btn-light btn-just-icon btn-round" onclick="tablesToExcel(['gstin_Table', 'outwardSupply_Table','Amendment_outward_supply_Table','CRDRNOTE_Table','Amendment_CRDRNOTES_Table','Advance_Received_InvoicePending_Table','Earlier_Advance_Invoice_Issued_Table','DocumentIssued_Table'], ['gstin_Table', 'outwardSupply_Table','Amendment_outward_supply_Table','CRDRNOTE_Table','Amendment_CRDRNOTES_Table','Advance_Received_InvoicePending_Table','Earlier_Advance_Invoice_Issued_Table','DocumentIssued_Table'], 'myfile.xls', 'Excel')" value="Export to Excel">
-                        <%--<input type="button" onclick="tablesToExcel(['gstin_Table', 'outwardSupply_Table','Amendment_outward_supply_Table','CRDRNOTE_Table','Amendment_CRDRNOTES_Table','Advance_Received_InvoicePending_Table','Earlier_Advance_Invoice_Issued_Table','DocumentIssued_Table'])" value="Export to Excel">--%>
+<%--                       <%--   <input type="button" class="btn btn-light btn-just-icon btn-round" onclick="tablesToExcel(['gstin_Table', 'inwardSupply_Table', 'Amendment_outward_supply_Table', 'CRDRNOTE_Table', 'Amendment_CRDRNOTES_Table', 'Advance_Received_InvoicePending_Table', 'Earlier_Advance_Invoice_Issued_Table', 'DocumentIssued_Table'], ['gstin_Table', 'inwardSupply_Table', 'Amendment_outward_supply_Table', 'CRDRNOTE_Table', 'Amendment_CRDRNOTES_Table', 'Advance_Received_InvoicePending_Table', 'Earlier_Advance_Invoice_Issued_Table', 'DocumentIssued_Table'], 'myfile.xls', 'Excel')" value="Export to Excel">--%>
+                               <input type="button" class="btn btn-light btn-just-icon btn-round" onclick="tablesToExcel(['gstin_Table', 'inwardSupply_Table', 'Amendment_outward_supply_Table', 'CRDRNOTE_Table', 'Advance_Received_InvoicePending_Table'], ['gstin_Table', 'inwardSupply_Table', 'Amendment_outward_supply_Table','Advance_Received_InvoicePending_Table', 'CRDRNOTE_Table'], 'myfile.xls', 'Excel')" value="Export to Excel">
+                     <%--<input type="button" onclick="tablesToExcel(['gstin_Table', 'outwardSupply_Table','Amendment_outward_supply_Table','CRDRNOTE_Table','Amendment_CRDRNOTES_Table','Advance_Received_InvoicePending_Table','Earlier_Advance_Invoice_Issued_Table','DocumentIssued_Table'])" value="Export to Excel">--%>
                         <script src="~/Views/JS/JSExcel.js" type="text/javascript"></script>
                        <br />
 <div class="col-sm-12" id="Grid" runat="server">
@@ -171,16 +172,190 @@
      <hr class="mt-10">
         <script type="text/javascript">
    function export_outwardSupply(elem) {
-                
-        var table = document.getElementById("inwardSupply_Table");
+       var table = document.getElementById("inwardSupply_Table");
         var html = table.outerHTML;
         var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
         elem.setAttribute("href", url);
         elem.setAttribute("download", "Outward Supply.xls"); // Choose the file name
-        return false;
+    return false;
   }
+
+           
    
        </script>
+   
+<%--    ----------------------------------------------------------------------------------------------------%>
+      <%--Amendment outward supply--%>
+       <table class="table table-bordered" id="Amendment_outward_supply_Table" style="border: 1px solid;">
+           
+           <thead>
+               <tr style="height:5px; border-color:black;"> <td colspan="34" style="background-color:sandybrown;"> <font color="black">Amendments to details of outward supplies of earlier tax periods </font></td></tr>
+			  <tr style="border-color:black;">
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Name of the receipient*  <font color="red">(Mandatory in case of unregistered person) </font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">GSTIN/ UIN*  <font color="red"> (Mandatory in case of Registered person)</font></th>
+                 <th colspan="1" style="border: 1px solid #ccc; border-color:black;">State Name*</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">"POS  <font color="red">(only if different from the location of recipient)" </font></th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Original Invoice Details</th>
+                  <th colspan="6" style="border: 1px solid #ccc; border-color:black;">Revised Invoice Details</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Quantity	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">IGST   <font color="red"> (Only for Inter State Supply)</font></th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">CGST	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">SGST	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Cess</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Indicate if supply attracts reverse charge</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Tax on this Invoice is paid under provisional assessment</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Provisional Assessment Order Details <font color="red">(Enter Details when value in column AA is YES)	</font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Name of ecommerce operator</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">GSTIN of ecommerce operato <font color="red"> (if applicable)</font></th>
+                  <th colspan="4" style="border: 1px solid #ccc; border-color:black;">Shipping Bill  <font color="red"> (In case of export)</font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Select Receipient Category if different from "Regular"</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Item Type</th>
+			  </tr>
+               <tr>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Invoice Value</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">HSN/SAC</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Goods/Service description</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Taxable value*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Qty</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Unit</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date</th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Export Type </th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date </th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Port Code </th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+               </tr>
+            </thead>
+            <tbody>
+                 </tbody>
+						</table>
+
+    <a id="downloadLink2" onclick="export_Amendment_outward_supply(this)">Export to excel</a>
+     <hr class="mt-10">
+        <script type="text/javascript">
+            function export_Amendment_outward_supply(elem) {
+          
+      var table = document.getElementById("Amendment_outward_supply_Table");
+  var html = table.outerHTML;
+  var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
+  elem.setAttribute("href", url);
+  elem.setAttribute("download", "Amendment outward supply.xls"); // Choose the file name
+  return false;
+            }
+
+      
+       </script>
+
+<%--    -------------------------------------------------------------------------------------------------------%>
+          <%--Advance Received InvoicePending--%>
+
+          <table class="table table-bordered" id="Advance_Received_InvoicePending_Table" style="border: 1px solid;">
+           
+           <thead>
+               <tr style="height:5px; border-color:black;"> <td colspan="34" style="background-color:sandybrown;"> <font color="black">Tax liability arising on account of Time of Supply without issuance of Invoice in the same period </font></td></tr>
+			  <tr style="border-color:black;">
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Name of the receipient*  <font color="red">(Mandatory in case of unregistered person) </font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">GSTIN/ UIN*  <font color="red"> (Mandatory in case of Registered person)</font></th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">State Name*</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">"POS  <font color="red">(only if different from the location of recipient)" </font></th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Document</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">HSN Code of Goods/Service</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">Goods/Service description</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Quantity	</th>
+                  <th colspan="1" style="border: 1px solid #ccc; border-color:black;">"Amount of advance received/ Value of Supply provided without raising a bill*</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">IGST   <font color="red"> (Only for Inter State Supply)</font></th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">CGST	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">SGST	</th>
+                  <th colspan="2" style="border: 1px solid #ccc; border-color:black;">Cess</th>
+                  
+			  </tr>
+               <tr>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">No.*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Date*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Qty</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Unit</th>
+                   <th style="border: 1px solid #ccc; border-color:black;"></th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Rate*</th>
+                   <th style="border: 1px solid #ccc; border-color:black;">Amt*</th>
+                   
+               </tr>
+            </thead>
+             <tbody>
+               <tr>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl1">1</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl2">2</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl3">3</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl4">4</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl5">5</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl6">6</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl7">7</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl8">8</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl9">9</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl10">10</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl11">11</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl12">12</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl13">13</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl14">14</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl15">15</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl16">16</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl17">17</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl18">18</label></td>
+                   <td colspan="1" style="border: 1px solid #ccc; border-color:black;"><label runat="server" id="adReInvoicepend_lbl19">19</label></td>
+                </tr>
+             </tbody>
+		</table>
+
+     <a id="downloadLink5" onclick="export_Advance_Received_InvoicePending(this)">Export to excel</a>
+     <hr class="mt-10">
+        <script type="text/javascript">
+            function export_Advance_Received_InvoicePending(elem) {
+                var table = document.getElementById("Advance_Received_InvoicePending_Table");
+  var html = table.outerHTML;
+  var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
+  elem.setAttribute("href", url);
+  elem.setAttribute("download", "Advance Received InvoicePending.xls"); // Choose the file name
+  return false;
+}
+       </script>
+
+
+
+
+
  <%----------------------------------------------------------------------------------------------------------------------------------------%>
            <%--CRDRNOTE--%>
         <table class="table table-bordered" id="CRDRNOTE_Table" style="border: 1px solid;">
@@ -243,6 +418,7 @@
      <hr class="mt-10">
         <script type="text/javascript">
             function export_CRDRNOTE(elem) {
+            
                 var table = document.getElementById("CRDRNOTE_Table");
                 var html = table.outerHTML;
                 var url = 'data:application/vnd.ms-excel,' + escape(html); // Set your html table into url 
@@ -436,13 +612,25 @@
         }
 
         function exportHTML() {            
-            $('a').remove();
-            $(".btn").remove();
-            $("[id*=FileUpload1").remove();
-            
-            var sourceHTML = document.getElementById("Grid").innerHTML;
-            var source = 'data:application/vnd.ms-word,' + encodeURIComponent(sourceHTML);
+            var sourceHTML = document.getElementById("gstin_Table");
+            var sourceHTML1 = document.getElementById("inwardSupply_Table");
+            var sourceHTML2 = document.getElementById("Amendment_outward_supply_Table");
+            var sourceHTML3 = document.getElementById("Advance_Received_InvoicePending_Table");
+            var sourceHTML4 = document.getElementById("CRDRNOTE_Table");
+            var sourceHTML5 = document.getElementById("AdvancePaid_withoutInvoice_Table");
+
+            var html = sourceHTML.outerHTML;
+            var html1 = sourceHTML1.outerHTML;
+            var html2 = sourceHTML2.outerHTML;
+            var html3 = sourceHTML3.outerHTML;
+            var html4 = sourceHTML4.outerHTML;
+            var html5 = sourceHTML5.outerHTML;
+
+            //var source = 'data:application/vnd.ms-word,' + encodeURIComponent(html);
+            var source = 'data:application/vnd.ms-word,' + escape(html + " " + html1 + "" + html2 + " " + html3+" "+html4+" "+html5);
+   
             var fileDownload = document.createElement("a");
+            debugger
             document.body.appendChild(fileDownload);
             fileDownload.href = source;
             fileDownload.download = 'document.doc';
@@ -451,8 +639,78 @@
             window.location.reload();
 
         }
+
+        
+
+
+
+        var tablesToExcel = (function () {
+            var uri = 'data:application/vnd.ms-excel;base64,'
+            , tmplWorkbookXML = '<?xml version="1.0"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">'
+              + '<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office"><Author>Axel Richter</Author><Created>{created}</Created></DocumentProperties>'
+              + '<Styles>'
+              + '<Style ss:ID="Currency"><NumberFormat ss:Format="Currency"></NumberFormat></Style>'
+              + '<Style ss:ID="Date"><NumberFormat ss:Format="Medium Date"></NumberFormat></Style>'
+              + '</Styles>'
+              + '{worksheets}</Workbook>'
+            , tmplWorksheetXML = '<Worksheet ss:Name="{nameWS}"><Table>{rows}</Table></Worksheet>'
+            , tmplCellXML = '<Cell{attributeStyleID}{attributeFormula}><Data ss:Type="{nameType}">{data}</Data></Cell>'
+            , base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
+            , format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
+            return function (tables, wsnames, wbname, appname) {
+                var ctx = "";
+                var workbookXML = "";
+                var worksheetsXML = "";
+                var rowsXML = "";
+
+                for (var i = 0; i < tables.length; i++) {
+                    if (!tables[i].nodeType) tables[i] = document.getElementById(tables[i]);
+                    for (var j = 0; j < tables[i].rows.length; j++) {
+                        rowsXML += '<Row>'
+                        for (var k = 0; k < tables[i].rows[j].cells.length; k++) {
+                            var dataType = tables[i].rows[j].cells[k].getAttribute("data-type");
+                            var dataStyle = tables[i].rows[j].cells[k].getAttribute("data-style");
+                            var dataValue = tables[i].rows[j].cells[k].getAttribute("data-value");
+                            dataValue = (dataValue) ? dataValue : tables[i].rows[j].cells[k].innerHTML;
+                            var dataFormula = tables[i].rows[j].cells[k].getAttribute("data-formula");
+                            dataFormula = (dataFormula) ? dataFormula : (appname == 'Calc' && dataType == 'DateTime') ? dataValue : null;
+                            ctx = {
+                                attributeStyleID: (dataStyle == 'Currency' || dataStyle == 'Date') ? ' ss:StyleID="' + dataStyle + '"' : ''
+                                   , nameType: (dataType == 'Number' || dataType == 'DateTime' || dataType == 'Boolean' || dataType == 'Error') ? dataType : 'String'
+                                   , data: (dataFormula) ? '' : dataValue
+                                   , attributeFormula: (dataFormula) ? ' ss:Formula="' + dataFormula + '"' : ''
+                            };
+                            rowsXML += format(tmplCellXML, ctx);
+                        }
+                        rowsXML += '</Row>'
+                    }
+                    ctx = { rows: rowsXML, nameWS: wsnames[i] || 'Sheet' + i };
+                    worksheetsXML += format(tmplWorksheetXML, ctx);
+                    rowsXML = "";
+                }
+
+                ctx = { created: (new Date()).getTime(), worksheets: worksheetsXML };
+                workbookXML = format(tmplWorkbookXML, ctx);
+
+                console.log(workbookXML);
+
+                var link = document.createElement("A");
+                link.href = uri + base64(workbookXML);
+                link.download = wbname || 'Workbook.xls';
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        })();
+
+
+
+   //var date = new Date();
    var date = new Date();
-     
+   var FromDateId = "";
+   var ToDateId = "";
+   var year = date.getFullYear();
         function monthChange() {
             
             var firstDay = date.getFullYear() + "-" +  $('.month_class').val() + "-" + 1; 

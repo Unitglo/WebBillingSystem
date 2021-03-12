@@ -14,6 +14,7 @@ namespace WebBillingSystem
     {
         DataBaseHealpare baseHealpare;
         public string ca_name;
+        public string ca_code;
         public string address_name;
         public string gst_no;
         public string json_obj_expenses_count;
@@ -43,8 +44,9 @@ namespace WebBillingSystem
                 if (sess_login_reader != null && sess_login_reader.Read())
                 {
                     ca_name = ""+sess_login_reader["ca_name"];
-                   // address_name = sess_login_reader["company_address_one"] + " " + sess_login_reader["company_address_two"] + "" + sess_login_reader["company_address_three"]; ;
-                   // gst_no = "" + sess_login_reader["company_gst_number"];
+                    ca_code = ""+sess_login_reader["ca_code"];
+                    // address_name = sess_login_reader["company_address_one"] + " " + sess_login_reader["company_address_two"] + "" + sess_login_reader["company_address_three"]; ;
+                    // gst_no = "" + sess_login_reader["company_gst_number"];
                 }
             }
             string gstdetailsrecieved = null;

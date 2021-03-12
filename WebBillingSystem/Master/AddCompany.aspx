@@ -178,7 +178,11 @@
 
                                         </div>
 										<div class="col-md-4 form-group" style="padding-top: 30px;">										
-                                            <asp:Button runat="server" class="btn btn-primary" type="submit" id="btnLogin" text="Login" OnClick="loginClick" />
+<%--                                            <asp:Button runat="server" class="btn btn-primary" type="submit" id="btnLogin" text="Login" OnClick="loginClick" />--%>
+                                    <a href="http://services.gst.gov.in/services/login" target="_blank" style="color:white;background-color:blue;" class="btn btn-primary"> GST Login </a> 
+
+
+
                                             <%--<input type="button" class="btn btn-primary" onClick="loginClick()" value="Login"/>--%>
 										<%--<button type="submit" class="btn btn-primary" onClick="loginClick()">Login</button>--%>
 										</div>

@@ -186,7 +186,7 @@
         }
     }
     function sale_details_display() {
-
+        
         var jsonString = '<%=json_sale_obj %>'; //for testing
         if (jsonString != '') {
             jsonString = JSON.parse(jsonString);
@@ -247,6 +247,7 @@
       <%  if (Session["page_role"].ToString() == "CA")
     {%>
         $("#Addbtn").hide();
+       
      <% }%>
    <%else{%>
         $("#Addbtn").show();

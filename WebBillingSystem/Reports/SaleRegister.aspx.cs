@@ -90,7 +90,7 @@ namespace WebBillingSystem
             {
                string edit_button = "<a class='btn btn-xs btn-warning details-control fa fa-angle-right' data-toggle='tooltip-dark' data-placement='top' title='Expand'></>";
                  edit_button += "<a class='btn btn-xs btn-light fa fa-file-excel-o btnExcelMonth' data-toggle='tooltip-dark' data-placement='top' title='Export to Excel' style='font - size:20px; color: forestgreen' onclick='ExportToExcel(this)'></>";
-                 edit_button += "<a class='btn btn-xs btn-light fa fa-file-pdf-o btnPdfMonth' data-toggle='tooltip-dark' data-placement='top' title='Export to PDF' style='font - size:20px; color: red'></>";
+                 edit_button += "<a class='btn btn-xs btn-light fa fa-file-pdf-o btnPdfMonth' data-toggle='tooltip-dark' data-placement='top' title='Export to PDF' style='font - size:20px; color: red' onclick='ExportPdf()'></>";
                  edit_button += "<a class='btn btn-xs btn-light fa fa-file-word-o btnWordMonth' data-toggle='tooltip-dark' data-placement='top' title='Export to Word Doc' style='font - size:20px; color: blue' onclick='ExportToDocMonth(this)'></>";
                  double cr_tot = Convert.ToDouble(reader["cr_tot"].ToString());
                  double dr_tot = Convert.ToDouble(reader["dr_tot"].ToString());

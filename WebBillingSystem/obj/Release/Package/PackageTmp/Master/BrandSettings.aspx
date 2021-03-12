@@ -136,10 +136,10 @@
                         </table>
                         <hr class="mt-0"/>
                         <div class="row">
-                             <div class="col-sm">
-                                 <input type="button" id="brand_sett_btn_id" class="btn btn-primary" Style="margin-left: 30%" value="Save" onclick="saveBtnClick()" data-toggle="tooltip-dark" data-placement="top" title="Save Brand Setting"/>
-                                  <%--<asp:Button type="button" runat="server" ID="master_sett_btn_id" class="btn btn-primary" Style="margin-left: 30%" Text="Save" onclick="saveBtnClick()" OnClientClick=""/>--%>
-                                  <asp:Button type="button" runat="server" ID="event_id" class="btn btn-primary" Style="margin-left: 30%" Text="Save2" onclick="button_Click"/>
+                             <div class="col-sm" onclick="saveBtnClick();">
+<%--                                 <input type="button" id="brand_sett_btn_id" class="btn btn-primary" Style="margin-left: 30%" value="Save" onclick="saveBtnClick()" data-toggle="tooltip-dark" data-placement="top" title="Save Brand Setting"/>--%>
+<%--                                  <asp:Button type="button" runat="server" ID="master_sett_btn_id" class="btn btn-primary" Style="margin-left: 30%" Text="Save" onclick="saveBtnClick()" OnClientClick=""/>--%>
+                                  <asp:Button type="button" runat="server" ID="event_id" class="btn btn-primary" Style="margin-left: 30%" Text="Save" onclick="button_Click"/>
                              </div>
                         </div>
                     </section>
@@ -179,7 +179,7 @@
                 var json_str = JSON.stringify(JSONObject);
             $(".txthdn_Json").val(json_str);
             alert($(".txthdn_Json").val());
-        
+            
         }
 
         function imageSetUrl(input) 
@@ -193,5 +193,8 @@
             }
         }
     </script>
+
+<%--</div>
+</div>--%>
 
 </asp:Content>

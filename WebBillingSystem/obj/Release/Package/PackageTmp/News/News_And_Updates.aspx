@@ -35,7 +35,7 @@
                               <div class="row">
                                  <div class="col-md-10 mb-10">     
                                        <h6> Description :  </h6>
-                                       <textarea id="description_id" runat="server" class="form-control mt-15" rows="3" placeholder="Enter Description..."></textarea>
+                                       <textarea id="description_id" runat="server" class="form-control mt-15" rows="3" placeholder="Enter Description..." maxlength="200" onkeyup="limitarea('value','countchar');" onkeydown="limitarea('value','countchar');" ></textarea>
                                  </div>
                               </div> <hr class="mt-0">   
 <%--------------------------------------------------------------------------------------------------------------------------------------%>
@@ -87,6 +87,13 @@
     </div>
 
     <script type="text/javascript">
+        function limitarea(startfrom,charend)
+        {
+            var len = document.getElementById(startfrom).value.length;
+            document.getElementById(charend).innerHTML = len;
+        }
+
+
         window.onload = function () {
             
             $('.txtLink_class').hide();

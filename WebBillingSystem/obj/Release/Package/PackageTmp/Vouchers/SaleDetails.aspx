@@ -35,7 +35,7 @@
                 <!-- Title -->
                 <div class="hk-pg-header">
                     <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="align-left"></i></span></span>Sale/Tax Invoice Details</h4>
-                    <input type="button" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" style="float: right;" value="+" data-toggle="tooltip-dark" data-placement="top" title="Add New Sale"/>
+                    <input type="button" id="Addbtn" onclick="loadModalDiv();" class="btn btn-primary btn-just-icon btn-round" style="float: right;" value="+" data-toggle="tooltip-dark" data-placement="top" title="Add New Sale" />
                 </div>
                 <!-- /Title -->
 
@@ -186,7 +186,7 @@
         }
     }
     function sale_details_display() {
-
+        
         var jsonString = '<%=json_sale_obj %>'; //for testing
         if (jsonString != '') {
             jsonString = JSON.parse(jsonString);
@@ -239,12 +239,25 @@
         sale_details();
         $("a.exportSaleExcel").removeClass("dt-button buttons-excel buttons-html5");
         $("a.exportSaleExcel").addClass("btn btn-info btn-sm btn-just-icon btn-round");
+         loadModalDiv();
 }
 
     function loadModalDiv()
     {
-        location.href = '/Vouchers/SaleInvoice';
-    }
+      <%  if (Session["page_role"].ToString() == "CA")
+    {%>
+        $("#Addbtn").hide();
+       
+     <% }%>
+   <%else{%>
+        $("#Addbtn").show();
+        $("#Addbtn").click(function(){ 
+            location.href = '/Vouchers/SaleInvoice';
+        })
+ <% }%>
+  }
+        
+ 
     
     function Export2Doc(element, filename = '') {
         $(".exportSaleExcel").hide();

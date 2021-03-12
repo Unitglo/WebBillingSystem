@@ -26,6 +26,7 @@ namespace WebBillingSystem
         public string json_Party_name;
         public string json_Account_head;
         public string json_obj;
+        public string json_product;
         public string json_product_name;
         public string json_exp_obj;
         public string json_setting_obj;
@@ -73,23 +74,46 @@ namespace WebBillingSystem
                     msq_reader.Close();
                 }
 
-                MySqlDataReader product_reader = baseHealpare.SelectAllValues(baseHealpare.expenses_voucher_product_name, " where status=0");
+                MySqlDataReader company_reader = baseHealpare.SelectAllValues(baseHealpare.TableAddStock, " where status=0");
+
 
                 product_name = new System.Collections.ArrayList();
+                account_master = new System.Collections.ArrayList();
 
-                while (product_reader != null && product_reader.Read())
+                while (company_reader != null && company_reader.Read())
                 {
-                    product_name.Add(product_reader["expe_product_name"]);
+                    account_master.Add(new
+                    {
+                        stock_nature_of_opration = company_reader["stock_nature_of_opration"],
+                        stock_group = company_reader["stock_group"],
+                        stock_hsn_sac_code = company_reader["stock_hsn_sac_code"],
+                        stock_gst_rate = company_reader["stock_gst_rate"],
+                        stock_mrp = company_reader["stock_mrp"],
+                        stock_product_name = company_reader["stock_product_name"],
+                        stock_unit_of_measurment = company_reader["stock_unit_of_measurment"],
+                        stock_reorder_quantity = company_reader["stock_reorder_quantity"],
+                        stock_minimum_stock_reminder = company_reader["stock_minimum_stock_reminder"],
+                        stock_sale_price_without_gst = company_reader["stock_sale_price_without_gst"],
+
+                        stock_opening_qty = company_reader["stock_opening_qty"],
+                        stock_purc_price_per_unit = company_reader["stock_purc_price_per_unit"],
+                        stock_opening_amt = company_reader["stock_opening_amt"],
+                        stock_pri_unit_of_measurment = company_reader["stock_pri_unit_of_measurment"],
+                        stock_sec_unit_of_measurement = company_reader["stock_sec_unit_of_measurement"],
+                        stock_conversion_factor = company_reader["stock_conversion_factor"],
+                    });
+                    product_name.Add(company_reader["stock_product_name"]);
                 }
-                if (product_reader != null)
+                if (company_reader != null)
                 {
-                    product_reader.Close();
+                    company_reader.Close();
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     serializer = new JavaScriptSerializer();
+                    json_product = serializer.Serialize(account_master);    
                     json_product_name = serializer.Serialize(product_name);
                 }
 
-                MySqlDataReader company_reader = baseHealpare.SelectAllValues("*, " + "(SELECT pms_account_state_name FROM pms_account_state WHERE pms_account_state_code = account_state_code) as statename", baseHealpare.TableAddAccount, " where status=0");
+             company_reader = baseHealpare.SelectAllValues("*, " + "(SELECT pms_account_state_name FROM pms_account_state WHERE pms_account_state_code = account_state_code) as statename", baseHealpare.TableAddAccount, " where status=0");
                 account_master = new System.Collections.ArrayList();
                 party_name = new System.Collections.ArrayList();
                 Account_head = new System.Collections.ArrayList();

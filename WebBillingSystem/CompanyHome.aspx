@@ -7,6 +7,8 @@
              <div class="hk-row">
 				 <div class="col-sm-12">
                      <div style="height: 40px; padding-top: 6px; background-color: #2d1453; font-size: larger;">
+                  <a href="http://services.gst.gov.in/services/login" target="_blank" style="color:white;background-color:darkblue;height:30px" class="btn btn-primary"> GST Login </a> 
+
 	                        <marquee id="left_marq_id" behavior="scroll" direction="left">
 	                    	    <ul style="overflow: hidden;">
 	                    		    <li style="display: inline-block; color:white;" id="li_mar_id">

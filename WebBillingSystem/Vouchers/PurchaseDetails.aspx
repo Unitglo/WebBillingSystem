@@ -221,7 +221,7 @@
        
       <% }%>
          <%else{%>
-         $("#Addbtn").Show();
+         $("#Addbtn").show();
          $("#Addbtn").click(function(){ 
              location.href = '/Vouchers/Purchaseinvoice';
          })

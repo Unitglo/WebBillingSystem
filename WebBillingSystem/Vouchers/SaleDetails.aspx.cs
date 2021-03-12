@@ -50,6 +50,7 @@ namespace WebBillingSystem
             {
                 string status_label = "";
                 string edit_button = "<a href='/Vouchers/SaleInvoice.aspx?value=" + baseHealpare.EncodeUrl(this, "" + reader["sale_mst_id"]) + "' class='btn btn-sm btn-info fa fa-pencil' id='btnEdit' data-toggle='tooltip-dark' data-placement='top' title='Edit Record'></a>  ";
+               // char[] MyChar = { '~' };
                 edit_button += " " + "<a href='#' onclick='preparePopup(this)' data-modal-title='Cancel Record' data-message='Do You Want to Continue?' data-url='/Vouchers/SaleInvoice.aspx?delete=delete&value=" + baseHealpare.EncodeUrl(this, "" + reader["sale_mst_id"]) + "' class='btn btn-sm btn-danger fa fa-close' data-toggle='tooltip-dark' data-placement='top' title='Cancel Record'></>";
                 
                 if (reader["status"]+"" == "2") {

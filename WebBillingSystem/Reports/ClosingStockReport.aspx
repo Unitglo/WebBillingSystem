@@ -340,7 +340,8 @@
     //Export To Excel Per Year
     $("#btnExport").click(function (e) {
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id=div_export_id]').html()));
-            e.preventDefault();
+        e.preventDefault();
+
     });
     //Export To Word Document   
     function Export2Doc(element, filename = '') {
@@ -371,8 +372,9 @@
         document.body.removeChild(downloadLink);
     }
     function ExportPdf() { 
-        //$('#dtl_Table thead tr').remove();
-        //$('#dtl_Table  tbody').find('tr:eq(0)').remove();
+       // $('#dtl_Table thead tr').remove();
+      //  $('#dtl_Table  tbody').find('tr:eq(0)').remove();
+
             kendo.drawing
                 .drawDOM("#div_export_id", 
                 { 

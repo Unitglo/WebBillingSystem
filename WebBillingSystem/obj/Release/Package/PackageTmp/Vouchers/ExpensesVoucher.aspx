@@ -270,7 +270,7 @@
                                                     <hr class="mt-0">
                                             </tr>
                                             <tr class="tr_gst_Id">
-                                                <td colspan="1"><input type="checkbox" class="chkigst_class" id="chkigst_Id" onclick="chkigstcheck()"/><label>IGST  </label>&nbsp;<input type="checkbox" id="chkcgst_Id" class="chkcgst_class" onclick="chkcgstcheck()" checked/><label>CGST/SGST  </label></td>
+                                                <td colspan="1"><input type="checkbox" class="chkigst_class" id="chkigst_Id" onclick="chkigstcheck()"/><label>IGST  </label>&nbsp;<input type="checkbox" id="chkcgst_Id" class="chkcgst_class" onclick="chkcgstcheck()"/><label>CGST/SGST  </label></td>
                                                 <td colspan="1">:</td>
                                                 <td colspan="2"><input type="text" class="form-control txtIgst_class" id="txtIgst" value="0" placeholder="Igst amount"/><input type="text" class="form-control txtCgst_class" id="txtCgst" value="0" placeholder="Cgst amount"/><input type="text" id="txtSgst" value="0" class="form-control txtSgst_class" placeholder="Sgst amount"/></td>
                                             </tr>
@@ -402,7 +402,7 @@
         <!-- end row -->
         <div class="row">
             <div class="col-sm">
-                <asp:Button runat="server" class="btn btn-primary" type="submit" ID="submit_expenses_details" Text="Save" OnClick="submit_expenses_details_event" OnClientClick="saveValue();" data-toggle="tooltip-dark" data-placement="top" title="Save Data" />
+                <asp:Button runat="server" class="btn btn-primary" type="submit" ID="submit_expenses_details" Text="Save" OnClick="submit_expenses_details_event" OnClientClick="saveValue();" data-toggle="tooltip-dark"   data-placement="top" title="Save Data" />
               <asp:Button runat="server" class="btn btn-info" id="btnPrint" text="Print" OnClick="btnPrintClick" data-toggle="tooltip-dark" data-placement="top" title="Print Data Sale"/>
 
             </div>
@@ -437,29 +437,44 @@
         var availablePartyName = '';
         var partyObject = '';
         
+
+        var availableProductName = null;
+        var prodcutObject = null;
         window.onload = function () {
            //$(".tr_gst_Id").hide();
             if ($('[id*=breadcrumb_title]').text() == "Update Expenses Voucher") {
                 if($('.gstin_class').val() != '') { gstin_str = ($('.gstin_class').val()).substring(0, 2); } else { gstin_str = $('.state_code_class').val(); }
                 updateval();
             }
+            debugger
+         availableProductName = JSON.parse('<%=json_product_name %>');
+           prodcutObject = JSON.parse('<%=json_product%>');
 
-            var availableProductName = JSON.parse('<%=json_product_name %>');
-
-            $(".product-name").autocomplete({
+         $(".product-name").autocomplete({
 
                 source: availableProductName,
 
                 select: function (event, ui) {
+
                     var index = availableProductName.indexOf(ui.item.value);
+                    $(".hsn_Code_Class").val(prodcutObject[index].stock_hsn_sac_code);
+                    if (prodcutObject[index].stock_gst_rate == "" || prodcutObject[index].stock_gst_rate == null) {
+                        $(".gst_rate_Class").val("0");
+                    } else {
+                        $(".gst_rate_Class").val(prodcutObject[index].stock_gst_rate);
+                    }  
+
                 }
+              
             });
 
 
-             availablePartyName = JSON.parse('<%=json_Party_name %>');
+            availablePartyName = JSON.parse('<%=json_Party_name %>');
              partyObject = JSON.parse('<%=json_obj%>');
             
+          
             $(".Supplier_Name_class").autocomplete({
+           
                 source: availablePartyName,
                 select: function (event, ui) {
                     var index = availablePartyName.indexOf(ui.item.value);
@@ -551,7 +566,7 @@
                 localStorage.setItem('items1', null);
                 updatevalLocal(data, data1);
             }
-            chkcgstcheck();
+            //chkcgstcheck();
         }
 
         function updateval() {
@@ -566,9 +581,31 @@
                     $(".hsn_Code_Class").val(p_json_obj[i]['exp_hsn_code']);
                     $(".gst_rate_Class").val(p_json_obj[i]['rate']);
                     $(".amount").val(p_json_obj[i]['exp_tax_value']);
-                    $(".txtIgst_class").val(p_json_obj[i]['exp_igst_amount']);
-                    $(".txtCgst_class").val(p_json_obj[i]['exp_cgst_amount']);
-                    $(".txtSgst_class").val(p_json_obj[i]['exp_sgst_amount']);
+
+                    //$(".txtIgst_class").val(p_json_obj[i]['exp_igst_amount']);
+                    //$(".txtCgst_class").val(p_json_obj[i]['exp_cgst_amount']);
+                    //$(".txtSgst_class").val(p_json_obj[i]['exp_sgst_amount']);
+
+                    if (p_json_obj[i]['exp_igst_amount'] == 0) {
+                       
+                        $(".chkcgst_class").prop('checked', true);
+                        $(".chkigst_class").prop('checked', false);
+                        $(".txtCgst_class").val(p_json_obj[i]['exp_cgst_amount']).show();
+                        $(".txtSgst_class").val(p_json_obj[i]['exp_cgst_amount']).show();
+                        $("#tot_Cgst").show();
+                        $("#tot_Sgst").show();
+                      //  $("#tot_Amt_tax").show();
+                        
+                    }
+                    else {
+                        $(".chkcgst_class").prop('checked', false);
+                        $(".chkigst_class").prop('checked', true);
+                        $(".txtIgst_class").val(p_json_obj[i]['exp_igst_amount']).show();
+                        $("#tot_Igst").show();
+
+                    }
+
+
                     addproduct();
                 }
             }
@@ -582,7 +619,6 @@
         var tot_cgst_amt = 0;
         var tot_sgst_amt = 0;
         var tot_amount_tax = 0;
-        
         var i = 0;
 
         function addproduct() {
@@ -608,22 +644,56 @@
                 var sgstrate = "0";
                 var sgstAmt = "0";
 
-                if ($(".chkcgst_class").prop("checked") == true) {
-
-                        igstrate = "0";
-                        igstAmt = "0";
-                        cgstrate = gstVal;
-                        cgstAmt = convert_number($(".txtCgst_class").val());
-                        sgstrate = gstVal;
-                        sgstAmt = convert_number($(".txtSgst_class").val());
-                    } else if ($(".chkigst_class").prop("checked") == true) {
-                        igstrate = gstRate;
+                if ($(".state_code_class").text() == gstin_str) {
+                    igstrate = "0";
+                    igstAmt = "0";
+                    cgstrate = gstVal;
+                    cgstAmt = convert_number($(".txtCgst_class").val());
+                    sgstrate = gstVal;
+                    sgstAmt = convert_number($(".txtSgst_class").val());
+                }
+                else {
+                    igstrate = gstRate;
                     igstAmt = convert_number($(".txtIgst_class").val());
                     cgstrate = "0";
                     cgstAmt = "0";
                     sgstrate = "0";
                     sgstAmt = "0";
-                   }
+                }
+                if ($(".chkigst_class").prop("checked") == true) {
+                    igstrate = gstRate;
+                    igstAmt = $(".txtIgst_class").val();
+                    cgstrate = "0";
+                    cgstAmt = "0";
+                    sgstrate = "0";
+                    sgstAmt = "0";
+
+                }
+                else {
+                    cgstrate = gstVal;
+                    cgstAmt = $(".txtCgst_class").val();
+                    sgstrate = gstVal;
+                    sgstAmt = $(".txtSgst_class").val();
+                    igstrate = "0";
+                    igstAmt = "0";
+                }
+
+                //if ($(".chkcgst_class").prop("checked") == true) {
+
+                //        igstrate = "0";
+                //        igstAmt = "0";
+                //        cgstrate = gstVal;
+                //        cgstAmt = convert_number($(".txtCgst_class").val());
+                //        sgstrate = gstVal;
+                //        sgstAmt = convert_number($(".txtSgst_class").val());
+                //    } else if ($(".chkigst_class").prop("checked") == true) {
+                //        igstrate = gstRate;
+                //    igstAmt = convert_number($(".txtIgst_class").val());
+                //    cgstrate = "0";
+                //    cgstAmt = "0";
+                //    sgstrate = "0";
+                //    sgstAmt = "0";
+                //   }
                 
                 $('#myTable> tbody:last').append('<tr>' +
                     '<td style="border:1px solid!important;">' + (i + 1) + '</td>' +
@@ -642,45 +712,8 @@
                     + '</tr>'
                 );
                 i++;
-                
-                   if ($(".chkcgst_class").prop("checked") == true) {
-                        $('td:nth-child(6),th:nth-child(6)').hide();
-                        $('td:nth-child(7),th:nth-child(7)').hide();
-                        $('td:nth-child(8),th:nth-child(8)').show();
-                        $('td:nth-child(9),th:nth-child(9)').show();
-                        $('td:nth-child(10),th:nth-child(10)').show();
-                        $('td:nth-child(11),th:nth-child(11)').show();
-                        $("#tot_Igst").hide();
-                        $("#tot_Cgst").show();
-                        $("#tot_Sgst").show();
-                        $("#tot_Amt_tax").show();
-                   } else if ($(".chkigst_class").prop("checked") == true) {
-                        $('td:nth-child(6),th:nth-child(6)').show();
-                        $('td:nth-child(7),th:nth-child(7)').show();
-                        $('td:nth-child(8),th:nth-child(8)').hide();
-                        $('td:nth-child(9),th:nth-child(9)').hide();
-                        $('td:nth-child(10),th:nth-child(10)').hide();
-                        $('td:nth-child(11),th:nth-child(11)').hide();
-                        $('td:nth-child(12),th:nth-child(12)').show();
-                        $("#tot_Cgst").hide();
-                        $("#tot_Sgst").hide();
-                        $("#tot_Igst").show();
-                        $("#tot_Amt_tax").show();
-                   }
-                
-                if($(".chkigst_class").prop("checked") == true) {
-                    $('td:nth-child(6),th:nth-child(6)').show();
-                    $('td:nth-child(7),th:nth-child(7)').show();
-                    $('td:nth-child(8),th:nth-child(8)').hide();
-                    $('td:nth-child(9),th:nth-child(9)').hide();
-                    $('td:nth-child(10),th:nth-child(10)').hide();
-                    $('td:nth-child(11),th:nth-child(11)').hide();
-                    $('td:nth-child(12),th:nth-child(12)').show();
-                    $("#tot_Cgst").hide();
-                    $("#tot_Sgst").hide();
-                    $("#tot_Igst").show();
-                    $("#tot_Amt_tax").show();
-                } else if ($(".chkcgst_class").prop("checked") == true) {
+               settingsCheck();
+                if ($(".state_code_class").text() == gstin_str) {
                     $('td:nth-child(6),th:nth-child(6)').hide();
                     $('td:nth-child(7),th:nth-child(7)').hide();
                     $('td:nth-child(8),th:nth-child(8)').show();
@@ -691,7 +724,98 @@
                     $("#tot_Cgst").show();
                     $("#tot_Sgst").show();
                     $("#tot_Amt_tax").show();
+
+                    if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop("checked") == false) {
+                        $('td:nth-child(6),th:nth-child(6)').show();
+                        $('td:nth-child(7),th:nth-child(7)').show();
+                        $('td:nth-child(8),th:nth-child(8)').hide();
+                        $('td:nth-child(9),th:nth-child(9)').hide();
+                        $('td:nth-child(10),th:nth-child(10)').hide();
+                        $('td:nth-child(11),th:nth-child(11)').hide();
+                            $('td:nth-child(12),th:nth-child(12)').show();
+                        $("#tot_Igst").show();
+                         $("#tot_Cgst").hide();
+                        $("#tot_Sgst").hide();
+                    }
+
                 }
+                else {
+                    $('td:nth-child(6),th:nth-child(6)').show();
+                    $('td:nth-child(7),th:nth-child(7)').show();
+                    $('td:nth-child(8),th:nth-child(8)').hide();
+                    $('td:nth-child(9),th:nth-child(9)').hide();
+                    $('td:nth-child(10),th:nth-child(10)').hide();
+                    $('td:nth-child(11),th:nth-child(11)').hide();
+                    $('td:nth-child(12),th:nth-child(12)').show();
+                    $("#tot_Cgst").hide();
+                    $("#tot_Sgst").hide();
+                    $("#tot_Igst").show()
+                    $("#tot_Amt_tax").show();
+
+                    if ($(".chkcgst_class").prop("checked") == true && $(".chkigst_class").prop("checked") == false) {
+                        $('td:nth-child(6),th:nth-child(6)').hide();
+                        $('td:nth-child(7),th:nth-child(7)').hide();
+                        $('td:nth-child(8),th:nth-child(8)').show();
+                        $('td:nth-child(9),th:nth-child(9)').show();
+                        $('td:nth-child(10),th:nth-child(10)').show();
+                        $('td:nth-child(11),th:nth-child(11)').show();
+                        $("#tot_Igst").hide();
+                        $("#tot_Cgst").show();
+                        $("#tot_Sgst").show();
+                        $("#tot_Amt_tax").show();
+                    }
+                }
+
+                   //if ($(".chkcgst_class").prop("checked") == true) {
+                   //     $('td:nth-child(6),th:nth-child(6)').hide();
+                   //     $('td:nth-child(7),th:nth-child(7)').hide();
+                   //     $('td:nth-child(8),th:nth-child(8)').show();
+                   //     $('td:nth-child(9),th:nth-child(9)').show();
+                   //     $('td:nth-child(10),th:nth-child(10)').show();
+                   //     $('td:nth-child(11),th:nth-child(11)').show();
+                   //     $("#tot_Igst").hide();
+                   //     $("#tot_Cgst").show();
+                   //     $("#tot_Sgst").show();
+                   //     $("#tot_Amt_tax").show();
+                   //    }
+                    //else if ($(".chkigst_class").prop("checked") == true) {
+                   //     $('td:nth-child(6),th:nth-child(6)').show();
+                   //     $('td:nth-child(7),th:nth-child(7)').show();
+                   //     $('td:nth-child(8),th:nth-child(8)').hide();
+                   //     $('td:nth-child(9),th:nth-child(9)').hide();
+                   //     $('td:nth-child(10),th:nth-child(10)').hide();
+                   //     $('td:nth-child(11),th:nth-child(11)').hide();
+                   //     $('td:nth-child(12),th:nth-child(12)').show();
+                   //     $("#tot_Cgst").hide();
+                   //     $("#tot_Sgst").hide();
+                   //     $("#tot_Igst").show();
+                   //     $("#tot_Amt_tax").show();
+                   //}
+                
+                //if($(".chkigst_class").prop("checked") == true) {
+                //    $('td:nth-child(6),th:nth-child(6)').show();
+                //    $('td:nth-child(7),th:nth-child(7)').show();
+                //    $('td:nth-child(8),th:nth-child(8)').hide();
+                //    $('td:nth-child(9),th:nth-child(9)').hide();
+                //    $('td:nth-child(10),th:nth-child(10)').hide();
+                //    $('td:nth-child(11),th:nth-child(11)').hide();
+                //    $('td:nth-child(12),th:nth-child(12)').show();
+                //    $("#tot_Cgst").hide();
+                //    $("#tot_Sgst").hide();
+                //    $("#tot_Igst").show();
+                //    $("#tot_Amt_tax").show();
+                //} else if ($(".chkcgst_class").prop("checked") == true) {
+                //    $('td:nth-child(6),th:nth-child(6)').hide();
+                //    $('td:nth-child(7),th:nth-child(7)').hide();
+                //    $('td:nth-child(8),th:nth-child(8)').show();
+                //    $('td:nth-child(9),th:nth-child(9)').show();
+                //    $('td:nth-child(10),th:nth-child(10)').show();
+                //    $('td:nth-child(11),th:nth-child(11)').show();
+                //    $("#tot_Igst").hide();
+                //    $("#tot_Cgst").show();
+                //    $("#tot_Sgst").show();
+                //    $("#tot_Amt_tax").show();
+                //}
 
                 calculate()
                 $("[id*=txtproduct_name]").val("");
@@ -841,18 +965,18 @@
 
     // onclick save(add controls value json in dtl table)
         function saveValue() {
-            
-                $(".totalcost").val($("#tot_amt_add_cgst").text());
+         $(".totalcost").val($("#tot_amt_add_cgst").text());
                 $(".totalgst").val($("#tot_gst_tax_amount").text());                
                 $(".totaligst").val($("#tot_add_igst").text());
                 $(".totalcgst").val($("#tot_add_cgst").text());
                 $(".totalsgst").val($("#tot_add_sgst").text());
                 $(".paymentmode").val($('[id*=selectPayMode').val());
-
+         
                 var JSONObject = new Array();
 
                 $('#myTable tbody tr').each(function (row, tr) {
                     var values = {};
+             
                     values.VOUCNO = $(".voucher_number_class").text();
                     values.EXPHEAD = $(".expenses_class").val();
                     values.PROD = $(tr).find('td:eq(1)').text();
@@ -869,7 +993,8 @@
                     JSONObject.push(values);
                 });
                 var json_str = JSON.stringify(JSONObject);
-                $(".txthdn_Json").val(json_str);            
+                $(".txthdn_Json").val(json_str);
+           
         }
 
     //Add Master Setting json 
@@ -888,12 +1013,12 @@
 
   // Add I/C/S GST Value 
         function checkgst() {
-            
-                tax_val = $("[id*=txtAmount]").val();
-                var gstRate = $(".gst_rate_Class").val();
-                var gstVal = parseFloat(gstRate) / 2;
-                var gst_amount = ((tax_val * gstVal) / 100);
-                var tot = (parseFloat(tax_val)+(gst_amount*2));
+         
+            tax_val = $("[id*=txtAmount]").val();
+             var gstRate = $(".gst_rate_Class").val();
+             var gstVal = parseFloat(gstRate) / 2;
+             var gst_amount = ((tax_val * gstVal) / 100);
+              var tot = (parseFloat(tax_val)+(gst_amount*2));
                 $(".txtCgst_class").val(gst_amount);
                 $(".txtSgst_class").val(gst_amount);
                 $(".txtIgst_class").val((tax_val * gstRate) / 100);
@@ -907,17 +1032,41 @@
                 $(".txtIgst_class").show();
                 $(".txtCgst_class").hide();
                 $(".txtSgst_class").hide();
+
+
+                if ($(".chkigst_class").prop("checked") == true && $(".chkcgst_class").prop('checked', false)) {
+                    //$(".chkigst_class").prop('checked', true);
+                    //$(".chkcgst_class").prop('checked', false);
+                    $(".txtIgst_class").show();
+                    $(".txtCgst_class").hide();
+                    $(".txtSgst_class").hide();
+                    $("#tot_Igst").show();
+                    $("#tot_Cgst").hide();
+                    $("#tot_Sgst").hide();
+                }
             checkgst();
         }
 
   // Check CGST AND SGST
         function chkcgstcheck() {
+            $(".chkigst_class").prop('checked', false);
             $(".chkcgst_class").prop('checked', true);
             $(".chksgst_class").prop('checked', true);
-            $(".chkigst_class").prop('checked', false);
+           
             $(".txtIgst_class").hide();
             $(".txtCgst_class").show();
             $(".txtSgst_class").show();
+
+            if ($(".chkcgst_class").prop("checked") == true && $(".chkigst_class").prop("checked") == false) {
+
+                //   $(".chkcgst_class").prop('checked', true);
+                $(".txtIgst_class").hide();
+                $(".txtCgst_class").show();
+                $(".txtSgst_class").show();
+                $("#tot_Igst").hide();  
+                $("#tot_Cgst").show();
+                $("#tot_Sgst").show();
+            }
             checkgst();
         }
 

@@ -163,6 +163,7 @@ namespace WebBillingSystem
             {
                 string edit_button = "<a href='/Reports/AccountLedger.aspx?value="+ baseHealpare.EncodeUrl(this, "" + reader["account_head"]) + "' class='btn btn-xs btn-light details-control-accHead fa fa-share' data-toggle='tooltip-dark' data-placement='top' title='Expand'></>";
 
+
                 double cr_tot = Convert.ToDouble(reader["sub_group_cr_tran_tot"].ToString());
                 double dr_tot = Convert.ToDouble(reader["sub_group_dr_tran_tot"].ToString());
 
@@ -204,6 +205,7 @@ namespace WebBillingSystem
             }
             if(reader != null)
             {
+
                 reader.Close();
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 json_acc_head_obj = serializer.Serialize(acc_head_arrylist);
